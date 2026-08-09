@@ -43,6 +43,16 @@ Pipedrive's thesis: you can't control outcomes, only actions — so the CRM's jo
 
 **MUST HAVE**: typed activities (call/meeting/task at minimum + custom types), due dates, overdue state, done toggle, deal/contact linkage, an "overdue/today" worklist, and the **won→plan-next-activity** nudge. Calendar sync is SHOULD (essential for daily use but heavier). This is where AI can genuinely help: **auto-create activities from emails/meetings and suggest the next follow-up** ([16-COMPETITIVE-OPPORTUNITIES.md](16-COMPETITIVE-OPPORTUNITIES.md)).
 
+## Verified help-doc specifics (support.pipedrive.com, 2026-08)
+
+- **6 default activity types** — Call, Meeting, Task, Deadline, Email, Lunch — plus fully custom types (Company settings → Activities → "+ Activity type", icon + name).
+- Activity fields: title, type, date/time/**duration**, **Busy/Free** status (Busy blocks Scheduler availability), private **Note**, **Guests** (internal contacts or external emails), **Location** (auto-verified via Google Maps), public **Description** (syncs to external calendars), owner.
+- Two timestamps: **Due date** (editable) + **Marked-as-done time** (auto). Derived **Last activity date** and **Next activity date** (the latter drives pipeline sort).
+- **Reminders**: in-app alert, inclusion in a **daily summary email**, and/or a **separate email ~1 hour before**; mobile push. Overdue flagged by color-coded dots on the board.
+- **Linkable to deals, organizations, people, leads, projects** — **cascading**: an activity linked to a deal auto-associates the deal's person + organization.
+- **Won → prompt to add the next activity** (confirmed behavior), reinforcing "never leave a deal without a next step." Managers set **activity goals** (daily/weekly/monthly).
+- Sources: `/article/activities`, `/article/activity-reminder-emails`, `/features/activities-goals`, `/article/creating-custom-activity-types`.
+
 ## Twenty mapping (preview)
 
 Twenty has **Tasks** and **Notes** standard objects and a Calendar module, plus activity timelines on records. Gaps: typed activities with an "overdue/today" worklist framing, the won→plan-next nudge, and tight activity-centric UX. See [14-TWENTY-REUSE-MAP.md](14-TWENTY-REUSE-MAP.md).

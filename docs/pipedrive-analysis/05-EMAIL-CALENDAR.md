@@ -39,6 +39,16 @@ OBSERVED (Mail tab + settings) + DOCUMENTED (help pages).
 
 Email is where Pipedrive most frustrates entry-tier users (sync gated to Growth; Campaigns unreliable per complaints) and where **AI removes real work**: understand incoming emails, auto-link to the right deal/contact, **auto-create activities/follow-ups**, draft replies, and **update the CRM from email content** (e.g. move a stage, log an outcome). See [16-COMPETITIVE-OPPORTUNITIES.md](16-COMPETITIVE-OPPORTUNITIES.md).
 
+## Verified help-doc specifics (support.pipedrive.com, 2026-08)
+
+- **Full 2-way sync starts at Growth** (Lite = Smart BCC only). **Multiple email accounts/user**: Growth 1, Premium 3, Ultimate 5. **Shared team inboxes**: Premium 1, Ultimate 5.
+- **Smart BCC**: each account/deal has a unique BCC address; BCC it from any external client and the email is captured + linked — the no-full-sync fallback.
+- **Templates** with **merge/placeholder fields** (contact/deal/custom fields); rich-HTML **signatures** per user.
+- **Open + link-click tracking** with real-time notifications (Growth+). **Group/bulk email** (Growth+, per-plan recipient caps). **Scheduled send**. **Email sequences** (multi-step nurture): Growth 5, Premium 25, Ultimate 50 per company. Email **actions rate-limited to 40/min/company**.
+- **AI email** (write / summarize + sentiment/readiness scoring / reply): **Premium+**.
+- **Calendar**: 2-way Google + Microsoft/Outlook sync; in-app day/week calendar view. **Meeting Scheduler / booking pages** (Growth+): share availability, invitee self-books → creates activity. **Video links** via Zoom / Google Meet / Microsoft Teams.
+- Sources: `/features/email-software`, `/article/smart-bcc`, `/article/email-templates`, `/article/scheduling-emails`, `/article/calendar-sync`, `/article/scheduler`, `/article/usage-limits-in-pipedrive`.
+
 ## Twenty mapping (preview)
 
 Twenty has **connected-account email + calendar sync** (Gmail/Google + Microsoft, IMAP/SMTP/CalDAV), message threads linked to records, and the worker-driven sync pipeline — a strong, reusable foundation ([14-TWENTY-REUSE-MAP.md](14-TWENTY-REUSE-MAP.md)). Gaps vs Pipedrive: templates, open/click tracking, meeting-scheduler booking pages, send-tracking UI. Twenty's AI + tools layer is a differentiator for the "email → CRM update" opportunity.

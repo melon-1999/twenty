@@ -54,3 +54,12 @@ The strategic point: **Twenty's power is a liability for this segment unless hid
 - **Hide** custom-object creation, the metadata engine, row-level predicates, and the full field-type zoo from default users (available to power users/admins only).
 
 See [14-TWENTY-REUSE-MAP.md](14-TWENTY-REUSE-MAP.md) and [24 in codebase-analysis] for what's app-configurable vs core.
+
+## Verified help-doc specifics (support.pipedrive.com, 2026-08)
+
+- **16 custom field types**: Text, Large text, Single option (max 1000 options), Multiple options (max 1000), Autocomplete (255 chars), Numerical, Monetary (+ ISO currency subfield), User, Organization, Person, Phone (click-to-call), Time, Time Range, Date, Date Range, Address (Google Maps + subfields). Plus a **Formula field** (Premium+), **capped at 10/company**.
+- **Entities**: custom fields on lead, deal, person, organization, product, project (+ limited on activity). **Deal and Lead custom fields are shared.** **No custom objects** — the object model is fixed on every plan (contrast: Twenty has custom objects).
+- **Field caps**: officially only **Ultimate = 500** is documented; entry tier ~30, mid-tiers unconfirmed in primary sources (30/100/300/500 widely cited).
+- **Important fields** (Growth+): highlight missing data, **don't block save**. **Required fields** (Premium+): **block save**. Both can be scoped **per pipeline and/or per stage** (Pipedrive's conditional-required form). **Pipeline-specific fields** (Premium+): hide a field on selected pipelines.
+- **Read-only fields** (Premium+): per permission-set view-vs-edit. Access model = **permission sets** (actions) + **visibility groups** (records) + per-record "Visible to" override.
+- Sources: `/article/what-types-of-custom-fields-are-there`, `/article/custom-fields-formula-fields`, `/article/data-fields-in-pipedrive`, `/article/permission-sets`, `/article/visibility-groups`.

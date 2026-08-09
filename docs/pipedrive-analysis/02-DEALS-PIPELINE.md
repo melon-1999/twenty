@@ -64,3 +64,14 @@ Key details:
 ## Implications for our product (INFERRED)
 
 The pipeline Kanban + drag + rotting + "next activity" sort + weighted forecast + a consistent inline-edit detail page are the **irreducible deal experience**. A competitor must match this. Everything else on the deal page (WhatsApp, Invoice, Documents) is add-on surface that can be omitted or deferred. See Twenty mapping in [13-PIPEDRIVE-VS-TWENTY.md](13-PIPEDRIVE-VS-TWENTY.md) (Twenty's Opportunities + RecordBoard Kanban + record show page cover most of this; rotting, days-in-stage, weighted forecast, and Won/Lost+lost-reason are the notable gaps).
+
+## Verified help-doc specifics (support.pipedrive.com, 2026-08)
+
+- **Deal card default fields** (customizable): title, contact, value, label, owner. **Activity dots** are color-coded for **due / overdue / unassigned** — the board's prioritization signal.
+- **Rotting mechanics**: enabled per-pipeline (pencil), a **distinct threshold per stage**; rotten tiles turn **red**; timer = the deal's **last-updated** time; **resets** on marking activities done, adding notes/files, email send/receive, or editing deal fields (value/close date/custom). **Limitation: rotting ignores the next-activity date** — a deal with a future activity can still rot.
+- **Multiple pipelines** confirmed; admins **reorder pipelines by priority**.
+- **Products/line items**: per line — price + currency (defaults from catalog, per-deal overrides don't write back), **quantity**, **discount** (amount or %), **tax** (inclusive/exclusive); **up to 1,000 products per deal**.
+- **Lost reasons**: two modes — **freeform** (up to 100/account) or admin **predefined** list; both allow a **comment** saved as a note; surfaced in a list-view column and in **Insights** reports.
+- **Probability**: **stage probability** (default 100%, per pencil) vs **deal probability** (per deal) — **deal probability always wins**. Weighted value = value × prob ÷ 100; feeds the **Forecast view** and per-stage/pipeline totals (weighted + unweighted shown).
+- **Deal detail**: progress bar shows **days spent in each stage**; sidebar sections are user-manageable (drag-reorder/toggle, per-section field customization); history tabs = Notes / Activities / Emails / Files / Documents / Invoices + a **Changelog** tab (stage/value/label/contact/custom-field changes); **Focus** panel = pending activities + email drafts; followers; deleted deals restorable within **30 days**.
+- Sources: `/article/pipeline-view`, `/article/the-rotting-feature`, `/article/probability-in-pipedrive`, `/article/lost-reasons`, `/article/deal-detail-view`, `/article/how-can-i-link-products-to-a-deal`.

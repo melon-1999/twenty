@@ -44,3 +44,26 @@ Twenty already has a **full workflow engine** that is *more capable* than Pipedr
 - Visual editor (`@xyflow/react`), draft/active versioning, run history with per-step state, retries, no hard "50 workflows / 10 actions / 90-day" caps.
 
 So for automation, **Twenty is better than Pipedrive** — the work is not building an engine but **simplifying the UI** for SMBs (recipe templates for the 5 essential automations above, plain-language trigger/action pickers) and **hiding** the power-user surface (code steps, iterators, raw HTTP) by default. This is a place to **beat Pipedrive**: uncapped, AI-assisted automation without a tier wall. See [13](13-PIPEDRIVE-VS-TWENTY.md), [14](14-TWENTY-REUSE-MAP.md), [16](16-COMPETITIVE-OPPORTUNITIES.md).
+
+## Verified help-doc specifics (support.pipedrive.com, 2026-08)
+
+- **Availability: Growth+** (no automation on Lite). Access: Tools and apps → Automations → "+ Automation". If-then visual builder; actions run top-to-bottom; **templates library**.
+- **Triggers**: **event triggers** = 6 entities (deal, person, activity, lead, organization, project) × **added / updated / deleted**; **date triggers** = 4 entities (deal, person, activity, organization) fired **before / on / after a date field**. **No inbound-email ("email received") trigger and no true time-of-day/cron trigger.**
+- **Conditions**: field filters with AND/OR; **if/else branching**, **Wait-for-condition** (each step ≤ 7 days), **Delay** (total ≤ 90 days).
+- **Actions**: create/update person, organization, lead, deal, activity; send email (template); add note; campaigns; projects; **webhook**; + integration actions (Slack, Microsoft Teams, Trello, Asana).
+- **Exact plan limits** (per company):
+
+  | Limit | Growth | Premium | Ultimate |
+  |---|---|---|---|
+  | Active automations | 50 | 150 | 250 |
+  | Actions per automation | 10 | 10 | 10 |
+  | If/else conditions | 3 | 10 | 20 |
+  | Wait-for-condition steps | 3 | 10 | 10 |
+  | Delay steps | 3 | 10 | 10 |
+
+  Frequency caps (all plans): 10,000 executions / 10 min company-wide, 5,000 / 10 min per automation; email actions 40/min/company.
+- **AI**: assistive only (AI Sales Assistant win-probability + next-best-action, AI email writer/summarizer, AI Report Generator, Pipedrive Pulse; uses OpenAI). **No natural-language "build my automation" feature** — the workflow builder itself is rules-based.
+
+### The concrete competitor opening
+
+Pipedrive has **no inbound-email trigger and no time/cron trigger**, plus hard caps. **Twenty already has both missing triggers** (webhook/server-route for inbound, cron for scheduled) and **no caps** — so "automate when an email arrives" and "every Monday do X" are things we can offer that Pipedrive can't. Combined with Twenty's **AI-agent workflow action**, we can also ship genuine AI-in-automation, not just assistive suggestions. Sources: `/article/workflow-automation`, `/article/automation-update-trigger`, `/article/how-many-workflows-can-i-have-in-pipedrive`.

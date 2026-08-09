@@ -43,6 +43,21 @@ OBSERVED live unless labeled.
 
 Recommendation for our product: **default to no separate Lead entity in MVP.** Model qualification as a first pipeline stage (or a lightweight "inbox" pipeline) so users have one place to look and one object model. Revisit a dedicated lead object only if/when lead-gen volume (web forms, chatbots) justifies keeping raw inbound out of the pipeline — and even then it can be an optional pipeline, not a separate top-level concept. This is a concrete simplification win over Pipedrive. See [12-FEATURE-PRIORITIES.md](12-FEATURE-PRIORITIES.md).
 
+## Verified help-doc specifics (support.pipedrive.com, 2026-08)
+
+Contacts:
+- **Merge Duplicates is on ALL plans.** Detection: **people** = same name + (same phone OR email OR organization); **organizations** = same name + same address. One record is **primary** (wins conflicts), a **preview** precedes confirm, deals/activities/ownership consolidate, and it is **irreversible**.
+- **Smart Contact Data** (enrichment from email/domain → job title, company history, industry, socials): **Advanced/Professional+** (mid-tier), admin-enabled.
+- **Related Organizations** hierarchy: Related (peer), Parent, Daughter, Sister (auto among daughters) — **immutable** once set (delete + recreate to change). A person links to **one primary organization**; an org links to many people.
+- Google **Contact Sync** (1- or 2-way) + multiple **contact labels**.
+
+Leads:
+- **Leads and deals share one quota AND one custom-field schema** ("a custom field created for deals also exists on leads") → architecturally a Lead is a **deal in a different lifecycle state**, not a separate data model. This strengthens the recommendation to drop a separate Lead entity.
+- Default lead labels **Hot / Warm / Cold** (+ custom) = a lightweight temperature field, not a pipeline.
+- Capture: **Web Forms, Chatbot + Live Chat, Prospector** (400M-profile outbound DB) — all the **LeadBooster** add-on (from ~$32.50/company/mo) — plus manual add and CSV import.
+- **Convert to deal** (person/org/notes/activities/fields carry over); can also convert **back** to a lead.
+- Sources: `/article/merge-duplicates`, `/features/smart-contact-data`, `/article/related-organizations`, `/features/leads-inbox`, `/features/lead-generation-software`, `/article/custom-fields`.
+
 ## Twenty mapping (preview)
 
 Twenty already has **People** and **Companies** as standard objects with the same list/board/show pattern, custom fields, search, and relations. Gaps vs Pipedrive contacts: inline duplicate detection/merge, contact enrichment, org rollup columns (open/closed deals) out of the box. See [13](13-PIPEDRIVE-VS-TWENTY.md) / [14](14-TWENTY-REUSE-MAP.md).

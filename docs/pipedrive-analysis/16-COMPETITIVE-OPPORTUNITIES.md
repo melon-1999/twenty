@@ -5,7 +5,7 @@ Priorities: **simplicity, fast onboarding, less manual data entry, AI only where
 ## Non-AI structural wins (do these regardless)
 
 1. **Transparent, inclusive pricing.** Bundle email sync + basic automation + basic reporting into the base tier; no add-on stacking. Attacks the #1 complaint (cost creep). Pure GTM + not-gating; Twenty is open-source so cost structure supports it.
-2. **Uncapped automation.** No "50 workflows / 10 actions / 90-day / no email trigger" limits. Twenty's workflow engine already supports db-event/webhook/cron triggers, branching, delay, HTTP, AI — far past Pipedrive's caps. Just simplify the UI.
+2. **Uncapped automation + the triggers Pipedrive lacks.** No "50/150/250 workflows, 10 actions, 90-day" limits. Crucially, Pipedrive's triggers are only entity added/updated/deleted + date-field-relative — it has **no inbound-email trigger and no time/cron trigger**. Twenty already ships **both** (webhook/server-route for inbound, cron for scheduled) plus branching, delay, HTTP, and an **AI-agent action**. So "automate when an email arrives" and "every Monday do X" and "let AI decide the step" are things we can offer that Pipedrive structurally cannot. Just simplify the UI.
 3. **Reporting that works out of the box.** Ship funnel, win rate, weighted forecast, activity, MRR/ARR, cross-object reports **free**, no tier wall. Attacks the "shallow + gated" reporting complaint.
 4. **One place to look.** No separate Leads inbox; qualification is a pipeline stage. Fewer top-level concepts = faster comprehension.
 5. **Reachable support + clean billing.** Trust-first positioning against Pipedrive's BBB "D-"/billing threads.
