@@ -1,5 +1,8 @@
 import 'reflect-metadata';
-import { type FeatureFlagKey } from 'twenty-shared/types';
+import {
+  type FeatureFlagKey,
+  type ProductCapabilityKey,
+} from 'twenty-shared/types';
 
 import { type Gate } from 'src/engine/twenty-orm/interfaces/gate.interface';
 
@@ -20,6 +23,7 @@ export interface ReflectMetadataTypeMap {
   ['config-variables']: ConfigVariablesMetadataMap;
   ['workspace:is-searchable-metadata-args']: boolean;
   ['feature-flag-metadata-args']: FeatureFlagKey;
+  ['capability-metadata-args']: ProductCapabilityKey;
 }
 
 export class TypedReflect {
