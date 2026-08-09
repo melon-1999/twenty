@@ -1,4 +1,5 @@
 import { createAtomState } from '@/ui/utilities/state/jotai/utils/createAtomState';
+import { type ProductCapabilityKey } from 'twenty-shared/types';
 import {
   type Application,
   type Role,
@@ -50,6 +51,9 @@ export type CurrentWorkspace = Pick<
     Application,
     'id' | 'name' | 'universalIdentifier' | 'logoUrl'
   >[];
+  // TODO: remove this once `enabledCapabilities` is present in the generated
+  // metadata graphql types (requires running `graphql:generate` against a live backend).
+  enabledCapabilities?: { key: ProductCapabilityKey; value: boolean }[] | null;
 };
 
 export const currentWorkspaceState = createAtomState<CurrentWorkspace | null>({
