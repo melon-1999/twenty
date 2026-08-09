@@ -9,6 +9,7 @@ import { type FlatApiKey } from 'src/engine/core-modules/api-key/types/flat-api-
 import { type ApplicationVariableCacheMaps } from 'src/engine/core-modules/application/application-variable/types/application-variable-cache-maps.type';
 import { type FlatApplicationCacheMaps } from 'src/engine/core-modules/application/types/flat-application-cache-maps.type';
 import { type CurrentBillingSubscription } from 'src/engine/core-modules/billing/types/flat-billing-subscription.type';
+import { type CapabilitiesMap } from 'src/engine/core-modules/product-capability/interfaces/capabilities-map.interface';
 import { type FlatWorkspaceMemberMaps } from 'src/engine/core-modules/user/types/flat-workspace-member-maps.type';
 import { type WorkflowAutomatedTriggerMaps } from 'src/engine/core-modules/workflow/types/workflow-automated-trigger-maps.type';
 import { type FlatRoleTargetByAgentIdMaps } from 'src/engine/metadata-modules/flat-agent/types/flat-role-target-by-agent-id-maps.type';
@@ -31,6 +32,7 @@ export const WORKSPACE_CACHE_KEYS_V2 = {
   flatSearchFieldMetadataMaps: 'flat-maps:search-field-metadata',
   flatLogicFunctionMaps: 'flat-maps:logic-function',
   featureFlagsMap: 'feature-flag:feature-flags-map',
+  capabilitiesMap: 'capability:capabilities-map',
   rolesPermissions: 'metadata:permissions:roles-permissions',
   userWorkspaceRoleMap: 'metadata:permissions:user-workspace-role-map',
   apiKeyRoleMap: 'metadata:permissions:api-key-role-map',
@@ -68,6 +70,7 @@ export const WORKSPACE_CACHE_KEYS_V2 = {
 
 export type AdditionalCacheDataMaps = {
   featureFlagsMap: Record<FeatureFlagKey, boolean>;
+  capabilitiesMap: CapabilitiesMap;
   rolesPermissions: ObjectsPermissionsByRoleId;
   userWorkspaceRoleMap: UserWorkspaceRoleMap;
   apiKeyRoleMap: Record<string, string>;
