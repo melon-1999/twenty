@@ -1,6 +1,6 @@
 # Implementation Status
 
-Phase: **PLAN / DECISION documented. No application code changed.** Implementation (§30–31) begins only after this plan is validated.
+Phase: **FOUNDATION BUILT + integration-verified** on branch `feat/product-capability-layer` (7 commits, final whole-branch review: READY TO MERGE, zero-behavior-change invariant verified). Object-backed enforcement go/no-go RESOLVED (isActive is not a schema boundary → guard-only). Remaining: Settings UI + per-capability migration (Dashboards → Email/Calendar/Automations/AI).
 
 ## Foundation
 
@@ -10,16 +10,16 @@ Phase: **PLAN / DECISION documented. No application code changed.** Implementati
 | Architecture decision documented (§29) | ✅ done ([IMPLEMENTATION-PLAN.md](IMPLEMENTATION-PLAN.md), [02](02-ARCHITECTURE.md)) |
 | Capability model designed | ✅ done ([03](03-CAPABILITY-MODEL.md)) |
 | Module catalog defined | ✅ done ([12](12-MODULE-CATALOG.md)) |
-| `ProductCapabilityKey` enum (shared) | ⬜ not started (impl) |
-| Capability catalog constant + service | ⬜ not started |
-| `WorkspaceCapabilityEntity` + instance command | ⬜ not started |
-| `WorkspaceCapabilityService` + `capabilitiesMap` cache | ⬜ not started |
-| `currentWorkspace.enabledCapabilities` field | ⬜ not started |
-| `useIsCapabilityEnabled` hook | ⬜ not started |
-| `@RequireCapability` guard | ⬜ not started |
+| Object-backed enforcement go/no-go test (§16) | ✅ done — RESOLVED: `isActive` does NOT exclude from GraphQL schema (A false); data preservation + lossless reactivation true (B/C). Decision: guard-only enforcement. |
+| `ProductCapabilityKey` enum (shared) | ✅ done (`c072c2e1`) |
+| Capability catalog constant + service | ✅ done (`57de90ba` catalog; service same commit) |
+| `WorkspaceCapabilityEntity` + instance command | ✅ done (`57de90ba` entity; `7f9312bc` fast instance command, table applied+verified) |
+| `WorkspaceCapabilityService` + `capabilitiesMap` cache | ✅ done (`57de90ba`, 14/14 server tests) |
+| `currentWorkspace.enabledCapabilities` field | ✅ done (`61fa15b2`; codegen reconciled `8bc8b3e3`) |
+| `useIsCapabilityEnabled` hook | ✅ done (`227fdd1c`; 7/7 front tests) |
+| `@RequireCapability` guard | ✅ done (`2f4ef115`, defined + unit-tested; not yet applied to any resolver) |
 | Settings → Features UI | ⬜ not started |
-| Object-backed enforcement go/no-go test (§16) | ⬜ not started (blocks object-backed path) |
-| Migration/workspace command | ⬜ not started |
+| Migration/workspace command (seed existing workspaces) | ⬜ not started (next step; `computeForCache` defaults keep unseeded workspaces all-enabled) |
 
 ## Per-capability tracking (fill during implementation)
 
