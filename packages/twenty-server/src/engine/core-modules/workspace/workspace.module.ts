@@ -17,6 +17,7 @@ import { FeatureFlagModule } from 'src/engine/core-modules/feature-flag/feature-
 import { FileModule } from 'src/engine/core-modules/file/file.module';
 import { MetricsModule } from 'src/engine/core-modules/metrics/metrics.module';
 import { OnboardingModule } from 'src/engine/core-modules/onboarding/onboarding.module';
+import { ProductCapabilityModule } from 'src/engine/core-modules/product-capability/product-capability.module';
 import { SdkClientModule } from 'src/engine/core-modules/sdk-client/sdk-client.module';
 import { UserWorkspaceEntity } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { UserWorkspaceModule } from 'src/engine/core-modules/user-workspace/user-workspace.module';
@@ -61,6 +62,7 @@ import { StandardObjectsPrefillModule } from 'src/engine/workspace-manager/stand
     UserWorkspaceModule,
     WorkspaceManagerModule,
     FeatureFlagModule,
+    ProductCapabilityModule,
     OnboardingModule,
     WorkspaceDataSourceModule,
     PermissionsModule,

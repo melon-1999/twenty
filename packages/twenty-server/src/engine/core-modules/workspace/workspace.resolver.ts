@@ -34,6 +34,8 @@ import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/service
 import { FileUrlService } from 'src/engine/core-modules/file/file-url/file-url.service';
 import { PreventNestToAutoLogGraphqlErrorsFilter } from 'src/engine/core-modules/graphql/filters/prevent-nest-to-auto-log-graphql-errors.filter';
 import { ResolverValidationPipe } from 'src/engine/core-modules/graphql/pipes/resolver-validation.pipe';
+import { ProductCapabilityDTO } from 'src/engine/core-modules/product-capability/dtos/product-capability.dto';
+import { WorkspaceCapabilityService } from 'src/engine/core-modules/product-capability/services/workspace-capability.service';
 import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { ActivateWorkspaceInput } from 'src/engine/core-modules/workspace/dtos/activate-workspace-input';
@@ -94,6 +96,7 @@ export class WorkspaceResolver {
     private readonly fileUrlService: FileUrlService,
     private readonly billingSubscriptionService: BillingSubscriptionService,
     private readonly featureFlagService: FeatureFlagService,
+    private readonly workspaceCapabilityService: WorkspaceCapabilityService,
     private readonly roleService: RoleService,
     private readonly viewService: ViewService,
     private readonly dnsManagerService: DnsManagerService,
@@ -164,6 +167,15 @@ export class WorkspaceResolver {
 
     return featureFlags.filter((flag) =>
       Object.values(FeatureFlagKey).includes(flag.key),
+    );
+  }
+
+  @ResolveField(() => [ProductCapabilityDTO], { nullable: true })
+  async enabledCapabilities(
+    @Parent() workspace: WorkspaceEntity,
+  ): Promise<ProductCapabilityDTO[]> {
+    return this.workspaceCapabilityService.getWorkspaceCapabilities(
+      workspace.id,
     );
   }
 
