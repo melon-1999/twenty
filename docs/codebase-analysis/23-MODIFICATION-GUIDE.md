@@ -1,0 +1,28 @@
+# 23 — Modification Guide
+
+"If I want to change X, where do I look?" Server paths under `packages/twenty-server/src`, front under `packages/twenty-front/src`. Always run `lint:diff-with-main` + `typecheck` after; generate an instance command for entity changes; run `graphql:generate` after schema changes.
+
+| Goal | Where | Flow / notes |
+|------|-------|--------------|
+| **Change CRM record UI (table/board/cell)** | front `object-record/` — `record-table/`, `record-board/`, `record-field/ui/components/FieldDisplay.tsx` + `meta-types/{display,input}/` | Field rendering is guard-dispatched by type; columns from `useColumnDefinitionsFromObjectMetadata` |
+| **Add a new field *type*** | `twenty-shared/src/types/FieldMetadataType.ts` (+ `composite-types/` if composite); server `metadata-modules/field-metadata/`, `twenty-orm/factories/entity-schema-column.factory.ts`, `field-metadata-type-to-column-type.util.ts`, GraphQL `type-mapper.service.ts`; front `record-field/ui/types/guards/` + `meta-types/`. **Core fork required** | Touches metadata, DDL, GraphQL type gen, and UI dispatch — high blast radius |
+| **Add a backend REST endpoint** | for records, it's already generic (`api/rest/`); for bespoke, add a NestJS controller in the relevant module (guard with `JwtAuthGuard`/`WorkspaceAuthGuard`, oxlint enforces guarding) | Or expose via an app logic-function HTTP route (no core change) |
+| **Add a GraphQL mutation (non-record)** | metadata/core module resolver (`@MetadataResolver`/`@CoreResolver`), guard it, add DTO; run `graphql:generate` | Record CRUD mutations are auto-generated — don't hand-write |
+| **Add a database entity (core)** | `engine/core-modules/<x>/*.entity.ts` (schema `core`); register in module; **generate an instance command** (`database:migrate:generate`) | Standard/custom objects are NOT this — they're metadata (below) |
+| **Add a standard (built-in) object/field** | `engine/workspace-manager/twenty-standard-application/utils/` flat-metadata builders + `src/modules/<x>/standard-objects/*.workspace-entity.ts` (typing shape) | Seeded per workspace via the migration pipeline; a workspace command may be needed to backfill existing tenants |
+| **Add a metadata type** (new flat entity kind) | `metadata-modules/flat-<x>/`, migration action handlers, side-effect handlers, cache keys | **Core; deep** — touches the whole flat + migration machinery |
+| **Add a workflow action** | server `modules/workflow/workflow-executor/workflow-actions/<x>/` (implement `WorkflowAction`, add to `WorkflowActionType` in twenty-shared, register in `workflow-action.factory.ts`, guard); front `modules/workflow/workflow-steps/<x>/` + diagram support | See [08](08-WORKFLOWS.md) |
+| **Add a workflow trigger type** | `modules/workflow/workflow-trigger/` (`WorkflowTriggerType`, activation wiring, listener/cron) | Core; DB-event/cron/webhook/manual exist |
+| **Add an integration** | `modules/<integration>/` or `engine/core-modules/<integration>/`; use a driver/factory + `SecureHttpClientService`; add a queue/cron if async | See [14](14-INTEGRATIONS.md) |
+| **Add an AI provider** | `metadata-modules/ai/ai-models/services/sdk-provider-factory.service.ts` (add a `createX`), extend `ai-providers.json`, config vars in the `LLM` group | Uses Vercel AI SDK provider packages |
+| **Add an AI tool** | new `ToolProvider` under `core-modules/tool-provider/providers/` (or a static tool in `core-modules/tool/tools/`), register in `TOOL_PROVIDERS`, add to `ToolCategory`; gate by permission flag | Or expose an app logic-function as a tool (no core change) — `toolTriggerSettings` |
+| **Add a settings page** | front `pages/settings/<x>/` + route in `app/components/SettingsRoutes.tsx` (wrap in `SettingsProtectedRouteWrapper` with a `PermissionFlagType`) + nav item in `useSettingsNavigationItems` | |
+| **Add a reusable UI component** | `twenty-ui/src/<category>/` (CSS Modules + SCSS, `data-*` variants) or front `ui/` (Linaria) | Export via subpath in twenty-ui `package.json` |
+| **Change authentication** | `engine/core-modules/auth/` (services/strategies/token), `engine/core-modules/jwt/`, front `auth/` | See [10](10-AUTH-PERMISSIONS.md) |
+| **Change permissions** | `metadata-modules/permissions/permissions.service.ts`, `metadata-modules/role/`, `object-permission/`, enforcement in `twenty-orm/repository/permissions.utils.ts`; front `useHasPermissionFlag`/`useObjectPermissions`; flags in `twenty-shared/src/constants/PermissionFlagType.ts` | |
+| **Add a background job** | create a `@Processor(queue)` class with `@Process(JobName)` in the feature module, add the module to `JobsModule`, enqueue via `@InjectMessageQueue`. New queue → add to `MessageQueue` enum + `MESSAGE_QUEUE_WORKER_CONFIG` | See [15](15-BACKGROUND-JOBS.md) |
+| **Add an environment variable** | `engine/core-modules/twenty-config/config-variables.ts` (property + `@ConfigVariablesMetadata`), read via `TwentyConfigService.get()`; document in `.env.example` | See [16](16-CONFIGURATION.md) |
+| **Add a feature flag** | `FeatureFlagKey` (twenty-shared) + `core.featureFlag`; for a lab (user-toggleable) flag add to `PUBLIC_FEATURE_FLAGS`; gate server via `FeatureFlagGuard`, front via `useIsFeatureEnabled` | |
+| **Change deployment** | `packages/twenty-docker/` (Dockerfile, compose, helm, k8s, entrypoint.sh) | See [17](17-DEPLOYMENT.md) |
+
+**General rule:** if the change is data/view/UI/logic/AI/permissions/connections *for a specific customer*, prefer building an app with `twenty-sdk` (no core change — [12](12-APPS-SDK-EXTENSIBILITY.md), [24](24-EXTENSION-VS-CORE.md)). If it changes the *platform's capabilities*, it's a core change.
