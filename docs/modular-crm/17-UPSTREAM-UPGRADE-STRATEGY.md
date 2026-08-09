@@ -35,7 +35,7 @@ Ask: can this go through the existing feature system / plan system / app framewo
 ## Upgrade risk rating
 
 - **Low overall.** New module is self-contained; the ~9 in-place edits are localized, additive, and mirror existing patterns. The one medium item (command-menu predicate) sits on a hot path but follows the established `doesCommandMenuItemMatch*` shape the pipeline is built to extend.
-- **Biggest single dependency risk:** reliance on `ObjectMetadata.isActive` semantics ([16](16-TESTING.md) go/no-go test). If Twenty changes how `isActive` gates schema/nav upstream, object-backed capabilities are affected — mitigate by keeping the effect behind `WorkspaceCapabilityService` so the mechanism can be swapped without touching capability definitions.
+- **Dependency risk (reduced by go/no-go RESOLVED):** the design relies on `ObjectMetadata.isActive` only for UI-hide (nav/quick-create/command-menu) and data preservation ([16](16-TESTING.md) go/no-go confirmed both stable) — not for schema gating, since `isActive` never excluded objects from the schema. Enforcement is guard-based (`@RequireCapability`), independent of `isActive` schema semantics, which reduces this risk versus the originally assumed design. If Twenty changes how `isActive` gates nav/UI upstream, object-backed capabilities are affected — mitigate by keeping the effect behind `WorkspaceCapabilityService` so the mechanism can be swapped without touching capability definitions.
 
 ## Keeping in sync with upstream Twenty
 

@@ -8,7 +8,7 @@ Product principle (§24): **disabling a capability must not delete its data.** R
 
 ## How it holds for each capability type
 
-- **Object-backed** (Dashboards, future Products/Reports, custom objects): disabling sets `ObjectMetadata.isActive=false`. The object's **table and rows remain** in the workspace schema; only visibility/schema-exposure changes. Re-enabling sets `isActive=true` → the object and all its records reappear. *(Verify: deactivation must not drop the table nor run a data-destructive migration — [16](16-TESTING.md) test; if Twenty's deactivate path is ever destructive, we must interpose a non-destructive hide instead.)*
+- **Object-backed** (Dashboards, future Products/Reports, custom objects): disabling sets `ObjectMetadata.isActive=false`. The object's **table and rows remain** in the workspace schema; only UI visibility changes (nav/quick-create/command-menu) — the object stays in the GraphQL schema, so the access boundary is `@RequireCapability`, not schema exposure. Re-enabling sets `isActive=true` → the object and all its records reappear. Go/no-go RESOLVED: deactivation is confirmed non-destructive (a metadata UPDATE, never a `DROP TABLE`), and reactivation is lossless.
 - **Guarded / non-object** (Email, Calendar, Automations, AI): disabling flips the capability flag + hides UI + backend guard denies. **No data is touched** — synced messages, calendar events, workflows/runs, AI threads all remain in their tables. Re-enabling restores access.
 
 ## Explicit contrast with the app system

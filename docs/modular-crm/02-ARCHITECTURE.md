@@ -11,7 +11,7 @@ flowchart TB
   subgraph Existing["Existing Twenty (reused, mostly unchanged)"]
     BILL["Billing entitlements + hasEntitlement()  @license Enterprise (consume only)"]
     CFG["Deployment config → clientConfig atoms"]
-    OBJ["ObjectMetadata.isActive → nav / quick-create / command-menu / workspace GraphQL schema"]
+    OBJ["ObjectMetadata.isActive → nav / quick-create / command-menu (UI) + data preservation; enforcement via @RequireCapability (separate)"]
     PERM["Roles + PermissionFlagType (per user)"]
     FF["Feature flags (experiments / Lab) — kept separate"]
     APP["Applications (install/uninstall) — kept separate"]
@@ -49,7 +49,7 @@ A feature is usable iff **all three** pass:
 
 ## How enable/disable takes effect (reuse, don't rebuild)
 
-- **Object-backed capabilities** (Dashboards, future Products/Reports, custom objects): the resolver toggles `ObjectMetadata.isActive` for the capability's standard object(s). This already propagates to nav, quick-create, command menu, and — critically — inactive objects are excluded from the workspace GraphQL schema, giving **backend enforcement for free** and **data preservation for free** (rows are not dropped). *(Assumption to verify before build — see Risks.)*
+- **Object-backed capabilities** (Dashboards, future Products/Reports, custom objects): the resolver toggles `ObjectMetadata.isActive` for the capability's standard object(s). This already propagates to nav, quick-create, and command menu, and gives **data preservation for free** (rows are not dropped). It does **not** give backend enforcement — inactive objects remain in the workspace GraphQL schema (go/no-go RESOLVED, see Risks). The access boundary is `@RequireCapability` on the object's resolvers/controllers/jobs, same as non-object capabilities.
 - **Non-object capabilities** (Email, Calendar, Automations, AI): no single object to toggle. The resolver drives (a) a frontend hook used in settings-nav `isHidden`, route wrappers, and the command-menu filter pipeline; and (b) a backend `@RequireCapability` guard on the relevant resolvers/jobs.
 
 ## Storage (follow the `enabledAiModelIds` precedent)
@@ -69,8 +69,8 @@ A feature is usable iff **all three** pass:
 - **User permission** = `PermissionFlagType`/roles (user).
 - **Experiment/Lab** = `FeatureFlagKey` (workspace, temporary).
 
-## Risks (verify before implementation)
-1. **`isActive` = schema exclusion + lossless reactivation** — the whole object-backed design leans on this. Must confirm: (a) deactivating a standard object removes it from the workspace GraphQL schema (enforcement), (b) its table/rows are retained (data preservation), (c) reactivation is lossless and doesn't re-run destructive migration. If any is false, object-backed capabilities fall back to guard-based gating like non-object ones.
+## Risks (RESOLVED before implementation)
+1. **`isActive` schema-exclusion assumption — RESOLVED, false.** Go/no-go verdict: (A) deactivating a standard object removes it from the workspace GraphQL schema — **FALSE**; the flat-object-metadata map that feeds schema generation loads all objects for the workspace regardless of `isActive` (`workspace-flat-object-metadata-map-cache.service.ts`, no `isActive` filter), so resolvers/root fields stay live. (B) its table/rows are retained (data preservation) — **TRUE**, deactivation is a metadata UPDATE, never a `DROP TABLE`. (C) reactivation is lossless and doesn't re-run destructive migration — **TRUE**, same UPDATE path, table never dropped, schema recomputed from metadata. Decision: object-backed capabilities use guard-based gating (`@RequireCapability`), same as non-object ones. `isActive` = UI-hide (nav/quick-create/command-menu) + data preservation only. The only code path that actually excludes objects from the generated per-workspace schema is the `applicationId` filter (`workspace-graphql-schema-sdl.service.ts`) — noted as the alternative schema-level lever that was **not** chosen; guard-only was chosen instead.
 2. **Metadata-version churn:** toggling `isActive` bumps the workspace metadata version and regenerates schema/caches — heavier than a boolean flag. Acceptable for an admin action; document.
 3. **Enterprise/billing asymmetry** (backend `hasEntitlement` grants on self-hosted while frontend entitlement list requires an enterprise token) already exists in Twenty; the availability resolver must pick one consistent rule (recommend: mirror `hasEntitlement`'s self-hosted-true behavior for availability).
 4. **Dependency cycles / cascade** — catalog validated at load; resolver rejects cycles.
@@ -84,7 +84,7 @@ A feature is usable iff **all three** pass:
 | A standalone module **registry/registry framework** | A **code catalog** that maps to **existing** `isActive` + guards | Avoid a parallel system; reuse metadata-driven nav/actions |
 | Modules inherently mapped to pricing plans | Capabilities are pricing-independent; availability *optionally* references an entitlement | §6 — module system must not depend on billing |
 | One "capability" per tiny feature (DealNotesModule…) | Capabilities = human-meaningful product areas only | §12 avoid over-modularization |
-| Route hiding is enough | Object-backed → schema exclusion; non-object → guard + route wrapper | §18 UI hiding ≠ security |
+| Route hiding is enough | All optional capabilities → `@RequireCapability` guard + route wrapper; `isActive` = UI-hide only | §18 UI hiding ≠ security |
 | Build new nav/command-menu gating | Reuse `useFilteredObjectMetadataItems` + add one predicate to existing pipelines | Minimal upstream change |
 | Generic "apps == modules" | Apps stay separate; core capabilities are not installable apps | §9 — apps lack soft-disable |
 

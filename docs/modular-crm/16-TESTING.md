@@ -20,7 +20,7 @@ Test scenarios mapped to the three-gate model (§33). Follow Twenty's test setup
 
 - `WorkspaceCapabilityService`: enable/disable, availability gate (`hasEntitlement` mock + billing-off true), dependency validation (enable/disable prompts, cycle rejection), core-cannot-disable, cache invalidation on toggle.
 - `@RequireCapability` guard: allows when enabled, `ForbiddenException` when disabled, composes with permission guard (scenario 2 + 3).
-- **Object-backed enforcement (critical assumption):** integration test that deactivating a standard object (a) removes its root fields from the workspace GraphQL schema, (b) makes its CRUD resolvers unavailable/deny, (c) **keeps its table + rows**, (d) reactivation restores schema + data losslessly. If any fails, object-backed capabilities must fall back to guard-based gating — this test is a go/no-go for that mechanism.
+- **Object-backed enforcement (go/no-go RESOLVED: A false, B/C true):** `isActive=false` does **not** remove an object's root fields from the workspace GraphQL schema — resolvers stay reachable. Enforcement is via `@RequireCapability`. Integration test should assert: (a) a disabled capability's resolver **denies via the `@RequireCapability` guard** even though the object is still in the schema, (b) deactivating the standard object removes it only from nav/quick-create/command-menu (UI), (c) its table + rows are preserved (data preservation), (d) reactivation restores UI presence + data losslessly.
 - Migration command: idempotent; seeds correct enabled state from current `isActive`/availability; isolated per workspace.
 
 ## Frontend (jest + storybook)
@@ -39,6 +39,6 @@ Test scenarios mapped to the three-gate model (§33). Follow Twenty's test setup
 ## Security tests (§35)
 
 - Disabled non-object capability: direct GraphQL/REST call to its resolver → denied (not just UI-hidden).
-- Disabled object-backed capability: direct query for its records → unavailable (schema absence).
+- Disabled object-backed capability: direct query for its records → denied by `@RequireCapability` guard (isActive alone leaves the resolver reachable).
 - Background job / workflow action for a disabled capability → does not execute.
 - No stale-enable window after toggle (cache invalidation).

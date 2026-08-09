@@ -16,12 +16,12 @@ Twenty already has **five** relevant mechanisms. Full detail in [01](01-EXISTING
 | **Billing entitlements** (`BillingEntitlementKey`, `core.billingEntitlement`) | **per-workspace** boolean, **commercial** | DB, Stripe-synced via webhook; 4 keys (SSO, CUSTOM_DOMAIN, RLS, AUDIT_LOGS) | commercial capability availability | via subscription |
 | **Applications** (`ApplicationEntity`, `SyncableEntity.applicationId`) | **per-workspace** bundle | DB row per install; every object/field/view/nav/role belongs to one app | packaging + install/uninstall; **core CRM is the "Standard" app** | **no** — only destructive install/uninstall |
 | **Permissions/roles** (`PermissionFlagType`, roles, object/field/row perms) | **per-user (role)** | DB; on `currentUserWorkspace` | who may do what | yes (per user) |
-| **Object metadata activation** (`ObjectMetadata.isActive`) | **per-workspace**, object-granular | metadata; drives nav/quick-create/command-menu | show/hide a data object | **yes — data-preserving** |
+| **Object metadata activation** (`ObjectMetadata.isActive`) | **per-workspace**, object-granular | metadata; drives nav/quick-create/command-menu (UI only — object stays in the GraphQL schema) | show/hide a data object | **yes — data-preserving** |
 | **Deployment config** (`twenty-config` `IS_*`, `clientConfig`) | **instance/deployment** | env / config store → clientConfig → ~37 Jotai atoms | cloud vs self-hosted, provider availability | n/a (global) |
 
 **Key facts that drive the design:**
 1. There is **no "product module / capability" concept** and **no per-workspace "enabled modules" store** today. The closest precedents are `FeatureFlagEntity` (per-workspace boolean, but experiment-semantics) and `workspace.enabledAiModelIds: string[]` (a real per-workspace enabled-list column).
-2. **`ObjectMetadata.isActive` already gives data-preserving, per-workspace hiding** that propagates to navigation, quick-create and the command menu (via `useFilteredObjectMetadataItems`), and — because inactive objects are excluded from the generated per-workspace GraphQL schema — provides **de-facto backend enforcement** for object-backed capabilities. This is the single most reusable lever.
+2. **`ObjectMetadata.isActive` already gives data-preserving, per-workspace hiding** that propagates to navigation, quick-create and the command menu (via `useFilteredObjectMetadataItems`). Go/no-go RESOLVED: inactive objects are **not** excluded from the generated per-workspace GraphQL schema, so `isActive` provides **no backend enforcement** — object-backed capabilities need `@RequireCapability` on their resolvers/controllers/jobs, same as non-object capabilities. `isActive` remains the single most reusable lever for UI-hide + data preservation.
 3. **Billing, enterprise, SSO, RLS, audit-logs code is `@license Enterprise` (commercial)**, not AGPL. Our capability layer must live in AGPL core and only *consume* `BillingService.hasEntitlement(...)` — it must **not modify** Enterprise files.
 4. Command-menu/record actions are **metadata-driven** (`CommandMenuItem.conditionalAvailabilityExpression`, an `expr-eval-fork` expression) and the frontend filter pipelines are explicitly designed to accept additional `.filter()` predicates — a minimal-invasive extension point.
 
@@ -31,7 +31,7 @@ Twenty already has **five** relevant mechanisms. Full detail in [01](01-EXISTING
 
 - **Availability (commercial/deployment):** Stripe entitlement webhook → `core.billingEntitlement` (or `IS_BILLING_ENABLED=false` ⇒ `hasEntitlement` returns true). Deployment `IS_*` config → `clientConfig` → frontend atoms.
 - **Enabled (workspace):** today only feature flags (`core.featureFlag`) + object `isActive`. Reaches frontend via `currentWorkspace.featureFlags` and `objectMetadataItems`.
-- **Backend:** `FeatureFlagGuard`/`@RequireFeatureFlag`; imperative `BillingService.hasEntitlement`; ORM permission checks; inactive objects absent from schema.
+- **Backend:** `FeatureFlagGuard`/`@RequireFeatureFlag`; imperative `BillingService.hasEntitlement`; ORM permission checks; inactive objects remain present in the schema — no schema-level enforcement from `isActive`.
 - **Frontend:** `useIsFeatureEnabled`, `useHasPermissionFlag`, clientConfig atoms; nav from `useFilteredObjectMetadataItems`; settings nav `useSettingsNavigationItems` (inline `isHidden`); routes `SettingsProtectedRouteWrapper`.
 
 ---
@@ -42,7 +42,7 @@ Twenty already has **five** relevant mechanisms. Full detail in [01](01-EXISTING
 **PARTIALLY.** It has two per-workspace boolean-capability systems (feature flags, billing entitlements) and a per-workspace, data-preserving object-hiding lever (`isActive`), plus an app-bundle boundary (`applicationId`). None of them is a *product-capability catalog* with human-meaningful modules, dependencies, and coordinated enable/disable across nav+routes+backend. So the foundation exists; the coordinating layer does not.
 
 ### What existing mechanism are we using as the foundation?
-- **Downstream enforcement/UI for object-backed capabilities:** reuse **`ObjectMetadata.isActive`** (already propagates to nav/quick-create/command-menu and excludes inactive objects from the workspace GraphQL schema). Data-preserving by construction.
+- **Downstream UI + data preservation for object-backed capabilities:** reuse **`ObjectMetadata.isActive`** (already propagates to nav/quick-create/command-menu; does **not** exclude inactive objects from the workspace GraphQL schema — go/no-go RESOLVED false). Data-preserving by construction; enforcement is a separate `@RequireCapability` guard, uniform with non-object capabilities.
 - **Commercial availability:** reuse **`BillingService.hasEntitlement` + `BillingEntitlementKey`** and deployment `clientConfig` flags — **consumed, not modified** (Enterprise license).
 - **User authorization:** reuse **roles + `PermissionFlagType`** unchanged.
 - **Per-workspace enabled state storage:** follow the **`workspace.enabledAiModelIds`** precedent (a per-workspace list/table), not a new parallel framework.
@@ -104,7 +104,7 @@ Declared in the catalog; resolver blocks enabling without deps (auto-enable requ
 Object-backed capabilities need **no new nav/route code** — `isActive` already hides them. Non-object capabilities (Email/Calendar/Automations/AI/Reports settings + routes) add one predicate to the existing pipelines: a `useIsCapabilityEnabled(key)` hook (mirrors `useIsFeatureEnabled`), used in `useSettingsNavigationItems` inline `isHidden`, `SettingsProtectedRouteWrapper` (new optional `requiredCapability` prop), and — where needed — a new `.filter()` in the command-menu pipeline / a `conditionalAvailabilityExpression` term. (§16-17, [08](08-FRONTEND-INTEGRATION.md))
 
 ## Backend enforcement
-Object-backed: inactive object ⇒ absent from workspace GraphQL schema ⇒ enforced. Non-object: a `@RequireCapability(key)` guard (mirrors `FeatureFlagGuard`) on the relevant resolvers/jobs, resolving via the cached `capabilitiesMap`. (§18, [09](09-BACKEND-ENFORCEMENT.md))
+Object-backed and non-object capabilities both enforce the same way: a `@RequireCapability(key)` guard (mirrors `FeatureFlagGuard`) on the relevant resolvers/controllers/jobs, resolving via the cached `capabilitiesMap`. (Go/no-go RESOLVED: `isActive` does not remove an inactive object from the workspace GraphQL schema, so it is not an enforcement mechanism — only UI-hide + data preservation.) (§18, [09](09-BACKEND-ENFORCEMENT.md))
 
 ## Migration
 One instance/workspace command seeds `WorkspaceCapability` rows for existing workspaces from current object `isActive` state (all currently-usable capabilities enabled) → preserves behavior. (§15, [15](15-MIGRATION-STRATEGY.md))
@@ -116,10 +116,10 @@ Disabling never deletes: object rows persist under `isActive=false`; workflow/me
 Additive: new enum (shared), new entity + service + guard (server), new hook + settings section (front), plus **small edits** to a handful of existing files (workspace cache key list, `currentWorkspace` fragment, settings-nav hook, `SettingsProtectedRouteWrapper`, one nav filter). No Enterprise files touched. Tracked in [17](17-UPSTREAM-UPGRADE-STRATEGY.md).
 
 ## Risks
-- Object `isActive` semantics: confirm inactive objects are excluded from the workspace GraphQL schema (strong enforcement) AND that re-activation is lossless — must verify before relying on it. (High-value assumption; see Risks in [25 in codebase-analysis]/[02-ARCHITECTURE.md](02-ARCHITECTURE.md).)
+- Object `isActive` schema-exclusion assumption — **RESOLVED = false**, decision = guard-only. Go/no-go confirmed inactive objects are **not** excluded from the workspace GraphQL schema; re-activation *is* lossless (true), but that no longer matters for enforcement since enforcement was never actually resting on schema exclusion. Object-backed capabilities use `@RequireCapability`, uniform with non-object capabilities; `isActive` is retained only for UI-hide + data preservation. (See Risks in [02-ARCHITECTURE.md](02-ARCHITECTURE.md).)
 - Capability↔entitlement asymmetry (backend `hasEntitlement` vs frontend list) already exists in Twenty; document, don't inherit bugs.
 - Over-coupling to Enterprise billing — mitigated by consume-only.
-- Metadata-version churn when toggling object `isActive` (regenerates schema/cache) — acceptable but note performance.
+- Metadata-version churn when toggling object `isActive` (regenerates schema/cache) — acceptable but note performance; still valid for the UI/data toggle.
 
 ## Alternatives considered
 - **A) Extend billing entitlements** — rejected: Enterprise-licensed, commercial-only, 4 fixed keys, ties modules to pricing.

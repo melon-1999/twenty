@@ -33,4 +33,4 @@ How installed **Applications** relate to **product capabilities**. They are sepa
 | Application (Standard/Custom) | core/custom metadata owner | seeded, non-uninstallable | n/a | source of the objects a capability toggles |
 | Product capability | human-meaningful module | enable / disable (non-destructive) | **preserved** | the new layer |
 
-See [09](09-BACKEND-ENFORCEMENT.md) for how object-backed capabilities enforce via schema exclusion, and [14](14-DATA-PRESERVATION.md) for the data guarantee.
+See [09](09-BACKEND-ENFORCEMENT.md) for how object-backed capabilities enforce via `@RequireCapability` (`isActive` is UI-hide + data preservation only), and [14](14-DATA-PRESERVATION.md) for the data guarantee.

@@ -27,11 +27,13 @@ Legend per column: ⬜ todo · 🟡 in progress · ✅ done · n/a.
 
 | Capability | existing arch understood | capability defined | entitlement integ. | workspace config | frontend integ. | route protection | backend enforce | permission integ. | dependency handling | data preservation | tests | docs | remaining issues |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Contacts (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | via schema | ✅ existing | n/a | ✅ (never disabled) | ⬜ | ✅ | locked-on |
-| Companies (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | via schema | ✅ | n/a | ✅ | ⬜ | ✅ | locked-on |
-| Deals (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | via schema | ✅ | dep: Companies/Contacts (core) | ✅ | ⬜ | ✅ | locked-on |
-| Activities (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | via schema | ✅ | n/a | ✅ | ⬜ | ✅ | locked-on |
-| Dashboards | ✅ | ⬜ | n/a | ⬜ | ⬜ | via isActive | via schema | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | first migration candidate |
+| Contacts (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | n/a (locked-on) | ✅ existing | n/a | ✅ (never disabled) | ⬜ | ✅ | locked-on |
+| Companies (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | n/a (locked-on) | ✅ | n/a | ✅ | ⬜ | ✅ | locked-on |
+| Deals (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | n/a (locked-on) | ✅ | dep: Companies/Contacts (core) | ✅ | ⬜ | ✅ | locked-on |
+| Activities (core) | ✅ | ⬜ | n/a | ⬜ | ⬜ | n/a | n/a (locked-on) | ✅ | n/a | ✅ | ⬜ | ✅ | locked-on |
+| Dashboards | ✅ | ⬜ | n/a | ⬜ | ⬜ | via isActive | @RequireCapability | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | first migration candidate |
+
+Enforcement is uniform `@RequireCapability`; `isActive` = UI-hide + data preservation only (go/no-go resolved: `isActive` does not exclude an object from the GraphQL schema).
 | Email | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: Contacts | ⬜ | ⬜ | ✅ | config availability |
 | Calendar | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: Activities | ⬜ | ⬜ | ✅ | |
 | Automations | ✅ | ⬜ | n/a | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | |

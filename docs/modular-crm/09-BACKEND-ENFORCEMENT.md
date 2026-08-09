@@ -9,9 +9,11 @@ Request → auth (workspace resolved, ALS) → availability (hasEntitlement/conf
        → capability enabled (capabilitiesMap) → user permission (roles/object perms) → business logic
 ```
 
-## Object-backed capabilities — enforced by schema exclusion (free)
+## Object-backed capabilities — enforced by `@RequireCapability` (same as non-object)
 
-When a capability's objects are `isActive=false`, they are excluded from the **per-workspace GraphQL schema** (generated from active object metadata). Result: `findManyProducts`/`createProduct` etc. **do not exist** in that workspace's API — GraphQL, REST (both funnel through the same common query runners), and MCP all deny access by absence, not by a check. This is strong, uniform enforcement with no new code. *(Assumption to verify — [02](02-ARCHITECTURE.md) Risks; if false, fall back to a guard as below.)*
+Go/no-go RESOLVED: `ObjectMetadata.isActive=false` does **not** exclude an object from the per-workspace GraphQL schema. The flat-object-metadata map that feeds schema generation loads all objects for the workspace regardless of `isActive` (`workspace-flat-object-metadata-map-cache.service.ts` queries `find({ where: { workspaceId }, withDeleted: true })` with no `isActive` filter), so resolvers and root query/mutation fields are built for every object. `findManyProducts`/`createProduct` etc. **stay live** on `/graphql`, `/rest`, and MCP even when the object is inactive.
+
+`isActive` gives **UI-hide** (nav, quick-create, command menu — via `useFilteredObjectMetadataItems`) and **data preservation** (deactivation is a metadata UPDATE, never a `DROP TABLE`) for free. It is **not** an access boundary. Object-backed capabilities are therefore enforced the same way as non-object capabilities: `@RequireCapability(ProductCapabilityKey)` on the object's resolvers/controllers/jobs.
 
 Object/field/row permissions (existing) continue to apply on top for active objects.
 
@@ -26,9 +28,9 @@ Email, Calendar, Automations, AI expose resolvers/controllers/jobs not tied to a
 
 | Path | Enforcement |
 |---|---|
-| GraphQL (`/graphql`) | object-backed: schema absence; non-object: `@RequireCapability` on resolver |
-| REST (`/rest`) | same common query runners → same result; controller guard for non-object |
-| MCP (`/mcp`) | routes through record-crud/common runners → object absence; capability check for tools |
+| GraphQL (`/graphql`) | `@RequireCapability` on resolver (same as non-object) |
+| REST (`/rest`) | same common query runners → same result; `@RequireCapability` guard |
+| MCP (`/mcp`) | routes through record-crud/common runners → `@RequireCapability` check for tools |
 | Background jobs / workflows | `@RequireCapability` at the processor / action entry (don't rely on producer-side checks) |
 | Webhooks / integrations | capability check in the inbound handler / the outbound job |
 | Direct service calls | services call `WorkspaceCapabilityService.isEnabled` where they are a capability boundary |
@@ -46,6 +48,6 @@ Email, Calendar, Automations, AI expose resolvers/controllers/jobs not tied to a
 
 - [ ] Non-object capability resolvers/controllers carry `@RequireCapability`.
 - [ ] Their jobs/workflow-actions/webhook handlers check the capability at execution (not only enqueue).
-- [ ] Object-backed enforcement verified: inactive object absent from schema (test in [16](16-TESTING.md)).
+- [ ] Object-backed enforcement verified: disabled capability's resolver denies via `@RequireCapability` (isActive alone leaves it reachable) (test in [16](16-TESTING.md)).
 - [ ] Cached `capabilitiesMap` invalidated on toggle (no stale-enable window).
 - [ ] Capability guard composes with, never bypasses, permission guards.

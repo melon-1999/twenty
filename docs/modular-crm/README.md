@@ -43,7 +43,7 @@ Turning Twenty into a CRM where **each workspace uses only the functionality it 
 ## Architecture decision (§29)
 
 - **Did Twenty already have a usable module/feature architecture? — PARTIALLY.** Two per-workspace boolean systems (feature flags = experiments/Lab; billing entitlements = commercial, 4 keys, `@license Enterprise`), a per-workspace data-preserving object-hide lever (`ObjectMetadata.isActive`), an app-bundle ownership boundary (core CRM = the "Standard" app), a per-user permission model, and instance-scoped deployment config. **None is a product-capability catalog.**
-- **Foundation we build on:** object `isActive` (downstream hide + schema-exclusion enforcement + data preservation) for object-backed capabilities; `hasEntitlement` + clientConfig for availability (consumed, not modified); roles/permission flags for authorization (unchanged); the `enabledAiModelIds`/`FeatureFlagEntity` patterns for storage/cache/hook.
+- **Foundation we build on:** object `isActive` (UI-hide + data preservation only; enforcement is `@RequireCapability`) for object-backed capabilities; `hasEntitlement` + clientConfig for availability (consumed, not modified); roles/permission flags for authorization (unchanged); the `enabledAiModelIds`/`FeatureFlagEntity` patterns for storage/cache/hook.
 - **New layer? — Yes, one small one** (Option C+D hybrid): a code **capability catalog** + per-workspace **enabled store** + resolver + hook + guard + settings UI, coordinating existing systems. Existing ones were insufficient (experiment semantics / commercial-only / destructive apps / object-granular).
 - **Plans and modules share capability definitions? — No.** Availability optionally references an entitlement key; enabled state is separate. Future plans map without a rewrite.
 - **Permissions separate? — Yes** (per-user, untouched).
@@ -52,18 +52,18 @@ Turning Twenty into a CRM where **each workspace uses only the functionality it 
 ## Final report (§44)
 
 - **What Twenty already had:** see the decision above / [01](01-EXISTING-TWENTY-FEATURE-SYSTEMS.md).
-- **Reused:** object `isActive` + metadata-driven nav/command-menu; `hasEntitlement`/clientConfig (availability); roles/permissions; feature-flag storage/cache/guard/hook *patterns*; `enabledAiModelIds` precedent; the upgrade-command framework.
+- **Reused:** object `isActive` (UI-hide + data preservation only) + metadata-driven nav/command-menu; `hasEntitlement`/clientConfig (availability); roles/permissions; feature-flag storage/cache/guard/hook *patterns*; `enabledAiModelIds` precedent; the upgrade-command framework.
 - **Extended (small in-place edits):** `currentWorkspace` (+`enabledCapabilities`), workspace cache key list, settings-nav hook, `SettingsProtectedRouteWrapper`, one command-menu predicate, workspace creation. ([17](17-UPSTREAM-UPGRADE-STRATEGY.md))
 - **Added (new):** `ProductCapabilityKey` + catalog + `WorkspaceCapabilityEntity` + service + `capabilitiesMap` + `@RequireCapability` + `useIsCapabilityEnabled` + Settings → Features.
 - **Why new was necessary:** no existing system is a permanent, human-meaningful, dependency-aware, per-workspace product-module catalog.
-- **Final capability flow:** availability (billing/config) → enabled (workspace capability + deps) → authorized (user role) → usable; downstream effect via `isActive` (object-backed) or `@RequireCapability` (guarded).
+- **Final capability flow:** availability (billing/config) → enabled (workspace capability + deps) → authorized (user role) → usable; downstream: UI via `isActive`; enforcement via `@RequireCapability` (uniform for object-backed and guarded).
 - **Capabilities identified (real):** Core — Contacts, Companies, Deals, Activities. Optional — Dashboards, Email, Calendar, Automations, AI Assistant. Future (not built) — Products, Reports. Decided-out — Leads (use a pipeline stage). Commercial (availability-only) — SSO, Custom domain, RLS, Audit logs. ([12](12-MODULE-CATALOG.md))
 - **Core (mandatory):** Contacts/Companies/Deals/Activities + all infrastructure ([12](12-MODULE-CATALOG.md) "not capabilities").
 - **Existing pricing tiers found:** PRO, ENTERPRISE; 4 entitlements; Stripe-synced prices; self-hosted bypass. ([04](04-PLANS-AND-ENTITLEMENTS.md))
 - **Upstream files modified (unavoidable):** the ~9 in [17](17-UPSTREAM-UPGRADE-STRATEGY.md); **no `@license Enterprise` files**.
-- **Upgrade risk:** low overall; single biggest dependency = `isActive` semantics (go/no-go test in [16](16-TESTING.md)).
+- **Upgrade risk:** low overall; `isActive` dependency reduced — go/no-go RESOLVED (A false, B/C true): enforcement is `@RequireCapability`, not `isActive` schema semantics (test in [16](16-TESTING.md)).
 - **Remaining non-modular functionality:** core infra (never optional); commercial entitlements stay in the billing path.
-- **Recommended next steps:** validate plan → run the `isActive` go/no-go test → build foundation (default-enabled, no behavior change) → migrate Dashboards first → Settings UI → Email/Calendar/Automations/AI.
+- **Recommended next steps:** validate plan → build foundation (default-enabled, no behavior change) → migrate Dashboards first → Settings UI → Email/Calendar/Automations/AI.
 
 ## Verification questions (§43) — answered by the design
 
