@@ -1,6 +1,6 @@
 import { type CurrentWorkspace } from '@/auth/states/currentWorkspaceState';
-import { type ProductCapabilityKey } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
+import { type ProductCapabilityKey } from '~/generated-metadata/graphql';
 
 export const checkIfCapabilityIsEnabledOnWorkspace = (
   capabilityKey: ProductCapabilityKey | null | undefined,

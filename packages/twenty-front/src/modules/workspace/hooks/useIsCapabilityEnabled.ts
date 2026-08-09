@@ -1,6 +1,6 @@
 import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
-import { type ProductCapabilityKey } from 'twenty-shared/types';
+import { type ProductCapabilityKey } from '~/generated-metadata/graphql';
 
 export const useIsCapabilityEnabled = (
   capabilityKey: ProductCapabilityKey | null,
