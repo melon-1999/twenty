@@ -1,4 +1,6 @@
 import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
+import { useInvalidateMetadataStore } from '@/metadata-store/hooks/useInvalidateMetadataStore';
+import { PRODUCT_CAPABILITY_DISPLAY_CATALOG } from '@/settings/product-capability/constants/productCapabilityCatalog';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
 import { useAtomState } from '@/ui/utilities/state/jotai/hooks/useAtomState';
 import { type ErrorLike } from '@apollo/client';
@@ -16,6 +18,7 @@ export const useUpdateWorkspaceCapability = () => {
     currentWorkspaceState,
   );
   const { enqueueErrorSnackBar } = useSnackBar();
+  const { invalidateMetadataStore } = useInvalidateMetadataStore();
 
   const [updateWorkspaceCapabilityMutation] = useMutation(
     UpdateWorkspaceCapabilityDocument,
@@ -50,6 +53,13 @@ export const useUpdateWorkspaceCapability = () => {
           { ...updatedCapability },
         ],
       });
+
+      // Object-backed capabilities flip a backing object's isActive server-side.
+      // Invalidate the metadata store so the nav reflects the change live,
+      // mirroring how object create/delete refresh metadata.
+      if (PRODUCT_CAPABILITY_DISPLAY_CATALOG[key]?.objectBacked === true) {
+        invalidateMetadataStore();
+      }
 
       return true;
     } catch (error) {

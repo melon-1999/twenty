@@ -7,6 +7,9 @@ export type ProductCapabilityDisplay = {
   label: MessageDescriptor;
   description: MessageDescriptor;
   isCore: boolean;
+  // Toggling this capability flips the isActive of a backing object metadata item
+  // server-side, so the client must refresh object metadata to update the nav.
+  objectBacked?: boolean;
 };
 
 // Display-only catalog: labels/descriptions for rendering the Features settings
@@ -45,6 +48,7 @@ export const PRODUCT_CAPABILITY_DISPLAY_CATALOG: Record<
     label: msg`Dashboards`,
     description: msg`Visualize your CRM data with charts and metrics.`,
     isCore: false,
+    objectBacked: true,
   },
   [ProductCapabilityKey.EMAIL]: {
     key: ProductCapabilityKey.EMAIL,

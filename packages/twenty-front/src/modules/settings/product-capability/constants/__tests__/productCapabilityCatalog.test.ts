@@ -42,4 +42,12 @@ describe('productCapabilityCatalog', () => {
       ].sort(),
     );
   });
+
+  it('should flag only DASHBOARDS as object-backed', () => {
+    const objectBackedKeys = Object.values(PRODUCT_CAPABILITY_DISPLAY_CATALOG)
+      .filter((capability) => capability.objectBacked === true)
+      .map((capability) => capability.key);
+
+    expect(objectBackedKeys).toEqual([ProductCapabilityKey.DASHBOARDS]);
+  });
 });
