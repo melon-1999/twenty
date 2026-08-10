@@ -1,5 +1,5 @@
 import { PRODUCT_CAPABILITY_DISPLAY_CATALOG } from '@/settings/product-capability/constants/productCapabilityCatalog';
-import { ProductCapabilityKey } from 'twenty-shared/types';
+import { ProductCapabilityKey } from '~/generated-metadata/graphql';
 
 describe('productCapabilityCatalog', () => {
   it('should have a display entry for every ProductCapabilityKey', () => {

@@ -1,12 +1,12 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ProductCapabilityKey } from 'twenty-shared/types';
 
 import { PRODUCT_CAPABILITY_DISPLAY_CATALOG } from '@/settings/product-capability/constants/productCapabilityCatalog';
 import { SettingsProductCapabilityToggleRow } from '@/settings/product-capability/components/SettingsProductCapabilityToggleRow';
 import { useUpdateWorkspaceCapability } from '@/settings/product-capability/hooks/useUpdateWorkspaceCapability';
 import { useIsCapabilityEnabled } from '@/workspace/hooks/useIsCapabilityEnabled';
+import { ProductCapabilityKey } from '~/generated-metadata/graphql';
 
 jest.mock(
   '@/settings/product-capability/hooks/useUpdateWorkspaceCapability',

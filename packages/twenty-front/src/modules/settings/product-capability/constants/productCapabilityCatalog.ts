@@ -1,6 +1,7 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
-import { ProductCapabilityKey } from 'twenty-shared/types';
+
+import { ProductCapabilityKey } from '~/generated-metadata/graphql';
 
 export type ProductCapabilityDisplay = {
   key: ProductCapabilityKey;
