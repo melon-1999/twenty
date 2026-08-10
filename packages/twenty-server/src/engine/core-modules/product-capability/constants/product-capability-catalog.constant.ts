@@ -1,3 +1,4 @@
+import { STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS } from 'twenty-shared/metadata';
 import {
   type ProductCapabilityDefinition,
   ProductCapabilityKey,
@@ -67,7 +68,13 @@ export const PRODUCT_CAPABILITY_CATALOG: Record<
       ProductCapabilityKey.DEALS,
     ],
     availability: {},
-    effect: {},
+    // Toggling DASHBOARDS flips the dashboard standard object's isActive per
+    // workspace (UI-hide + lossless data preservation). This is NOT an API
+    // access boundary — enforcement lives on the discrete dashboard endpoints
+    // via @RequireCapability(DASHBOARDS). See WorkspaceCapabilityService.
+    effect: {
+      objectStandardIds: [STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.dashboard],
+    },
   },
   [ProductCapabilityKey.EMAIL]: {
     key: ProductCapabilityKey.EMAIL,

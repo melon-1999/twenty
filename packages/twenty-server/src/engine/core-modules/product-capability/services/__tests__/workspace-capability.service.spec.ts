@@ -1,4 +1,5 @@
 import { Test, type TestingModule } from '@nestjs/testing';
+import { getRepositoryToken } from '@nestjs/typeorm';
 
 import { ProductCapabilityKey } from 'twenty-shared/types';
 
@@ -7,6 +8,8 @@ import { type CapabilitiesMap } from 'src/engine/core-modules/product-capability
 import { PRODUCT_CAPABILITY_CATALOG } from 'src/engine/core-modules/product-capability/constants/product-capability-catalog.constant';
 import { WorkspaceCapabilityService } from 'src/engine/core-modules/product-capability/services/workspace-capability.service';
 import { WorkspaceCapabilityEntity } from 'src/engine/core-modules/product-capability/workspace-capability.entity';
+import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
+import { ObjectMetadataService } from 'src/engine/metadata-modules/object-metadata/object-metadata.service';
 import { getWorkspaceScopedRepositoryToken } from 'src/engine/twenty-orm/workspace-scoped-repository/get-workspace-scoped-repository-token.util';
 import { WorkspaceCacheService } from 'src/engine/workspace-cache/services/workspace-cache.service';
 
@@ -32,6 +35,14 @@ describe('WorkspaceCapabilityService', () => {
     invalidateAndRecompute: jest.fn(),
   };
 
+  const mockObjectMetadataRepository = {
+    findOne: jest.fn(),
+  };
+
+  const mockObjectMetadataService = {
+    updateOneObject: jest.fn(),
+  };
+
   const workspaceId = 'workspace-id';
 
   beforeEach(async () => {
@@ -47,6 +58,14 @@ describe('WorkspaceCapabilityService', () => {
         {
           provide: WorkspaceCacheService,
           useValue: mockWorkspaceCacheService,
+        },
+        {
+          provide: getRepositoryToken(ObjectMetadataEntity),
+          useValue: mockObjectMetadataRepository,
+        },
+        {
+          provide: ObjectMetadataService,
+          useValue: mockObjectMetadataService,
         },
       ],
     }).compile();
@@ -171,6 +190,130 @@ describe('WorkspaceCapabilityService', () => {
       expect(
         mockWorkspaceCacheService.invalidateAndRecompute,
       ).toHaveBeenCalledWith(workspaceId, ['capabilitiesMap']);
+    });
+
+    describe('capability effect application', () => {
+      const dashboardObjectMetadataId = 'dashboard-object-metadata-id';
+
+      it('should deactivate the dashboard object when disabling DASHBOARDS', async () => {
+        mockWorkspaceCacheService.getOrRecompute.mockResolvedValue({
+          capabilitiesMap: buildAllEnabledMap(),
+        });
+        mockWorkspaceCapabilityRepository.findOne.mockResolvedValue(null);
+        mockWorkspaceCapabilityRepository.save.mockResolvedValue({});
+        mockObjectMetadataRepository.findOne.mockResolvedValue({
+          id: dashboardObjectMetadataId,
+          nameSingular: 'dashboard',
+          isActive: true,
+        });
+
+        await service.setEnabled(
+          workspaceId,
+          ProductCapabilityKey.DASHBOARDS,
+          false,
+        );
+
+        expect(mockObjectMetadataRepository.findOne).toHaveBeenCalledWith({
+          where: { workspaceId, nameSingular: 'dashboard' },
+        });
+        expect(mockObjectMetadataService.updateOneObject).toHaveBeenCalledWith({
+          workspaceId,
+          updateObjectInput: {
+            id: dashboardObjectMetadataId,
+            update: { isActive: false },
+          },
+        });
+      });
+
+      it('should reactivate the dashboard object when enabling DASHBOARDS', async () => {
+        mockWorkspaceCacheService.getOrRecompute.mockResolvedValue({
+          capabilitiesMap: buildAllEnabledMap(),
+        });
+        mockWorkspaceCapabilityRepository.findOne.mockResolvedValue(null);
+        mockWorkspaceCapabilityRepository.save.mockResolvedValue({});
+        mockObjectMetadataRepository.findOne.mockResolvedValue({
+          id: dashboardObjectMetadataId,
+          nameSingular: 'dashboard',
+          isActive: false,
+        });
+
+        await service.setEnabled(
+          workspaceId,
+          ProductCapabilityKey.DASHBOARDS,
+          true,
+        );
+
+        expect(mockObjectMetadataService.updateOneObject).toHaveBeenCalledWith({
+          workspaceId,
+          updateObjectInput: {
+            id: dashboardObjectMetadataId,
+            update: { isActive: true },
+          },
+        });
+      });
+
+      it('should not touch any object for a capability with an empty effect', async () => {
+        mockWorkspaceCacheService.getOrRecompute.mockResolvedValue({
+          capabilitiesMap: buildAllEnabledMap(),
+        });
+        mockWorkspaceCapabilityRepository.findOne.mockResolvedValue(null);
+        mockWorkspaceCapabilityRepository.save.mockResolvedValue({});
+
+        await service.setEnabled(
+          workspaceId,
+          ProductCapabilityKey.AI_ASSISTANT,
+          true,
+        );
+
+        expect(mockObjectMetadataRepository.findOne).not.toHaveBeenCalled();
+        expect(
+          mockObjectMetadataService.updateOneObject,
+        ).not.toHaveBeenCalled();
+      });
+
+      it('should be a no-op (no throw) when the object does not exist in the workspace', async () => {
+        mockWorkspaceCacheService.getOrRecompute.mockResolvedValue({
+          capabilitiesMap: buildAllEnabledMap(),
+        });
+        mockWorkspaceCapabilityRepository.findOne.mockResolvedValue(null);
+        mockWorkspaceCapabilityRepository.save.mockResolvedValue({});
+        mockObjectMetadataRepository.findOne.mockResolvedValue(null);
+
+        await expect(
+          service.setEnabled(
+            workspaceId,
+            ProductCapabilityKey.DASHBOARDS,
+            false,
+          ),
+        ).resolves.not.toThrow();
+
+        expect(
+          mockObjectMetadataService.updateOneObject,
+        ).not.toHaveBeenCalled();
+      });
+
+      it('should skip the update when the object is already in the desired state', async () => {
+        mockWorkspaceCacheService.getOrRecompute.mockResolvedValue({
+          capabilitiesMap: buildAllEnabledMap(),
+        });
+        mockWorkspaceCapabilityRepository.findOne.mockResolvedValue(null);
+        mockWorkspaceCapabilityRepository.save.mockResolvedValue({});
+        mockObjectMetadataRepository.findOne.mockResolvedValue({
+          id: dashboardObjectMetadataId,
+          nameSingular: 'dashboard',
+          isActive: false,
+        });
+
+        await service.setEnabled(
+          workspaceId,
+          ProductCapabilityKey.DASHBOARDS,
+          false,
+        );
+
+        expect(
+          mockObjectMetadataService.updateOneObject,
+        ).not.toHaveBeenCalled();
+      });
     });
   });
 });

@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 
 import { ActorModule } from 'src/engine/core-modules/actor/actor.module';
 import { AuthModule } from 'src/engine/core-modules/auth/auth.module';
+import { ProductCapabilityModule } from 'src/engine/core-modules/product-capability/product-capability.module';
 import { PageLayoutModule } from 'src/engine/metadata-modules/page-layout/page-layout.module';
 import { TwentyORMModule } from 'src/engine/twenty-orm/twenty-orm.module';
 import { WorkspaceCacheStorageModule } from 'src/engine/workspace-cache-storage/workspace-cache-storage.module';
@@ -18,6 +19,9 @@ import { DashboardDuplicationService } from 'src/modules/dashboard/services/dash
     PageLayoutModule,
     TwentyORMModule,
     WorkspaceCacheStorageModule,
+    // Provides WorkspaceCapabilityService so CapabilityGuard resolves on the
+    // duplicateDashboard resolver.
+    ProductCapabilityModule,
   ],
   controllers: [DashboardController],
   providers: [DashboardDuplicationService, DashboardResolver],
