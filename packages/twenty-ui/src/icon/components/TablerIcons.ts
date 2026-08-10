@@ -407,6 +407,7 @@ export {
   IconTimeDuration30,
   IconTimeDuration60,
   IconTimelineEvent,
+  IconToggleRight,
   IconTool,
   IconTransform,
   IconTrash,

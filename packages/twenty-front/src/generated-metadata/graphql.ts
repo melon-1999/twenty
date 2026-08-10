@@ -2829,6 +2829,7 @@ export type Mutation = {
   updateViewSort: ViewSort;
   updateWebhook: Webhook;
   updateWorkspace: Workspace;
+  updateWorkspaceCapability: ProductCapability;
   updateWorkspaceMemberRole: WorkspaceMember;
   updateWorkspaceMemberSettings: Scalars['Boolean']['output'];
   upgradeApplication: Scalars['Boolean']['output'];
@@ -3908,6 +3909,11 @@ export type MutationUpdateWebhookArgs = {
 
 export type MutationUpdateWorkspaceArgs = {
   data: UpdateWorkspaceInput;
+};
+
+
+export type MutationUpdateWorkspaceCapabilityArgs = {
+  input: UpdateWorkspaceCapabilityInput;
 };
 
 
@@ -6024,6 +6030,11 @@ export type UpdateWebhookInputUpdates = {
   operations?: InputMaybe<Array<Scalars['String']['input']>>;
   secret?: InputMaybe<Scalars['String']['input']>;
   targetUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type UpdateWorkspaceCapabilityInput = {
+  enabled: Scalars['Boolean']['input'];
+  key: ProductCapabilityKey;
 };
 
 export type UpdateWorkspaceInput = {
@@ -8688,6 +8699,13 @@ export type UploadWorkspaceMemberProfilePictureMutationVariables = Exact<{
 
 export type UploadWorkspaceMemberProfilePictureMutation = { __typename?: 'Mutation', uploadWorkspaceMemberProfilePicture: { __typename?: 'FileWithSignedUrl', id: string, url: string } };
 
+export type UpdateWorkspaceCapabilityMutationVariables = Exact<{
+  input: UpdateWorkspaceCapabilityInput;
+}>;
+
+
+export type UpdateWorkspaceCapabilityMutation = { __typename?: 'Mutation', updateWorkspaceCapability: { __typename?: 'ProductCapability', key: ProductCapabilityKey, value: boolean } };
+
 export type RevokeAllOtherUserSessionsMutationVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -9627,6 +9645,7 @@ export const EventLogsDocument = {"kind":"Document","definitions":[{"kind":"Oper
 export const EventLogsLiveDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","name":{"kind":"Name","value":"EventLogsLive"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"table"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"EventLogTable"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"eventLogsLive"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"table"},"value":{"kind":"Variable","name":{"kind":"Name","value":"table"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"event"}},{"kind":"Field","name":{"kind":"Name","value":"timestamp"}},{"kind":"Field","name":{"kind":"Name","value":"userId"}},{"kind":"Field","name":{"kind":"Name","value":"properties"}},{"kind":"Field","name":{"kind":"Name","value":"recordId"}},{"kind":"Field","name":{"kind":"Name","value":"objectMetadataId"}}]}}]}}]} as unknown as DocumentNode<EventLogsLiveSubscription, EventLogsLiveSubscriptionVariables>;
 export const UpdateLabPublicFeatureFlagDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"UpdateLabPublicFeatureFlag"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"UpdateLabPublicFeatureFlagInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateLabPublicFeatureFlag"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<UpdateLabPublicFeatureFlagMutation, UpdateLabPublicFeatureFlagMutationVariables>;
 export const UploadWorkspaceMemberProfilePictureDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"UploadWorkspaceMemberProfilePicture"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"file"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Upload"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"uploadWorkspaceMemberProfilePicture"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"file"},"value":{"kind":"Variable","name":{"kind":"Name","value":"file"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]} as unknown as DocumentNode<UploadWorkspaceMemberProfilePictureMutation, UploadWorkspaceMemberProfilePictureMutationVariables>;
+export const UpdateWorkspaceCapabilityDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"UpdateWorkspaceCapability"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"UpdateWorkspaceCapabilityInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateWorkspaceCapability"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]} as unknown as DocumentNode<UpdateWorkspaceCapabilityMutation, UpdateWorkspaceCapabilityMutationVariables>;
 export const RevokeAllOtherUserSessionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"RevokeAllOtherUserSessions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"revokeAllOtherUserSessions"}}]}}]} as unknown as DocumentNode<RevokeAllOtherUserSessionsMutation, RevokeAllOtherUserSessionsMutationVariables>;
 export const RevokeUserSessionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"RevokeUserSession"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"userSessionId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"UUID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"revokeUserSession"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"userSessionId"},"value":{"kind":"Variable","name":{"kind":"Name","value":"userSessionId"}}}]}]}}]} as unknown as DocumentNode<RevokeUserSessionMutation, RevokeUserSessionMutationVariables>;
 export const CurrentUserSessionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CurrentUserSessions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"currentUserSessions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"workspaceId"}},{"kind":"Field","name":{"kind":"Name","value":"authProvider"}},{"kind":"Field","name":{"kind":"Name","value":"isImpersonating"}},{"kind":"Field","name":{"kind":"Name","value":"userAgent"}},{"kind":"Field","name":{"kind":"Name","value":"ipAddress"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"lastActiveAt"}},{"kind":"Field","name":{"kind":"Name","value":"expiresAt"}},{"kind":"Field","name":{"kind":"Name","value":"isCurrent"}}]}}]}}]} as unknown as DocumentNode<CurrentUserSessionsQuery, CurrentUserSessionsQueryVariables>;

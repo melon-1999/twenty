@@ -33,6 +33,7 @@ import {
   IconServer,
   IconSettings,
   IconSparkles,
+  IconToggleRight,
   IconUserCircle,
   IconUsers,
 } from 'twenty-ui/icon';
@@ -121,6 +122,12 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
           label: t`General`,
           path: SettingsPath.General,
           Icon: IconSettings,
+          isHidden: !permissionMap[PermissionFlagType.WORKSPACE],
+        },
+        {
+          label: t`Features`,
+          path: SettingsPath.Features,
+          Icon: IconToggleRight,
           isHidden: !permissionMap[PermissionFlagType.WORKSPACE],
         },
         {

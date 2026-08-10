@@ -170,6 +170,12 @@ const SettingsGeneral = lazy(() =>
   })),
 );
 
+const SettingsFeatures = lazy(() =>
+  import('~/pages/settings/features/SettingsFeatures').then((module) => ({
+    default: module.SettingsFeatures,
+  })),
+);
+
 const SettingsLegalDpa = lazy(() =>
   import('~/pages/settings/legal/SettingsLegalDpa').then((module) => ({
     default: module.SettingsLegalDpa,
@@ -718,6 +724,7 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         }
       >
         <Route path={SettingsPath.General} element={<SettingsGeneral />} />
+        <Route path={SettingsPath.Features} element={<SettingsFeatures />} />
         <Route
           path={SettingsPath.WorkspaceCommunications}
           element={<SettingsWorkspaceCommunications />}

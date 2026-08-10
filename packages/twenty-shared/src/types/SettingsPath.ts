@@ -28,6 +28,7 @@ export enum SettingsPath {
   General = 'general',
   Subdomain = 'general/subdomain',
   CustomDomain = 'general/custom-domain',
+  Features = 'features',
   WorkspaceCommunications = 'communications',
   EmailGroupChannelDetail = 'email/email-group/:messageChannelId',
   NewEmailGroupChannel = 'email/new-email-group',
