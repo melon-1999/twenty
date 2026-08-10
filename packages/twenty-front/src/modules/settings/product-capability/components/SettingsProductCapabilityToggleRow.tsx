@@ -16,10 +16,11 @@ export const SettingsProductCapabilityToggleRow = ({
   disabled = false,
 }: SettingsProductCapabilityToggleRowProps) => {
   const isEnabled = useIsCapabilityEnabled(capability.key);
-  const { updateWorkspaceCapability } = useUpdateWorkspaceCapability();
+  const { updateWorkspaceCapability, isUpdatingCapability } =
+    useUpdateWorkspaceCapability();
 
   const handleChange = async (value: boolean) => {
-    if (disabled) {
+    if (disabled || isUpdatingCapability) {
       return;
     }
 
@@ -34,7 +35,7 @@ export const SettingsProductCapabilityToggleRow = ({
       onChange={handleChange}
       toggleCentered={false}
       divider={divider}
-      disabled={disabled}
+      disabled={disabled || isUpdatingCapability}
     />
   );
 };

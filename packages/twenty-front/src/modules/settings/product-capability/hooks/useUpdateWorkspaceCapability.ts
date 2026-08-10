@@ -20,9 +20,8 @@ export const useUpdateWorkspaceCapability = () => {
   const { enqueueErrorSnackBar } = useSnackBar();
   const { invalidateMetadataStore } = useInvalidateMetadataStore();
 
-  const [updateWorkspaceCapabilityMutation] = useMutation(
-    UpdateWorkspaceCapabilityDocument,
-  );
+  const [updateWorkspaceCapabilityMutation, { loading: isUpdatingCapability }] =
+    useMutation(UpdateWorkspaceCapabilityDocument);
 
   const updateWorkspaceCapability = async (
     key: ProductCapabilityKey,
@@ -44,15 +43,22 @@ export const useUpdateWorkspaceCapability = () => {
         return false;
       }
 
-      setCurrentWorkspace({
-        ...currentWorkspace,
-        enabledCapabilities: [
-          ...(currentWorkspace.enabledCapabilities?.filter(
-            (capability) => capability.key !== updatedCapability.key,
-          ) ?? []),
-          { ...updatedCapability },
-        ],
-      });
+      // Merge onto the fresh atom value (functional updater) rather than the
+      // `currentWorkspace` closed over at render time, which can be stale by
+      // the time this slow, object-backed mutation resolves.
+      setCurrentWorkspace((previousWorkspace) =>
+        isDefined(previousWorkspace)
+          ? {
+              ...previousWorkspace,
+              enabledCapabilities: [
+                ...(previousWorkspace.enabledCapabilities?.filter(
+                  (capability) => capability.key !== updatedCapability.key,
+                ) ?? []),
+                { ...updatedCapability },
+              ],
+            }
+          : previousWorkspace,
+      );
 
       // Object-backed capabilities flip a backing object's isActive server-side.
       // Invalidate the metadata store so the nav reflects the change live,
@@ -73,5 +79,5 @@ export const useUpdateWorkspaceCapability = () => {
     }
   };
 
-  return { updateWorkspaceCapability };
+  return { updateWorkspaceCapability, isUpdatingCapability };
 };
