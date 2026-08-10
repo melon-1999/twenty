@@ -1142,6 +1142,11 @@ msgstr "活跃安装"
 msgid "Active Sync"
 msgstr "活动同步"
 
+#. js-lingui-id: 39ohdf
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Activities"
+msgstr ""
+
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 msgid "Add"
@@ -1793,6 +1798,11 @@ msgstr "AI 智能体运行"
 msgid "AI agents"
 msgstr "AI 代理"
 
+#. js-lingui-id: 3wfZhO
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "AI Assistant"
+msgstr ""
+
 #. js-lingui-id: V+Qj+q
 #: src/modules/settings/usage/utils/getOperationTypeLabel.ts
 msgid "AI Chat"
@@ -2156,6 +2166,11 @@ msgstr "已在导航栏中"
 #. js-lingui-id: u/DP73
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "Alt text"
+msgstr ""
+
+#. js-lingui-id: 6SKKBb
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Always included in every workspace and cannot be turned off."
 msgstr ""
 
 #. js-lingui-id: Fc64QW
@@ -2910,6 +2925,11 @@ msgstr ""
 msgid "Auto-upgrade"
 msgstr ""
 
+#. js-lingui-id: /s6IZ1
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automate repetitive work with workflows."
+msgstr ""
+
 #. js-lingui-id: YRT7ZW
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarChannelDetails.tsx
 msgid "Automatically create contacts for people you've participated in an event with."
@@ -2939,6 +2959,11 @@ msgstr ""
 #: src/pages/settings/applications/tabs/SettingsApplicationDetailContentTab.tsx
 msgid "Automation, AI, and access this app provides"
 msgstr "此应用提供的自动化、AI 和访问权限"
+
+#. js-lingui-id: EF+M0w
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automations"
+msgstr ""
 
 #. js-lingui-id: lXkUEV
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
@@ -3228,6 +3253,11 @@ msgstr "按 AI 模型的明细。"
 msgid "Brief explanation of this output field"
 msgstr "对这个输出字段的简要解释"
 
+#. js-lingui-id: mBu+lv
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Bring calendar events into your activity timeline."
+msgstr ""
+
 #. js-lingui-id: CSDv65
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Bronze"
@@ -3396,6 +3426,7 @@ msgstr "caldav.example.com"
 
 #. js-lingui-id: AjVXBS
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/side-panel/pages/page-layout/components/dashboard/SidePanelDashboardRecordTableSettings.tsx
 #: src/modules/side-panel/pages/page-layout/components/dropdown-content/FieldWidgetLayoutDropdownContent.tsx
 #: src/modules/side-panel/pages/page-layout/components/record-page/SidePanelRecordPageFieldSettings.tsx
@@ -4290,6 +4321,7 @@ msgstr "紧凑视图"
 
 #. js-lingui-id: s2QZS6
 #: src/modules/onboarding/components/import-contacts/OnboardingImportPreviewCompanies.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/sign-in-background-mock/components/BackgroundMockPage.tsx
 msgid "Companies"
 msgstr "公司"
@@ -4671,6 +4703,11 @@ msgstr "联系人自动创建"
 msgid "Contact your admin to continue using Workflow or AI features."
 msgstr "请联系您的管理员以继续使用工作流或 AI 功能。"
 
+#. js-lingui-id: gVfVfe
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Contacts"
+msgstr ""
+
 #. js-lingui-id: vrs6yX
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "container"
@@ -4889,6 +4926,11 @@ msgstr "复制查看链接"
 #: src/modules/workflow/workflow-steps/workflow-actions/utils/getActionHeaderTypeOrThrow.ts
 msgid "Core"
 msgstr "核心"
+
+#. js-lingui-id: 9PaIxv
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Core features"
+msgstr ""
 
 #. js-lingui-id: u9zl2y
 #: src/modules/settings/developers/components/WebhookEntitySelect.tsx
@@ -5728,6 +5770,7 @@ msgid "Dashboard duplicated successfully"
 msgstr "仪表板复制成功"
 
 #. js-lingui-id: w6iIMm
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/pages/settings/layout/SettingsLayout.tsx
 msgid "Dashboards"
 msgstr "仪表板"
@@ -5968,6 +6011,11 @@ msgstr "停用该字段"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "已停用"
+
+#. js-lingui-id: ZlGycp
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Deals"
+msgstr ""
 
 #. js-lingui-id: Iotuxe
 #: src/modules/ai/components/RoutingDebugDisplay.tsx
@@ -7083,6 +7131,7 @@ msgstr "否则如果"
 #: src/modules/object-record/record-field/ui/meta-types/input/components/EmailsFieldInput.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 #: src/modules/settings/members/components/MemberInfosTab.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTableHeader.tsx
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
@@ -8596,7 +8645,10 @@ msgid "Feature Flags"
 msgstr "功能标志"
 
 #. js-lingui-id: PpZkda
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 msgid "Features"
 msgstr "功能"
 
@@ -9192,6 +9244,11 @@ msgstr "根据帐户生成 Google Meet 或 Microsoft Teams 链接。"
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "German"
 msgstr "德语"
+
+#. js-lingui-id: q/3eUK
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Get AI-powered help across your workspace."
+msgstr ""
 
 #. js-lingui-id: sqtljx
 #: src/modules/settings/enterprise/components/EnterprisePlanModal.tsx
@@ -11415,6 +11472,11 @@ msgstr ""
 msgid "Log retention"
 msgstr "日志保留期"
 
+#. js-lingui-id: Qso8PX
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Log tasks, notes and interactions across your records."
+msgstr ""
+
 #. js-lingui-id: hykMbH
 #: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
 msgid "Logged in as {impersonatedUser}"
@@ -11571,6 +11633,11 @@ msgstr "管理成员"
 #: src/pages/settings/data-model/SettingsObjects.tsx
 msgid "Manage objects, fields and relationships"
 msgstr "管理对象、字段和关系"
+
+#. js-lingui-id: Z4m31E
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Manage opportunities as they move through your pipeline."
+msgstr ""
 
 #. js-lingui-id: eGGH1l
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
@@ -13360,6 +13427,7 @@ msgstr "没有失败的工作区"
 
 #. js-lingui-id: rPAZRd
 #: src/modules/settings/lab/hooks/useLabPublicFeatureFlags.ts
+#: src/modules/settings/product-capability/hooks/useUpdateWorkspaceCapability.ts
 msgid "No workspace selected"
 msgstr "未选择工作区"
 
@@ -13994,6 +14062,11 @@ msgstr "可选 — 为空时使用 IAM 角色"
 #: src/pages/settings/communications/SettingsWorkspaceUnsubscribeTopicDetail.tsx
 msgid "Optional context shown to recipients on the preferences page."
 msgstr "在首选项页面向收件人显示的可选说明内容。"
+
+#. js-lingui-id: ZcSSSn
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Optional features"
+msgstr ""
 
 #. js-lingui-id: hY8F2i
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
@@ -17722,6 +17795,11 @@ msgstr "步骤筛选选项"
 msgid "Stop impersonating"
 msgstr "停止假装"
 
+#. js-lingui-id: AdZnh4
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Store and manage people you do business with."
+msgstr ""
+
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
 msgid "Stored in database"
@@ -18013,6 +18091,11 @@ msgstr "已切换为生产实例。"
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useActionRolePermissionFlagConfig.ts
 msgid "Sync Account"
 msgstr "同步账户"
+
+#. js-lingui-id: Ru8fYU
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Sync and send emails alongside your contacts."
+msgstr ""
 
 #. js-lingui-id: NmHVSC
 #: src/pages/settings/applications/components/SettingsClaimApplicationSection.tsx
@@ -19127,6 +19210,11 @@ msgstr "总耗时"
 msgid "Track AI consumption across your workspace."
 msgstr "在您的工作区中跟踪 AI 消耗。"
 
+#. js-lingui-id: S9SL9v
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Track organizations and the people who work at them."
+msgstr ""
+
 #. js-lingui-id: zPGNJm
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationDangerZone.tsx
 msgid "Transfer"
@@ -19293,6 +19381,11 @@ msgstr ""
 #. js-lingui-id: fFSDTy
 #: src/pages/settings/ai/components/SettingsAgentLogsTab.tsx
 msgid "Turn evaluated successfully"
+msgstr ""
+
+#. js-lingui-id: juTKnj
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Turn features on or off for your workspace."
 msgstr ""
 
 #. js-lingui-id: 8680YN
@@ -20624,6 +20717,11 @@ msgstr "可视化"
 msgid "Visualize data model"
 msgstr "可视化数据模型"
 
+#. js-lingui-id: kozjCn
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Visualize your CRM data with charts and metrics."
+msgstr ""
+
 #. js-lingui-id: IEcsBR
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "VS Code"
@@ -21101,6 +21199,7 @@ msgstr "工作流"
 #: src/pages/settings/developers/playground/SettingsRestPlayground.tsx
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 #: src/pages/settings/general/SettingsGeneral.tsx
 #: src/pages/settings/layout/components/SettingsLayoutDetailScaffold.tsx
 #: src/pages/settings/layout/SettingsLayout.tsx

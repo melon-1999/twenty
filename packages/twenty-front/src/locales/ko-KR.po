@@ -1142,6 +1142,11 @@ msgstr "활성 설치 수"
 msgid "Active Sync"
 msgstr "활성 동기화"
 
+#. js-lingui-id: 39ohdf
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Activities"
+msgstr ""
+
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 msgid "Add"
@@ -1793,6 +1798,11 @@ msgstr "AI 에이전트 실행"
 msgid "AI agents"
 msgstr "AI 에이전트"
 
+#. js-lingui-id: 3wfZhO
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "AI Assistant"
+msgstr ""
+
 #. js-lingui-id: V+Qj+q
 #: src/modules/settings/usage/utils/getOperationTypeLabel.ts
 msgid "AI Chat"
@@ -2156,6 +2166,11 @@ msgstr "이미 내비게이션 바에 있음"
 #. js-lingui-id: u/DP73
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "Alt text"
+msgstr ""
+
+#. js-lingui-id: 6SKKBb
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Always included in every workspace and cannot be turned off."
 msgstr ""
 
 #. js-lingui-id: Fc64QW
@@ -2910,6 +2925,11 @@ msgstr ""
 msgid "Auto-upgrade"
 msgstr ""
 
+#. js-lingui-id: /s6IZ1
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automate repetitive work with workflows."
+msgstr ""
+
 #. js-lingui-id: YRT7ZW
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarChannelDetails.tsx
 msgid "Automatically create contacts for people you've participated in an event with."
@@ -2939,6 +2959,11 @@ msgstr ""
 #: src/pages/settings/applications/tabs/SettingsApplicationDetailContentTab.tsx
 msgid "Automation, AI, and access this app provides"
 msgstr "이 앱이 제공하는 자동화, AI 및 액세스"
+
+#. js-lingui-id: EF+M0w
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automations"
+msgstr ""
 
 #. js-lingui-id: lXkUEV
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
@@ -3228,6 +3253,11 @@ msgstr "AI 모델별 세부 내역."
 msgid "Brief explanation of this output field"
 msgstr "이 출력 필드에 대한 간단한 설명"
 
+#. js-lingui-id: mBu+lv
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Bring calendar events into your activity timeline."
+msgstr ""
+
 #. js-lingui-id: CSDv65
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Bronze"
@@ -3396,6 +3426,7 @@ msgstr "caldav.example.com"
 
 #. js-lingui-id: AjVXBS
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/side-panel/pages/page-layout/components/dashboard/SidePanelDashboardRecordTableSettings.tsx
 #: src/modules/side-panel/pages/page-layout/components/dropdown-content/FieldWidgetLayoutDropdownContent.tsx
 #: src/modules/side-panel/pages/page-layout/components/record-page/SidePanelRecordPageFieldSettings.tsx
@@ -4290,6 +4321,7 @@ msgstr "컴팩트 보기"
 
 #. js-lingui-id: s2QZS6
 #: src/modules/onboarding/components/import-contacts/OnboardingImportPreviewCompanies.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/sign-in-background-mock/components/BackgroundMockPage.tsx
 msgid "Companies"
 msgstr "회사"
@@ -4671,6 +4703,11 @@ msgstr "연락처 자동 생성"
 msgid "Contact your admin to continue using Workflow or AI features."
 msgstr "워크플로 또는 AI 기능을 계속 사용하려면 관리자에게 문의하세요."
 
+#. js-lingui-id: gVfVfe
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Contacts"
+msgstr ""
+
 #. js-lingui-id: vrs6yX
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "container"
@@ -4889,6 +4926,11 @@ msgstr "보기 링크 복사"
 #: src/modules/workflow/workflow-steps/workflow-actions/utils/getActionHeaderTypeOrThrow.ts
 msgid "Core"
 msgstr "코어"
+
+#. js-lingui-id: 9PaIxv
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Core features"
+msgstr ""
 
 #. js-lingui-id: u9zl2y
 #: src/modules/settings/developers/components/WebhookEntitySelect.tsx
@@ -5728,6 +5770,7 @@ msgid "Dashboard duplicated successfully"
 msgstr "대시보드가 성공적으로 복제되었습니다"
 
 #. js-lingui-id: w6iIMm
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/pages/settings/layout/SettingsLayout.tsx
 msgid "Dashboards"
 msgstr "대시보드"
@@ -5968,6 +6011,11 @@ msgstr "이 필드 비활성화"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "비활성화됨"
+
+#. js-lingui-id: ZlGycp
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Deals"
+msgstr ""
 
 #. js-lingui-id: Iotuxe
 #: src/modules/ai/components/RoutingDebugDisplay.tsx
@@ -7083,6 +7131,7 @@ msgstr "그 외의 조건"
 #: src/modules/object-record/record-field/ui/meta-types/input/components/EmailsFieldInput.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 #: src/modules/settings/members/components/MemberInfosTab.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTableHeader.tsx
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
@@ -8596,7 +8645,10 @@ msgid "Feature Flags"
 msgstr "기능 플래그"
 
 #. js-lingui-id: PpZkda
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 msgid "Features"
 msgstr "기능"
 
@@ -9192,6 +9244,11 @@ msgstr "계정에 따라 Google Meet 또는 Microsoft Teams 링크를 생성합�
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "German"
 msgstr "독일어"
+
+#. js-lingui-id: q/3eUK
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Get AI-powered help across your workspace."
+msgstr ""
 
 #. js-lingui-id: sqtljx
 #: src/modules/settings/enterprise/components/EnterprisePlanModal.tsx
@@ -11438,6 +11495,11 @@ msgstr ""
 msgid "Log retention"
 msgstr "로그 보존 기간"
 
+#. js-lingui-id: Qso8PX
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Log tasks, notes and interactions across your records."
+msgstr ""
+
 #. js-lingui-id: hykMbH
 #: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
 msgid "Logged in as {impersonatedUser}"
@@ -11594,6 +11656,11 @@ msgstr "회원 관리"
 #: src/pages/settings/data-model/SettingsObjects.tsx
 msgid "Manage objects, fields and relationships"
 msgstr "객체, 필드 및 관계 관리"
+
+#. js-lingui-id: Z4m31E
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Manage opportunities as they move through your pipeline."
+msgstr ""
 
 #. js-lingui-id: eGGH1l
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
@@ -13383,6 +13450,7 @@ msgstr "실패한 워크스페이스 없음"
 
 #. js-lingui-id: rPAZRd
 #: src/modules/settings/lab/hooks/useLabPublicFeatureFlags.ts
+#: src/modules/settings/product-capability/hooks/useUpdateWorkspaceCapability.ts
 msgid "No workspace selected"
 msgstr "선택된 워크스페이스가 없습니다"
 
@@ -14017,6 +14085,11 @@ msgstr "선택 사항 — 비워 두면 IAM 역할을 사용합니다"
 #: src/pages/settings/communications/SettingsWorkspaceUnsubscribeTopicDetail.tsx
 msgid "Optional context shown to recipients on the preferences page."
 msgstr "환경설정 페이지에서 수신자에게 표시되는 선택적 설명입니다."
+
+#. js-lingui-id: ZcSSSn
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Optional features"
+msgstr ""
 
 #. js-lingui-id: hY8F2i
 #: src/modules/settings/developers/components/SettingsDevelopersWebhookForm.tsx
@@ -17745,6 +17818,11 @@ msgstr "단계 필터 옵션"
 msgid "Stop impersonating"
 msgstr "대행 중지"
 
+#. js-lingui-id: AdZnh4
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Store and manage people you do business with."
+msgstr ""
+
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
 msgid "Stored in database"
@@ -18036,6 +18114,11 @@ msgstr "프로덕션 인스턴스로 전환되었습니다."
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useActionRolePermissionFlagConfig.ts
 msgid "Sync Account"
 msgstr "계정 동기화"
+
+#. js-lingui-id: Ru8fYU
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Sync and send emails alongside your contacts."
+msgstr ""
 
 #. js-lingui-id: NmHVSC
 #: src/pages/settings/applications/components/SettingsClaimApplicationSection.tsx
@@ -19180,6 +19263,11 @@ msgstr "총 시간"
 msgid "Track AI consumption across your workspace."
 msgstr "워크스페이스 전반의 AI 사용량을 추적하세요."
 
+#. js-lingui-id: S9SL9v
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Track organizations and the people who work at them."
+msgstr ""
+
 #. js-lingui-id: zPGNJm
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationDangerZone.tsx
 msgid "Transfer"
@@ -19346,6 +19434,11 @@ msgstr ""
 #. js-lingui-id: fFSDTy
 #: src/pages/settings/ai/components/SettingsAgentLogsTab.tsx
 msgid "Turn evaluated successfully"
+msgstr ""
+
+#. js-lingui-id: juTKnj
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Turn features on or off for your workspace."
 msgstr ""
 
 #. js-lingui-id: 8680YN
@@ -20677,6 +20770,11 @@ msgstr "시각화"
 msgid "Visualize data model"
 msgstr "데이터 모델 시각화"
 
+#. js-lingui-id: kozjCn
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Visualize your CRM data with charts and metrics."
+msgstr ""
+
 #. js-lingui-id: IEcsBR
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "VS Code"
@@ -21154,6 +21252,7 @@ msgstr "Workflows"
 #: src/pages/settings/developers/playground/SettingsRestPlayground.tsx
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 #: src/pages/settings/general/SettingsGeneral.tsx
 #: src/pages/settings/layout/components/SettingsLayoutDetailScaffold.tsx
 #: src/pages/settings/layout/SettingsLayout.tsx
