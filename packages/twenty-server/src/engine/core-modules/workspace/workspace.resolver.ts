@@ -35,6 +35,7 @@ import { FileUrlService } from 'src/engine/core-modules/file/file-url/file-url.s
 import { PreventNestToAutoLogGraphqlErrorsFilter } from 'src/engine/core-modules/graphql/filters/prevent-nest-to-auto-log-graphql-errors.filter';
 import { ResolverValidationPipe } from 'src/engine/core-modules/graphql/pipes/resolver-validation.pipe';
 import { ProductCapabilityDTO } from 'src/engine/core-modules/product-capability/dtos/product-capability.dto';
+import { UpdateWorkspaceCapabilityInput } from 'src/engine/core-modules/product-capability/dtos/update-workspace-capability.input';
 import { WorkspaceCapabilityService } from 'src/engine/core-modules/product-capability/services/workspace-capability.service';
 import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
@@ -187,6 +188,30 @@ export class WorkspaceResolver {
   async deleteCurrentWorkspace(@AuthWorkspace() { id }: WorkspaceEntity) {
     await this.workspaceService.suspendWorkspace(id);
     return this.workspaceService.deleteWorkspace(id, true);
+  }
+
+  @Mutation(() => ProductCapabilityDTO)
+  @UseGuards(
+    WorkspaceAuthGuard,
+    SettingsPermissionGuard(PermissionFlagType.WORKSPACE),
+  )
+  async updateWorkspaceCapability(
+    @Args('input') input: UpdateWorkspaceCapabilityInput,
+    @AuthWorkspace() workspace: WorkspaceEntity,
+  ): Promise<ProductCapabilityDTO> {
+    await this.workspaceCapabilityService.setEnabled(
+      workspace.id,
+      input.key,
+      input.enabled,
+    );
+
+    return {
+      key: input.key,
+      value: await this.workspaceCapabilityService.isCapabilityEnabled(
+        input.key,
+        workspace.id,
+      ),
+    };
   }
 
   @ResolveField(() => [BillingSubscriptionEntity])
