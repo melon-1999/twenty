@@ -1,4 +1,7 @@
-import { OBJECT_NAME_TO_CAPABILITY_KEY } from '@/object-metadata/constants/objectNameToCapabilityKey';
+import {
+  OBJECT_NAME_TO_CAPABILITY_KEY,
+  type ObjectBackedCapabilityKey,
+} from '@/object-metadata/constants/objectNameToCapabilityKey';
 import { objectMetadataItemsWithFieldsSelector } from '@/object-metadata/states/objectMetadataItemsWithFieldsSelector';
 import { useMemo } from 'react';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
@@ -21,12 +24,11 @@ export const useFilteredObjectMetadataItems = () => {
 
   const unavailableObjectNames = useMemo(() => {
     // Map each object-backed capability to whether it is available on this deploy.
-    const availabilityByCapability: Partial<
-      Record<ProductCapabilityKey, boolean>
-    > = {
-      [ProductCapabilityKey.DASHBOARDS]: isDashboardsAvailable,
-      [ProductCapabilityKey.AUTOMATIONS]: isAutomationsAvailable,
-    };
+    const availabilityByCapability: Record<ObjectBackedCapabilityKey, boolean> =
+      {
+        [ProductCapabilityKey.DASHBOARDS]: isDashboardsAvailable,
+        [ProductCapabilityKey.AUTOMATIONS]: isAutomationsAvailable,
+      };
 
     const names = new Set<string>();
     Object.entries(OBJECT_NAME_TO_CAPABILITY_KEY).forEach(
