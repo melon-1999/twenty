@@ -212,6 +212,9 @@ export class ClientConfigService {
       isEmailModuleEnabled: this.twentyConfigService.get(
         'IS_EMAIL_MODULE_ENABLED',
       ),
+      isCalendarModuleEnabled: this.twentyConfigService.get(
+        'IS_CALENDAR_MODULE_ENABLED',
+      ),
       isEmailVerificationRequired: this.twentyConfigService.get(
         'IS_EMAIL_VERIFICATION_REQUIRED',
       ),

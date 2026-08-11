@@ -281,6 +281,9 @@ export class ClientConfig {
   isEmailModuleEnabled: boolean;
 
   @Field(() => Boolean)
+  isCalendarModuleEnabled: boolean;
+
+  @Field(() => Boolean)
   isEmailVerificationRequired: boolean;
 
   @Field(() => String, { nullable: true })
