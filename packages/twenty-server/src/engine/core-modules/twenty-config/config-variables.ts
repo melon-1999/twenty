@@ -113,6 +113,16 @@ export class ConfigVariables {
   WORKSPACE_SCHEMA_DDL_LOCKED = false;
 
   @ConfigVariablesMetadata({
+    group: ConfigVariablesGroup.SERVER_CONFIG,
+    description:
+      'Enable the Dashboards module for this deployment. When false, the Dashboards feature is unavailable and hidden for all workspaces on this instance.',
+    isEnvOnly: true,
+    type: ConfigVariableType.BOOLEAN,
+  })
+  @IsOptional()
+  IS_DASHBOARDS_MODULE_ENABLED = true;
+
+  @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.TOKENS_DURATION,
     description: 'Duration for which the email verification token is valid',
     type: ConfigVariableType.STRING,
