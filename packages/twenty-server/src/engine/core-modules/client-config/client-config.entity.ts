@@ -278,6 +278,9 @@ export class ClientConfig {
   isDashboardsModuleEnabled: boolean;
 
   @Field(() => Boolean)
+  isEmailModuleEnabled: boolean;
+
+  @Field(() => Boolean)
   isEmailVerificationRequired: boolean;
 
   @Field(() => String, { nullable: true })

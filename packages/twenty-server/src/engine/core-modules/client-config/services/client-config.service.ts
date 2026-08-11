@@ -209,6 +209,7 @@ export class ClientConfigService {
       isDashboardsModuleEnabled: this.twentyConfigService.get(
         'IS_DASHBOARDS_MODULE_ENABLED',
       ),
+      isEmailModuleEnabled: this.twentyConfigService.get('IS_EMAIL_MODULE_ENABLED'),
       isEmailVerificationRequired: this.twentyConfigService.get(
         'IS_EMAIL_VERIFICATION_REQUIRED',
       ),

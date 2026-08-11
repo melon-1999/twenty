@@ -67,6 +67,7 @@ describe('ClientConfigController', () => {
         signInPrefilled: false,
         isMultiWorkspaceEnabled: true,
         isDashboardsModuleEnabled: true,
+        isEmailModuleEnabled: true,
         isEmailVerificationRequired: false,
         defaultSubdomain: 'app',
         subdomainMinLength: 1,
