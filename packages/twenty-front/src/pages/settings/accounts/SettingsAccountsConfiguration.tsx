@@ -9,8 +9,12 @@ import { GET_MY_CALENDAR_CHANNELS } from '@/settings/accounts/graphql/queries/ge
 import { GET_MY_MESSAGE_CHANNELS } from '@/settings/accounts/graphql/queries/getMyMessageChannels';
 import { useMutation, useQuery } from '@apollo/client/react';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
+import { useIsCapabilityEnabled } from '@/workspace/hooks/useIsCapabilityEnabled';
 import { getSettingsPath, isDefined } from 'twenty-shared/utils';
-import { StartChannelSyncDocument } from '~/generated-metadata/graphql';
+import {
+  ProductCapabilityKey,
+  StartChannelSyncDocument,
+} from '~/generated-metadata/graphql';
 import { SettingsAccountsConfigurationSelectedMessageChannelEffect } from '~/pages/settings/accounts/SettingsAccountsConfigurationSelectedMessageChannelEffect';
 import { SettingsAccountsConfigurationStepCalendar } from '~/pages/settings/accounts/SettingsAccountsConfigurationStepCalendar';
 import { SettingsAccountsConfigurationStepEmail } from '~/pages/settings/accounts/SettingsAccountsConfigurationStepEmail';
@@ -36,11 +40,15 @@ export const SettingsAccountsConfiguration = () => {
       SettingsAccountsConfigurationStep.Email,
     );
 
+  const isEmailModuleEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.EMAIL,
+  );
+
   const { data: metadataMessageChannelData } = useQuery<{
     myMessageChannels: MessageChannel[];
   }>(GET_MY_MESSAGE_CHANNELS, {
     variables: { connectedAccountId },
-    skip: !connectedAccountId,
+    skip: !connectedAccountId || !isEmailModuleEnabled,
   });
 
   const { data: metadataCalendarChannelData } = useQuery<{
