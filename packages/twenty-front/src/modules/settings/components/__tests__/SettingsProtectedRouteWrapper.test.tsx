@@ -112,9 +112,7 @@ describe('SettingsProtectedRouteWrapper', () => {
 
     renderCalendarRoutes();
 
-    expect(
-      screen.getByText('Calendars Settings Content'),
-    ).toBeInTheDocument();
+    expect(screen.getByText('Calendars Settings Content')).toBeInTheDocument();
     expect(screen.queryByText('Profile Page')).not.toBeInTheDocument();
   });
 });
