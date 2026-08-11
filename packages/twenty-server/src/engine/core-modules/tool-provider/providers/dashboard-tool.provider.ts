@@ -9,13 +9,17 @@ import { type ToolProviderContext } from 'src/engine/core-modules/tool-provider/
 
 import { DASHBOARD_TOOL_SERVICE_TOKEN } from 'src/engine/core-modules/tool-provider/constants/dashboard-tool-service.token';
 import { ToolCategory } from 'twenty-shared/ai';
-import { CoreObjectNameSingular } from 'twenty-shared/types';
+import {
+  CoreObjectNameSingular,
+  ProductCapabilityKey,
+} from 'twenty-shared/types';
 import { type ToolDescriptor } from 'src/engine/core-modules/tool-provider/types/tool-descriptor.type';
 import { type ToolIndexEntry } from 'src/engine/core-modules/tool-provider/types/tool-index-entry.type';
 import { executeToolFromToolSet } from 'src/engine/core-modules/tool-provider/utils/execute-tool-from-tool-set.util';
 import { resolveObjectIcon } from 'src/engine/core-modules/tool-provider/utils/resolve-object-icon.util';
 import { toolSetToDescriptors } from 'src/engine/core-modules/tool-provider/utils/tool-set-to-descriptors.util';
 import { type ToolOutput } from 'src/engine/core-modules/tool/types/tool-output.type';
+import { WorkspaceCapabilityService } from 'src/engine/core-modules/product-capability/services/workspace-capability.service';
 import { WorkspaceManyOrAllFlatEntityMapsCacheService } from 'src/engine/metadata-modules/flat-entity/services/workspace-many-or-all-flat-entity-maps-cache.service';
 import { PermissionsService } from 'src/engine/metadata-modules/permissions/permissions.service';
 import type { DashboardToolWorkspaceService } from 'src/modules/dashboard/tools/services/dashboard-tool.workspace-service';
@@ -30,10 +34,19 @@ export class DashboardToolProvider implements ToolProvider {
     private readonly dashboardToolService: DashboardToolWorkspaceService | null,
     private readonly permissionsService: PermissionsService,
     private readonly flatEntityMapsCacheService: WorkspaceManyOrAllFlatEntityMapsCacheService,
+    private readonly workspaceCapabilityService: WorkspaceCapabilityService,
   ) {}
 
   async isAvailable(context: ToolProviderContext): Promise<boolean> {
     if (!this.dashboardToolService) {
+      return false;
+    }
+
+    if (
+      !this.workspaceCapabilityService.isCapabilityAvailable(
+        ProductCapabilityKey.DASHBOARDS,
+      )
+    ) {
       return false;
     }
 
