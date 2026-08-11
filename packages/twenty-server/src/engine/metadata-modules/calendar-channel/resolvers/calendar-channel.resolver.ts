@@ -6,12 +6,17 @@ import { MetadataResolver } from 'src/engine/api/graphql/graphql-config/decorato
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { NoPermissionGuard } from 'src/engine/guards/no-permission.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
 import { CalendarChannelMetadataService } from 'src/engine/metadata-modules/calendar-channel/calendar-channel-metadata.service';
 import { CalendarChannelDTO } from 'src/engine/metadata-modules/calendar-channel/dtos/calendar-channel.dto';
 import { UpdateCalendarChannelInput } from 'src/engine/metadata-modules/calendar-channel/dtos/update-calendar-channel.input';
 import { CalendarChannelGraphqlApiExceptionInterceptor } from 'src/engine/metadata-modules/calendar-channel/interceptors/calendar-channel-graphql-api-exception.interceptor';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 @UseGuards(WorkspaceAuthGuard)
 @UseInterceptors(CalendarChannelGraphqlApiExceptionInterceptor)
@@ -22,7 +27,8 @@ export class CalendarChannelResolver {
   ) {}
 
   @Query(() => [CalendarChannelDTO])
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.CALENDAR)
   async myCalendarChannels(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -49,7 +55,8 @@ export class CalendarChannelResolver {
   }
 
   @Mutation(() => CalendarChannelDTO)
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.CALENDAR)
   async updateCalendarChannel(
     @Args('input') input: UpdateCalendarChannelInput,
     @AuthWorkspace() workspace: WorkspaceEntity,

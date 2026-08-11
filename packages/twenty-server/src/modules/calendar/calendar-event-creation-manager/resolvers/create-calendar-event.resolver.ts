@@ -15,6 +15,10 @@ import { ResolverValidationPipe } from 'src/engine/core-modules/graphql/pipes/re
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
 import { ConnectedAccountMetadataService } from 'src/engine/metadata-modules/connected-account/connected-account-metadata.service';
@@ -22,6 +26,7 @@ import { CreateCalendarEventOutputDTO } from 'src/modules/calendar/calendar-even
 import { CreateCalendarEventInput } from 'src/modules/calendar/calendar-event-creation-manager/dtos/create-calendar-event.input';
 import { CalendarEventComposerService } from 'src/modules/calendar/calendar-event-creation-manager/services/calendar-event-composer.service';
 import { CreateCalendarEventService } from 'src/modules/calendar/calendar-event-creation-manager/services/create-calendar-event.service';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 @MetadataResolver()
 @UsePipes(ResolverValidationPipe)
@@ -40,6 +45,8 @@ export class CreateCalendarEventResolver {
   ) {}
 
   @Mutation(() => CreateCalendarEventOutputDTO)
+  @UseGuards(CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.CALENDAR)
   async createCalendarEvent(
     @Args('input') input: CreateCalendarEventInput,
     @AuthWorkspace() workspace: WorkspaceEntity,
