@@ -84,7 +84,7 @@ export const PRODUCT_CAPABILITY_CATALOG: Record<
     isCore: false,
     defaultEnabled: true,
     dependsOn: [ProductCapabilityKey.CONTACTS],
-    availability: {},
+    availability: { configFlag: 'IS_EMAIL_MODULE_ENABLED' },
     effect: {},
   },
   [ProductCapabilityKey.CALENDAR]: {
