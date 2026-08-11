@@ -95,7 +95,7 @@ export const PRODUCT_CAPABILITY_CATALOG: Record<
     isCore: false,
     defaultEnabled: true,
     dependsOn: [ProductCapabilityKey.ACTIVITIES],
-    availability: {},
+    availability: { configFlag: 'IS_CALENDAR_MODULE_ENABLED' },
     effect: {},
   },
   [ProductCapabilityKey.AUTOMATIONS]: {

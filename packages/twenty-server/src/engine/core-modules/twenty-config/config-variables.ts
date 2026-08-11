@@ -133,6 +133,16 @@ export class ConfigVariables {
   IS_EMAIL_MODULE_ENABLED = true;
 
   @ConfigVariablesMetadata({
+    group: ConfigVariablesGroup.SERVER_CONFIG,
+    description:
+      'Enable the Calendar module for this deployment. When false, the connected-calendar feature is unavailable and hidden for all workspaces on this instance.',
+    isEnvOnly: true,
+    type: ConfigVariableType.BOOLEAN,
+  })
+  @IsOptional()
+  IS_CALENDAR_MODULE_ENABLED = true;
+
+  @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.TOKENS_DURATION,
     description: 'Duration for which the email verification token is valid',
     type: ConfigVariableType.STRING,
