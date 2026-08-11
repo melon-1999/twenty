@@ -2,6 +2,7 @@ import { UseFilters, UseGuards, UsePipes } from '@nestjs/common';
 import { Args, Mutation, Query } from '@nestjs/graphql';
 
 import { PermissionFlagType } from 'twenty-shared/constants';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 import { CoreResolver } from 'src/engine/api/graphql/graphql-config/decorators/core-resolver.decorator';
 import { UUIDScalarType } from 'src/engine/api/graphql/workspace-schema-builder/graphql-types/scalars';
@@ -23,6 +24,10 @@ import { WorkflowVersionTriggerDTO } from 'src/engine/core-modules/workflow/dtos
 import { WorkflowVersionStepGraphqlApiExceptionFilter } from 'src/engine/core-modules/workflow/filters/workflow-version-step-graphql-api-exception.filter';
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { UserAuthGuard } from 'src/engine/guards/user-auth.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
@@ -39,6 +44,7 @@ import { WorkflowRunnerWorkspaceService } from 'src/modules/workflow/workflow-ru
   WorkspaceAuthGuard,
   UserAuthGuard,
   SettingsPermissionGuard(PermissionFlagType.WORKFLOWS),
+  CapabilityGuard,
 )
 @UseFilters(
   PermissionsGraphqlApiExceptionFilter,
@@ -56,6 +62,7 @@ export class WorkflowVersionStepResolver {
 
   // Related to https://github.com/twentyhq/private-issues/issues/478
   @Query(() => ConnectedAccountHandleDTO, { nullable: true })
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async workflowStepConnectedAccountHandle(
     @Args('connectedAccountId', { type: () => UUIDScalarType }) id: string,
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
@@ -77,6 +84,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => WorkflowVersionStepChangesDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async createWorkflowVersionStep(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -89,6 +97,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => WorkflowActionDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async updateWorkflowVersionStep(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -102,6 +111,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => WorkflowVersionTriggerDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async updateWorkflowVersionTrigger(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -117,6 +127,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => WorkflowVersionStepChangesDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async deleteWorkflowVersionStep(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -130,6 +141,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => Boolean)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async submitFormStep(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -146,6 +158,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => WorkflowActionDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async updateWorkflowRunStep(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -161,6 +174,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => WorkflowVersionStepChangesDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async duplicateWorkflowVersionStep(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input')
@@ -176,6 +190,7 @@ export class WorkflowVersionStepResolver {
   }
 
   @Mutation(() => TestHttpRequestDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async testHttpRequest(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @Args('input')

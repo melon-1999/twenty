@@ -7,6 +7,7 @@ import {
   WORKFLOW_TRIGGER_METADATA_WORKSPACE_MEMBER_ID_KEY,
   WORKFLOW_TRIGGER_PAYLOAD_KEY,
 } from 'twenty-shared/workflow';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 import { CoreResolver } from 'src/engine/api/graphql/graphql-config/decorators/core-resolver.decorator';
 import { UUIDScalarType } from 'src/engine/api/graphql/workspace-schema-builder/graphql-types/scalars';
@@ -21,6 +22,10 @@ import { WorkflowTriggerGraphqlApiExceptionFilter } from 'src/engine/core-module
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUser } from 'src/engine/decorators/auth/auth-user.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { UserAuthGuard } from 'src/engine/guards/user-auth.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
@@ -34,6 +39,7 @@ import { WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/sta
 @UseGuards(
   WorkspaceAuthGuard,
   SettingsPermissionGuard(PermissionFlagType.WORKFLOWS),
+  CapabilityGuard,
 )
 @UsePipes(ResolverValidationPipe)
 @UseFilters(
@@ -48,6 +54,7 @@ export class WorkflowTriggerResolver {
   ) {}
 
   @Mutation(() => Boolean)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async activateWorkflowVersion(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @Args('workflowVersionId', { type: () => UUIDScalarType })
@@ -60,6 +67,7 @@ export class WorkflowTriggerResolver {
   }
 
   @Mutation(() => Boolean)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async deactivateWorkflowVersion(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @Args('workflowVersionId', { type: () => UUIDScalarType })
@@ -73,6 +81,7 @@ export class WorkflowTriggerResolver {
 
   @Mutation(() => RunWorkflowVersionDTO)
   @UseGuards(UserAuthGuard)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async runWorkflowVersion(
     @AuthUser() user: AuthContextUser,
     @AuthWorkspace() workspace: WorkspaceEntity,
@@ -123,6 +132,7 @@ export class WorkflowTriggerResolver {
   }
 
   @Mutation(() => WorkflowRunDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async stopWorkflowRun(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @Args('workflowRunId', { type: () => UUIDScalarType })
@@ -135,6 +145,7 @@ export class WorkflowTriggerResolver {
   }
 
   @Mutation(() => WorkflowRunDTO)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async retryWorkflowRun(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @Args('workflowRunId', { type: () => UUIDScalarType })

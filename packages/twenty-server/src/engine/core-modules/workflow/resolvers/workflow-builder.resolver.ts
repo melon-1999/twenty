@@ -3,6 +3,7 @@ import { Args, Mutation } from '@nestjs/graphql';
 
 import graphqlTypeJson from 'graphql-type-json';
 import { PermissionFlagType } from 'twenty-shared/constants';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 import { CoreResolver } from 'src/engine/api/graphql/graphql-config/decorators/core-resolver.decorator';
 import { PreventNestToAutoLogGraphqlErrorsFilter } from 'src/engine/core-modules/graphql/filters/prevent-nest-to-auto-log-graphql-errors.filter';
@@ -11,6 +12,10 @@ import { ComputeStepOutputSchemaInput } from 'src/engine/core-modules/workflow/d
 import { WorkflowTriggerGraphqlApiExceptionFilter } from 'src/engine/core-modules/workflow/filters/workflow-trigger-graphql-api-exception.filter';
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { UserAuthGuard } from 'src/engine/guards/user-auth.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
@@ -23,6 +28,7 @@ import { WorkflowSchemaWorkspaceService } from 'src/modules/workflow/workflow-bu
   WorkspaceAuthGuard,
   UserAuthGuard,
   SettingsPermissionGuard(PermissionFlagType.WORKFLOWS),
+  CapabilityGuard,
 )
 @UsePipes(ResolverValidationPipe)
 @UseFilters(
@@ -36,6 +42,7 @@ export class WorkflowBuilderResolver {
   ) {}
 
   @Mutation(() => graphqlTypeJson)
+  @RequireCapability(ProductCapabilityKey.AUTOMATIONS)
   async computeStepOutputSchema(
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
     @Args('input') { step, workflowVersionId }: ComputeStepOutputSchemaInput,
