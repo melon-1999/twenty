@@ -1,6 +1,7 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { ProductCapabilityModule } from 'src/engine/core-modules/product-capability/product-capability.module';
 import { RecordCrudModule } from 'src/engine/core-modules/record-crud/record-crud.module';
 import { TOOL_PROVIDERS } from 'src/engine/core-modules/tool-provider/constants/tool-providers.token';
 import { ActionToolProvider } from 'src/engine/core-modules/tool-provider/providers/action-tool.provider';
@@ -57,6 +58,7 @@ import { ToolRegistryService } from './services/tool-registry.service';
     ObjectMetadataModule,
     FieldMetadataModule,
     PermissionsModule,
+    ProductCapabilityModule,
     ViewModule,
     ViewFieldModule,
     ViewFilterModule,
