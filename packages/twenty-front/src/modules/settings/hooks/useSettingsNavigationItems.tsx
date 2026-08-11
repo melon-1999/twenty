@@ -12,6 +12,7 @@ import {
   type NavigationDrawerItemModifier,
 } from '@/ui/navigation/navigation-drawer/components/NavigationDrawerItem';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
+import { useIsCapabilityEnabled } from '@/workspace/hooks/useIsCapabilityEnabled';
 import { useIsFeatureEnabled } from '@/workspace/hooks/useIsFeatureEnabled';
 import { t } from '@lingui/core/macro';
 import { isNonEmptyString } from '@sniptt/guards';
@@ -37,7 +38,10 @@ import {
   IconUserCircle,
   IconUsers,
 } from 'twenty-ui/icon';
-import { PermissionFlagType } from '~/generated-metadata/graphql';
+import {
+  PermissionFlagType,
+  ProductCapabilityKey,
+} from '~/generated-metadata/graphql';
 
 export type SettingsNavigationSection = {
   label: string;
@@ -77,6 +81,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
   const isEmailGroupFeatureEnabled = useIsFeatureEnabled(
     FeatureFlagKey.IS_EMAIL_GROUP_ENABLED,
   );
+  const isEmailCapabilityEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.EMAIL,
+  );
   return [
     {
       label: t`User`,
@@ -101,7 +108,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
               label: t`Emails`,
               path: SettingsPath.AccountsEmails,
               Icon: IconMail,
-              isHidden: !permissionMap[PermissionFlagType.CONNECTED_ACCOUNTS],
+              isHidden:
+                !isEmailCapabilityEnabled ||
+                !permissionMap[PermissionFlagType.CONNECTED_ACCOUNTS],
               indentationLevel: 2,
             },
             {

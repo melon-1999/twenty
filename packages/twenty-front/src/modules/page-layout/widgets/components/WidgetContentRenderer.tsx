@@ -19,7 +19,8 @@ import { WorkflowRunWidget } from '@/page-layout/widgets/workflow/components/Wor
 import { WorkflowVersionWidget } from '@/page-layout/widgets/workflow/components/WorkflowVersionWidget';
 import { RecordTableWidgetRenderer } from '@/page-layout/widgets/record-table/components/RecordTableWidgetRenderer';
 import { WorkflowWidget } from '@/page-layout/widgets/workflow/components/WorkflowWidget';
-import { WidgetType } from '~/generated-metadata/graphql';
+import { useIsCapabilityEnabled } from '@/workspace/hooks/useIsCapabilityEnabled';
+import { ProductCapabilityKey, WidgetType } from '~/generated-metadata/graphql';
 
 type WidgetContentRendererProps = {
   widget: PageLayoutWidget;
@@ -28,6 +29,10 @@ type WidgetContentRendererProps = {
 export const WidgetContentRenderer = ({
   widget,
 }: WidgetContentRendererProps) => {
+  const isEmailModuleEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.EMAIL,
+  );
+
   switch (widget.type) {
     case WidgetType.GRAPH:
       return <GraphWidgetRenderer widget={widget} />;
@@ -57,7 +62,7 @@ export const WidgetContentRenderer = ({
       return <FileWidget widget={widget} />;
 
     case WidgetType.EMAILS:
-      return <EmailWidget widget={widget} />;
+      return isEmailModuleEnabled ? <EmailWidget widget={widget} /> : null;
 
     case WidgetType.CALENDAR:
       return <CalendarWidget widget={widget} />;

@@ -13,7 +13,10 @@ import { SettingsSkeletonLoader } from '@/settings/components/SettingsSkeletonLo
 import { SettingPublicDomain } from '@/settings/domains/components/SettingPublicDomain';
 import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
-import { PermissionFlagType } from '~/generated-metadata/graphql';
+import {
+  PermissionFlagType,
+  ProductCapabilityKey,
+} from '~/generated-metadata/graphql';
 
 const SettingsGraphQLPlayground = lazy(() =>
   import('~/pages/settings/developers/playground/SettingsGraphQLPlayground').then(
@@ -692,9 +695,17 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
       >
         <Route path={SettingsPath.Accounts} element={<SettingsAccounts />} />
         <Route
-          path={SettingsPath.AccountsEmails}
-          element={<SettingsAccountsEmails />}
-        />
+          element={
+            <SettingsProtectedRouteWrapper
+              requiredCapability={ProductCapabilityKey.EMAIL}
+            />
+          }
+        >
+          <Route
+            path={SettingsPath.AccountsEmails}
+            element={<SettingsAccountsEmails />}
+          />
+        </Route>
         <Route
           path={SettingsPath.AccountsCalendars}
           element={<SettingsAccountsCalendars />}
