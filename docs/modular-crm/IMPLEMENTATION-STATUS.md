@@ -14,6 +14,12 @@ Email is the second deploy-config slice (after Dashboards), following the same p
 
 **Accepted limitation (Level A):** the shared email+calendar plumbing — the Accounts settings section, the IMAP/CalDAV connect flow, the Google/Microsoft OAuth controllers, `ChannelSyncResolver`, `ConnectedAccountResolver`, and the background message-sync cron jobs — is intentionally left reachable when `IS_EMAIL_MODULE_ENABLED=false`, so disabling Email does not break Calendar (which shares the same connected-account infrastructure). Background message-sync crons are not guarded. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
 
+### Calendar slice (implemented)
+
+Calendar is the third deploy-config slice (after Dashboards and Email), following the same pattern: `IS_CALENDAR_MODULE_ENABLED` (`isEnvOnly`, default `true`) gates the CALENDAR catalog entry's `availability.configFlag`. `@RequireCapability(ProductCapabilityKey.CALENDAR)` guards the calendar-pure resolvers: `CalendarChannelResolver` (`myCalendarChannels`, `updateCalendarChannel`) and `CreateCalendarEventResolver` (`createCalendarEvent`). `ClientConfig.isCalendarModuleEnabled` is surfaced to the frontend, which hides the Calendars settings nav sub-item, the `AccountsCalendars` settings route (via `SettingsProtectedRouteWrapper`'s `requiredCapability`), and the record timeline `WidgetType.CALENDAR` widget when the flag is off. Hardening: the `myCalendarChannels` query is skipped client-side when Calendar is off (`useMyCalendarChannels` and `SettingsAccountsConfiguration`'s calendar query).
+
+**Accepted limitation (Level A):** the same shared email+calendar plumbing — the Accounts settings section, the IMAP/CalDAV connect flow, the Google/Microsoft OAuth controllers, `ChannelSyncResolver`, `ConnectedAccountResolver` — is intentionally left reachable when `IS_CALENDAR_MODULE_ENABLED=false`, so disabling Calendar does not break Email. `TimelineCalendarEventResolver` (the Activities timeline's calendar-event surface) is intentionally **not** gated on CALENDAR. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
 ## Foundation
 
 | Item | Status |
@@ -47,7 +53,7 @@ Legend per column: ⬜ todo · 🟡 in progress · ✅ done · n/a.
 
 Enforcement is uniform `@RequireCapability`; `isActive` = UI-hide + data preservation only (go/no-go resolved: `isActive` does not exclude an object from the GraphQL schema).
 | Email | ✅ | ✅ | n/a (config) | n/a (dormant) | ✅ | ✅ | @RequireCapability ✅ | ✅ | dep: Contacts | n/a (non-object) | ✅ | ✅ | done — Level A: shared Accounts/OAuth/ChannelSync plumbing intentionally reachable (Calendar dependency) |
-| Calendar | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: Activities | ⬜ | ⬜ | ✅ | |
+| Calendar | ✅ | ✅ | n/a (config) | n/a (dormant) | ✅ | ✅ | @RequireCapability ✅ | ✅ | dep: Activities | n/a (non-object) | ✅ | ✅ | done — Level A: shared Accounts/OAuth/ChannelSync plumbing intentionally reachable (Email dependency); TimelineCalendarEventResolver intentionally left ungated |
 | Automations | ✅ | ⬜ | n/a | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | |
 | AI Assistant | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | — | ⬜ | ⬜ | ✅ | |
 | Products (future) | ✅ | ⬜ | — | — | — | — | — | — | dep: Deals | — | — | ✅ | object not built |
