@@ -1,4 +1,4 @@
-import { SettingsProductCapabilityToggleRow } from '@/settings/product-capability/components/SettingsProductCapabilityToggleRow';
+import { SettingsProductCapabilityStatusRow } from '@/settings/product-capability/components/SettingsProductCapabilityStatusRow';
 import { PRODUCT_CAPABILITY_DISPLAY_CATALOG } from '@/settings/product-capability/constants/productCapabilityCatalog';
 import { styled } from '@linaria/react';
 import { t } from '@lingui/core/macro';
@@ -25,12 +25,12 @@ export const SettingsFeaturesContent = () => {
     <StyledSectionsContainer>
       <Section>
         <H2Title
-          title={t`Optional features`}
-          description={t`Turn features on or off for your workspace.`}
+          title={t`Your modules`}
+          description={t`Modules included in your plan for this workspace.`}
         />
         <Card rounded backgroundColor={themeCssVariables.background.secondary}>
           {optionalCapabilities.map((capability, index) => (
-            <SettingsProductCapabilityToggleRow
+            <SettingsProductCapabilityStatusRow
               key={capability.key}
               capability={capability}
               divider={index < optionalCapabilities.length - 1}
@@ -42,15 +42,15 @@ export const SettingsFeaturesContent = () => {
       <Section>
         <H2Title
           title={t`Core features`}
-          description={t`Always included in every workspace and cannot be turned off.`}
+          description={t`Always included in every workspace.`}
         />
         <Card rounded backgroundColor={themeCssVariables.background.secondary}>
           {coreCapabilities.map((capability, index) => (
-            <SettingsProductCapabilityToggleRow
+            <SettingsProductCapabilityStatusRow
               key={capability.key}
               capability={capability}
               divider={index < coreCapabilities.length - 1}
-              disabled
+              alwaysIncluded
             />
           ))}
         </Card>
