@@ -8,6 +8,7 @@ import {
   variables,
 } from '@/object-metadata/hooks/__mocks__/useFilteredObjectMetadataItems';
 import { useFilteredObjectMetadataItems } from '@/object-metadata/hooks/useFilteredObjectMetadataItems';
+import { isAutomationsModuleEnabledState } from '@/client-config/states/isAutomationsModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
 import { useSetAtomState } from '@/ui/utilities/state/jotai/hooks/useSetAtomState';
 import { jotaiStore } from '@/ui/utilities/state/jotai/jotaiStore';
@@ -169,6 +170,76 @@ describe('useFilteredObjectMetadataItems', () => {
     expect(
       activeObjectMetadataItems.find(
         (item) => item.nameSingular === 'dashboard',
+      ),
+    ).toBeDefined();
+  });
+
+  it('should exclude the workflow object when the Automations deploy flag is disabled', async () => {
+    const { result } = renderHook(
+      () => {
+        const filteredObjectMetadataItems = useFilteredObjectMetadataItems();
+        const setIsAutomationsModuleEnabled = useSetAtomState(
+          isAutomationsModuleEnabledState,
+        );
+
+        return { filteredObjectMetadataItems, setIsAutomationsModuleEnabled };
+      },
+      { wrapper: Wrapper },
+    );
+
+    act(() => {
+      result.current.setIsAutomationsModuleEnabled(false);
+    });
+
+    const { activeNonSystemObjectMetadataItems, activeObjectMetadataItems } =
+      result.current.filteredObjectMetadataItems;
+
+    expect(
+      activeNonSystemObjectMetadataItems.find(
+        (item) => item.nameSingular === 'workflow',
+      ),
+    ).toBeUndefined();
+    expect(
+      activeObjectMetadataItems.find(
+        (item) => item.nameSingular === 'workflow',
+      ),
+    ).toBeUndefined();
+
+    expect(
+      activeNonSystemObjectMetadataItems.find(
+        (item) => item.nameSingular === 'person',
+      ),
+    ).toBeDefined();
+  });
+
+  it('should include the workflow object when the Automations deploy flag is enabled', async () => {
+    const { result } = renderHook(
+      () => {
+        const filteredObjectMetadataItems = useFilteredObjectMetadataItems();
+        const setIsAutomationsModuleEnabled = useSetAtomState(
+          isAutomationsModuleEnabledState,
+        );
+
+        return { filteredObjectMetadataItems, setIsAutomationsModuleEnabled };
+      },
+      { wrapper: Wrapper },
+    );
+
+    act(() => {
+      result.current.setIsAutomationsModuleEnabled(true);
+    });
+
+    const { activeNonSystemObjectMetadataItems, activeObjectMetadataItems } =
+      result.current.filteredObjectMetadataItems;
+
+    expect(
+      activeNonSystemObjectMetadataItems.find(
+        (item) => item.nameSingular === 'workflow',
+      ),
+    ).toBeDefined();
+    expect(
+      activeObjectMetadataItems.find(
+        (item) => item.nameSingular === 'workflow',
       ),
     ).toBeDefined();
   });

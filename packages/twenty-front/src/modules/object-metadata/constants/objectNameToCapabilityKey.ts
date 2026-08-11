@@ -7,4 +7,5 @@ export const OBJECT_NAME_TO_CAPABILITY_KEY: Record<
   ProductCapabilityKey
 > = {
   dashboard: ProductCapabilityKey.DASHBOARDS,
+  workflow: ProductCapabilityKey.AUTOMATIONS,
 };

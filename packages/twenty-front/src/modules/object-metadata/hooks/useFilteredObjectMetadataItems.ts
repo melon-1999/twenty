@@ -15,21 +15,29 @@ export const useFilteredObjectMetadataItems = () => {
   const isDashboardsAvailable = useIsCapabilityEnabled(
     ProductCapabilityKey.DASHBOARDS,
   );
+  const isAutomationsAvailable = useIsCapabilityEnabled(
+    ProductCapabilityKey.AUTOMATIONS,
+  );
 
   const unavailableObjectNames = useMemo(() => {
+    // Map each object-backed capability to whether it is available on this deploy.
+    const availabilityByCapability: Partial<
+      Record<ProductCapabilityKey, boolean>
+    > = {
+      [ProductCapabilityKey.DASHBOARDS]: isDashboardsAvailable,
+      [ProductCapabilityKey.AUTOMATIONS]: isAutomationsAvailable,
+    };
+
     const names = new Set<string>();
-    if (!isDashboardsAvailable) {
-      // Drive the object name from the mapping instead of a bare literal.
-      Object.entries(OBJECT_NAME_TO_CAPABILITY_KEY).forEach(
-        ([objectName, capabilityKey]) => {
-          if (capabilityKey === ProductCapabilityKey.DASHBOARDS) {
-            names.add(objectName);
-          }
-        },
-      );
-    }
+    Object.entries(OBJECT_NAME_TO_CAPABILITY_KEY).forEach(
+      ([objectName, capabilityKey]) => {
+        if (availabilityByCapability[capabilityKey] === false) {
+          names.add(objectName);
+        }
+      },
+    );
     return names;
-  }, [isDashboardsAvailable]);
+  }, [isDashboardsAvailable, isAutomationsAvailable]);
 
   const activeNonSystemObjectMetadataItems = useMemo(
     () =>
