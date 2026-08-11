@@ -707,9 +707,17 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
           />
         </Route>
         <Route
-          path={SettingsPath.AccountsCalendars}
-          element={<SettingsAccountsCalendars />}
-        />
+          element={
+            <SettingsProtectedRouteWrapper
+              requiredCapability={ProductCapabilityKey.CALENDAR}
+            />
+          }
+        >
+          <Route
+            path={SettingsPath.AccountsCalendars}
+            element={<SettingsAccountsCalendars />}
+          />
+        </Route>
         <Route
           path={SettingsPath.NewAccount}
           element={<SettingsNewAccount />}

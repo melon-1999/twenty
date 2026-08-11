@@ -11,6 +11,7 @@ import {
   jotaiStore,
   resetJotaiStore,
 } from '@/ui/utilities/state/jotai/jotaiStore';
+import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 
 const renderRoutes = () =>
@@ -41,6 +42,34 @@ const renderRoutes = () =>
     </JotaiProvider>,
   );
 
+const renderCalendarRoutes = () =>
+  render(
+    <JotaiProvider store={jotaiStore}>
+      <MemoryRouter
+        initialEntries={[getSettingsPath(SettingsPath.AccountsCalendars)]}
+      >
+        <Routes>
+          <Route
+            path={getSettingsPath(SettingsPath.ProfilePage)}
+            element={<div>Profile Page</div>}
+          />
+          <Route
+            element={
+              <SettingsProtectedRouteWrapper
+                requiredCapability={ProductCapabilityKey.CALENDAR}
+              />
+            }
+          >
+            <Route
+              path={getSettingsPath(SettingsPath.AccountsCalendars)}
+              element={<div>Calendars Settings Content</div>}
+            />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    </JotaiProvider>,
+  );
+
 describe('SettingsProtectedRouteWrapper', () => {
   beforeEach(() => {
     resetJotaiStore();
@@ -64,6 +93,28 @@ describe('SettingsProtectedRouteWrapper', () => {
     renderRoutes();
 
     expect(screen.getByText('Emails Settings Content')).toBeInTheDocument();
+    expect(screen.queryByText('Profile Page')).not.toBeInTheDocument();
+  });
+
+  it('redirects away and does not render children when the required calendar capability is disabled', () => {
+    jotaiStore.set(isCalendarModuleEnabledState.atom, false);
+
+    renderCalendarRoutes();
+
+    expect(screen.getByText('Profile Page')).toBeInTheDocument();
+    expect(
+      screen.queryByText('Calendars Settings Content'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('renders children when the required calendar capability is enabled', () => {
+    jotaiStore.set(isCalendarModuleEnabledState.atom, true);
+
+    renderCalendarRoutes();
+
+    expect(
+      screen.getByText('Calendars Settings Content'),
+    ).toBeInTheDocument();
     expect(screen.queryByText('Profile Page')).not.toBeInTheDocument();
   });
 });

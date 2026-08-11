@@ -32,6 +32,9 @@ export const WidgetContentRenderer = ({
   const isEmailModuleEnabled = useIsCapabilityEnabled(
     ProductCapabilityKey.EMAIL,
   );
+  const isCalendarModuleEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.CALENDAR,
+  );
 
   switch (widget.type) {
     case WidgetType.GRAPH:
@@ -65,7 +68,9 @@ export const WidgetContentRenderer = ({
       return isEmailModuleEnabled ? <EmailWidget widget={widget} /> : null;
 
     case WidgetType.CALENDAR:
-      return <CalendarWidget widget={widget} />;
+      return isCalendarModuleEnabled ? (
+        <CalendarWidget widget={widget} />
+      ) : null;
 
     case WidgetType.WORKFLOW:
       return <WorkflowWidget />;

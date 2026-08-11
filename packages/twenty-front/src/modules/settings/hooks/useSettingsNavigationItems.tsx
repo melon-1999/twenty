@@ -84,6 +84,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
   const isEmailCapabilityEnabled = useIsCapabilityEnabled(
     ProductCapabilityKey.EMAIL,
   );
+  const isCalendarCapabilityEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.CALENDAR,
+  );
   return [
     {
       label: t`User`,
@@ -117,7 +120,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
               label: t`Calendars`,
               path: SettingsPath.AccountsCalendars,
               Icon: IconCalendarEvent,
-              isHidden: !permissionMap[PermissionFlagType.CONNECTED_ACCOUNTS],
+              isHidden:
+                !isCalendarCapabilityEnabled ||
+                !permissionMap[PermissionFlagType.CONNECTED_ACCOUNTS],
               indentationLevel: 2,
             },
           ],
