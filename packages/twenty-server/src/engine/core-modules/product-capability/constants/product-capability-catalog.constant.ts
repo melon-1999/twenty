@@ -110,8 +110,13 @@ export const PRODUCT_CAPABILITY_CATALOG: Record<
       ProductCapabilityKey.COMPANIES,
       ProductCapabilityKey.DEALS,
     ],
-    availability: {},
-    effect: {},
+    availability: { configFlag: 'IS_AUTOMATIONS_MODULE_ENABLED' },
+    // Toggling AUTOMATIONS flips the workflow standard object's isActive per
+    // workspace via the dormant path; the enforcement boundary is the discrete
+    // workflow resolver guards via @RequireCapability(AUTOMATIONS).
+    effect: {
+      objectStandardIds: [STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.workflow],
+    },
   },
   [ProductCapabilityKey.AI_ASSISTANT]: {
     key: ProductCapabilityKey.AI_ASSISTANT,
