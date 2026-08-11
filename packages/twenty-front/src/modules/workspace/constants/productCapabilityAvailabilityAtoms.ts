@@ -1,4 +1,5 @@
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
+import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 import { type State } from '@/ui/utilities/state/jotai/types/State';
 import { ProductCapabilityKey } from '~/generated-metadata/graphql';
 
@@ -10,4 +11,5 @@ export const PRODUCT_CAPABILITY_AVAILABILITY_ATOM: Partial<
   Record<ProductCapabilityKey, State<boolean>>
 > = {
   [ProductCapabilityKey.DASHBOARDS]: isDashboardsModuleEnabledState,
+  [ProductCapabilityKey.EMAIL]: isEmailModuleEnabledState,
 };

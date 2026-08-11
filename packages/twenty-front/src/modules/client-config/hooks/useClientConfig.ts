@@ -27,6 +27,7 @@ import { isMicrosoftCalendarEnabledState } from '@/client-config/states/isMicros
 import { isMicrosoftMessagingEnabledState } from '@/client-config/states/isMicrosoftMessagingEnabledState';
 import { isCookieSessionEnabledState } from '@/client-config/states/isCookieSessionEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
+import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 import { isMultiWorkspaceEnabledState } from '@/client-config/states/isMultiWorkspaceEnabledState';
 import { isOnboardingAiChatEnabledState } from '@/client-config/states/isOnboardingAiChatEnabledState';
 import { labPublicFeatureFlagsState } from '@/client-config/states/labPublicFeatureFlagsState';
@@ -65,6 +66,7 @@ export const useClientConfig = (): UseClientConfigResult => {
   const setIsDashboardsModuleEnabled = useSetAtomState(
     isDashboardsModuleEnabledState,
   );
+  const setIsEmailModuleEnabled = useSetAtomState(isEmailModuleEnabledState);
   const setIsCookieSessionEnabled = useSetAtomState(
     isCookieSessionEnabledState,
   );
@@ -191,6 +193,7 @@ export const useClientConfig = (): UseClientConfigResult => {
       setIsDeveloperDefaultSignInPrefilled(clientConfig.signInPrefilled);
       setIsMultiWorkspaceEnabled(clientConfig.isMultiWorkspaceEnabled);
       setIsDashboardsModuleEnabled(clientConfig.isDashboardsModuleEnabled);
+      setIsEmailModuleEnabled(clientConfig.isEmailModuleEnabled);
       setIsCookieSessionEnabled(clientConfig.isCookieSessionEnabled);
       setIsEmailVerificationRequired(clientConfig.isEmailVerificationRequired);
       setBilling(clientConfig.billing);
@@ -289,6 +292,7 @@ export const useClientConfig = (): UseClientConfigResult => {
     setIsImapSmtpCaldavEnabled,
     setIsMultiWorkspaceEnabled,
     setIsDashboardsModuleEnabled,
+    setIsEmailModuleEnabled,
     setIsCookieSessionEnabled,
     setIsEmailingDomainInDemoMode,
     setIsClickHouseConfigured,

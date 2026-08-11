@@ -3,6 +3,7 @@ import { createElement } from 'react';
 import { Provider as JotaiProvider } from 'jotai';
 
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
+import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 import { useSetAtomState } from '@/ui/utilities/state/jotai/hooks/useSetAtomState';
 import { jotaiStore } from '@/ui/utilities/state/jotai/jotaiStore';
 import { useIsCapabilityEnabled } from '@/workspace/hooks/useIsCapabilityEnabled';
@@ -18,10 +19,14 @@ const renderHooks = (capabilityKey: ProductCapabilityKey | null) => {
       const setIsDashboardsModuleEnabled = useSetAtomState(
         isDashboardsModuleEnabledState,
       );
+      const setIsEmailModuleEnabled = useSetAtomState(
+        isEmailModuleEnabledState,
+      );
 
       return {
         isCapabilityEnabled,
         setIsDashboardsModuleEnabled,
+        setIsEmailModuleEnabled,
       };
     },
     {
@@ -47,6 +52,26 @@ describe('useIsCapabilityEnabled', () => {
 
     act(() => {
       result.current.setIsDashboardsModuleEnabled(true);
+    });
+
+    expect(result.current.isCapabilityEnabled).toBe(true);
+  });
+
+  it('should return false when the EMAIL deploy flag is disabled', () => {
+    const { result } = renderHooks(ProductCapabilityKey.EMAIL);
+
+    act(() => {
+      result.current.setIsEmailModuleEnabled(false);
+    });
+
+    expect(result.current.isCapabilityEnabled).toBe(false);
+  });
+
+  it('should return true when the EMAIL deploy flag is enabled', () => {
+    const { result } = renderHooks(ProductCapabilityKey.EMAIL);
+
+    act(() => {
+      result.current.setIsEmailModuleEnabled(true);
     });
 
     expect(result.current.isCapabilityEnabled).toBe(true);
