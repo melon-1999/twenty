@@ -1,19 +1,25 @@
-import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
+import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
-import { type ProductCapabilityKey } from '~/generated-metadata/graphql';
+import { isDefined } from 'twenty-shared/utils';
+import { ProductCapabilityKey } from '~/generated-metadata/graphql';
 
 export const useIsCapabilityEnabled = (
   capabilityKey: ProductCapabilityKey | null,
-) => {
-  const currentWorkspace = useAtomStateValue(currentWorkspaceState);
+): boolean => {
+  // Read all deploy-flag availability atoms unconditionally (hooks rule).
+  const isDashboardsModuleEnabled = useAtomStateValue(
+    isDashboardsModuleEnabledState,
+  );
 
-  if (!capabilityKey) {
+  if (!isDefined(capabilityKey)) {
     return false;
   }
 
-  const capability = currentWorkspace?.enabledCapabilities?.find(
-    (enabledCapability) => enabledCapability.key === capabilityKey,
-  );
+  // Capabilities with a deploy flag resolve to it; all others are always available.
+  const availabilityByCapability: Partial<Record<ProductCapabilityKey, boolean>> =
+    {
+      [ProductCapabilityKey.DASHBOARDS]: isDashboardsModuleEnabled,
+    };
 
-  return !!capability?.value;
+  return availabilityByCapability[capabilityKey] ?? true;
 };
