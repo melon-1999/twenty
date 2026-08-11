@@ -8,6 +8,7 @@ export const mockedClientConfig: ClientConfig = {
   isDashboardsModuleEnabled: true,
   isEmailModuleEnabled: true,
   isCalendarModuleEnabled: true,
+  isAutomationsModuleEnabled: true,
   isCookieSessionEnabled: false,
   isEmailVerificationRequired: false,
   authProviders: {

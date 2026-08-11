@@ -1,5 +1,6 @@
 import { aiModelsState } from '@/client-config/states/aiModelsState';
 import { apiConfigState } from '@/client-config/states/apiConfigState';
+import { isAutomationsModuleEnabledState } from '@/client-config/states/isAutomationsModuleEnabledState';
 import { onboardingConfigState } from '@/client-config/states/onboardingConfigState';
 import { appVersionState } from '@/client-config/states/appVersionState';
 import { authProvidersState } from '@/client-config/states/authProvidersState';
@@ -70,6 +71,9 @@ export const useClientConfig = (): UseClientConfigResult => {
   const setIsEmailModuleEnabled = useSetAtomState(isEmailModuleEnabledState);
   const setIsCalendarModuleEnabled = useSetAtomState(
     isCalendarModuleEnabledState,
+  );
+  const setIsAutomationsModuleEnabled = useSetAtomState(
+    isAutomationsModuleEnabledState,
   );
   const setIsCookieSessionEnabled = useSetAtomState(
     isCookieSessionEnabledState,
@@ -199,6 +203,7 @@ export const useClientConfig = (): UseClientConfigResult => {
       setIsDashboardsModuleEnabled(clientConfig.isDashboardsModuleEnabled);
       setIsEmailModuleEnabled(clientConfig.isEmailModuleEnabled);
       setIsCalendarModuleEnabled(clientConfig.isCalendarModuleEnabled);
+      setIsAutomationsModuleEnabled(clientConfig.isAutomationsModuleEnabled);
       setIsCookieSessionEnabled(clientConfig.isCookieSessionEnabled);
       setIsEmailVerificationRequired(clientConfig.isEmailVerificationRequired);
       setBilling(clientConfig.billing);
@@ -299,6 +304,7 @@ export const useClientConfig = (): UseClientConfigResult => {
     setIsDashboardsModuleEnabled,
     setIsEmailModuleEnabled,
     setIsCalendarModuleEnabled,
+    setIsAutomationsModuleEnabled,
     setIsCookieSessionEnabled,
     setIsEmailingDomainInDemoMode,
     setIsClickHouseConfigured,

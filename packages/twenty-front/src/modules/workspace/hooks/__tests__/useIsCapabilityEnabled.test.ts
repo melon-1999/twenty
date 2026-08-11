@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import { createElement } from 'react';
 import { Provider as JotaiProvider } from 'jotai';
 
+import { isAutomationsModuleEnabledState } from '@/client-config/states/isAutomationsModuleEnabledState';
 import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
 import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
@@ -26,12 +27,16 @@ const renderHooks = (capabilityKey: ProductCapabilityKey | null) => {
       const setIsCalendarModuleEnabled = useSetAtomState(
         isCalendarModuleEnabledState,
       );
+      const setIsAutomationsModuleEnabled = useSetAtomState(
+        isAutomationsModuleEnabledState,
+      );
 
       return {
         isCapabilityEnabled,
         setIsDashboardsModuleEnabled,
         setIsEmailModuleEnabled,
         setIsCalendarModuleEnabled,
+        setIsAutomationsModuleEnabled,
       };
     },
     {
@@ -97,6 +102,26 @@ describe('useIsCapabilityEnabled', () => {
 
     act(() => {
       result.current.setIsCalendarModuleEnabled(true);
+    });
+
+    expect(result.current.isCapabilityEnabled).toBe(true);
+  });
+
+  it('should return false when the AUTOMATIONS deploy flag is disabled', () => {
+    const { result } = renderHooks(ProductCapabilityKey.AUTOMATIONS);
+
+    act(() => {
+      result.current.setIsAutomationsModuleEnabled(false);
+    });
+
+    expect(result.current.isCapabilityEnabled).toBe(false);
+  });
+
+  it('should return true when the AUTOMATIONS deploy flag is enabled', () => {
+    const { result } = renderHooks(ProductCapabilityKey.AUTOMATIONS);
+
+    act(() => {
+      result.current.setIsAutomationsModuleEnabled(true);
     });
 
     expect(result.current.isCapabilityEnabled).toBe(true);
