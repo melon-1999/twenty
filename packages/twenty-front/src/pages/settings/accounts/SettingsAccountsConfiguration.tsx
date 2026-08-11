@@ -43,6 +43,9 @@ export const SettingsAccountsConfiguration = () => {
   const isEmailModuleEnabled = useIsCapabilityEnabled(
     ProductCapabilityKey.EMAIL,
   );
+  const isCalendarModuleEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.CALENDAR,
+  );
 
   const { data: metadataMessageChannelData } = useQuery<{
     myMessageChannels: MessageChannel[];
@@ -55,7 +58,7 @@ export const SettingsAccountsConfiguration = () => {
     myCalendarChannels: CalendarChannel[];
   }>(GET_MY_CALENDAR_CHANNELS, {
     variables: { connectedAccountId },
-    skip: !connectedAccountId,
+    skip: !connectedAccountId || !isCalendarModuleEnabled,
   });
 
   const messageChannels = metadataMessageChannelData?.myMessageChannels ?? [];
