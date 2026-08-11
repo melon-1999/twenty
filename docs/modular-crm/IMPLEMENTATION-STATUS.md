@@ -20,6 +20,14 @@ Calendar is the third deploy-config slice (after Dashboards and Email), followin
 
 **Accepted limitation (Level A):** the same shared email+calendar plumbing — the Accounts settings section, the IMAP/CalDAV connect flow, the Google/Microsoft OAuth controllers, `ChannelSyncResolver`, `ConnectedAccountResolver` — is intentionally left reachable when `IS_CALENDAR_MODULE_ENABLED=false`, so disabling Calendar does not break Email. `TimelineCalendarEventResolver` (the Activities timeline's calendar-event surface) is intentionally **not** gated on CALENDAR. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
 
+### Automations slice (implemented)
+
+Automations is the fourth deploy-config slice (after Dashboards, Email, and Calendar), and the first **object-backed** slice since Dashboards: `IS_AUTOMATIONS_MODULE_ENABLED` (`isEnvOnly`, default `true`) gates the AUTOMATIONS catalog entry's `availability.configFlag` and its `effect.objectStandardIds: [workflow]`. Like Dashboards, the `workflow` root object is hidden from object-nav when the flag is off, via the generalized `objectNameToCapabilityKey` mapping in `useFilteredObjectMetadataItems`; the system child objects `workflowVersion`, `workflowRun`, and `workflowAutomatedTrigger` are not independently nav-visible and stay reachable only via relations off `workflow`. `@RequireCapability(ProductCapabilityKey.AUTOMATIONS)` guards all 21 `@Query`/`@Mutation` methods across the five workflow resolvers (`WorkflowTriggerResolver`, `WorkflowVersionResolver`, `WorkflowVersionStepResolver`, `WorkflowVersionEdgeResolver`, `WorkflowBuilderResolver`). Automations also closes the AI-tool bypass the Dashboards precedent left open: `WorkflowToolProvider.isAvailable` now checks `isCapabilityAvailable(AUTOMATIONS)`, so the 21 chat-invoked workflow AI tools are unavailable when the module is off. `ClientConfig.isAutomationsModuleEnabled` is surfaced to the frontend via an FE atom + `useIsCapabilityEnabled`.
+
+**Accepted limitation (Level A):** the unauthenticated webhook trigger controller (`workflow-trigger.controller.ts`, behind `PublicEndpointGuard`) and the background cron/async workflow-run infrastructure are not capability-guarded — when the module is deploy-off, no workflows exist to trigger, and deploy is operator-controlled. Mirrors the accepted background-cron limitation already documented for Email/Calendar. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
+**FOLLOW-UP:** the Dashboards slice left the same AI-tool bypass open — `dashboard-tool.provider.ts` should get the equivalent `isCapabilityAvailable(DASHBOARDS)` check backfilled.
+
 ## Foundation
 
 | Item | Status |
@@ -54,7 +62,7 @@ Legend per column: ⬜ todo · 🟡 in progress · ✅ done · n/a.
 Enforcement is uniform `@RequireCapability`; `isActive` = UI-hide + data preservation only (go/no-go resolved: `isActive` does not exclude an object from the GraphQL schema).
 | Email | ✅ | ✅ | n/a (config) | n/a (dormant) | ✅ | ✅ | @RequireCapability ✅ | ✅ | dep: Contacts | n/a (non-object) | ✅ | ✅ | done — Level A: shared Accounts/OAuth/ChannelSync plumbing intentionally reachable (Calendar dependency) |
 | Calendar | ✅ | ✅ | n/a (config) | n/a (dormant) | ✅ | ✅ | @RequireCapability ✅ | ✅ | dep: Activities | n/a (non-object) | ✅ | ✅ | done — Level A: shared Accounts/OAuth/ChannelSync plumbing intentionally reachable (Email dependency); TimelineCalendarEventResolver intentionally left ungated |
-| Automations | ✅ | ⬜ | n/a | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | |
+| Automations | ✅ | ✅ | n/a (config) | n/a (dormant) | ✅ | ✅ | @RequireCapability ✅ | ✅ | dep: CRM | ✅ (guard-only; isActive unaffected) | ✅ | ✅ | done — object-backed (`workflow` hidden from nav like Dashboards); 21 resolver methods guarded across 5 resolvers; AI-tool bypass closed (`WorkflowToolProvider`); Level A: webhook trigger + background cron intentionally left ungated (operator-controlled) |
 | AI Assistant | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | — | ⬜ | ⬜ | ✅ | |
 | Products (future) | ✅ | ⬜ | — | — | — | — | — | — | dep: Deals | — | — | ✅ | object not built |
 | Reports (future) | ✅ | ⬜ | — | — | — | — | — | — | dep: CRM | — | — | ✅ | not built |
