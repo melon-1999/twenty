@@ -16,10 +16,11 @@ export const useIsCapabilityEnabled = (
   }
 
   // Capabilities with a deploy flag resolve to it; all others are always available.
-  const availabilityByCapability: Partial<Record<ProductCapabilityKey, boolean>> =
-    {
-      [ProductCapabilityKey.DASHBOARDS]: isDashboardsModuleEnabled,
-    };
+  const availabilityByCapability: Partial<
+    Record<ProductCapabilityKey, boolean>
+  > = {
+    [ProductCapabilityKey.DASHBOARDS]: isDashboardsModuleEnabled,
+  };
 
   return availabilityByCapability[capabilityKey] ?? true;
 };
