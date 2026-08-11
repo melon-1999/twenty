@@ -22,7 +22,7 @@ describe('CapabilityGuard', () => {
     } as any;
 
     mockWorkspaceCapabilityService = {
-      isCapabilityEnabled: jest.fn(),
+      isCapabilityAvailable: jest.fn(),
     } as any;
 
     mockGqlContext = {
@@ -49,47 +49,47 @@ describe('CapabilityGuard', () => {
   });
 
   describe('canActivate', () => {
-    it('should return true when no capability metadata is set on the handler', async () => {
+    it('should return true when no capability metadata is set on the handler', () => {
       mockReflector.get.mockReturnValue(undefined);
 
-      const result = await guard.canActivate(mockExecutionContext);
+      const result = guard.canActivate(mockExecutionContext);
 
       expect(result).toBe(true);
       expect(
-        mockWorkspaceCapabilityService.isCapabilityEnabled,
+        mockWorkspaceCapabilityService.isCapabilityAvailable,
       ).not.toHaveBeenCalled();
     });
 
-    it('should return false when there is no workspace on the request', async () => {
+    it('should return true for pass-through even without workspace context, since availability is deployment-scoped', () => {
       mockGqlContext.req.workspace = undefined;
+      mockReflector.get.mockReturnValue(undefined);
 
-      const result = await guard.canActivate(mockExecutionContext);
+      const result = guard.canActivate(mockExecutionContext);
 
-      expect(result).toBe(false);
-      expect(mockReflector.get).not.toHaveBeenCalled();
+      expect(result).toBe(true);
     });
 
-    it('should return true when the capability is enabled', async () => {
-      mockReflector.get.mockReturnValue(ProductCapabilityKey.EMAIL);
-      mockWorkspaceCapabilityService.isCapabilityEnabled.mockResolvedValue(
+    it('returns true when the capability is available', () => {
+      mockReflector.get.mockReturnValue(ProductCapabilityKey.DASHBOARDS);
+      mockWorkspaceCapabilityService.isCapabilityAvailable.mockReturnValue(
         true,
       );
 
-      const result = await guard.canActivate(mockExecutionContext);
+      const result = guard.canActivate(mockExecutionContext);
 
       expect(result).toBe(true);
       expect(
-        mockWorkspaceCapabilityService.isCapabilityEnabled,
-      ).toHaveBeenCalledWith(ProductCapabilityKey.EMAIL, 'workspace-id');
+        mockWorkspaceCapabilityService.isCapabilityAvailable,
+      ).toHaveBeenCalledWith(ProductCapabilityKey.DASHBOARDS);
     });
 
-    it('should throw ForbiddenException when the capability is disabled', async () => {
-      mockReflector.get.mockReturnValue(ProductCapabilityKey.EMAIL);
-      mockWorkspaceCapabilityService.isCapabilityEnabled.mockResolvedValue(
+    it('throws ForbiddenException when the capability is not available', () => {
+      mockReflector.get.mockReturnValue(ProductCapabilityKey.DASHBOARDS);
+      mockWorkspaceCapabilityService.isCapabilityAvailable.mockReturnValue(
         false,
       );
 
-      await expect(guard.canActivate(mockExecutionContext)).rejects.toThrow(
+      expect(() => guard.canActivate(mockExecutionContext)).toThrow(
         ForbiddenException,
       );
     });

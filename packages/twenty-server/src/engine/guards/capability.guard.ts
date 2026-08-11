@@ -5,7 +5,6 @@ import {
   Injectable,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { GqlExecutionContext } from '@nestjs/graphql';
 
 import { type ProductCapabilityKey } from 'twenty-shared/types';
 
@@ -37,15 +36,7 @@ export class CapabilityGuard implements CanActivate {
     private readonly workspaceCapabilityService: WorkspaceCapabilityService,
   ) {}
 
-  async canActivate(context: ExecutionContext): Promise<boolean> {
-    const ctx = GqlExecutionContext.create(context);
-    const request = ctx.getContext().req;
-    const workspaceId = request.workspace?.id;
-
-    if (!workspaceId) {
-      return false;
-    }
-
+  canActivate(context: ExecutionContext): boolean {
     const capability = this.reflector.get<ProductCapabilityKey>(
       CAPABILITY_KEY,
       context.getHandler(),
@@ -55,14 +46,10 @@ export class CapabilityGuard implements CanActivate {
       return true;
     }
 
-    const isEnabled = await this.workspaceCapabilityService.isCapabilityEnabled(
-      capability,
-      workspaceId,
-    );
-
-    if (!isEnabled) {
+    // Availability is deployment-scoped (config-driven), not workspace-scoped.
+    if (!this.workspaceCapabilityService.isCapabilityAvailable(capability)) {
       throw new ForbiddenException(
-        `Capability "${capability}" is not enabled for this workspace`,
+        `Module "${capability}" is not available on this deployment`,
       );
     }
 
