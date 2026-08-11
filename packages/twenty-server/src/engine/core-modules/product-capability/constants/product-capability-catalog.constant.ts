@@ -67,7 +67,7 @@ export const PRODUCT_CAPABILITY_CATALOG: Record<
       ProductCapabilityKey.COMPANIES,
       ProductCapabilityKey.DEALS,
     ],
-    availability: {},
+    availability: { configFlag: 'IS_DASHBOARDS_MODULE_ENABLED' },
     // Toggling DASHBOARDS flips the dashboard standard object's isActive per
     // workspace (UI-hide + lossless data preservation). This is NOT an API
     // access boundary — enforcement lives on the discrete dashboard endpoints

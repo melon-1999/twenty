@@ -10,6 +10,7 @@ import { WorkspaceCapabilityService } from 'src/engine/core-modules/product-capa
 import { WorkspaceCapabilityEntity } from 'src/engine/core-modules/product-capability/workspace-capability.entity';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { ObjectMetadataService } from 'src/engine/metadata-modules/object-metadata/object-metadata.service';
+import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { getWorkspaceScopedRepositoryToken } from 'src/engine/twenty-orm/workspace-scoped-repository/get-workspace-scoped-repository-token.util';
 import { WorkspaceCacheService } from 'src/engine/workspace-cache/services/workspace-cache.service';
 
@@ -43,6 +44,10 @@ describe('WorkspaceCapabilityService', () => {
     updateOneObject: jest.fn(),
   };
 
+  const twentyConfigService = {
+    get: jest.fn(),
+  };
+
   const workspaceId = 'workspace-id';
 
   beforeEach(async () => {
@@ -66,6 +71,10 @@ describe('WorkspaceCapabilityService', () => {
         {
           provide: ObjectMetadataService,
           useValue: mockObjectMetadataService,
+        },
+        {
+          provide: TwentyConfigService,
+          useValue: twentyConfigService,
         },
       ],
     }).compile();
@@ -314,6 +323,30 @@ describe('WorkspaceCapabilityService', () => {
           mockObjectMetadataService.updateOneObject,
         ).not.toHaveBeenCalled();
       });
+    });
+  });
+
+  describe('isCapabilityAvailable', () => {
+    it('returns true for a capability with no configFlag', () => {
+      // CONTACTS has availability: {}
+      expect(service.isCapabilityAvailable(ProductCapabilityKey.CONTACTS)).toBe(
+        true,
+      );
+    });
+
+    it('returns the config value for a capability with a configFlag', () => {
+      twentyConfigService.get.mockReturnValue(false);
+      expect(
+        service.isCapabilityAvailable(ProductCapabilityKey.DASHBOARDS),
+      ).toBe(false);
+      expect(twentyConfigService.get).toHaveBeenCalledWith(
+        'IS_DASHBOARDS_MODULE_ENABLED',
+      );
+
+      twentyConfigService.get.mockReturnValue(true);
+      expect(
+        service.isCapabilityAvailable(ProductCapabilityKey.DASHBOARDS),
+      ).toBe(true);
     });
   });
 });

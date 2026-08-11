@@ -18,6 +18,8 @@ import {
   PRODUCT_CAPABILITY_CATALOG,
 } from 'src/engine/core-modules/product-capability/constants/product-capability-catalog.constant';
 import { WorkspaceCapabilityEntity } from 'src/engine/core-modules/product-capability/workspace-capability.entity';
+import { type ConfigVariables } from 'src/engine/core-modules/twenty-config/config-variables';
+import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { ObjectMetadataService } from 'src/engine/metadata-modules/object-metadata/object-metadata.service';
 import { InjectWorkspaceScopedRepository } from 'src/engine/twenty-orm/workspace-scoped-repository/inject-workspace-scoped-repository.decorator';
@@ -53,6 +55,7 @@ export class WorkspaceCapabilityService {
     // plain import risks a Nest module cycle; forwardRef breaks it defensively.
     @Inject(forwardRef(() => ObjectMetadataService))
     private readonly objectMetadataService: ObjectMetadataService,
+    private readonly twentyConfigService: TwentyConfigService,
   ) {}
 
   public async getCapabilitiesMap(
@@ -73,6 +76,18 @@ export class WorkspaceCapabilityService {
     const capabilitiesMap = await this.getCapabilitiesMap(workspaceId);
 
     return !!capabilitiesMap[key];
+  }
+
+  public isCapabilityAvailable(key: ProductCapabilityKey): boolean {
+    const configFlag = PRODUCT_CAPABILITY_CATALOG[key].availability.configFlag;
+
+    if (!isDefined(configFlag)) {
+      return true;
+    }
+
+    return Boolean(
+      this.twentyConfigService.get(configFlag as keyof ConfigVariables),
+    );
   }
 
   public async getWorkspaceCapabilities(
