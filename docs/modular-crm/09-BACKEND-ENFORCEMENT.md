@@ -2,6 +2,10 @@
 
 Rule (§18, §35): UI hiding is not security. Where a capability is a real access boundary, the backend enforces it. Reuse Twenty's existing enforcement layers.
 
+## Pivot: guard resolves against config availability (deploy-scoped)
+
+`@RequireCapability` now resolves against `WorkspaceCapabilityService.isCapabilityAvailable(key)`, which reads the catalog's `availability.configFlag` (`IS_<MODULE>_MODULE_ENABLED`, `isEnvOnly: true`) via `TwentyConfigService` — a deployment-scoped, operator-set, customer-immutable check — rather than the per-workspace `capabilitiesMap` enable/disable store described below (that store is DORMANT/deprecated). Enforcement remains **Level A**: the guard denies the module's discrete resolver/controller/job endpoints, and the UI hides nav/routes/object-nav. Raw object CRUD via the generic dynamic resolver stays technically reachable (hand-crafted GraphQL only, no UI path) — this residual gap is **accepted**, since the flag is operator-controlled at deploy time, not a per-customer entitlement; there is no applicationId schema exclusion or per-customer build. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
 ## Enforcement path
 
 ```
@@ -37,7 +41,7 @@ Email, Calendar, Automations, AI expose resolvers/controllers/jobs not tied to a
 
 ## Availability vs enabled vs permission (don't conflate)
 
-- **Availability** (commercial/deployment) may already be enforced by the existing feature service (e.g. `BillingService.hasEntitlement` for SSO). The capability guard checks **enabled**; it does not re-implement entitlement checks — it composes with them.
+- **Availability** (commercial/deployment) may already be enforced by the existing feature service (e.g. `BillingService.hasEntitlement` for SSO). Post-pivot, `@RequireCapability` checks **availability** directly (config flag, deployment-scoped) rather than the dormant per-workspace **enabled** store; it still composes with, rather than reimplements, entitlement checks.
 - **Permission** stays in roles/ORM. The capability guard is a *third* gate, not a replacement.
 
 ## Performance (§34)

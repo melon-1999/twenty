@@ -2,6 +2,12 @@
 
 Phase: **FOUNDATION BUILT + integration-verified** on branch `feat/product-capability-layer` (7 commits, final whole-branch review: READY TO MERGE, zero-behavior-change invariant verified). Object-backed enforcement go/no-go RESOLVED (isActive is not a schema boundary → guard-only). Remaining: Settings UI + per-capability migration (Dashboards → Email/Calendar/Automations/AI).
 
+## Pivot: deploy-config availability model (branch `feat/deploy-config-module-provisioning`)
+
+Availability is now resolved from **deploy-time, operator-set, customer-immutable config flags** — `IS_<MODULE>_MODULE_ENABLED` (e.g. `IS_DASHBOARDS_MODULE_ENABLED`), declared in `config-variables.ts` with `isEnvOnly: true` (env-only, no admin-panel/DB override) and default `true` (unconfigured deployment = today's behavior). `WorkspaceCapabilityService.isCapabilityAvailable(key)` resolves via the catalog's `availability.configFlag` through `TwentyConfigService`, and the `@RequireCapability` guard now checks this **deployment-scoped** availability, not the per-workspace DB toggle. The flag is surfaced on `ClientConfig.isDashboardsModuleEnabled`; the frontend hides the module accordingly (object-nav filtering in `useFilteredObjectMetadataItems`), and Settings → Features is now a **read-only** "Your modules" view.
+
+The per-workspace `WorkspaceCapabilityEntity`, the `updateWorkspaceCapability` mutation, its instance command, and the old Settings toggle described throughout this doc set are now **DORMANT/deprecated** — left in the tree but no longer the gate. Enforcement is Level A (guard denies discrete endpoints + UI hides nav/routes/object-nav; raw object CRUD via the generic dynamic resolver remains technically reachable via hand-crafted GraphQL only — accepted, since deploy is operator-controlled). See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
 ## Foundation
 
 | Item | Status |

@@ -2,7 +2,11 @@
 
 Per-workspace enabled/disabled state — the one genuinely new store.
 
-## Storage decision
+## Pivot: availability is deployment-scoped, not per-workspace-configurable
+
+Module **availability** is now decided at deploy time by the operator via immutable, `isEnvOnly: true` config flags (`IS_<MODULE>_MODULE_ENABLED`), resolved through `TwentyConfigService` — not by workspace admins, and not stored per-workspace. Everything below this line (`WorkspaceCapabilityEntity`, `setEnabled`, the enable/disable mutation) describes the per-workspace store that predates this pivot; it is now DORMANT/deprecated — the code remains in the tree but is no longer read by `@RequireCapability`. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
+## Storage decision (dormant)
 
 **Chosen: `WorkspaceCapabilityEntity`** (`core.workspaceCapability`), columns `id`, `key: ProductCapabilityKey`, `isEnabled: boolean`, `workspaceId`, timestamps; unique `(key, workspaceId)`. Same shape as `FeatureFlagEntity` (proven pattern), semantically the product-capability layer.
 
@@ -18,7 +22,7 @@ Add `enabledCapabilities: [ProductCapabilityKey]` as a resolve-field on `current
 
 `capabilitiesMap` as a `@WorkspaceCache` provider (mirror `WorkspaceFeatureFlagsMapCacheService`): compute the per-workspace resolved enabled set (store × availability × dependencies), invalidate on `setEnabled`. No per-request DB query (§34).
 
-## Setting state
+## Setting state (dormant — no longer the availability gate)
 
 `WorkspaceCapabilityService.setEnabled(ws, key, value)`:
 1. Reject if capability `isCore` (cannot disable) or not `available`.

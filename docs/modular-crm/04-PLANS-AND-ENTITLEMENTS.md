@@ -17,6 +17,10 @@ available(ws, cap) = (!entitlementKey || billing.hasEntitlement(ws, entitlementK
                   && configFlags.every(f => clientConfig[f])
 ```
 
+### Pivot: config flags are now the primary availability gate
+
+For optional product modules (Dashboards first; Email/Calendar/Automations/AI to follow), `availability.configFlag` points to a deploy-time, operator-set, customer-immutable config variable named `IS_<MODULE>_MODULE_ENABLED` (`isEnvOnly: true`, default `true`). `isCapabilityAvailable(key)` resolves this flag via `TwentyConfigService`, and `@RequireCapability` now gates on this **availability**, not on the per-workspace `WorkspaceCapabilityEntity` enable/disable store described elsewhere in this doc set — that store, its mutation, and the Settings toggle are DORMANT/deprecated. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
 ## Mapping future plans to capabilities (illustrative, not implemented — §21)
 
 A future plan defines a set of entitlement keys; capabilities reference them:
