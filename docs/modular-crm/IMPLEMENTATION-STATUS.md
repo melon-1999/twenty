@@ -8,6 +8,12 @@ Availability is now resolved from **deploy-time, operator-set, customer-immutabl
 
 The per-workspace `WorkspaceCapabilityEntity`, the `updateWorkspaceCapability` mutation, its instance command, and the old Settings toggle described throughout this doc set are now **DORMANT/deprecated** — left in the tree but no longer the gate. Enforcement is Level A (guard denies discrete endpoints + UI hides nav/routes/object-nav; raw object CRUD via the generic dynamic resolver remains technically reachable via hand-crafted GraphQL only — accepted, since deploy is operator-controlled). See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
 
+### Email slice (implemented)
+
+Email is the second deploy-config slice (after Dashboards), following the same pattern: `IS_EMAIL_MODULE_ENABLED` (`isEnvOnly`, default `true`) gates the EMAIL catalog entry's `availability.configFlag`. `@RequireCapability(ProductCapabilityKey.EMAIL)` guards the email-pure resolvers: `MessageChannelResolver` (`myMessageChannels`, `updateMessageChannel`, `createEmailGroupChannel`, `updateEmailGroupChannel`, `deleteEmailGroupChannel`), `MessageFolderResolver` (`myMessageFolders`, `updateMessageFolder`, `updateMessageFolders`), and `SendEmailResolver` (`sendEmail`). `ClientConfig.isEmailModuleEnabled` is surfaced to the frontend, which hides the Emails settings nav sub-item, the `AccountsEmails` settings route (via `SettingsProtectedRouteWrapper`'s `requiredCapability`), and the record timeline `WidgetType.EMAILS` widget when the flag is off.
+
+**Accepted limitation (Level A):** the shared email+calendar plumbing — the Accounts settings section, the IMAP/CalDAV connect flow, the Google/Microsoft OAuth controllers, `ChannelSyncResolver`, `ConnectedAccountResolver`, and the background message-sync cron jobs — is intentionally left reachable when `IS_EMAIL_MODULE_ENABLED=false`, so disabling Email does not break Calendar (which shares the same connected-account infrastructure). Background message-sync crons are not guarded. See [docs/superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md).
+
 ## Foundation
 
 | Item | Status |
@@ -40,7 +46,7 @@ Legend per column: ⬜ todo · 🟡 in progress · ✅ done · n/a.
 | Dashboards | ✅ | ⬜ | n/a | ⬜ | ⬜ | via isActive | @RequireCapability | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | first migration candidate |
 
 Enforcement is uniform `@RequireCapability`; `isActive` = UI-hide + data preservation only (go/no-go resolved: `isActive` does not exclude an object from the GraphQL schema).
-| Email | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: Contacts | ⬜ | ⬜ | ✅ | config availability |
+| Email | ✅ | ✅ | n/a (config) | n/a (dormant) | ✅ | ✅ | @RequireCapability ✅ | ✅ | dep: Contacts | n/a (non-object) | ✅ | ✅ | done — Level A: shared Accounts/OAuth/ChannelSync plumbing intentionally reachable (Calendar dependency) |
 | Calendar | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: Activities | ⬜ | ⬜ | ✅ | |
 | Automations | ✅ | ⬜ | n/a | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | dep: CRM | ⬜ | ⬜ | ✅ | |
 | AI Assistant | ✅ | ⬜ | n/a (config) | ⬜ | ⬜ | ⬜ | @RequireCapability | ✅ | — | ⬜ | ⬜ | ✅ | |

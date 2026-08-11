@@ -9,7 +9,7 @@ The actual capability catalog derived from **real Twenty functionality** (not th
 | **Deals** (Opportunity) | Core CRM | CRM | on | **no (core)** | always | Companies, Contacts | object `isActive` (locked) | not started |
 | **Activities** (Task + Note) | Core CRM | CRM | on | **no (core)** | always | — | object `isActive` (locked) | not started |
 | **Dashboards** | Optional | Insights | on | yes | always | CRM records | object-backed (`dashboard`) | not started |
-| **Email** | Optional | Communication | on if available | yes | config `MESSAGING_PROVIDER_GMAIL/MICROSOFT_ENABLED` (any) | Contacts | guarded (messaging module + settings nav + record surfaces) | not started |
+| **Email** | Optional | Communication | on if available | yes | config `MESSAGING_PROVIDER_GMAIL/MICROSOFT_ENABLED` (any)¹ | Contacts | guarded (messaging module + settings nav + record surfaces) | done |
 | **Calendar** | Optional | Communication | on if available | yes | config `CALENDAR_PROVIDER_GOOGLE/MICROSOFT_ENABLED` (any) | Activities | guarded (calendar module + settings + view) | not started |
 | **Automations** | Optional | Automation | off (SMB default) | yes | always | CRM records | guarded (workflow module + settings + routes/actions) | not started |
 | **AI Assistant** | Optional | AI | off | yes | config `AI_PROVIDERS` non-empty | — | guarded (AI chat page/side panel + tools + settings AI) | not started |
@@ -48,3 +48,4 @@ Auth, workspaces, metadata engine, twenty-orm, GraphQL/REST API, permission infr
 - **Activities** groups Task + Note (one user-facing capability, two objects) — an example of catalog grouping to avoid over-modularization (§12).
 - Defaults reflect the SMB product goal: minimal core on; Automations/AI off by default (opt-in); Email/Calendar on when the instance provides them; Dashboards on.
 - The `Impl status` column is duplicated/maintained in [IMPLEMENTATION-STATUS.md](IMPLEMENTATION-STATUS.md).
+- ¹ As shipped, Email's availability gate is the single deploy-config flag `IS_EMAIL_MODULE_ENABLED` (`isEnvOnly`, default `true`), not the provider-specific flags listed above — see [IMPLEMENTATION-STATUS.md](IMPLEMENTATION-STATUS.md#pivot-deploy-config-availability-model-branch-featdeploy-config-module-provisioning) and [the deploy-config design spec](../superpowers/specs/2026-08-11-deploy-config-module-provisioning-design.md). The accepted shared-plumbing limitation (Accounts/OAuth/ChannelSync left reachable so Calendar is unaffected) is documented there.
