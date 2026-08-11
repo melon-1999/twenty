@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { FeatureFlagModule } from 'src/engine/core-modules/feature-flag/feature-flag.module';
+import { ProductCapabilityModule } from 'src/engine/core-modules/product-capability/product-capability.module';
 import { ConnectedAccountMetadataModule } from 'src/engine/metadata-modules/connected-account/connected-account-metadata.module';
 import { MessageChannelMetadataModule } from 'src/engine/metadata-modules/message-channel/message-channel-metadata.module';
 import { MessageFolderEntity } from 'src/engine/metadata-modules/message-folder/entities/message-folder.entity';
@@ -17,6 +18,9 @@ import { PermissionsModule } from 'src/engine/metadata-modules/permissions/permi
     FeatureFlagModule,
     ConnectedAccountMetadataModule,
     MessageChannelMetadataModule,
+    // Provides WorkspaceCapabilityService so CapabilityGuard resolves on the
+    // email-pure resolvers.
+    ProductCapabilityModule,
   ],
   providers: [
     MessageFolderMetadataService,

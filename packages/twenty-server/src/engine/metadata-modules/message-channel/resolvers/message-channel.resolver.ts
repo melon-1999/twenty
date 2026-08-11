@@ -13,6 +13,10 @@ import { buildPublicConnectedAccount } from 'src/engine/metadata-modules/connect
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { NoPermissionGuard } from 'src/engine/guards/no-permission.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
@@ -37,6 +41,7 @@ import {
   MessageChannelSyncStage,
   MessageChannelType,
   MessageFolderPendingSyncAction,
+  ProductCapabilityKey,
 } from 'twenty-shared/types';
 
 @UseGuards(WorkspaceAuthGuard)
@@ -79,7 +84,8 @@ export class MessageChannelResolver {
   }
 
   @Query(() => [MessageChannelDTO])
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async myMessageChannels(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -106,7 +112,8 @@ export class MessageChannelResolver {
   }
 
   @Mutation(() => MessageChannelDTO)
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async updateMessageChannel(
     @Args('input') input: UpdateMessageChannelInput,
     @AuthWorkspace() workspace: WorkspaceEntity,
@@ -169,7 +176,11 @@ export class MessageChannelResolver {
   }
 
   @Mutation(() => CreateEmailGroupChannelOutput)
-  @UseGuards(SettingsPermissionGuard(PermissionFlagType.WORKSPACE))
+  @UseGuards(
+    SettingsPermissionGuard(PermissionFlagType.WORKSPACE),
+    CapabilityGuard,
+  )
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async createEmailGroupChannel(
     @Args('input') input: CreateEmailGroupChannelInput,
     @AuthWorkspace() workspace: WorkspaceEntity,
@@ -184,7 +195,11 @@ export class MessageChannelResolver {
   }
 
   @Mutation(() => MessageChannelDTO)
-  @UseGuards(SettingsPermissionGuard(PermissionFlagType.WORKSPACE))
+  @UseGuards(
+    SettingsPermissionGuard(PermissionFlagType.WORKSPACE),
+    CapabilityGuard,
+  )
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async updateEmailGroupChannel(
     @Args('input') input: UpdateEmailGroupChannelInput,
     @AuthWorkspace() workspace: WorkspaceEntity,
@@ -199,7 +214,11 @@ export class MessageChannelResolver {
   }
 
   @Mutation(() => MessageChannelDTO)
-  @UseGuards(SettingsPermissionGuard(PermissionFlagType.WORKSPACE))
+  @UseGuards(
+    SettingsPermissionGuard(PermissionFlagType.WORKSPACE),
+    CapabilityGuard,
+  )
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async deleteEmailGroupChannel(
     @Args('id', { type: () => UUIDScalarType }) id: string,
     @AuthWorkspace() workspace: WorkspaceEntity,

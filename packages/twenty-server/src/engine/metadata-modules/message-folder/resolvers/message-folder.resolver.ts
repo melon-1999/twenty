@@ -6,6 +6,10 @@ import { MetadataResolver } from 'src/engine/api/graphql/graphql-config/decorato
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { NoPermissionGuard } from 'src/engine/guards/no-permission.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
 import { MessageFolderDTO } from 'src/engine/metadata-modules/message-folder/dtos/message-folder.dto';
@@ -15,6 +19,7 @@ import {
 } from 'src/engine/metadata-modules/message-folder/dtos/update-message-folder.input';
 import { MessageFolderGraphqlApiExceptionInterceptor } from 'src/engine/metadata-modules/message-folder/interceptors/message-folder-graphql-api-exception.interceptor';
 import { MessageFolderMetadataService } from 'src/engine/metadata-modules/message-folder/message-folder-metadata.service';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 @UseGuards(WorkspaceAuthGuard)
 @UseInterceptors(MessageFolderGraphqlApiExceptionInterceptor)
@@ -25,7 +30,8 @@ export class MessageFolderResolver {
   ) {}
 
   @Query(() => [MessageFolderDTO])
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async myMessageFolders(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -50,7 +56,8 @@ export class MessageFolderResolver {
   }
 
   @Mutation(() => MessageFolderDTO)
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async updateMessageFolder(
     @Args('input') input: UpdateMessageFolderInput,
     @AuthWorkspace() workspace: WorkspaceEntity,
@@ -70,7 +77,8 @@ export class MessageFolderResolver {
   }
 
   @Mutation(() => [MessageFolderDTO])
-  @UseGuards(NoPermissionGuard)
+  @UseGuards(NoPermissionGuard, CapabilityGuard)
+  @RequireCapability(ProductCapabilityKey.EMAIL)
   async updateMessageFolders(
     @Args('input') input: UpdateMessageFoldersInput,
     @AuthWorkspace() workspace: WorkspaceEntity,
