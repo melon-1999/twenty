@@ -37,6 +37,7 @@ export type ClientConfig = {
   isMultiWorkspaceEnabled: boolean;
   isDashboardsModuleEnabled: boolean;
   isEmailModuleEnabled: boolean;
+  isCalendarModuleEnabled: boolean;
   isCookieSessionEnabled: boolean;
   isImapSmtpCaldavEnabled: boolean;
   isEmailingDomainInDemoMode: boolean;

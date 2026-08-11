@@ -1,3 +1,4 @@
+import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
 import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 import { type State } from '@/ui/utilities/state/jotai/types/State';
@@ -12,4 +13,5 @@ export const PRODUCT_CAPABILITY_AVAILABILITY_ATOM: Partial<
 > = {
   [ProductCapabilityKey.DASHBOARDS]: isDashboardsModuleEnabledState,
   [ProductCapabilityKey.EMAIL]: isEmailModuleEnabledState,
+  [ProductCapabilityKey.CALENDAR]: isCalendarModuleEnabledState,
 };

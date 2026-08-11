@@ -1,3 +1,4 @@
+import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
 import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
@@ -12,6 +13,9 @@ export const useIsCapabilityEnabled = (
     isDashboardsModuleEnabledState,
   );
   const isEmailModuleEnabled = useAtomStateValue(isEmailModuleEnabledState);
+  const isCalendarModuleEnabled = useAtomStateValue(
+    isCalendarModuleEnabledState,
+  );
 
   if (!isDefined(capabilityKey)) {
     return false;
@@ -23,6 +27,7 @@ export const useIsCapabilityEnabled = (
   > = {
     [ProductCapabilityKey.DASHBOARDS]: isDashboardsModuleEnabled,
     [ProductCapabilityKey.EMAIL]: isEmailModuleEnabled,
+    [ProductCapabilityKey.CALENDAR]: isCalendarModuleEnabled,
   };
 
   return availabilityByCapability[capabilityKey] ?? true;

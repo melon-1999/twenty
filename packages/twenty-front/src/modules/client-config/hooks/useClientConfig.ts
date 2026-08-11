@@ -26,6 +26,7 @@ import { maintenanceModeState } from '@/client-config/states/maintenanceModeStat
 import { isMicrosoftCalendarEnabledState } from '@/client-config/states/isMicrosoftCalendarEnabledState';
 import { isMicrosoftMessagingEnabledState } from '@/client-config/states/isMicrosoftMessagingEnabledState';
 import { isCookieSessionEnabledState } from '@/client-config/states/isCookieSessionEnabledState';
+import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
 import { isEmailModuleEnabledState } from '@/client-config/states/isEmailModuleEnabledState';
 import { isMultiWorkspaceEnabledState } from '@/client-config/states/isMultiWorkspaceEnabledState';
@@ -67,6 +68,9 @@ export const useClientConfig = (): UseClientConfigResult => {
     isDashboardsModuleEnabledState,
   );
   const setIsEmailModuleEnabled = useSetAtomState(isEmailModuleEnabledState);
+  const setIsCalendarModuleEnabled = useSetAtomState(
+    isCalendarModuleEnabledState,
+  );
   const setIsCookieSessionEnabled = useSetAtomState(
     isCookieSessionEnabledState,
   );
@@ -194,6 +198,7 @@ export const useClientConfig = (): UseClientConfigResult => {
       setIsMultiWorkspaceEnabled(clientConfig.isMultiWorkspaceEnabled);
       setIsDashboardsModuleEnabled(clientConfig.isDashboardsModuleEnabled);
       setIsEmailModuleEnabled(clientConfig.isEmailModuleEnabled);
+      setIsCalendarModuleEnabled(clientConfig.isCalendarModuleEnabled);
       setIsCookieSessionEnabled(clientConfig.isCookieSessionEnabled);
       setIsEmailVerificationRequired(clientConfig.isEmailVerificationRequired);
       setBilling(clientConfig.billing);
@@ -293,6 +298,7 @@ export const useClientConfig = (): UseClientConfigResult => {
     setIsMultiWorkspaceEnabled,
     setIsDashboardsModuleEnabled,
     setIsEmailModuleEnabled,
+    setIsCalendarModuleEnabled,
     setIsCookieSessionEnabled,
     setIsEmailingDomainInDemoMode,
     setIsClickHouseConfigured,
