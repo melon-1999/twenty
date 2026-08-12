@@ -2,6 +2,8 @@ import { act, renderHook } from '@testing-library/react';
 import { Provider as JotaiProvider } from 'jotai';
 import { type ReactNode } from 'react';
 
+import { hasAgentChatBeenOpenedState } from '@/ai/states/hasAgentChatBeenOpenedState';
+import { isAiAssistantModuleEnabledState } from '@/client-config/states/isAiAssistantModuleEnabledState';
 import { useOpenAskAiPageInSidePanel } from '@/side-panel/hooks/useOpenAskAiPageInSidePanel';
 import { isSidePanelOpenedState } from '@/side-panel/states/isSidePanelOpenedState';
 import { jotaiStore } from '@/ui/utilities/state/jotai/jotaiStore';
@@ -27,6 +29,8 @@ describe('useOpenAskAiPageInSidePanel', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     jotaiStore.set(isSidePanelOpenedState.atom, false);
+    jotaiStore.set(isAiAssistantModuleEnabledState.atom, true);
+    jotaiStore.set(hasAgentChatBeenOpenedState.atom, false);
     window.history.pushState({}, '', '/objects/companies');
   });
 
@@ -96,5 +100,20 @@ describe('useOpenAskAiPageInSidePanel', () => {
     });
 
     expect(navigateSidePanelMenuMock).not.toHaveBeenCalled();
+  });
+
+  it('should not open the AskAI page when the AI Assistant module is deploy-disabled', () => {
+    jotaiStore.set(isAiAssistantModuleEnabledState.atom, false);
+
+    const { result } = renderHook(() => useOpenAskAiPageInSidePanel(), {
+      wrapper: Wrapper,
+    });
+
+    act(() => {
+      result.current.openAskAiPage();
+    });
+
+    expect(navigateSidePanelMenuMock).not.toHaveBeenCalled();
+    expect(jotaiStore.get(hasAgentChatBeenOpenedState.atom)).toBe(false);
   });
 });
