@@ -70,6 +70,7 @@ describe('ClientConfigController', () => {
         isEmailModuleEnabled: true,
         isCalendarModuleEnabled: true,
         isAutomationsModuleEnabled: true,
+        isAiAssistantModuleEnabled: true,
         isEmailVerificationRequired: false,
         defaultSubdomain: 'app',
         subdomainMinLength: 1,

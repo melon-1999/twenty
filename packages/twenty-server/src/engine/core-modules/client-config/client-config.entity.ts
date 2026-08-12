@@ -287,6 +287,9 @@ export class ClientConfig {
   isAutomationsModuleEnabled: boolean;
 
   @Field(() => Boolean)
+  isAiAssistantModuleEnabled: boolean;
+
+  @Field(() => Boolean)
   isEmailVerificationRequired: boolean;
 
   @Field(() => String, { nullable: true })

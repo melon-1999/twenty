@@ -218,6 +218,9 @@ export class ClientConfigService {
       isAutomationsModuleEnabled: this.twentyConfigService.get(
         'IS_AUTOMATIONS_MODULE_ENABLED',
       ),
+      isAiAssistantModuleEnabled: this.twentyConfigService.get(
+        'IS_AI_ASSISTANT_MODULE_ENABLED',
+      ),
       isEmailVerificationRequired: this.twentyConfigService.get(
         'IS_EMAIL_VERIFICATION_REQUIRED',
       ),
