@@ -3,6 +3,7 @@ import { Args, Mutation } from '@nestjs/graphql';
 
 import GraphQLJSON from 'graphql-type-json';
 import { PermissionFlagType } from 'twenty-shared/constants';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 import { type WorkspaceCompanyEnrichment } from 'twenty-shared/workspace';
 
 import { MetadataResolver } from 'src/engine/api/graphql/graphql-config/decorators/metadata-resolver.decorator';
@@ -12,6 +13,10 @@ import { type WorkspaceEntity } from 'src/engine/core-modules/workspace/workspac
 import { AuthUser } from 'src/engine/decorators/auth/auth-user.decorator';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { UserAuthGuard } from 'src/engine/guards/user-auth.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
@@ -23,6 +28,7 @@ import { AiGraphqlApiExceptionInterceptor } from 'src/engine/metadata-modules/ai
   WorkspaceAuthGuard,
   UserAuthGuard,
   SettingsPermissionGuard(PermissionFlagType.AI),
+  CapabilityGuard,
 )
 @UseInterceptors(AiGraphqlApiExceptionInterceptor)
 @MetadataResolver()
@@ -32,6 +38,7 @@ export class WorkspaceSetupChatResolver {
   ) {}
 
   @Mutation(() => StartWorkspaceSetupChatResultDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async startWorkspaceSetupChat(
     @Args('companyContext', { type: () => GraphQLJSON, nullable: true })
     companyContext: WorkspaceCompanyEnrichment | null,
