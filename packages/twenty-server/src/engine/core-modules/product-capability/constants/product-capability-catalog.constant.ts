@@ -126,7 +126,9 @@ export const PRODUCT_CAPABILITY_CATALOG: Record<
     isCore: false,
     defaultEnabled: true,
     dependsOn: [],
-    availability: {},
+    availability: { configFlag: 'IS_AI_ASSISTANT_MODULE_ENABLED' },
+    // Toggling AI_ASSISTANT is enforcement-only via discrete resolver guards
+    // via @RequireCapability(AI_ASSISTANT); no standard object effect.
     effect: {},
   },
 };

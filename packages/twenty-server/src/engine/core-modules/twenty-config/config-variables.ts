@@ -153,6 +153,16 @@ export class ConfigVariables {
   IS_AUTOMATIONS_MODULE_ENABLED = true;
 
   @ConfigVariablesMetadata({
+    group: ConfigVariablesGroup.SERVER_CONFIG,
+    description:
+      'Enable the AI Assistant module for this deployment. When false, the AI chat/agent feature is unavailable and hidden for all workspaces on this instance.',
+    isEnvOnly: true,
+    type: ConfigVariableType.BOOLEAN,
+  })
+  @IsOptional()
+  IS_AI_ASSISTANT_MODULE_ENABLED = true;
+
+  @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.TOKENS_DURATION,
     description: 'Duration for which the email verification token is valid',
     type: ConfigVariableType.STRING,
