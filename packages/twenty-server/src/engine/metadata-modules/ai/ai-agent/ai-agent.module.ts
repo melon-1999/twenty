@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ApplicationModule } from 'src/engine/core-modules/application/application.module';
 import { FileModule } from 'src/engine/core-modules/file/file.module';
+import { ProductCapabilityModule } from 'src/engine/core-modules/product-capability/product-capability.module';
 import { ThrottlerModule } from 'src/engine/core-modules/throttler/throttler.module';
 import { AiAgentRoleModule } from 'src/engine/metadata-modules/ai/ai-agent-role/ai-agent-role.module';
 import { AiGraphqlApiExceptionInterceptor } from 'src/engine/metadata-modules/ai/interceptors/ai-graphql-api-exception.interceptor';
@@ -37,6 +38,7 @@ import { AgentEntity } from './entities/agent.entity';
     ApplicationModule,
     FlatAgentModule,
     WorkspaceCacheModule,
+    ProductCapabilityModule,
   ],
   providers: [
     AgentResolver,

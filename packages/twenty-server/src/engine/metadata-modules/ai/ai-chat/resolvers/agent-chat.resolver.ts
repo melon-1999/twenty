@@ -10,6 +10,7 @@ import {
 
 import GraphQLJSON from 'graphql-type-json';
 import { PermissionFlagType } from 'twenty-shared/constants';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
 
 import { MetadataResolver } from 'src/engine/api/graphql/graphql-config/decorators/metadata-resolver.decorator';
@@ -20,6 +21,10 @@ import { toDisplayCredits } from 'src/engine/core-modules/usage/utils/to-display
 import { type WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
 import { AgentMessageDTO } from 'src/engine/metadata-modules/ai/ai-agent-execution/dtos/agent-message.dto';
@@ -46,7 +51,11 @@ import { AiGraphqlApiExceptionInterceptor } from 'src/engine/metadata-modules/ai
 import { InjectWorkspaceScopedRepository } from 'src/engine/twenty-orm/workspace-scoped-repository/inject-workspace-scoped-repository.decorator';
 import { WorkspaceScopedRepository } from 'src/engine/twenty-orm/workspace-scoped-repository/workspace-scoped-repository';
 
-@UseGuards(WorkspaceAuthGuard, SettingsPermissionGuard(PermissionFlagType.AI))
+@UseGuards(
+  WorkspaceAuthGuard,
+  SettingsPermissionGuard(PermissionFlagType.AI),
+  CapabilityGuard,
+)
 @UseInterceptors(AiGraphqlApiExceptionInterceptor)
 @MetadataResolver(() => AgentChatThreadDTO)
 export class AgentChatResolver {
@@ -63,6 +72,7 @@ export class AgentChatResolver {
   ) {}
 
   @Query(() => [AgentChatThreadDTO])
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async chatThreads(
     @AuthUserWorkspaceId() userWorkspaceId: string,
     @AuthWorkspace() { id: workspaceId }: WorkspaceEntity,
@@ -74,6 +84,7 @@ export class AgentChatResolver {
   }
 
   @Query(() => AgentChatThreadDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async chatThread(
     @Args('id', { type: () => UUIDScalarType }) id: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -87,6 +98,7 @@ export class AgentChatResolver {
   }
 
   @Query(() => [AgentMessageDTO])
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async chatMessages(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -100,6 +112,7 @@ export class AgentChatResolver {
   }
 
   @Query(() => ChatStreamCatchupChunksDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async chatStreamCatchupChunks(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -138,6 +151,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => AgentChatThreadDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async createChatThread(
     @AuthUserWorkspaceId() userWorkspaceId: string,
     @AuthWorkspace() workspace: WorkspaceEntity,
@@ -149,6 +163,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => SendChatMessageResultDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async sendChatMessage(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @Args('text') text: string,
@@ -271,6 +286,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => SendChatMessageResultDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async retryChatMessage(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @Args('modelId', { type: () => String, nullable: true })
@@ -314,6 +330,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => SendChatMessageResultDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async answerAgentChatQuestion(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @Args('messageId', { type: () => UUIDScalarType }) messageId: string,
@@ -374,6 +391,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => Boolean)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async stopAgentChatStream(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -404,6 +422,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => AgentChatThreadDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async renameChatThread(
     @Args('id', { type: () => UUIDScalarType }) id: string,
     @Args('title') title: string,
@@ -419,6 +438,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => AgentChatThreadDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async archiveChatThread(
     @Args('id', { type: () => UUIDScalarType }) id: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -434,6 +454,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => AgentChatThreadDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async unarchiveChatThread(
     @Args('id', { type: () => UUIDScalarType }) id: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -447,6 +468,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => Boolean)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async deleteChatThread(
     @Args('id', { type: () => UUIDScalarType }) id: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -485,6 +507,7 @@ export class AgentChatResolver {
   }
 
   @Mutation(() => Boolean)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async deleteQueuedChatMessage(
     @Args('messageId', { type: () => UUIDScalarType }) messageId: string,
     @AuthUserWorkspaceId() userWorkspaceId: string,
@@ -530,6 +553,7 @@ export class AgentChatResolver {
   }
 
   @Query(() => AiSystemPromptPreviewDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async getAiSystemPromptPreview(
     @AuthWorkspace() workspace: WorkspaceEntity,
     @AuthUserWorkspaceId() userWorkspaceId: string,

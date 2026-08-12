@@ -2,6 +2,7 @@ import { UseGuards, UseInterceptors } from '@nestjs/common';
 import { Args, Subscription } from '@nestjs/graphql';
 
 import { PermissionFlagType } from 'twenty-shared/constants';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
 
 import { MetadataResolver } from 'src/engine/api/graphql/graphql-config/decorators/metadata-resolver.decorator';
@@ -9,6 +10,10 @@ import { UUIDScalarType } from 'src/engine/api/graphql/workspace-schema-builder/
 import { type WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { UserAuthGuard } from 'src/engine/guards/user-auth.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
@@ -27,7 +32,7 @@ import { wrapAsyncIteratorWithLifecycle } from 'src/engine/subscriptions/utils/w
 import { InjectWorkspaceScopedRepository } from 'src/engine/twenty-orm/workspace-scoped-repository/inject-workspace-scoped-repository.decorator';
 import { WorkspaceScopedRepository } from 'src/engine/twenty-orm/workspace-scoped-repository/workspace-scoped-repository';
 @MetadataResolver()
-@UseGuards(WorkspaceAuthGuard, UserAuthGuard)
+@UseGuards(WorkspaceAuthGuard, UserAuthGuard, CapabilityGuard)
 @UseInterceptors(AiGraphqlApiExceptionInterceptor)
 export class AgentChatSubscriptionResolver {
   constructor(
@@ -46,6 +51,7 @@ export class AgentChatSubscriptionResolver {
     },
   })
   @UseGuards(SettingsPermissionGuard(PermissionFlagType.AI))
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async onAgentChatEvent(
     @Args('threadId', { type: () => UUIDScalarType }) threadId: string,
     @AuthWorkspace() workspace: WorkspaceEntity,

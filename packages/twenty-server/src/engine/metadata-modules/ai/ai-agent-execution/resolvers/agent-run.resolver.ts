@@ -2,6 +2,7 @@ import { UseGuards, UseInterceptors } from '@nestjs/common';
 import { Args, Mutation } from '@nestjs/graphql';
 
 import { PermissionFlagType } from 'twenty-shared/constants';
+import { ProductCapabilityKey } from 'twenty-shared/types';
 
 import { MetadataResolver } from 'src/engine/api/graphql/graphql-config/decorators/metadata-resolver.decorator';
 import { type FlatApplication } from 'src/engine/core-modules/application/types/flat-application.type';
@@ -10,6 +11,10 @@ import { AuthApplication } from 'src/engine/decorators/auth/auth-application.dec
 import { AuthUserWorkspaceId } from 'src/engine/decorators/auth/auth-user-workspace-id.decorator';
 import { AuthWorkspaceMemberId } from 'src/engine/decorators/auth/auth-workspace-member-id.decorator';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
+import {
+  CapabilityGuard,
+  RequireCapability,
+} from 'src/engine/guards/capability.guard';
 import { SettingsPermissionGuard } from 'src/engine/guards/settings-permission.guard';
 import { WorkspaceAuthGuard } from 'src/engine/guards/workspace-auth.guard';
 import { RunAgentInputDTO } from 'src/engine/metadata-modules/ai/ai-agent-execution/dtos/run-agent.input';
@@ -17,13 +22,18 @@ import { RunAgentResultDTO } from 'src/engine/metadata-modules/ai/ai-agent-execu
 import { AgentRunService } from 'src/engine/metadata-modules/ai/ai-agent-execution/services/agent-run.service';
 import { AiGraphqlApiExceptionInterceptor } from 'src/engine/metadata-modules/ai/interceptors/ai-graphql-api-exception.interceptor';
 
-@UseGuards(WorkspaceAuthGuard, SettingsPermissionGuard(PermissionFlagType.AI))
+@UseGuards(
+  WorkspaceAuthGuard,
+  SettingsPermissionGuard(PermissionFlagType.AI),
+  CapabilityGuard,
+)
 @UseInterceptors(AiGraphqlApiExceptionInterceptor)
 @MetadataResolver()
 export class AgentRunResolver {
   constructor(private readonly agentRunService: AgentRunService) {}
 
   @Mutation(() => RunAgentResultDTO)
+  @RequireCapability(ProductCapabilityKey.AI_ASSISTANT)
   async runAgent(
     @Args('input') input: RunAgentInputDTO,
     @AuthWorkspace() workspace: FlatWorkspace,
