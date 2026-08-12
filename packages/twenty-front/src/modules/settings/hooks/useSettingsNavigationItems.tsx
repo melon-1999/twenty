@@ -87,6 +87,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
   const isCalendarCapabilityEnabled = useIsCapabilityEnabled(
     ProductCapabilityKey.CALENDAR,
   );
+  const isAiAssistantCapabilityEnabled = useIsCapabilityEnabled(
+    ProductCapabilityKey.AI_ASSISTANT,
+  );
   return [
     {
       label: t`User`,
@@ -192,7 +195,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
           label: t`AI`,
           path: SettingsPath.AI,
           Icon: IconSparkles,
-          isHidden: !permissionMap[PermissionFlagType.AI_SETTINGS],
+          isHidden:
+            !isAiAssistantCapabilityEnabled ||
+            !permissionMap[PermissionFlagType.AI_SETTINGS],
         },
         {
           label: t`Communication`,

@@ -800,6 +800,7 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         element={
           <SettingsProtectedRouteWrapper
             settingsPermission={PermissionFlagType.AI_SETTINGS}
+            requiredCapability={ProductCapabilityKey.AI_ASSISTANT}
           />
         }
       >
