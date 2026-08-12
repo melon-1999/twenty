@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import { createElement } from 'react';
 import { Provider as JotaiProvider } from 'jotai';
 
+import { isAiAssistantModuleEnabledState } from '@/client-config/states/isAiAssistantModuleEnabledState';
 import { isAutomationsModuleEnabledState } from '@/client-config/states/isAutomationsModuleEnabledState';
 import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
@@ -30,6 +31,9 @@ const renderHooks = (capabilityKey: ProductCapabilityKey | null) => {
       const setIsAutomationsModuleEnabled = useSetAtomState(
         isAutomationsModuleEnabledState,
       );
+      const setIsAiAssistantModuleEnabled = useSetAtomState(
+        isAiAssistantModuleEnabledState,
+      );
 
       return {
         isCapabilityEnabled,
@@ -37,6 +41,7 @@ const renderHooks = (capabilityKey: ProductCapabilityKey | null) => {
         setIsEmailModuleEnabled,
         setIsCalendarModuleEnabled,
         setIsAutomationsModuleEnabled,
+        setIsAiAssistantModuleEnabled,
       };
     },
     {
@@ -122,6 +127,26 @@ describe('useIsCapabilityEnabled', () => {
 
     act(() => {
       result.current.setIsAutomationsModuleEnabled(true);
+    });
+
+    expect(result.current.isCapabilityEnabled).toBe(true);
+  });
+
+  it('should return false when the AI_ASSISTANT deploy flag is disabled', () => {
+    const { result } = renderHooks(ProductCapabilityKey.AI_ASSISTANT);
+
+    act(() => {
+      result.current.setIsAiAssistantModuleEnabled(false);
+    });
+
+    expect(result.current.isCapabilityEnabled).toBe(false);
+  });
+
+  it('should return true when the AI_ASSISTANT deploy flag is enabled', () => {
+    const { result } = renderHooks(ProductCapabilityKey.AI_ASSISTANT);
+
+    act(() => {
+      result.current.setIsAiAssistantModuleEnabled(true);
     });
 
     expect(result.current.isCapabilityEnabled).toBe(true);

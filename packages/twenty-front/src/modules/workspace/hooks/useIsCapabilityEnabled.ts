@@ -1,3 +1,4 @@
+import { isAiAssistantModuleEnabledState } from '@/client-config/states/isAiAssistantModuleEnabledState';
 import { isAutomationsModuleEnabledState } from '@/client-config/states/isAutomationsModuleEnabledState';
 import { isCalendarModuleEnabledState } from '@/client-config/states/isCalendarModuleEnabledState';
 import { isDashboardsModuleEnabledState } from '@/client-config/states/isDashboardsModuleEnabledState';
@@ -20,6 +21,9 @@ export const useIsCapabilityEnabled = (
   const isAutomationsModuleEnabled = useAtomStateValue(
     isAutomationsModuleEnabledState,
   );
+  const isAiAssistantModuleEnabled = useAtomStateValue(
+    isAiAssistantModuleEnabledState,
+  );
 
   if (!isDefined(capabilityKey)) {
     return false;
@@ -33,6 +37,7 @@ export const useIsCapabilityEnabled = (
     [ProductCapabilityKey.EMAIL]: isEmailModuleEnabled,
     [ProductCapabilityKey.CALENDAR]: isCalendarModuleEnabled,
     [ProductCapabilityKey.AUTOMATIONS]: isAutomationsModuleEnabled,
+    [ProductCapabilityKey.AI_ASSISTANT]: isAiAssistantModuleEnabled,
   };
 
   return availabilityByCapability[capabilityKey] ?? true;

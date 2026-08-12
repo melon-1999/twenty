@@ -39,6 +39,7 @@ export type ClientConfig = {
   isEmailModuleEnabled: boolean;
   isCalendarModuleEnabled: boolean;
   isAutomationsModuleEnabled: boolean;
+  isAiAssistantModuleEnabled: boolean;
   isCookieSessionEnabled: boolean;
   isImapSmtpCaldavEnabled: boolean;
   isEmailingDomainInDemoMode: boolean;
