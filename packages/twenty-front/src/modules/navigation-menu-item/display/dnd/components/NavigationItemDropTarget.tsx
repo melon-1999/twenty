@@ -23,7 +23,7 @@ const StyledDropTarget = styled.div<{
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: ${themeCssVariables.color.blue};
+      background-color: ${themeCssVariables.accent.accent9};
       ${({ $highlightPosition }) =>
         $highlightPosition === 'top'
           ? `

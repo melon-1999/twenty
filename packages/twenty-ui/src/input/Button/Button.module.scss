@@ -231,7 +231,7 @@ $primary-inverted-colors: (
 $secondary-accents: (
   'default': (
     border-secondary: var(--t-background-transparent-medium),
-    border-focus: var(--t-color-blue),
+    border-focus: var(--t-accent-accent9),
     focus-needs-enabled-secondary: true,
     shadow-focus: var(--t-accent-tertiary),
     color: var(--t-font-color-secondary),
@@ -241,10 +241,10 @@ $secondary-accents: (
   ),
   'blue': (
     border-secondary: var(--t-accent-primary),
-    border-focus: var(--t-color-blue),
+    border-focus: var(--t-accent-accent9),
     focus-needs-enabled-secondary: false,
     shadow-focus: var(--t-accent-tertiary),
-    color: var(--t-color-blue),
+    color: var(--t-accent-accent9),
     color-disabled: var(--t-accent-accent4060),
     hover: var(--t-accent-tertiary),
     active: var(--t-accent-secondary),

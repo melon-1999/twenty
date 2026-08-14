@@ -47,7 +47,7 @@ const StyledThumbnail = styled.div<{ isSelected?: boolean }>`
   border: 1px solid
     ${({ isSelected }) =>
       isSelected
-        ? themeCssVariables.color.blue
+        ? themeCssVariables.accent.accent9
         : themeCssVariables.border.color.medium};
   border-radius: ${themeCssVariables.border.radius.sm};
   cursor: pointer;
@@ -57,7 +57,7 @@ const StyledThumbnail = styled.div<{ isSelected?: boolean }>`
   overflow: hidden;
 
   &:hover {
-    border-color: ${themeCssVariables.color.blue};
+    border-color: ${themeCssVariables.accent.accent9};
   }
 `;
 

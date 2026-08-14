@@ -120,7 +120,7 @@ const StyledEditorContainer = styled.div<{
     }
 
     .ProseMirror-selectednode {
-      outline: 2px solid ${themeCssVariables.color.blue};
+      outline: 2px solid ${themeCssVariables.accent.accent9};
     }
   }
 

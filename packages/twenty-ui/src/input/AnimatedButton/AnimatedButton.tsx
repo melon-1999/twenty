@@ -60,7 +60,7 @@ const computeAnimatedButtonDynamicStyles = (
             : themeCssVariables.background.primary;
           result.borderColor = !inverted
             ? !disabled && focus
-              ? themeCssVariables.color.blue
+              ? themeCssVariables.accent.accent9
               : themeCssVariables.background.transparent.light
             : themeCssVariables.background.transparent.light;
           result.borderWidthOverride = '1px 1px 1px 1px';
@@ -91,11 +91,11 @@ const computeAnimatedButtonDynamicStyles = (
           break;
         case 'blue':
           result.background = !inverted
-            ? themeCssVariables.color.blue
+            ? themeCssVariables.accent.accent9
             : themeCssVariables.background.primary;
           result.borderColor = !inverted
             ? focus
-              ? themeCssVariables.color.blue
+              ? themeCssVariables.accent.accent9
               : themeCssVariables.background.transparent.light
             : themeCssVariables.background.transparent.light;
           result.borderWidthOverride = '1px 1px 1px 1px';
@@ -109,13 +109,13 @@ const computeAnimatedButtonDynamicStyles = (
               : 'none';
           result.color = !inverted
             ? GRAY_SCALE_LIGHT.gray1
-            : themeCssVariables.color.blue;
+            : themeCssVariables.accent.accent9;
           if (!disabled) {
             result.hoverBackground = !inverted
-              ? themeCssVariables.color.blue10
+              ? themeCssVariables.accent.accent10
               : themeCssVariables.background.secondary;
             result.activeBackground = !inverted
-              ? themeCssVariables.color.blue12
+              ? themeCssVariables.accent.accent12
               : themeCssVariables.background.tertiary;
           } else {
             result.hoverBackground = result.background;
@@ -165,10 +165,10 @@ const computeAnimatedButtonDynamicStyles = (
           result.borderColor = !inverted
             ? variant === 'secondary'
               ? !disabled && focus
-                ? themeCssVariables.color.blue
+                ? themeCssVariables.accent.accent9
                 : themeCssVariables.background.transparent.medium
               : focus
-                ? themeCssVariables.color.blue
+                ? themeCssVariables.accent.accent9
                 : 'transparent'
             : variant === 'secondary'
               ? focus || disabled
@@ -207,10 +207,10 @@ const computeAnimatedButtonDynamicStyles = (
           result.borderColor = !inverted
             ? variant === 'secondary'
               ? focus
-                ? themeCssVariables.color.blue
+                ? themeCssVariables.accent.accent9
                 : themeCssVariables.accent.primary
               : focus
-                ? themeCssVariables.color.blue
+                ? themeCssVariables.accent.accent9
                 : 'transparent'
             : variant === 'secondary'
               ? focus || disabled
@@ -230,7 +230,7 @@ const computeAnimatedButtonDynamicStyles = (
               : 'none';
           result.color = !inverted
             ? !disabled
-              ? themeCssVariables.color.blue
+              ? themeCssVariables.accent.accent9
               : themeCssVariables.accent.accent4060
             : themeCssVariables.font.color.inverted;
           result.hoverBackground = !inverted

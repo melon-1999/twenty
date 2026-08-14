@@ -48,8 +48,8 @@ const settingsTextLinkPrimaryClassName = css`
   text-decoration-color: ${themeCssVariables.border.color.strong};
 
   &:not(:disabled):hover {
-    color: ${themeCssVariables.color.blue};
-    text-decoration-color: ${themeCssVariables.color.blue};
+    color: ${themeCssVariables.accent.accent9};
+    text-decoration-color: ${themeCssVariables.accent.accent9};
   }
 `;
 
@@ -58,8 +58,8 @@ const settingsTextLinkSecondaryClassName = css`
   text-decoration-color: ${themeCssVariables.font.color.tertiary};
 
   &:not(:disabled):hover {
-    color: ${themeCssVariables.color.blue};
-    text-decoration-color: ${themeCssVariables.color.blue};
+    color: ${themeCssVariables.accent.accent9};
+    text-decoration-color: ${themeCssVariables.accent.accent9};
   }
 `;
 

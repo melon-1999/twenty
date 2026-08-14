@@ -34,7 +34,7 @@ export const useStripeAppearance = (): Appearance => {
     variables: {
       fontFamily: theme.font.family,
       fontSizeBase: '14px',
-      colorPrimary: toStripeColor(theme.color.blue),
+      colorPrimary: toStripeColor(theme.accent.accent9),
       colorBackground: toStripeColor(theme.background.primary),
       colorText: toStripeColor(theme.font.color.primary),
       colorTextSecondary: toStripeColor(theme.font.color.tertiary),

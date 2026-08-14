@@ -16,7 +16,7 @@ const getBackgroundColor = (
     case 'danger':
       return themeCssVariables.color.red;
     case 'blue':
-      return themeCssVariables.color.blue;
+      return themeCssVariables.accent.accent9;
     default:
       return undefined;
   }

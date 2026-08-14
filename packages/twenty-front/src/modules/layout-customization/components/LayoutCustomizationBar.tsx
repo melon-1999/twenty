@@ -23,7 +23,7 @@ import { PageLayoutType } from '~/generated-metadata/graphql';
 
 const StyledContainer = styled.div`
   align-items: center;
-  background: ${themeCssVariables.color.blue};
+  background: ${themeCssVariables.accent.accent9};
   box-sizing: border-box;
   color: ${GRAY_SCALE_LIGHT.gray1};
   display: flex;

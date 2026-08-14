@@ -41,7 +41,7 @@ const StyledCardsGrid = styled.div`
 const StyledHintLink = styled.button`
   background: none;
   border: none;
-  color: ${themeCssVariables.color.blue};
+  color: ${themeCssVariables.accent.accent9};
   cursor: pointer;
   font-size: inherit;
   padding: 0;

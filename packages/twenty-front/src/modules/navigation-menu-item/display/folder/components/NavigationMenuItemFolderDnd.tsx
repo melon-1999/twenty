@@ -57,7 +57,7 @@ const StyledFolderContainer = styled.div<{
 }>`
   border: ${({ $isSelectedInEditMode }) =>
     $isSelectedInEditMode
-      ? `1px solid ${themeCssVariables.color.blue}`
+      ? `1px solid ${themeCssVariables.accent.accent9}`
       : 'none'};
   border-radius: ${themeCssVariables.border.radius.sm};
   transition: background-color 150ms ease-in-out;
