@@ -24,10 +24,10 @@ Ziel: Twentys Erscheinungsbild + Informationsarchitektur an Pipedrive angleichen
 
 ## Phasen (klein, testbar, additiv)
 
-**Phase 1a — Token-Reskin (risikoarm, rein Theme)**
-- Accent-Tokens blau → grün in `AccentLight.ts` + `AccentDark.ts` (Radix `greenP3` statt `indigoP3`; `primary/secondary/tertiary/quaternary` auf green-Stufen).
-- Prüfen: Kontrast/A11y, Dark-Variante, Storybook.
-- Ergebnis: gesamte App in Pipedrive-Grün ohne Komponenten-Rewrite.
+**Phase 1a — Green Primary Reskin** (Detailplan: `docs/superpowers/plans/2026-08-14-green-primary-reskin.md`)
+- KORREKTUR nach Recon: Twenty vermischt Primary-Rolle mit der benannten Farbe `color.blue*` (= indigo). Ein reiner 2-Datei-Accent-Swap reicht NICHT — die meisten Primary/CTA/Link/Selection-Flächen lesen `color.blue*` direkt (~35-45 Dateien), und `color.blue*` speist auch User-„Blue"-Tags (Tag-Tokens).
+- Strategie: `accent.*`-Tokens (der eigentliche „Primary"-Slot) → grün repointen (`AccentLight/Dark`), dann Primary-Role-`color.blueN` → `accent.accentN` migrieren (tonal exakt, da heute identisch indigoN). `color.blue*` / `MainColors.blue` / `Tag*` bleiben unangetastet → User-Blau bleibt blau.
+- Enterprise-Dateien mit dekorativem blau ausgeschlossen. Verifikation: Storybook (Button-Accent grün, Tags blau) + laufende App.
 
 **Phase 1b — Kern-Komponenten polieren**
 - **Button**: primary=grün, klare Hierarchie (primary/secondary/tertiary).
