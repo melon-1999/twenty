@@ -112,7 +112,7 @@ $primary-accents: (
     bg: var(--t-background-transparent-lighter),
     bg-disabled: var(--t-background-transparent-lighter),
     border: var(--t-background-transparent-light),
-    border-focus: var(--t-color-blue),
+    border-focus: var(--t-accent-accent9),
     focus-needs-enabled: true,
     shadow-focus: var(--t-accent-tertiary),
     color: var(--t-font-color-secondary),
@@ -121,16 +121,16 @@ $primary-accents: (
     active: var(--t-background-quaternary),
   ),
   'blue': (
-    bg: var(--t-color-blue),
+    bg: var(--t-accent-accent9),
     bg-disabled: var(--t-accent-accent4060),
     border: var(--t-background-transparent-light),
-    border-focus: var(--t-color-blue),
+    border-focus: var(--t-accent-accent9),
     focus-needs-enabled: false,
     shadow-focus: var(--t-accent-tertiary),
     color: $gray-scale-light-gray1,
     color-disabled: $gray-scale-light-gray1,
-    hover: var(--t-color-blue10),
-    active: var(--t-color-blue12),
+    hover: var(--t-accent-accent10),
+    active: var(--t-accent-accent12),
   ),
   'danger': (
     bg: var(--t-color-red),
@@ -195,7 +195,7 @@ $primary-accents: (
 // color.
 $primary-inverted-colors: (
   'default': var(--t-font-color-secondary),
-  'blue': var(--t-color-blue),
+  'blue': var(--t-accent-accent9),
   'danger': var(--t-color-red),
   'green': var(--t-color-green9),
 );

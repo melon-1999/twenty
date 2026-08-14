@@ -78,7 +78,7 @@ const StyledTextAreaContainer = styled.div<{ variant: TextAreaVariant }>`
       border-color: ${({ variant }) =>
         variant === 'transparent'
           ? 'transparent'
-          : themeCssVariables.color.blue};
+          : themeCssVariables.accent.accent9};
     }
 
     &::placeholder {

@@ -28,7 +28,7 @@ const StyledRecordTableCellFocusPortalContent = styled.div<{
 
   height: ${RECORD_TABLE_ROW_HEIGHT}px;
 
-  outline: 1px solid ${themeCssVariables.color.blue8};
+  outline: 1px solid ${themeCssVariables.accent.accent8};
   outline-offset: -1px;
 
   user-select: none;

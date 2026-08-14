@@ -86,7 +86,7 @@ const StyledItem = styled.button<StyledItemProps>`
     active ? themeCssVariables.background.transparent.light : 'transparent'};
   border: ${({ isSelectedInEditMode }) =>
     isSelectedInEditMode
-      ? `1px solid ${themeCssVariables.color.blue}`
+      ? `1px solid ${themeCssVariables.accent.accent9}`
       : '1px solid transparent'};
   border-radius: ${themeCssVariables.border.radius.md};
   box-sizing: border-box;

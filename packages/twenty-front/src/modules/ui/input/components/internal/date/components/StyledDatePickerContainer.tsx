@@ -242,7 +242,7 @@ export const StyledDatePickerContainer = styled.div<{
   & .react-datepicker__day--in-range,
   & .react-datepicker__day--range-start,
   & .react-datepicker__day--range-end {
-    background-color: ${themeCssVariables.color.blue};
+    background-color: ${themeCssVariables.accent.accent9};
     color: ${themeCssVariables.background.primary};
 
     &.react-datepicker__day:hover {
