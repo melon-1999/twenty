@@ -21,8 +21,8 @@ const StyledTitle = styled.div<{ hideTitle?: boolean }>`
   font-weight: ${themeCssVariables.font.weight.medium};
   gap: ${themeCssVariables.spacing[1]};
   height: ${themeCssVariables.spacing[8]};
-  padding-left: ${themeCssVariables.spacing[2]};
-  padding-right: ${themeCssVariables.spacing[2]};
+  padding-left: ${themeCssVariables.spacing[1]};
+  padding-right: ${themeCssVariables.spacing[1]};
 
   @media (max-width: ${MOBILE_VIEWPORT}px) {
     display: ${({ hideTitle }) => (hideTitle ? 'none' : 'flex')};
