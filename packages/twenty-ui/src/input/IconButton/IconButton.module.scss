@@ -105,7 +105,7 @@ $primary-accents: (
   'default': (
     bg: var(--t-background-transparent-lighter),
     border: var(--t-background-transparent-light),
-    border-focus: var(--t-color-blue),
+    border-focus: var(--t-accent-accent9),
     border-disabled: null,
     shadow-focus: var(--t-accent-tertiary),
     color: var(--t-font-color-secondary),
@@ -210,7 +210,7 @@ $primary-accents: (
     [data-variant='tertiary']
   )[data-accent='default'][data-focus] {
   --icon-button-bg: var(--t-background-transparent-primary);
-  --icon-button-border-color: var(--t-color-blue);
+  --icon-button-border-color: var(--t-accent-accent9);
   --icon-button-box-shadow: 0 0 0 3px var(--t-accent-tertiary);
 }
 
