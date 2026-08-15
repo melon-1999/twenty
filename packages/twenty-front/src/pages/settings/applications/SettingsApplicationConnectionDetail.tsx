@@ -318,7 +318,7 @@ export const SettingsApplicationConnectionDetail = () => {
                     title={t`Reconnect`}
                     Icon={IconRefresh}
                     variant="secondary"
-                    accent="blue"
+                    accent="green"
                     onClick={handleReconnect}
                   />
                 )}

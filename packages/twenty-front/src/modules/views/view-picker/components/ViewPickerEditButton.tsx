@@ -65,7 +65,7 @@ export const ViewPickerEditButton = () => {
         title={t`Go to Settings`}
         onClick={navigateToSelectSettings}
         size="small"
-        accent="blue"
+        accent="green"
         fullWidth
         justify="center"
       />
@@ -80,7 +80,7 @@ export const ViewPickerEditButton = () => {
       <Button
         title={t`Create`}
         onClick={createViewFromCurrentState}
-        accent="blue"
+        accent="green"
         fullWidth
         size="small"
         justify="center"

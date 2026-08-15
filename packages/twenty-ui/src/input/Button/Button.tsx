@@ -16,6 +16,8 @@ import styles from './Button.module.scss';
 export type ButtonSize = 'medium' | 'small';
 export type ButtonPosition = 'standalone' | 'left' | 'middle' | 'right';
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+// 'blue' is a deprecated alias of 'green' after the green primary reskin; new
+// call sites should use 'green' or the default accent.
 export type ButtonAccent = 'default' | 'blue' | 'danger' | 'green';
 
 export type ButtonProps = {

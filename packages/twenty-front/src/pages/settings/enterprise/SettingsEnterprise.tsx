@@ -527,7 +527,7 @@ export const SettingsEnterprise = ({
           <Button
             Icon={IconKey}
             title={isActivating ? t`Activating...` : t`Activate`}
-            accent="blue"
+            accent="green"
             onClick={handleActivate}
             disabled={isActivating || !enterpriseKey.trim()}
           />
@@ -550,7 +550,7 @@ export const SettingsEnterprise = ({
             : t`Release & transfer to this server`
         }
         variant="secondary"
-        accent="blue"
+        accent="green"
         onClick={() =>
           openModal(RELEASE_ENTERPRISE_BINDING_CONFIRMATION_MODAL_ID)
         }
@@ -667,7 +667,7 @@ export const SettingsEnterprise = ({
                 isRefreshingToken ? t`Reloading...` : t`Reload validity token`
               }
               variant="secondary"
-              accent="blue"
+              accent="green"
               onClick={handleRefreshValidityToken}
               disabled={isRefreshingToken}
             />
@@ -881,7 +881,7 @@ export const SettingsEnterprise = ({
               Icon={IconCreditCard}
               title={t`Go to billing portal`}
               variant="secondary"
-              accent="blue"
+              accent="green"
               onClick={openBillingPortal}
             />
           </Section>

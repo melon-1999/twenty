@@ -147,7 +147,7 @@ export const SettingsAgentEvalsTab = ({
           <Button
             Icon={IconPlus}
             variant="primary"
-            accent="blue"
+            accent="green"
             size="small"
             title={t`Add`}
             onClick={handleAddInput}

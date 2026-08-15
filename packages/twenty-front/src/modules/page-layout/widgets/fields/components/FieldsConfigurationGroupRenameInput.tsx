@@ -66,7 +66,7 @@ export const FieldsConfigurationGroupRenameInput = ({
       />
       <Button
         variant="primary"
-        accent="blue"
+        accent="green"
         size="small"
         title={t`Done`}
         onClick={handleSave}

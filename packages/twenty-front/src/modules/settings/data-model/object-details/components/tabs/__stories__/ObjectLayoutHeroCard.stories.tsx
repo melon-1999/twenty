@@ -42,7 +42,7 @@ const renderCard = (colorScheme: 'light' | 'dark') => (
               <Button
                 title="Customize"
                 variant="primary"
-                accent="blue"
+                accent="green"
                 size="small"
                 Icon={IconPencil}
               />

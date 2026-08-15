@@ -300,7 +300,7 @@ export const SettingsClaimApplicationSection = () => {
             <Button
               title={t`Claim with GitHub`}
               Icon={IconBrandGithub}
-              accent="blue"
+              accent="green"
               onClick={handleClaimWithGithub}
               disabled={isRedirectingToGithub}
             />

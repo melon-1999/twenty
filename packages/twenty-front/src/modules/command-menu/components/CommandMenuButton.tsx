@@ -40,6 +40,9 @@ export const CommandMenuButton = ({
     ? getCommandMenuItemLabel(command.shortLabel)
     : undefined;
 
+  // IconButtonAccent has no 'green' value, so this stays 'blue' (which
+  // already renders green via the shared accent tokens) to stay compatible
+  // with both the Button and IconButton branches below.
   const buttonAccent = command.isPrimaryCTA ? 'blue' : 'default';
 
   return (

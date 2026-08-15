@@ -88,7 +88,7 @@ export const SettingsAI = () => {
             <Button
               Icon={IconPlus}
               title={t`New Skill`}
-              accent="blue"
+              accent="green"
               size="small"
             />
           </UndecoratedLink>
@@ -96,7 +96,7 @@ export const SettingsAI = () => {
           <Button
             Icon={IconPlus}
             title={t`New Tool`}
-            accent="blue"
+            accent="green"
             size="small"
             onClick={handleCreateTool}
             disabled={isCreatingTool}

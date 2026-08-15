@@ -91,7 +91,7 @@ export const SidePanelSendCampaignTestPage = () => {
             title={t`Send test email`}
             Icon={IconSend}
             variant="primary"
-            accent="blue"
+            accent="green"
             size="small"
             disabled={!canSend || loading}
             onClick={handleSend}

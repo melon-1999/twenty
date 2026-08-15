@@ -111,7 +111,7 @@ export const ObjectLayout = ({ objectMetadataItem }: ObjectLayoutProps) => {
                 <Button
                   title={t`Customize`}
                   variant="primary"
-                  accent="blue"
+                  accent="green"
                   size="small"
                   Icon={IconPencil}
                   onClick={handleCustomizeRecordPage}

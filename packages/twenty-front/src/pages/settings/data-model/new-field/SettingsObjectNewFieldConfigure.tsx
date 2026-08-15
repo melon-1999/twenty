@@ -222,7 +222,7 @@ export const SettingsObjectNewFieldConfigure = () => {
                 title={t`Save`}
                 variant="primary"
                 size="small"
-                accent="blue"
+                accent="green"
                 onClick={formConfig.handleSubmit(handleSave)}
                 disabled={!canSave || isSaving}
               />

@@ -102,7 +102,7 @@ export const SettingsUnsubscribePreview = () => {
                 <Button
                   title={t`Update`}
                   variant="primary"
-                  accent="blue"
+                  accent="green"
                   fullWidth
                   justify="center"
                 />
@@ -118,7 +118,7 @@ export const SettingsUnsubscribePreview = () => {
               <Button
                 title={t`Unsubscribe`}
                 variant="primary"
-                accent="blue"
+                accent="green"
                 fullWidth
                 justify="center"
               />

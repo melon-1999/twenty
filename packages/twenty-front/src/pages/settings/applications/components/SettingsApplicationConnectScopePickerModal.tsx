@@ -71,7 +71,7 @@ export const SettingsApplicationConnectScopePickerModal = ({
           onConfirm(scope);
         }}
         variant="secondary"
-        accent="blue"
+        accent="green"
         title={t`Continue`}
         fullWidth
         justify="center"

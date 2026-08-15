@@ -143,7 +143,7 @@ const AddPaymentMethodFormContent = ({
         title={t`Add credit card`}
         onClick={handleSubmit}
         variant="secondary"
-        accent="blue"
+        accent="green"
         fullWidth
         justify="center"
         isLoading={isSubmitting}

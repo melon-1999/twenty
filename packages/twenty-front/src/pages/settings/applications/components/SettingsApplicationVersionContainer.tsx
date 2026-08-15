@@ -105,7 +105,7 @@ export const SettingsApplicationVersionContainer = ({
               : t`Upgrade to ${latestAvailableVersion}`
           }
           variant="secondary"
-          accent="blue"
+          accent="green"
           onClick={handleUpgrade}
           disabled={isUpgrading}
         />

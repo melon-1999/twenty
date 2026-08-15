@@ -67,7 +67,7 @@ export const UpdateMultipleRecordsFooter = ({
         <Button
           title={isUpdating ? t`Apply${progressText}` : t`Apply`}
           variant="primary"
-          accent="blue"
+          accent="green"
           size="small"
           Icon={IconBoxMultiple}
           isLoading={isUpdating && !progressText}

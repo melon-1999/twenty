@@ -331,6 +331,17 @@ export const FullWidth: Story = {
   decorators: [ComponentDecorator],
 };
 
+export const Hierarchy: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 8 }}>
+      <Button variant="primary" title="Primary" />
+      <Button variant="secondary" title="Secondary" />
+      <Button variant="tertiary" title="Tertiary" />
+    </div>
+  ),
+  decorators: [ComponentDecorator],
+};
+
 export const LoadingButton: Story = {
   args: {
     title: 'Reload',

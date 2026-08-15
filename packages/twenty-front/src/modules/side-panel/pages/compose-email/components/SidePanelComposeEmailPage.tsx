@@ -96,7 +96,7 @@ export const SidePanelComposeEmailPage = () => {
             key="send"
             size="small"
             variant="primary"
-            accent="blue"
+            accent="green"
             title={t`Send`}
             Icon={IconSend}
             hotkeys={[getOsControlSymbol(), '⏎']}

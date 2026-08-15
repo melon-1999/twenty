@@ -57,6 +57,9 @@ export const InformationBanner = ({
   );
 
   const isPrimary = variant === 'primary';
+  // IconButtonAccent has no 'green' value, so this stays 'blue' (which
+  // already renders green via the shared accent tokens) to stay compatible
+  // with both the Button and IconButton usages below.
   const buttonAccent = color === 'danger' ? 'danger' : 'blue';
 
   return (

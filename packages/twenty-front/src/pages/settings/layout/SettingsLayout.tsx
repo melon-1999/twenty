@@ -96,7 +96,7 @@ export const SettingsLayout = () => {
                   <Button
                     title={t`Customize`}
                     variant="primary"
-                    accent="blue"
+                    accent="green"
                     size="small"
                     Icon={IconPencil}
                     onClick={handleCustomize}
