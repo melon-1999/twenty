@@ -32,21 +32,18 @@ export class OpportunitySetStageChangedAtJob {
   }: OpportunitySetStageChangedAtJobData): Promise<void> {
     const authContext = buildSystemAuthContext(workspaceId);
 
-    await this.globalWorkspaceOrmManager.executeInWorkspaceContext(
-      async () => {
-        const opportunityRepository =
-          await this.globalWorkspaceOrmManager.getRepository<OpportunityWorkspaceEntity>(
-            workspaceId,
-            'opportunity',
-            { shouldBypassPermissionChecks: true },
-          );
-
-        await opportunityRepository.update(
-          { id: opportunityId },
-          { stageChangedAt: new Date(stageChangedAt) },
+    await this.globalWorkspaceOrmManager.executeInWorkspaceContext(async () => {
+      const opportunityRepository =
+        await this.globalWorkspaceOrmManager.getRepository<OpportunityWorkspaceEntity>(
+          workspaceId,
+          'opportunity',
+          { shouldBypassPermissionChecks: true },
         );
-      },
-      authContext,
-    );
+
+      await opportunityRepository.update(
+        { id: opportunityId },
+        { stageChangedAt: new Date(stageChangedAt) },
+      );
+    }, authContext);
   }
 }
