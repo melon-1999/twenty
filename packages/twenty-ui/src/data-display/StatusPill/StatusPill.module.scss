@@ -1,0 +1,29 @@
+.pill {
+  align-items: center;
+  background: var(--status-pill-background);
+  border-radius: var(--t-border-radius-rounded);
+  box-sizing: border-box;
+  color: var(--status-pill-text);
+  corner-shape: round;
+  display: inline-flex;
+  font-size: var(--t-font-size-sm);
+  font-weight: var(--t-font-weight-medium);
+  gap: var(--t-spacing-1);
+  height: var(--t-spacing-5);
+  overflow: hidden;
+  padding: 0 var(--t-spacing-2);
+  white-space: nowrap;
+}
+
+.dot {
+  background: var(--status-pill-text);
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 6px;
+  width: 6px;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
