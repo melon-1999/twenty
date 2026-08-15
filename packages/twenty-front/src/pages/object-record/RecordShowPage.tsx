@@ -31,11 +31,10 @@ export const RecordShowPage = () => {
     objectRecordId: string;
   }>();
 
-  const { objectNameSingular, objectRecordId, objectMetadataItem } =
-    useRecordShowPage(
-      parameters.objectNameSingular ?? '',
-      parameters.objectRecordId ?? '',
-    );
+  const { objectNameSingular, objectRecordId } = useRecordShowPage(
+    parameters.objectNameSingular ?? '',
+    parameters.objectRecordId ?? '',
+  );
 
   const recordShowComponentInstanceId =
     computeRecordShowComponentInstanceId(objectRecordId);
@@ -56,12 +55,6 @@ export const RecordShowPage = () => {
       fieldName: 'closedAt',
     },
   ) as string | null;
-
-  const opportunityStatusLabel =
-    objectMetadataItem.fields
-      .find((field) => field.name === 'status')
-      ?.options?.find((option) => option.value === opportunityStatus)?.label ??
-    '';
 
   return (
     <RecordComponentInstanceContextsWrapper
@@ -87,7 +80,6 @@ export const RecordShowPage = () => {
                   <OpportunityWonLostActions
                     recordId={objectRecordId}
                     status={opportunityStatus ?? 'OPEN'}
-                    statusLabel={opportunityStatusLabel}
                     closedAt={opportunityClosedAt}
                   />
                 )}

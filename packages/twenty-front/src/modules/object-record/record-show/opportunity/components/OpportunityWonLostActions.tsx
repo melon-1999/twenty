@@ -1,3 +1,4 @@
+import { t } from '@lingui/core/macro';
 import { styled } from '@linaria/react';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 import { Button } from 'twenty-ui/input';
@@ -20,14 +21,19 @@ const StyledClosedAtLabel = styled.span`
 type OpportunityWonLostActionsProps = {
   recordId: string;
   status: string;
-  statusLabel: string;
   closedAt: string | null;
+};
+
+const getStatusLabel = (status: string): string => {
+  if (status === 'WON') return t({ message: 'Won', context: 'Opportunity status' });
+  if (status === 'LOST')
+    return t({ message: 'Lost', context: 'Opportunity status' });
+  return t({ message: 'Open', context: 'Opportunity status' });
 };
 
 export const OpportunityWonLostActions = ({
   recordId,
   status,
-  statusLabel,
   closedAt,
 }: OpportunityWonLostActionsProps) => {
   const { updateOneRecord } = useUpdateOneRecord();
@@ -46,14 +52,14 @@ export const OpportunityWonLostActions = ({
 
   return (
     <StyledContainer>
-      <OpportunityStatusPill status={status} label={statusLabel} />
+      <OpportunityStatusPill status={status} label={getStatusLabel(status)} />
       {isClosed && closedAt && (
         <StyledClosedAtLabel>{beautifyExactDate(closedAt)}</StyledClosedAtLabel>
       )}
       {isClosed ? (
         <Button
           variant="secondary"
-          title="Reopen"
+          title={t`Reopen`}
           onClick={() => setOutcome('OPEN')}
         />
       ) : (
@@ -61,13 +67,13 @@ export const OpportunityWonLostActions = ({
           <Button
             variant="primary"
             accent="green"
-            title="Mark as Won"
+            title={t`Mark as Won`}
             onClick={() => setOutcome('WON')}
           />
           <Button
             variant="primary"
             accent="danger"
-            title="Mark as Lost"
+            title={t`Mark as Lost`}
             onClick={() => setOutcome('LOST')}
           />
         </>

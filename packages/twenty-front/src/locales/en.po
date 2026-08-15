@@ -11590,6 +11590,12 @@ msgstr "Look up"
 msgid "loop"
 msgstr "loop"
 
+#. js-lingui-id: xmp/zU
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgctxt "Opportunity status"
+msgid "Lost"
+msgstr "Lost"
+
 #. js-lingui-id: MsaCqr
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Mail Account"
@@ -11751,6 +11757,16 @@ msgstr "Manual configuration"
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "Margin"
 msgstr "Margin"
+
+#. js-lingui-id: ra2YB4
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Mark as Lost"
+msgstr "Mark as Lost"
+
+#. js-lingui-id: 8qA8wp
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Mark as Won"
+msgstr "Mark as Won"
 
 #. js-lingui-id: fI1Tll
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationGeneralToggles.tsx
@@ -13999,6 +14015,12 @@ msgstr "Only you will be able to see your emails and events"
 msgid "Open"
 msgstr "Open"
 
+#. js-lingui-id: Gd7dhI
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgctxt "Opportunity status"
+msgid "Open"
+msgstr "Open"
+
 #. js-lingui-id: Kkq3xr
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Open a maintained integration or prefill clients that accept MCP install links."
@@ -15711,6 +15733,11 @@ msgstr "Rename chat"
 #: src/modules/settings/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Renewal date"
 msgstr "Renewal date"
+
+#. js-lingui-id: M7SqjM
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Reopen"
+msgstr "Reopen"
 
 #. js-lingui-id: Ee8JBW
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowEditActionFormBuilder.tsx
@@ -21171,6 +21198,12 @@ msgstr "Without calling code"
 #: src/pages/onboarding/UpgradeFreeTrial.tsx
 msgid "without credit card"
 msgstr "without credit card"
+
+#. js-lingui-id: WFjwbr
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgctxt "Opportunity status"
+msgid "Won"
+msgstr "Won"
 
 #. js-lingui-id: 3J7l5w
 #: src/pages/settings/admin-panel/SettingsAdminQueueDetail.tsx

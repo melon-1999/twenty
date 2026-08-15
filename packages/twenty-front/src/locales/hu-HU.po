@@ -11595,6 +11595,12 @@ msgstr ""
 msgid "loop"
 msgstr "ciklus"
 
+#. js-lingui-id: xmp/zU
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgctxt "Opportunity status"
+msgid "Lost"
+msgstr ""
+
 #. js-lingui-id: MsaCqr
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Mail Account"
@@ -11755,6 +11761,16 @@ msgstr "Kézi konfiguráció"
 #. js-lingui-id: lkcAoj
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "Margin"
+msgstr ""
+
+#. js-lingui-id: ra2YB4
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Mark as Lost"
+msgstr ""
+
+#. js-lingui-id: 8qA8wp
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Mark as Won"
 msgstr ""
 
 #. js-lingui-id: fI1Tll
@@ -14004,6 +14020,12 @@ msgstr "Csak Ön fogja látni az e-mailjeit és eseményeit"
 msgid "Open"
 msgstr "Megnyitás"
 
+#. js-lingui-id: Gd7dhI
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgctxt "Opportunity status"
+msgid "Open"
+msgstr ""
+
 #. js-lingui-id: Kkq3xr
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Open a maintained integration or prefill clients that accept MCP install links."
@@ -15716,6 +15738,11 @@ msgstr "Beszélgetés átnevezése"
 #: src/modules/settings/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Renewal date"
 msgstr "Megújítás dátuma"
+
+#. js-lingui-id: M7SqjM
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Reopen"
+msgstr ""
 
 #. js-lingui-id: Ee8JBW
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowEditActionFormBuilder.tsx
@@ -21174,6 +21201,12 @@ msgstr "Hívókód nélkül"
 #: src/pages/onboarding/UpgradeFreeTrial.tsx
 msgid "without credit card"
 msgstr "hitelkártya nélkül"
+
+#. js-lingui-id: WFjwbr
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgctxt "Opportunity status"
+msgid "Won"
+msgstr ""
 
 #. js-lingui-id: 3J7l5w
 #: src/pages/settings/admin-panel/SettingsAdminQueueDetail.tsx

@@ -22,7 +22,6 @@ describe('OpportunityWonLostActions', () => {
       <OpportunityWonLostActions
         recordId="rec-1"
         status="OPEN"
-        statusLabel="Open"
         closedAt={null}
       />,
     );
@@ -46,7 +45,6 @@ describe('OpportunityWonLostActions', () => {
       <OpportunityWonLostActions
         recordId="rec-1"
         status="OPEN"
-        statusLabel="Open"
         closedAt={null}
       />,
     );
@@ -70,7 +68,6 @@ describe('OpportunityWonLostActions', () => {
       <OpportunityWonLostActions
         recordId="rec-1"
         status="WON"
-        statusLabel="Won"
         closedAt="2024-01-10T11:00:00.000Z"
       />,
     );
@@ -98,7 +95,6 @@ describe('OpportunityWonLostActions', () => {
       <OpportunityWonLostActions
         recordId="rec-1"
         status="LOST"
-        statusLabel="Lost"
         closedAt="2024-01-10T11:00:00.000Z"
       />,
     );
