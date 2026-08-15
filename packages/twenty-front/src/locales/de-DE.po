@@ -1142,6 +1142,11 @@ msgstr "Aktive Installationen"
 msgid "Active Sync"
 msgstr "Active Sync"
 
+#. js-lingui-id: 39ohdf
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Activities"
+msgstr "Aktivitäten"
+
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 msgid "Add"
@@ -1793,6 +1798,11 @@ msgstr "Ausführung des KI-Agenten"
 msgid "AI agents"
 msgstr "KI-Agenten"
 
+#. js-lingui-id: 3wfZhO
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "AI Assistant"
+msgstr "KI-Assistent"
+
 #. js-lingui-id: V+Qj+q
 #: src/modules/settings/usage/utils/getOperationTypeLabel.ts
 msgid "AI Chat"
@@ -1932,6 +1942,11 @@ msgstr "Alle"
 #: src/modules/object-record/record-field-list/record-detail-section/relation/components/RecordDetailRelationSection.tsx
 msgid "All ({relationRecordsCount})"
 msgstr "Alle ({relationRecordsCount})"
+
+#. js-lingui-id: pdOYzu
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "All {objectLabelPlural}"
+msgstr "Alle {objectLabelPlural}"
 
 #. js-lingui-id: Hn61nE
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsToolSection.tsx
@@ -2157,6 +2172,11 @@ msgstr "Bereits in der Navigationsleiste"
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "Alt text"
 msgstr "Alternativtext"
+
+#. js-lingui-id: eT1HVv
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Always included in every workspace."
+msgstr "Immer in jedem Arbeitsbereich enthalten."
 
 #. js-lingui-id: Fc64QW
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
@@ -2709,6 +2729,11 @@ msgstr "Zugewiesen {roleTargetDisplayName}"
 msgid "Assigned to"
 msgstr "Zugewiesen an"
 
+#. js-lingui-id: kZ7PLo
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "Assigned to Me"
+msgstr "Mir zugewiesen"
+
 #. js-lingui-id: TzM/0+
 #: src/modules/settings/roles/components/SettingsRolesDefaultRole.tsx
 msgid "Assigned to users who join via invite link, approved domain, or SSO, and used as fallback when an assigned role is deleted"
@@ -2910,6 +2935,11 @@ msgstr "Automatisch generierte Rolle für {agentDisplayName}"
 msgid "Auto-upgrade"
 msgstr "Automatische Aktualisierung"
 
+#. js-lingui-id: /s6IZ1
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automate repetitive work with workflows."
+msgstr "Wiederkehrende Aufgaben mit Workflows automatisieren."
+
 #. js-lingui-id: YRT7ZW
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarChannelDetails.tsx
 msgid "Automatically create contacts for people you've participated in an event with."
@@ -2939,6 +2969,11 @@ msgstr "Diese Anwendung automatisch aktualisieren, wenn eine neue Version veröf
 #: src/pages/settings/applications/tabs/SettingsApplicationDetailContentTab.tsx
 msgid "Automation, AI, and access this app provides"
 msgstr "Automatisierung, KI und Zugriffsrechte, die diese App bereitstellt"
+
+#. js-lingui-id: EF+M0w
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automations"
+msgstr "Automatisierungen"
 
 #. js-lingui-id: lXkUEV
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
@@ -3228,6 +3263,11 @@ msgstr "Aufschlüsselung nach KI-Modellen."
 msgid "Brief explanation of this output field"
 msgstr "Kurze Erklärung dieses Ausgabefeldes"
 
+#. js-lingui-id: mBu+lv
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Bring calendar events into your activity timeline."
+msgstr "Kalenderereignisse in Ihre Aktivitäten-Timeline holen."
+
 #. js-lingui-id: CSDv65
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Bronze"
@@ -3329,6 +3369,16 @@ msgstr "Schaltfläche"
 msgid "by {author}"
 msgstr "von {author}"
 
+#. js-lingui-id: 6+byWT
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "By Stage"
+msgstr "Nach Phase"
+
+#. js-lingui-id: jQX8V+
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "By Status"
+msgstr "Nach Status"
+
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using Twenty, you agree to the"
@@ -3396,6 +3446,7 @@ msgstr "caldav.example.com"
 
 #. js-lingui-id: AjVXBS
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/side-panel/pages/page-layout/components/dashboard/SidePanelDashboardRecordTableSettings.tsx
 #: src/modules/side-panel/pages/page-layout/components/dropdown-content/FieldWidgetLayoutDropdownContent.tsx
 #: src/modules/side-panel/pages/page-layout/components/record-page/SidePanelRecordPageFieldSettings.tsx
@@ -4290,6 +4341,7 @@ msgstr "Kompaktansicht"
 
 #. js-lingui-id: s2QZS6
 #: src/modules/onboarding/components/import-contacts/OnboardingImportPreviewCompanies.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/sign-in-background-mock/components/BackgroundMockPage.tsx
 msgid "Companies"
 msgstr "Unternehmen"
@@ -4671,6 +4723,11 @@ msgstr "Richtlinie zur automatischen Kontakterstellung"
 msgid "Contact your admin to continue using Workflow or AI features."
 msgstr "Kontaktieren Sie Ihren Admin, um Workflow- oder KI-Funktionen weiter zu nutzen."
 
+#. js-lingui-id: gVfVfe
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Contacts"
+msgstr "Kontakte"
+
 #. js-lingui-id: vrs6yX
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "container"
@@ -4889,6 +4946,11 @@ msgstr "Link zur Ansicht kopieren"
 #: src/modules/workflow/workflow-steps/workflow-actions/utils/getActionHeaderTypeOrThrow.ts
 msgid "Core"
 msgstr "Kern"
+
+#. js-lingui-id: 9PaIxv
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Core features"
+msgstr "Kernfunktionen"
 
 #. js-lingui-id: u9zl2y
 #: src/modules/settings/developers/components/WebhookEntitySelect.tsx
@@ -5728,6 +5790,7 @@ msgid "Dashboard duplicated successfully"
 msgstr "Dashboard erfolgreich dupliziert"
 
 #. js-lingui-id: w6iIMm
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/pages/settings/layout/SettingsLayout.tsx
 msgid "Dashboards"
 msgstr "Dashboards"
@@ -5968,6 +6031,11 @@ msgstr "Dieses Feld deaktivieren"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "Deaktiviert"
+
+#. js-lingui-id: ZlGycp
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Deals"
+msgstr "Deals"
 
 #. js-lingui-id: Iotuxe
 #: src/modules/ai/components/RoutingDebugDisplay.tsx
@@ -7083,6 +7151,7 @@ msgstr "sonst wenn"
 #: src/modules/object-record/record-field/ui/meta-types/input/components/EmailsFieldInput.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 #: src/modules/settings/members/components/MemberInfosTab.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTableHeader.tsx
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
@@ -8596,7 +8665,10 @@ msgid "Feature Flags"
 msgstr "Feature-Flags"
 
 #. js-lingui-id: PpZkda
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 msgid "Features"
 msgstr "Funktionen"
 
@@ -9192,6 +9264,11 @@ msgstr "Erzeugt je nach Konto einen Google-Meet- oder Microsoft-Teams-Link."
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "German"
 msgstr "Deutsch"
+
+#. js-lingui-id: q/3eUK
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Get AI-powered help across your workspace."
+msgstr "KI-gestützte Hilfe in Ihrem gesamten Arbeitsbereich."
 
 #. js-lingui-id: sqtljx
 #: src/modules/settings/enterprise/components/EnterprisePlanModal.tsx
@@ -10056,6 +10133,7 @@ msgstr "E-Mails einbeziehen, bei denen alle Teilnehmenden dieselbe Domain verwen
 
 #. js-lingui-id: C4qYgu
 #: src/modules/settings/billing/components/internal/SettingsBillingPlanComparisonTableRow.tsx
+#: src/modules/settings/product-capability/components/SettingsProductCapabilityStatusRow.tsx
 msgid "Included"
 msgstr "Enthalten"
 
@@ -11438,6 +11516,11 @@ msgstr "Alle anderen Geräte abmelden"
 msgid "Log retention"
 msgstr "Protokollaufbewahrung"
 
+#. js-lingui-id: Qso8PX
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Log tasks, notes and interactions across your records."
+msgstr "Aufgaben, Notizen und Interaktionen zu Ihren Datensätzen erfassen."
+
 #. js-lingui-id: hykMbH
 #: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
 msgid "Logged in as {impersonatedUser}"
@@ -11594,6 +11677,11 @@ msgstr "Mitglieder verwalten"
 #: src/pages/settings/data-model/SettingsObjects.tsx
 msgid "Manage objects, fields and relationships"
 msgstr "Objekte, Felder und Beziehungen verwalten"
+
+#. js-lingui-id: Z4m31E
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Manage opportunities as they move through your pipeline."
+msgstr "Verkaufschancen entlang Ihrer Pipeline steuern."
 
 #. js-lingui-id: eGGH1l
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
@@ -12016,6 +12104,11 @@ msgstr "Modelle, die im Agentenknoten und in den Chat-Modellauswahlen verfügbar
 #: src/pages/settings/admin-panel/SettingsAdminAiProviderDetail.tsx
 msgid "Models for this provider. Toggle to enable or disable."
 msgstr "Modelle für diesen Anbieter. Umschalten, um zu aktivieren oder zu deaktivieren."
+
+#. js-lingui-id: LHrHoQ
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Modules included in your plan for this workspace."
+msgstr "Module, die in Ihrem Plan für diesen Arbeitsbereich enthalten sind."
 
 #. js-lingui-id: hty0d5
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
@@ -13383,6 +13476,7 @@ msgstr "Kein fehlgeschlagener Arbeitsbereich"
 
 #. js-lingui-id: rPAZRd
 #: src/modules/settings/lab/hooks/useLabPublicFeatureFlags.ts
+#: src/modules/settings/product-capability/hooks/useUpdateWorkspaceCapability.ts
 msgid "No workspace selected"
 msgstr "Kein Arbeitsbereich ausgewählt"
 
@@ -13466,6 +13560,7 @@ msgstr "Nicht gefunden"
 
 #. js-lingui-id: JQUXsv
 #: src/modules/settings/billing/components/internal/SettingsBillingPlanComparisonTableRow.tsx
+#: src/modules/settings/product-capability/components/SettingsProductCapabilityStatusRow.tsx
 msgid "Not included"
 msgstr "Nicht enthalten"
 
@@ -17745,6 +17840,11 @@ msgstr "Optionen für Schritt-Filter"
 msgid "Stop impersonating"
 msgstr "Nachahmung beenden"
 
+#. js-lingui-id: AdZnh4
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Store and manage people you do business with."
+msgstr "Personen, mit denen Sie Geschäfte machen, speichern und verwalten."
+
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
 msgid "Stored in database"
@@ -18036,6 +18136,11 @@ msgstr "Zur Produktionsinstanz gewechselt."
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useActionRolePermissionFlagConfig.ts
 msgid "Sync Account"
 msgstr "Konto synchronisieren"
+
+#. js-lingui-id: Ru8fYU
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Sync and send emails alongside your contacts."
+msgstr "E-Mails synchronisieren und direkt bei Ihren Kontakten senden."
 
 #. js-lingui-id: NmHVSC
 #: src/pages/settings/applications/components/SettingsClaimApplicationSection.tsx
@@ -19179,6 +19284,11 @@ msgstr "Gesamtzeit"
 #: src/pages/settings/ai/components/SettingsAiUsageTab.tsx
 msgid "Track AI consumption across your workspace."
 msgstr "Verfolgen Sie den KI-Verbrauch in Ihrem Arbeitsbereich."
+
+#. js-lingui-id: S9SL9v
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Track organizations and the people who work at them."
+msgstr "Organisationen und die dort tätigen Personen verfolgen."
 
 #. js-lingui-id: zPGNJm
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationDangerZone.tsx
@@ -20677,6 +20787,11 @@ msgstr "Visualisieren"
 msgid "Visualize data model"
 msgstr "Datenmodell visualisieren"
 
+#. js-lingui-id: kozjCn
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Visualize your CRM data with charts and metrics."
+msgstr "Ihre CRM-Daten mit Diagrammen und Kennzahlen visualisieren."
+
 #. js-lingui-id: IEcsBR
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "VS Code"
@@ -21154,6 +21269,7 @@ msgstr "Workflows"
 #: src/pages/settings/developers/playground/SettingsRestPlayground.tsx
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 #: src/pages/settings/general/SettingsGeneral.tsx
 #: src/pages/settings/layout/components/SettingsLayoutDetailScaffold.tsx
 #: src/pages/settings/layout/SettingsLayout.tsx
@@ -21578,6 +21694,11 @@ msgstr "Ihr Handler erhält dieses Objekt. Der Body enthält das vom Client gese
 #: src/modules/settings/logic-functions/components/triggers/SettingsLogicFunctionHttpTriggerSection.tsx
 msgid "Your handler receives this object. The body is empty because GET requests carry no payload."
 msgstr "Ihr Handler erhält dieses Objekt. Der Body ist leer, da GET-Anfragen keine Nutzlast übertragen."
+
+#. js-lingui-id: GvQ2qs
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Your modules"
+msgstr "Ihre Module"
 
 #. js-lingui-id: 9ivpwk
 #: src/pages/settings/profile/SettingsProfile.tsx

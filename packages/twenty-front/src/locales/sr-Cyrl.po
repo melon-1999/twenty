@@ -1142,6 +1142,11 @@ msgstr "Активне инсталације"
 msgid "Active Sync"
 msgstr "Активна синхронизација"
 
+#. js-lingui-id: 39ohdf
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Activities"
+msgstr ""
+
 #. js-lingui-id: m16xKo
 #: src/pages/settings/ai/components/SettingsAgentEvalsTab.tsx
 msgid "Add"
@@ -1793,6 +1798,11 @@ msgstr "Покретање AI агента"
 msgid "AI agents"
 msgstr "АИ агенти"
 
+#. js-lingui-id: 3wfZhO
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "AI Assistant"
+msgstr ""
+
 #. js-lingui-id: V+Qj+q
 #: src/modules/settings/usage/utils/getOperationTypeLabel.ts
 msgid "AI Chat"
@@ -1932,6 +1942,11 @@ msgstr "Сви"
 #: src/modules/object-record/record-field-list/record-detail-section/relation/components/RecordDetailRelationSection.tsx
 msgid "All ({relationRecordsCount})"
 msgstr "Сви ({relationRecordsCount})"
+
+#. js-lingui-id: pdOYzu
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "All {objectLabelPlural}"
+msgstr ""
 
 #. js-lingui-id: Hn61nE
 #: src/modules/settings/roles/role-permissions/permission-flags/components/SettingsRolePermissionsToolSection.tsx
@@ -2156,6 +2171,11 @@ msgstr "Већ у траци за навигацију"
 #. js-lingui-id: u/DP73
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "Alt text"
+msgstr ""
+
+#. js-lingui-id: eT1HVv
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Always included in every workspace."
 msgstr ""
 
 #. js-lingui-id: Fc64QW
@@ -2709,6 +2729,11 @@ msgstr "Додељено {roleTargetDisplayName}"
 msgid "Assigned to"
 msgstr "Додељено"
 
+#. js-lingui-id: kZ7PLo
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "Assigned to Me"
+msgstr ""
+
 #. js-lingui-id: TzM/0+
 #: src/modules/settings/roles/components/SettingsRolesDefaultRole.tsx
 msgid "Assigned to users who join via invite link, approved domain, or SSO, and used as fallback when an assigned role is deleted"
@@ -2910,6 +2935,11 @@ msgstr ""
 msgid "Auto-upgrade"
 msgstr ""
 
+#. js-lingui-id: /s6IZ1
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automate repetitive work with workflows."
+msgstr ""
+
 #. js-lingui-id: YRT7ZW
 #: src/modules/settings/accounts/components/SettingsAccountsCalendarChannelDetails.tsx
 msgid "Automatically create contacts for people you've participated in an event with."
@@ -2939,6 +2969,11 @@ msgstr ""
 #: src/pages/settings/applications/tabs/SettingsApplicationDetailContentTab.tsx
 msgid "Automation, AI, and access this app provides"
 msgstr "Аутоматизација, AI и приступ који ова апликација пружа"
+
+#. js-lingui-id: EF+M0w
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Automations"
+msgstr ""
 
 #. js-lingui-id: lXkUEV
 #: src/modules/workflow/workflow-trigger/components/WorkflowEditTriggerManual.tsx
@@ -3228,6 +3263,11 @@ msgstr "Подела по AI моделима."
 msgid "Brief explanation of this output field"
 msgstr "Кратко објашњење овог излазног поља"
 
+#. js-lingui-id: mBu+lv
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Bring calendar events into your activity timeline."
+msgstr ""
+
 #. js-lingui-id: CSDv65
 #: src/modules/settings/data-model/fields/forms/select/components/SettingsDataModelFieldSelectFormOptionRow.tsx
 msgid "Bronze"
@@ -3329,6 +3369,16 @@ msgstr ""
 msgid "by {author}"
 msgstr ""
 
+#. js-lingui-id: 6+byWT
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "By Stage"
+msgstr ""
+
+#. js-lingui-id: jQX8V+
+#: src/modules/views/utils/resolveViewNamePlaceholders.ts
+msgid "By Status"
+msgstr ""
+
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using Twenty, you agree to the"
@@ -3396,6 +3446,7 @@ msgstr "caldav.example.com"
 
 #. js-lingui-id: AjVXBS
 #: src/modules/settings/accounts/components/SettingsAccountsSettingsSection.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/side-panel/pages/page-layout/components/dashboard/SidePanelDashboardRecordTableSettings.tsx
 #: src/modules/side-panel/pages/page-layout/components/dropdown-content/FieldWidgetLayoutDropdownContent.tsx
 #: src/modules/side-panel/pages/page-layout/components/record-page/SidePanelRecordPageFieldSettings.tsx
@@ -4290,6 +4341,7 @@ msgstr "Компактан приказ"
 
 #. js-lingui-id: s2QZS6
 #: src/modules/onboarding/components/import-contacts/OnboardingImportPreviewCompanies.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/sign-in-background-mock/components/BackgroundMockPage.tsx
 msgid "Companies"
 msgstr "Компаније"
@@ -4671,6 +4723,11 @@ msgstr "Аутоматска израда контаката"
 msgid "Contact your admin to continue using Workflow or AI features."
 msgstr "Контактирајте администратора да бисте наставили да користите функције радног тока или AI."
 
+#. js-lingui-id: gVfVfe
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Contacts"
+msgstr ""
+
 #. js-lingui-id: vrs6yX
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
 msgid "container"
@@ -4889,6 +4946,11 @@ msgstr "Копирај линк приказа"
 #: src/modules/workflow/workflow-steps/workflow-actions/utils/getActionHeaderTypeOrThrow.ts
 msgid "Core"
 msgstr "Језгро"
+
+#. js-lingui-id: 9PaIxv
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Core features"
+msgstr ""
 
 #. js-lingui-id: u9zl2y
 #: src/modules/settings/developers/components/WebhookEntitySelect.tsx
@@ -5728,6 +5790,7 @@ msgid "Dashboard duplicated successfully"
 msgstr "Контролна табла је успешно дуплирана"
 
 #. js-lingui-id: w6iIMm
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/pages/settings/layout/SettingsLayout.tsx
 msgid "Dashboards"
 msgstr "Контролне табле"
@@ -5968,6 +6031,11 @@ msgstr "Деактивирај ово поље"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "Деактивирано"
+
+#. js-lingui-id: ZlGycp
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Deals"
+msgstr ""
 
 #. js-lingui-id: Iotuxe
 #: src/modules/ai/components/RoutingDebugDisplay.tsx
@@ -7083,6 +7151,7 @@ msgstr "иначе ако"
 #: src/modules/object-record/record-field/ui/meta-types/input/components/EmailsFieldInput.tsx
 #: src/modules/settings/admin-panel/components/SettingsAdminGeneral.tsx
 #: src/modules/settings/members/components/MemberInfosTab.tsx
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTable.tsx
 #: src/modules/settings/roles/role-assignment/components/SettingsRoleAssignmentTableHeader.tsx
 #: src/modules/settings/security/components/SettingsSecurityEditableProfileFields.tsx
@@ -8596,7 +8665,10 @@ msgid "Feature Flags"
 msgstr "Заставице функција"
 
 #. js-lingui-id: PpZkda
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 msgid "Features"
 msgstr "Функционалности"
 
@@ -9192,6 +9264,11 @@ msgstr "Генерише Google Meet или Microsoft Teams линк, у зав�
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "German"
 msgstr "Немачки"
+
+#. js-lingui-id: q/3eUK
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Get AI-powered help across your workspace."
+msgstr ""
 
 #. js-lingui-id: sqtljx
 #: src/modules/settings/enterprise/components/EnterprisePlanModal.tsx
@@ -10056,6 +10133,7 @@ msgstr "Укључи е-поруке у којима сви учесници к�
 
 #. js-lingui-id: C4qYgu
 #: src/modules/settings/billing/components/internal/SettingsBillingPlanComparisonTableRow.tsx
+#: src/modules/settings/product-capability/components/SettingsProductCapabilityStatusRow.tsx
 msgid "Included"
 msgstr "Укључено"
 
@@ -11438,6 +11516,11 @@ msgstr ""
 msgid "Log retention"
 msgstr "Период чувања дневника"
 
+#. js-lingui-id: Qso8PX
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Log tasks, notes and interactions across your records."
+msgstr ""
+
 #. js-lingui-id: hykMbH
 #: src/modules/information-banner/components/impersonate/InformationBannerIsImpersonating.tsx
 msgid "Logged in as {impersonatedUser}"
@@ -11594,6 +11677,11 @@ msgstr "Управљање члановима"
 #: src/pages/settings/data-model/SettingsObjects.tsx
 msgid "Manage objects, fields and relationships"
 msgstr "Управљајте објектима, пољима и односима"
+
+#. js-lingui-id: Z4m31E
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Manage opportunities as they move through your pipeline."
+msgstr ""
 
 #. js-lingui-id: eGGH1l
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useSettingsRolePermissionFlagConfig.ts
@@ -12016,6 +12104,11 @@ msgstr "Модели доступни у чвору агента и у бира�
 #: src/pages/settings/admin-panel/SettingsAdminAiProviderDetail.tsx
 msgid "Models for this provider. Toggle to enable or disable."
 msgstr "Модели за овог провајдера. Пребаците да бисте омогућили или онемогућили."
+
+#. js-lingui-id: LHrHoQ
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Modules included in your plan for this workspace."
+msgstr ""
 
 #. js-lingui-id: hty0d5
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
@@ -13383,6 +13476,7 @@ msgstr "Нема неуспелих радних простора"
 
 #. js-lingui-id: rPAZRd
 #: src/modules/settings/lab/hooks/useLabPublicFeatureFlags.ts
+#: src/modules/settings/product-capability/hooks/useUpdateWorkspaceCapability.ts
 msgid "No workspace selected"
 msgstr "Није изабран радни простор"
 
@@ -13466,6 +13560,7 @@ msgstr "Није пронађено"
 
 #. js-lingui-id: JQUXsv
 #: src/modules/settings/billing/components/internal/SettingsBillingPlanComparisonTableRow.tsx
+#: src/modules/settings/product-capability/components/SettingsProductCapabilityStatusRow.tsx
 msgid "Not included"
 msgstr "Није укључено"
 
@@ -17745,6 +17840,11 @@ msgstr "Опције филтера корака"
 msgid "Stop impersonating"
 msgstr "Заустави имперсонацију"
 
+#. js-lingui-id: AdZnh4
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Store and manage people you do business with."
+msgstr ""
+
 #. js-lingui-id: qn1Xxf
 #: src/modules/settings/admin-panel/config-variables/utils/useSourceContent.ts
 msgid "Stored in database"
@@ -18036,6 +18136,11 @@ msgstr "Пребачено на продукциону инстанцу."
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useActionRolePermissionFlagConfig.ts
 msgid "Sync Account"
 msgstr "Синхронизација налога"
+
+#. js-lingui-id: Ru8fYU
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Sync and send emails alongside your contacts."
+msgstr ""
 
 #. js-lingui-id: NmHVSC
 #: src/pages/settings/applications/components/SettingsClaimApplicationSection.tsx
@@ -19179,6 +19284,11 @@ msgstr "Укупно време"
 #: src/pages/settings/ai/components/SettingsAiUsageTab.tsx
 msgid "Track AI consumption across your workspace."
 msgstr "Пратите потрошњу AI у свом радном простору."
+
+#. js-lingui-id: S9SL9v
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Track organizations and the people who work at them."
+msgstr ""
 
 #. js-lingui-id: zPGNJm
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationDangerZone.tsx
@@ -20677,6 +20787,11 @@ msgstr "Визуализуј"
 msgid "Visualize data model"
 msgstr "Визуализујте модел података"
 
+#. js-lingui-id: kozjCn
+#: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
+msgid "Visualize your CRM data with charts and metrics."
+msgstr ""
+
 #. js-lingui-id: IEcsBR
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "VS Code"
@@ -21154,6 +21269,7 @@ msgstr "Токови Рада"
 #: src/pages/settings/developers/playground/SettingsRestPlayground.tsx
 #: src/pages/settings/developers/webhooks/components/SettingsWebhooks.tsx
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
+#: src/pages/settings/features/SettingsFeatures.tsx
 #: src/pages/settings/general/SettingsGeneral.tsx
 #: src/pages/settings/layout/components/SettingsLayoutDetailScaffold.tsx
 #: src/pages/settings/layout/SettingsLayout.tsx
@@ -21578,6 +21694,11 @@ msgstr "Ваш обрађивач прима овај објекат. Тело �
 #: src/modules/settings/logic-functions/components/triggers/SettingsLogicFunctionHttpTriggerSection.tsx
 msgid "Your handler receives this object. The body is empty because GET requests carry no payload."
 msgstr "Ваш обрађивач прима овај објекат. Тело је празно јер GET захтеви не садрже тело поруке."
+
+#. js-lingui-id: GvQ2qs
+#: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
+msgid "Your modules"
+msgstr ""
 
 #. js-lingui-id: 9ivpwk
 #: src/pages/settings/profile/SettingsProfile.tsx
