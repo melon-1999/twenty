@@ -108,11 +108,9 @@
 Run: `npx nx typecheck twenty-server`
 Expected: 0 errors (the record now satisfies `Record<AllStandardObjectFieldName<'opportunity'>, FlatFieldMetadata>`; a missing field-name-union entry would surface here).
 
-- [ ] **Step 6: Verify on a fresh workspace via DB reset**
+- [ ] **Step 6: Verify definition structurally (NO DB reset)**
 
-Run: `npx nx database:reset twenty-server`
-Then query (Postgres MCP): `SELECT name, type, options FROM core."fieldMetadata" fm JOIN core."objectMetadata" om ON om.id=fm."objectMetadataId" WHERE om."nameSingular"='opportunity' AND fm.name IN ('status','closedAt');`
-Expected: `status` SELECT with 3 options (OPEN/WON/LOST), `closedAt` DATE_TIME.
+Do NOT run `database:reset` — it wipes the active dev workspace. Task 1's new-workspace definitions are verified by the Step 5 typecheck (the record must satisfy `Record<AllStandardObjectFieldName<'opportunity'>, FlatFieldMetadata>`; a missing/wrong entry fails there). The real DB proof (columns + enum present, existing rows `OPEN`) is produced in Task 2 by running the backfill command against the existing DB and querying with the Postgres MCP. Never reset the active dev DB for verification.
 
 - [ ] **Step 7: Commit**
 
