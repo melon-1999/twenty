@@ -29,11 +29,10 @@ Standalone from Tag (Tag stays for free-form user labels).
 - Files: `StatusPill.tsx`, `StatusPill.module.scss`, `__stories__/StatusPill.stories.tsx`, barrel export in `data-display/index.ts` and `twenty-ui` public export.
 - No mapping from domain statuses to variants here — callers pass `variant`.
 
-### 3. ProgressBar (new, `packages/twenty-ui/src/feedback/ProgressBar/`)
-- Props: `type ProgressBarProps = { value: number; max?: number; segments?: { value: number; color?: string }[]; color?: string; height?: number; label?: string; className?: string }`. `value`/`max` for a single continuous bar; `segments` (mutually exclusive) for a multi-segment bar (days-in-stage style).
-- Default fill = green accent; track = `--t-background-tertiary`; height default 6px; radius fully rounded; optional right-aligned `label`.
-- Clamp value to [0, max]; segments render proportionally, gap 2px.
-- Files: `ProgressBar.tsx`, `ProgressBar.module.scss`, `__stories__/ProgressBar.stories.tsx`, barrel + public export.
+### 3. ProgressBar — already exists, do NOT rebuild (YAGNI)
+`packages/twenty-ui/src/feedback/ProgressBar/ProgressBar.tsx` already provides a continuous bar (`value`, `barColor`, countdown support) on `@base-ui/react/progress`. The continuous progress need is met.
+- The only missing capability — a **multi-segment** bar (days-in-stage style) — belongs to Phase 2 (rotting / days-in-stage), so it is **out of scope** here.
+- No component work in Phase 1b. (Removed from the task list below.)
 
 ### 4. Card density (record/deal card)
 - Target `RecordCard` (`packages/twenty-front/src/modules/object-record/record-index/record-card/`).
@@ -46,13 +45,14 @@ Standalone from Tag (Tag stays for free-form user labels).
 - Verify in the running app across a wide table (Companies) light + dark.
 
 ## Sequencing (each a plan task/slice)
-1. **StatusPill** — additive, Storybook-verifiable, zero regression risk.
-2. **ProgressBar** — additive, Storybook-verifiable.
-3. **Button hierarchy audit** — repoint `blue`→`green`, story, no shape change.
-4. **Card density** — live-verified.
-5. **DataTable row density** — live-verified.
+1. **StatusPill** — new, additive, Storybook-verifiable, zero regression risk.
+2. **Button hierarchy audit** — repoint `blue`→`green`, story, no shape change.
+3. **Card density** — live-verified.
+4. **DataTable row density** — live-verified.
 
-New components (1–2) first because they cannot regress existing screens and are verifiable in Storybook (`nx storybook:serve:dev twenty-ui`, port 6008). Density passes (4–5) last because they need live visual verification and carry the most regression risk.
+(ProgressBar dropped — already exists; segmented variant is Phase 2.)
+
+New component (1) first because it cannot regress existing screens and is verifiable in Storybook (`nx storybook:serve:dev twenty-ui`, port 6008). Density passes (3–4) last because they need live visual verification and carry the most regression risk.
 
 ## Testing
 - New components: Storybook stories covering every variant/prop, light + dark. Type-check + `oxlint`/`oxfmt` clean.
