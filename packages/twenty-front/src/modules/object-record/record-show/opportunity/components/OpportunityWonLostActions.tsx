@@ -1,18 +1,34 @@
+import { styled } from '@linaria/react';
+import { themeCssVariables } from 'twenty-ui/theme-constants';
 import { Button } from 'twenty-ui/input';
 
 import { useUpdateOneRecord } from '@/object-record/hooks/useUpdateOneRecord';
 import { OpportunityStatusPill } from '@/object-record/record-show/opportunity/components/OpportunityStatusPill';
+import { beautifyExactDate } from '~/utils/date-utils';
+
+const StyledContainer = styled.div`
+  align-items: center;
+  display: flex;
+  gap: ${themeCssVariables.spacing[2]};
+`;
+
+const StyledClosedAtLabel = styled.span`
+  color: ${themeCssVariables.font.color.light};
+  font-size: ${themeCssVariables.font.size.sm};
+`;
 
 type OpportunityWonLostActionsProps = {
   recordId: string;
   status: string;
   statusLabel: string;
+  closedAt: string | null;
 };
 
 export const OpportunityWonLostActions = ({
   recordId,
   status,
   statusLabel,
+  closedAt,
 }: OpportunityWonLostActionsProps) => {
   const { updateOneRecord } = useUpdateOneRecord();
 
@@ -29,8 +45,11 @@ export const OpportunityWonLostActions = ({
   const isClosed = status === 'WON' || status === 'LOST';
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    <StyledContainer>
       <OpportunityStatusPill status={status} label={statusLabel} />
+      {isClosed && closedAt && (
+        <StyledClosedAtLabel>{beautifyExactDate(closedAt)}</StyledClosedAtLabel>
+      )}
       {isClosed ? (
         <Button
           variant="secondary"
@@ -53,6 +72,6 @@ export const OpportunityWonLostActions = ({
           />
         </>
       )}
-    </div>
+    </StyledContainer>
   );
 };

@@ -40,12 +40,20 @@ export const RecordShowPage = () => {
   const recordShowComponentInstanceId =
     computeRecordShowComponentInstanceId(objectRecordId);
 
-  // Read unconditionally (hooks can't be conditional); harmless no-ops for non-opportunity records.
+  // harmless no-op for non-opportunity records
   const opportunityStatus = useAtomFamilySelectorValue(
     recordStoreFamilySelector,
     {
       recordId: objectRecordId,
       fieldName: 'status',
+    },
+  ) as string | null;
+
+  const opportunityClosedAt = useAtomFamilySelectorValue(
+    recordStoreFamilySelector,
+    {
+      recordId: objectRecordId,
+      fieldName: 'closedAt',
     },
   ) as string | null;
 
@@ -80,6 +88,7 @@ export const RecordShowPage = () => {
                     recordId={objectRecordId}
                     status={opportunityStatus ?? 'OPEN'}
                     statusLabel={opportunityStatusLabel}
+                    closedAt={opportunityClosedAt}
                   />
                 )}
                 <RecordShowCommandMenu />

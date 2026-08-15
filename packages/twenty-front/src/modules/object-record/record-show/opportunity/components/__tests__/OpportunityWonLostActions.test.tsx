@@ -23,6 +23,7 @@ describe('OpportunityWonLostActions', () => {
         recordId="rec-1"
         status="OPEN"
         statusLabel="Open"
+        closedAt={null}
       />,
     );
 
@@ -46,6 +47,7 @@ describe('OpportunityWonLostActions', () => {
         recordId="rec-1"
         status="OPEN"
         statusLabel="Open"
+        closedAt={null}
       />,
     );
 
@@ -69,11 +71,42 @@ describe('OpportunityWonLostActions', () => {
         recordId="rec-1"
         status="WON"
         statusLabel="Won"
+        closedAt="2024-01-10T11:00:00.000Z"
       />,
     );
 
     expect(screen.queryByText('Mark as Won')).not.toBeInTheDocument();
     expect(screen.queryByText('Mark as Lost')).not.toBeInTheDocument();
+    expect(screen.getByText(/Jan 10, 2024/)).toBeInTheDocument();
+
+    await user.click(screen.getByText('Reopen'));
+
+    expect(mockUpdateOneRecord).toHaveBeenCalledTimes(1);
+    expect(mockUpdateOneRecord).toHaveBeenCalledWith({
+      objectNameSingular: 'opportunity',
+      idToUpdate: 'rec-1',
+      updateOneRecordInput: {
+        status: 'OPEN',
+        closedAt: null,
+      },
+    });
+  });
+
+  it('reopens a lost opportunity and shows the closed date', async () => {
+    const user = userEvent.setup();
+    render(
+      <OpportunityWonLostActions
+        recordId="rec-1"
+        status="LOST"
+        statusLabel="Lost"
+        closedAt="2024-01-10T11:00:00.000Z"
+      />,
+    );
+
+    expect(screen.queryByText('Mark as Won')).not.toBeInTheDocument();
+    expect(screen.queryByText('Mark as Lost')).not.toBeInTheDocument();
+    expect(screen.getByText('Reopen')).toBeInTheDocument();
+    expect(screen.getByText(/Jan 10, 2024/)).toBeInTheDocument();
 
     await user.click(screen.getByText('Reopen'));
 
