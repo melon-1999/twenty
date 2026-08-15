@@ -2812,6 +2812,7 @@ export type Mutation = {
   updateOneLogicFunction: Scalars['Boolean']['output'];
   updateOneObject: Object;
   updateOneRole: Role;
+  updateOpportunityStageRottingDays: Scalars['JSON']['output'];
   updatePageLayout: PageLayout;
   updatePageLayoutTab: PageLayoutTab;
   updatePageLayoutWidget: PageLayoutWidget;
@@ -3819,6 +3820,11 @@ export type MutationUpdateOneRoleArgs = {
 };
 
 
+export type MutationUpdateOpportunityStageRottingDaysArgs = {
+  input: UpdateOpportunityStageRottingDaysInput;
+};
+
+
 export type MutationUpdatePageLayoutArgs = {
   id: Scalars['String']['input'];
   input: UpdatePageLayoutInput;
@@ -4664,6 +4670,7 @@ export type Query = {
   object: Object;
   objectRecordCounts: Array<ObjectRecordCount>;
   objects: ObjectConnection;
+  opportunityStageRottingDays: Scalars['JSON']['output'];
   pieChartData: PieChartData;
   previewMessageCampaignAudience: CampaignAudiencePreviewDto;
   publicMarketplaceAppDetail: MarketplaceAppDetail;
@@ -5823,6 +5830,10 @@ export type UpdateOneObjectInput = {
   /** The id of the object to update */
   id: Scalars['UUID']['input'];
   update: UpdateObjectPayload;
+};
+
+export type UpdateOpportunityStageRottingDaysInput = {
+  config: Scalars['JSON']['input'];
 };
 
 export type UpdatePageLayoutInput = {
