@@ -512,6 +512,14 @@ const SettingsObjectFieldEdit = lazy(() =>
   ),
 );
 
+const SettingsObjectOpportunityRotting = lazy(() =>
+  import('~/pages/settings/data-model/SettingsObjectOpportunityRotting').then(
+    (module) => ({
+      default: module.SettingsObjectOpportunityRotting,
+    }),
+  ),
+);
+
 const SettingsSecuritySSOIdentifyProvider = lazy(() =>
   import('~/pages/settings/security/SettingsSecuritySSOIdentifyProvider').then(
     (module) => ({
@@ -896,6 +904,10 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         <Route
           path={SettingsPath.ObjectFieldEdit}
           element={<SettingsObjectFieldEdit />}
+        />
+        <Route
+          path={SettingsPath.ObjectRotting}
+          element={<SettingsObjectOpportunityRotting />}
         />
       </Route>
       <Route

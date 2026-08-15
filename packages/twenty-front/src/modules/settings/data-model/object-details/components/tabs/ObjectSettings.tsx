@@ -16,8 +16,9 @@ import { useModal } from '@/ui/layout/modal/hooks/useModal';
 import { styled } from '@linaria/react';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
 import { useLingui } from '@lingui/react/macro';
-import { SettingsPath } from 'twenty-shared/types';
-import { IconArchive, IconTrash } from 'twenty-ui/icon';
+import { CoreObjectNameSingular, SettingsPath } from 'twenty-shared/types';
+import { getSettingsPath } from 'twenty-shared/utils';
+import { IconArchive, IconClock, IconTrash } from 'twenty-ui/icon';
 import { H2Title } from 'twenty-ui/typography';
 import { Button } from 'twenty-ui/input';
 import { Section } from 'twenty-ui/layout';
@@ -125,6 +126,26 @@ export const ObjectSettings = ({
           />
         </Section>
       </StyledFormSectionContainer>
+      {objectMetadataItem.nameSingular ===
+        CoreObjectNameSingular.Opportunity && (
+        <StyledFormSectionContainer>
+          <Section>
+            <H2Title
+              title={t`Deal-Aging`}
+              description={t`Configure how many days a deal can stay in a stage before it is flagged as rotting`}
+            />
+            <Button
+              Icon={IconClock}
+              title={t`Configure rotting thresholds`}
+              variant="secondary"
+              size="small"
+              to={getSettingsPath(SettingsPath.ObjectRotting, {
+                objectNamePlural: objectMetadataItem.namePlural,
+              })}
+            />
+          </Section>
+        </StyledFormSectionContainer>
+      )}
       <AdvancedSettingsWrapper>
         <StyledFormSectionContainer>
           <Section>
