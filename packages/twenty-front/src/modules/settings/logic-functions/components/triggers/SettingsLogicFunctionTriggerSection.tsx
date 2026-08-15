@@ -48,7 +48,7 @@ export const SettingsLogicFunctionTriggerSection = ({
             value={enabled}
             onChange={onEnabledChange}
             toggleSize="small"
-            color={theme.color.blue}
+            color={theme.accent.accent9}
           />
         )}
       </StyledHeader>

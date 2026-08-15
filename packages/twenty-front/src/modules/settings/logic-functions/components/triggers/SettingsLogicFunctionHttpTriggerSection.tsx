@@ -137,7 +137,7 @@ export const SettingsLogicFunctionHttpTriggerSection = ({
               onChange={(checked) => updateField('isAuthRequired', checked)}
               disabled={readonly}
               toggleSize="small"
-              color={theme.color.blue}
+              color={theme.accent.accent9}
             />
             <StyledAuthLabel>{t`Require authentication`}</StyledAuthLabel>
           </StyledAuthRow>

@@ -117,18 +117,18 @@ $primary-accents: (
     active-disabled: var(--t-background-transparent-lighter),
   ),
   'blue': (
-    bg: var(--t-color-blue),
+    bg: var(--t-accent-accent9),
     border: var(--t-background-transparent-light),
-    border-focus: var(--t-color-blue),
+    border-focus: var(--t-accent-accent9),
     border-disabled: transparent,
     shadow-focus: var(--t-accent-tertiary),
     color: var(--t-gray-scale-gray1),
     color-disabled: null,
     opacity-disabled: 0.24,
-    hover: var(--t-color-blue10),
-    active: var(--t-color-blue12),
-    hover-disabled: var(--t-color-blue),
-    active-disabled: var(--t-color-blue),
+    hover: var(--t-accent-accent10),
+    active: var(--t-accent-accent12),
+    hover-disabled: var(--t-accent-accent9),
+    active-disabled: var(--t-accent-accent9),
   ),
   'danger': (
     bg: var(--t-color-red),
@@ -235,13 +235,13 @@ $primary-accents: (
     [data-variant='secondary'],
     [data-variant='tertiary']
   )[data-accent='blue'] {
-  --icon-button-color: var(--t-color-blue);
+  --icon-button-color: var(--t-accent-accent9);
   --icon-button-hover-bg: var(--t-accent-tertiary);
   --icon-button-active-bg: var(--t-accent-secondary);
 }
 
 .button[data-variant='secondary'][data-accent='blue'] {
-  --icon-button-border-color: var(--t-color-blue);
+  --icon-button-border-color: var(--t-accent-accent9);
 }
 
 .button:is(
@@ -255,7 +255,7 @@ $primary-accents: (
 // Only the tertiary border reacts to focus for the blue accent; the
 // secondary border is keyed on disabled alone.
 .button[data-variant='tertiary'][data-accent='blue'][data-focus] {
-  --icon-button-border-color: var(--t-color-blue);
+  --icon-button-border-color: var(--t-accent-accent9);
 }
 
 .button:is(
@@ -269,7 +269,7 @@ $primary-accents: (
 }
 
 .button[data-variant='secondary'][data-accent='blue'][data-disabled] {
-  --icon-button-border-color: var(--t-color-blue5);
+  --icon-button-border-color: var(--t-accent-accent5);
 }
 
 // accent=danger

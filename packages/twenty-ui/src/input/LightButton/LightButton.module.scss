@@ -66,11 +66,11 @@
 // switch where the (active || focus) branch came first.
 .button[data-active],
 .button[data-focus] {
-  --light-button-color: var(--t-color-blue);
+  --light-button-color: var(--t-accent-accent9);
 }
 
 // focus is gated by !disabled in the component, like the legacy call-site.
 .button[data-focus] {
-  --light-button-border: 1px solid var(--t-color-blue);
-  --light-button-box-shadow: 0 0 0 3px var(--t-color-blue3);
+  --light-button-border: 1px solid var(--t-accent-accent9);
+  --light-button-box-shadow: 0 0 0 3px var(--t-accent-accent3);
 }
