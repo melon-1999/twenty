@@ -9,6 +9,7 @@ import { MAIN_CONTEXT_STORE_INSTANCE_ID } from '@/context-store/constants/MainCo
 import { ContextStoreComponentInstanceContext } from '@/context-store/states/contexts/ContextStoreComponentInstanceContext';
 import { isLayoutCustomizationModeEnabledState } from '@/layout-customization/states/isLayoutCustomizationModeEnabledState';
 import { RecordComponentInstanceContextsWrapper } from '@/object-record/components/RecordComponentInstanceContextsWrapper';
+import { OpportunityRottingBadge } from '@/object-record/record-show/opportunity/components/OpportunityRottingBadge';
 import { OpportunityWonLostActions } from '@/object-record/record-show/opportunity/components/OpportunityWonLostActions';
 import { PageLayoutRecordPageRenderer } from '@/object-record/record-show/components/PageLayoutRecordPageRenderer';
 import { RecordShowPageSSESubscribeEffect } from '@/object-record/record-show/components/RecordShowPageSSESubscribeEffect';
@@ -56,6 +57,22 @@ export const RecordShowPage = () => {
     },
   ) as string | null;
 
+  const opportunityStage = useAtomFamilySelectorValue(
+    recordStoreFamilySelector,
+    {
+      recordId: objectRecordId,
+      fieldName: 'stage',
+    },
+  ) as string | null;
+
+  const opportunityStageChangedAt = useAtomFamilySelectorValue(
+    recordStoreFamilySelector,
+    {
+      recordId: objectRecordId,
+      fieldName: 'stageChangedAt',
+    },
+  ) as string | null;
+
   return (
     <RecordComponentInstanceContextsWrapper
       componentInstanceId={recordShowComponentInstanceId}
@@ -77,11 +94,18 @@ export const RecordShowPage = () => {
                 objectRecordId={objectRecordId}
               >
                 {objectNameSingular === CoreObjectNameSingular.Opportunity && (
-                  <OpportunityWonLostActions
-                    recordId={objectRecordId}
-                    status={opportunityStatus ?? 'OPEN'}
-                    closedAt={opportunityClosedAt}
-                  />
+                  <>
+                    <OpportunityRottingBadge
+                      status={opportunityStatus ?? 'OPEN'}
+                      stage={opportunityStage ?? ''}
+                      stageChangedAt={opportunityStageChangedAt}
+                    />
+                    <OpportunityWonLostActions
+                      recordId={objectRecordId}
+                      status={opportunityStatus ?? 'OPEN'}
+                      closedAt={opportunityClosedAt}
+                    />
+                  </>
                 )}
                 <RecordShowCommandMenu />
                 {!isLayoutCustomizationModeEnabled && <SidePanelToggleButton />}
