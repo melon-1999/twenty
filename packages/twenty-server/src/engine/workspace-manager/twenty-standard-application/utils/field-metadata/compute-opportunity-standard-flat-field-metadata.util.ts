@@ -177,6 +177,22 @@ export const buildOpportunityStandardFlatFieldMetadatas = ({
     twentyStandardApplicationId,
     now,
   }),
+  stageChangedAt: createStandardFieldFlatMetadata({
+    objectName,
+    workspaceId,
+    context: {
+      fieldName: 'stageChangedAt',
+      type: FieldMetadataType.DATE_TIME,
+      label: i18nLabel(msg`Stage changed at`),
+      description: i18nLabel(msg`When the opportunity last changed stage`),
+      icon: 'IconClockPin',
+      isNullable: true,
+    },
+    standardObjectMetadataRelatedEntityIds,
+    dependencyFlatEntityMaps,
+    twentyStandardApplicationId,
+    now,
+  }),
   stage: createStandardFieldFlatMetadata({
     objectName,
     workspaceId,

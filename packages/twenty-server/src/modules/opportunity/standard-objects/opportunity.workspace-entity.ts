@@ -17,6 +17,7 @@ export class OpportunityWorkspaceEntity extends BaseWorkspaceEntity {
   stage: string;
   status: string;
   closedAt: Date | null;
+  stageChangedAt: Date | null;
   position: number;
   createdBy: ActorMetadata;
   updatedBy: ActorMetadata;

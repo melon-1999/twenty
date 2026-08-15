@@ -731,6 +731,9 @@ export const STANDARD_OBJECT_FIELDS = {
     stage: { universalIdentifier: '20202020-6f76-477d-8551-28cd65b2b4b9' },
     status: { universalIdentifier: '20202020-5701-4a11-9c31-7e6b2d4f8a10' },
     closedAt: { universalIdentifier: '20202020-5701-4a11-9c31-7e6b2d4f8a11' },
+    stageChangedAt: {
+      universalIdentifier: '20202020-5701-4a11-9c31-7e6b2d4f8a12',
+    },
     pointOfContact: {
       universalIdentifier: '20202020-8dfb-42fc-92b6-01afb759ed16',
     },
