@@ -8,10 +8,11 @@ type GetOpportunityStageRottingDaysResult = {
 
 export const useOpportunityStageRottingConfig = (): {
   config: Record<string, number>;
+  loading: boolean;
 } => {
-  const { data } = useQuery<GetOpportunityStageRottingDaysResult>(
+  const { data, loading } = useQuery<GetOpportunityStageRottingDaysResult>(
     GET_OPPORTUNITY_STAGE_ROTTING_DAYS,
   );
 
-  return { config: data?.opportunityStageRottingDays ?? {} };
+  return { config: data?.opportunityStageRottingDays ?? {}, loading };
 };

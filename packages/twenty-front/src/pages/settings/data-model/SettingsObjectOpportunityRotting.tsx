@@ -5,6 +5,7 @@ import { useOpportunityStageRottingConfig } from '@/object-record/record-show/op
 import { useUpdateOpportunityStageRottingDays } from '@/object-record/record-show/opportunity/hooks/useUpdateOpportunityStageRottingDays';
 import { OpportunityRottingForm } from '@/settings/data-model/object-details/components/OpportunityRottingForm';
 import { SettingsPageContainer } from '@/settings/components/SettingsPageContainer';
+import { SettingsSectionSkeletonLoader } from '@/settings/components/SettingsSectionSkeletonLoader';
 import { SettingsPageLayout } from '@/settings/components/layout/SettingsPageLayout';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
 import { t } from '@lingui/core/macro';
@@ -29,7 +30,8 @@ export const SettingsObjectOpportunityRotting = () => {
     label: option.label,
   }));
 
-  const { config } = useOpportunityStageRottingConfig();
+  const { config, loading: rottingConfigLoading } =
+    useOpportunityStageRottingConfig();
   const { updateRottingDays } = useUpdateOpportunityStageRottingDays();
 
   const handleSave = async (nextConfig: Record<string, number>) => {
@@ -66,11 +68,15 @@ export const SettingsObjectOpportunityRotting = () => {
             title={t`Rotting thresholds`}
             description={t`Number of days a deal can stay in a stage before it is flagged as rotting`}
           />
-          <OpportunityRottingForm
-            options={options}
-            initialConfig={config}
-            onSave={handleSave}
-          />
+          {rottingConfigLoading ? (
+            <SettingsSectionSkeletonLoader />
+          ) : (
+            <OpportunityRottingForm
+              options={options}
+              initialConfig={config}
+              onSave={handleSave}
+            />
+          )}
         </Section>
       </SettingsPageContainer>
     </SettingsPageLayout>
