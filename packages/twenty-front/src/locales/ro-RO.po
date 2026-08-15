@@ -408,6 +408,11 @@ msgstr "{currentCreditAmountDisplay} credite "
 msgid "{days, plural, one {{days} day} other {{days} days}}"
 msgstr "{days, plural, one {{days} zi} few {{days} zile} other {{days} zile}}"
 
+#. js-lingui-id: PRMS5Z
+#: src/modules/object-record/record-show/opportunity/components/OpportunityRottingBadge.tsx
+msgid "{daysInStage} Tage in Phase"
+msgstr ""
+
 #. js-lingui-id: 0KwX9P
 #. placeholder {0}: (1000).toFixed(decimals)
 #. placeholder {1}: (1000).toFixed(decimals)
@@ -4474,6 +4479,11 @@ msgstr "Configurează metode de conectare alternative pentru utilizatorii cu per
 msgid "Configure how long audit logs are retained"
 msgstr "Configurați durata de păstrare a jurnalelor de audit"
 
+#. js-lingui-id: BTFWBQ
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure how many days a deal can stay in a stage before it is flagged as rotting"
+msgstr ""
+
 #. js-lingui-id: OLqG0t
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
 msgid "Configure how this object appears in search results"
@@ -4488,6 +4498,11 @@ msgstr "Configurați modul în care ar trebui să afișăm evenimentele dvs. în
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Configure IMAP settings to receive and sync your emails."
 msgstr "Configurați setările IMAP pentru a primi și sincroniza emailurile."
+
+#. js-lingui-id: U4P+9U
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure rotting thresholds"
+msgstr ""
 
 #. js-lingui-id: gk/8eh
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
@@ -6031,6 +6046,13 @@ msgstr "Dezactivează acest câmp"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "Dezactivat"
+
+#. js-lingui-id: BgYumF
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Deal-Aging"
+msgstr ""
 
 #. js-lingui-id: ZlGycp
 #: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
@@ -13656,6 +13678,11 @@ msgstr "Format număr"
 msgid "Number of dashboards"
 msgstr "Număr de dashboarduri"
 
+#. js-lingui-id: 0k3bQf
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Number of days a deal can stay in a stage before it is flagged as rotting"
+msgstr ""
+
 #. js-lingui-id: +cbzNC
 #: src/modules/settings/security/components/SettingsSecuritySettings.tsx
 msgid "Number of days to retain audit logs (30-1095 days)"
@@ -13803,6 +13830,7 @@ msgstr "obiecte"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -16117,6 +16145,16 @@ msgstr "Reînnoiți secretul clientului"
 msgid "Rotate secret"
 msgstr "Reînnoiți secretul"
 
+#. js-lingui-id: BqCHsC
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Rotting thresholds"
+msgstr ""
+
+#. js-lingui-id: /8oX7f
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Rotting thresholds updated"
+msgstr ""
+
 #. js-lingui-id: 13TAbH
 #: src/modules/workflow/workflow-steps/workflow-actions/pick-record-action/components/WorkflowEditActionPickRecord.tsx
 msgid "Round robin"
@@ -16226,6 +16264,7 @@ msgstr "Sâmbătă"
 
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
+#: src/modules/settings/data-model/object-details/components/OpportunityRottingForm.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "Save"
 msgstr "Salvează"
@@ -21294,6 +21333,7 @@ msgstr "Fluxuri de lucru"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx

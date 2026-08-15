@@ -403,6 +403,11 @@ msgstr "{currentCreditAmountDisplay} credits "
 msgid "{days, plural, one {{days} day} other {{days} days}}"
 msgstr "{days, plural, one {{days} day} other {{days} days}}"
 
+#. js-lingui-id: PRMS5Z
+#: src/modules/object-record/record-show/opportunity/components/OpportunityRottingBadge.tsx
+msgid "{daysInStage} Tage in Phase"
+msgstr "{daysInStage} Tage in Phase"
+
 #. js-lingui-id: 0KwX9P
 #. placeholder {0}: (1000).toFixed(decimals)
 #. placeholder {1}: (1000).toFixed(decimals)
@@ -4469,6 +4474,11 @@ msgstr "Configure fallback login methods for users with SSO bypass permissions"
 msgid "Configure how long audit logs are retained"
 msgstr "Configure how long audit logs are retained"
 
+#. js-lingui-id: BTFWBQ
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure how many days a deal can stay in a stage before it is flagged as rotting"
+msgstr "Configure how many days a deal can stay in a stage before it is flagged as rotting"
+
 #. js-lingui-id: OLqG0t
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
 msgid "Configure how this object appears in search results"
@@ -4483,6 +4493,11 @@ msgstr "Configure how we should display your events in your calendar"
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
 msgid "Configure IMAP settings to receive and sync your emails."
 msgstr "Configure IMAP settings to receive and sync your emails."
+
+#. js-lingui-id: U4P+9U
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure rotting thresholds"
+msgstr "Configure rotting thresholds"
 
 #. js-lingui-id: gk/8eh
 #: src/modules/settings/accounts/components/SettingsAccountsConnectionForm.tsx
@@ -6026,6 +6041,13 @@ msgstr "Deactivate this field"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "Deactivated"
+
+#. js-lingui-id: BgYumF
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Deal-Aging"
+msgstr "Deal-Aging"
 
 #. js-lingui-id: ZlGycp
 #: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
@@ -13651,6 +13673,11 @@ msgstr "Number format"
 msgid "Number of dashboards"
 msgstr "Number of dashboards"
 
+#. js-lingui-id: 0k3bQf
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Number of days a deal can stay in a stage before it is flagged as rotting"
+msgstr "Number of days a deal can stay in a stage before it is flagged as rotting"
+
 #. js-lingui-id: +cbzNC
 #: src/modules/settings/security/components/SettingsSecuritySettings.tsx
 msgid "Number of days to retain audit logs (30-1095 days)"
@@ -13798,6 +13825,7 @@ msgstr "objects"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -16112,6 +16140,16 @@ msgstr "Rotate client secret"
 msgid "Rotate secret"
 msgstr "Rotate secret"
 
+#. js-lingui-id: BqCHsC
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Rotting thresholds"
+msgstr "Rotting thresholds"
+
+#. js-lingui-id: /8oX7f
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+msgid "Rotting thresholds updated"
+msgstr "Rotting thresholds updated"
+
 #. js-lingui-id: 13TAbH
 #: src/modules/workflow/workflow-steps/workflow-actions/pick-record-action/components/WorkflowEditActionPickRecord.tsx
 msgid "Round robin"
@@ -16221,6 +16259,7 @@ msgstr "Saturday"
 
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
+#: src/modules/settings/data-model/object-details/components/OpportunityRottingForm.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "Save"
 msgstr "Save"
@@ -21291,6 +21330,7 @@ msgstr "Workflows"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
