@@ -18,7 +18,8 @@ export const useOpportunityRottingForRecord = (
   return computeOpportunityRotting({
     status: (record?.status as string | undefined) ?? 'OPEN',
     stage: (record?.stage as string | undefined) ?? '',
-    stageChangedAt: (record?.stageChangedAt as string | null | undefined) ?? null,
+    stageChangedAt:
+      (record?.stageChangedAt as string | null | undefined) ?? null,
     config,
     now: new Date(),
   });
