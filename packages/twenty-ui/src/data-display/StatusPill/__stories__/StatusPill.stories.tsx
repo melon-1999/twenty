@@ -16,11 +16,11 @@ type Story = StoryObj<typeof StatusPill>;
 export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-      <StatusPill variant="success" label="Won" withDot />
-      <StatusPill variant="danger" label="Lost" withDot />
-      <StatusPill variant="warning" label="At risk" withDot />
-      <StatusPill variant="info" label="Open" withDot />
-      <StatusPill variant="neutral" label="Cold" withDot />
+      <StatusPill variant="success" label="Active" withDot />
+      <StatusPill variant="danger" label="Error" withDot />
+      <StatusPill variant="warning" label="Warning" withDot />
+      <StatusPill variant="info" label="Info" withDot />
+      <StatusPill variant="neutral" label="Inactive" withDot />
     </div>
   ),
 };
