@@ -11,6 +11,9 @@ import { RecordTableUpdateContext } from '@/object-record/record-table/contexts/
 import { isRecordTableCellsNonEditableComponentState } from '@/object-record/record-table/states/isRecordTableCellsNonEditableComponentState';
 import { useAtomComponentStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomComponentStateValue';
 import { useContext, type ReactNode } from 'react';
+import { CoreObjectNameSingular } from 'twenty-shared/types';
+
+import { OpportunityRottingIndicator } from '@/object-record/record-show/opportunity/components/OpportunityRottingIndicator';
 
 type RecordTableCellFieldContextLabelIdentifierProps = {
   children: ReactNode;
@@ -89,6 +92,10 @@ export const RecordTableCellFieldContextLabelIdentifier = ({
       }}
     >
       {children}
+      {objectMetadataItem.nameSingular ===
+        CoreObjectNameSingular.Opportunity && (
+        <OpportunityRottingIndicator recordId={recordId} />
+      )}
     </FieldContext.Provider>
   );
 };

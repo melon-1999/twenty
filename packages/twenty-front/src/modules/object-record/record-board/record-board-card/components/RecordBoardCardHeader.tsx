@@ -4,6 +4,7 @@ import { RecordBoardCardContext } from '@/object-record/record-board/record-boar
 import { isRecordBoardCardSelectedComponentFamilyState } from '@/object-record/record-board/states/isRecordBoardCardSelectedComponentFamilyState';
 
 import { RecordChip } from '@/object-record/components/RecordChip';
+import { OpportunityRottingIndicator } from '@/object-record/record-show/opportunity/components/OpportunityRottingIndicator';
 import { useActiveRecordBoardCard } from '@/object-record/record-board/hooks/useActiveRecordBoardCard';
 import { useFocusedRecordBoardCard } from '@/object-record/record-board/hooks/useFocusedRecordBoardCard';
 import { StopPropagationContainer } from '@/object-record/record-board/record-board-card/components/StopPropagationContainer';
@@ -16,7 +17,7 @@ import { useAtomComponentFamilyState } from '@/ui/utilities/state/jotai/hooks/us
 import { useAtomComponentState } from '@/ui/utilities/state/jotai/hooks/useAtomComponentState';
 import { useAtomFamilyStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomFamilyStateValue';
 import { useGetCurrentViewOnly } from '@/views/hooks/useGetCurrentViewOnly';
-import { OpenRecordIn } from 'twenty-shared/types';
+import { CoreObjectNameSingular, OpenRecordIn } from 'twenty-shared/types';
 import { styled } from '@linaria/react';
 import { useContext } from 'react';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
@@ -99,6 +100,11 @@ export const RecordBoardCardHeader = () => {
           )}
         </StopPropagationContainer>
       </StyledRecordChipContainer>
+
+      {objectMetadataItem.nameSingular ===
+        CoreObjectNameSingular.Opportunity && (
+        <OpportunityRottingIndicator recordId={recordId} />
+      )}
 
       {isCompactModeActive && (
         <StyledCompactIconContainer className="compact-icon-container">
