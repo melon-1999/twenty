@@ -1918,6 +1918,9 @@ exports[`STANDARD_OBJECTS universal identifiers should never change without an e
       "id": {
         "universalIdentifier": "2fa92d57-b39d-5ee8-ac9e-b39bc65b9ee9",
       },
+      "lostReason": {
+        "universalIdentifier": "20202020-5701-4a11-9c31-7e6b2d4f8a15",
+      },
       "name": {
         "universalIdentifier": "20202020-8609-4f65-a2d9-44009eb422b5",
       },

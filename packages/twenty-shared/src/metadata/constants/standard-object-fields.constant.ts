@@ -740,6 +740,9 @@ export const STANDARD_OBJECT_FIELDS = {
     weightedAmount: {
       universalIdentifier: '20202020-5701-4a11-9c31-7e6b2d4f8a14',
     },
+    lostReason: {
+      universalIdentifier: '20202020-5701-4a11-9c31-7e6b2d4f8a15',
+    },
     pointOfContact: {
       universalIdentifier: '20202020-8dfb-42fc-92b6-01afb759ed16',
     },
