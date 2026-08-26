@@ -10,6 +10,7 @@ import { ContextStoreComponentInstanceContext } from '@/context-store/states/con
 import { isLayoutCustomizationModeEnabledState } from '@/layout-customization/states/isLayoutCustomizationModeEnabledState';
 import { RecordComponentInstanceContextsWrapper } from '@/object-record/components/RecordComponentInstanceContextsWrapper';
 import { OpportunityRottingBadge } from '@/object-record/record-show/opportunity/components/OpportunityRottingBadge';
+import { OpportunityWeightedAmount } from '@/object-record/record-show/opportunity/components/OpportunityWeightedAmount';
 import { OpportunityWonLostActions } from '@/object-record/record-show/opportunity/components/OpportunityWonLostActions';
 import { PageLayoutRecordPageRenderer } from '@/object-record/record-show/components/PageLayoutRecordPageRenderer';
 import { RecordShowPageSSESubscribeEffect } from '@/object-record/record-show/components/RecordShowPageSSESubscribeEffect';
@@ -73,6 +74,22 @@ export const RecordShowPage = () => {
     },
   ) as string | null;
 
+  const opportunityProbability = useAtomFamilySelectorValue(
+    recordStoreFamilySelector,
+    {
+      recordId: objectRecordId,
+      fieldName: 'probability',
+    },
+  ) as number | null;
+
+  const opportunityAmount = useAtomFamilySelectorValue(
+    recordStoreFamilySelector,
+    {
+      recordId: objectRecordId,
+      fieldName: 'amount',
+    },
+  ) as { amountMicros: number; currencyCode: string } | null;
+
   return (
     <RecordComponentInstanceContextsWrapper
       componentInstanceId={recordShowComponentInstanceId}
@@ -99,6 +116,10 @@ export const RecordShowPage = () => {
                       status={opportunityStatus ?? 'OPEN'}
                       stage={opportunityStage ?? ''}
                       stageChangedAt={opportunityStageChangedAt}
+                    />
+                    <OpportunityWeightedAmount
+                      amount={opportunityAmount}
+                      probability={opportunityProbability}
                     />
                     <OpportunityWonLostActions
                       recordId={objectRecordId}
