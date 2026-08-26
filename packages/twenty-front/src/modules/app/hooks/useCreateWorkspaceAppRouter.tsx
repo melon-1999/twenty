@@ -117,6 +117,12 @@ const AiChatPage = lazy(() =>
   })),
 );
 
+const OpportunityForecastPage = lazy(() =>
+  import('~/pages/opportunity-forecast/OpportunityForecastPage').then(
+    (module) => ({ default: module.OpportunityForecastPage }),
+  ),
+);
+
 const NotFound = lazy(() =>
   import('~/pages/not-found/NotFound').then((module) => ({
     default: module.NotFound,
@@ -181,6 +187,14 @@ const createWorkspaceAppRouter = (
                 element={
                   <LazyRoute>
                     <AiChatPage />
+                  </LazyRoute>
+                }
+              />
+              <Route
+                path={AppPath.ForecastPage}
+                element={
+                  <LazyRoute>
+                    <OpportunityForecastPage />
                   </LazyRoute>
                 }
               />
