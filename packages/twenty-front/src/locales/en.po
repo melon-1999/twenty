@@ -405,6 +405,7 @@ msgstr "{days, plural, one {{days} day} other {{days} days}}"
 
 #. js-lingui-id: PRMS5Z
 #: src/modules/object-record/record-show/opportunity/components/OpportunityRottingBadge.tsx
+#: src/modules/object-record/record-show/opportunity/components/OpportunityRottingIndicator.tsx
 msgid "{daysInStage} Tage in Phase"
 msgstr "{daysInStage} Tage in Phase"
 
@@ -557,6 +558,11 @@ msgstr "{permissionLabel} Permission removed"
 #: src/modules/object-record/record-merge/components/MergeSettingsTab.tsx
 msgid "{positionLabel} record holds priority"
 msgstr "{positionLabel} record holds priority"
+
+#. js-lingui-id: lPumzc
+#: src/modules/object-record/record-show/opportunity/components/OpportunityProbabilityBadge.tsx
+msgid "{probability}%"
+msgstr "{probability}%"
 
 #. js-lingui-id: 5d0hY6
 #: src/modules/settings/admin-panel/health-status/hooks/useRetryJobs.ts
@@ -4494,6 +4500,11 @@ msgstr "Configure how we should display your events in your calendar"
 msgid "Configure IMAP settings to receive and sync your emails."
 msgstr "Configure IMAP settings to receive and sync your emails."
 
+#. js-lingui-id: byNCXH
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure probability defaults"
+msgstr "Configure probability defaults"
+
 #. js-lingui-id: U4P+9U
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
 msgid "Configure rotting thresholds"
@@ -4508,6 +4519,11 @@ msgstr "Configure SMTP settings to send emails from your account."
 #: src/modules/settings/admin-panel/ai/components/SettingsAdminAI.tsx
 msgid "Configure the default AI models for all workspaces"
 msgstr "Configure the default AI models for all workspaces"
+
+#. js-lingui-id: z9QmGp
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure the default win probability applied to a deal when it enters a stage"
+msgstr "Configure the default win probability applied to a deal when it enters a stage"
 
 #. js-lingui-id: CcCy4C
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
@@ -6140,6 +6156,11 @@ msgstr "Default Value"
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownDefaultView.tsx
 msgid "Default View"
 msgstr "Default View"
+
+#. js-lingui-id: tWGYaJ
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Default win probability applied to a deal when it enters a stage"
+msgstr "Default win probability applied to a deal when it enters a stage"
 
 #. js-lingui-id: Y2ImVJ
 #: src/pages/settings/data-model/SettingsNewObject.tsx
@@ -9323,6 +9344,11 @@ msgstr "Get the most out of your CRM by installing some apps"
 #: src/pages/onboarding/InviteTeam.tsx
 msgid "Get the most out of your workspace by inviting your team."
 msgstr "Get the most out of your workspace by inviting your team."
+
+#. js-lingui-id: M3hrSX
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWeightedAmount.tsx
+msgid "Gewichtet"
+msgstr "Gewichtet"
 
 #. js-lingui-id: XXtAx5
 #: src/modules/settings/data-model/indexes/forms/components/SettingsObjectIndexOptionsForm.tsx
@@ -13825,6 +13851,7 @@ msgstr "objects"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -15013,6 +15040,23 @@ msgstr "pro plan"
 #: src/modules/settings/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Pro plan"
 msgstr "Pro plan"
+
+#. js-lingui-id: WJIL29
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability"
+msgstr "Probability"
+
+#. js-lingui-id: Fb98lk
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability defaults"
+msgstr "Probability defaults"
+
+#. js-lingui-id: 3ClQ0K
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability defaults updated"
+msgstr "Probability defaults updated"
 
 #. js-lingui-id: vrnnn9
 #: src/modules/activities/calendar/components/CalendarEventCallRecorderAvatar.tsx
@@ -16259,6 +16303,7 @@ msgstr "Saturday"
 
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
+#: src/modules/settings/data-model/object-details/components/OpportunityProbabilityForm.tsx
 #: src/modules/settings/data-model/object-details/components/OpportunityRottingForm.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "Save"
@@ -21330,6 +21375,7 @@ msgstr "Workflows"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx

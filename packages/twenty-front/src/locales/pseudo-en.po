@@ -405,6 +405,7 @@ msgstr ""
 
 #. js-lingui-id: PRMS5Z
 #: src/modules/object-record/record-show/opportunity/components/OpportunityRottingBadge.tsx
+#: src/modules/object-record/record-show/opportunity/components/OpportunityRottingIndicator.tsx
 msgid "{daysInStage} Tage in Phase"
 msgstr ""
 
@@ -556,6 +557,11 @@ msgstr ""
 #. js-lingui-id: HpUf/k
 #: src/modules/object-record/record-merge/components/MergeSettingsTab.tsx
 msgid "{positionLabel} record holds priority"
+msgstr ""
+
+#. js-lingui-id: lPumzc
+#: src/modules/object-record/record-show/opportunity/components/OpportunityProbabilityBadge.tsx
+msgid "{probability}%"
 msgstr ""
 
 #. js-lingui-id: 5d0hY6
@@ -4494,6 +4500,11 @@ msgstr ""
 msgid "Configure IMAP settings to receive and sync your emails."
 msgstr ""
 
+#. js-lingui-id: byNCXH
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure probability defaults"
+msgstr ""
+
 #. js-lingui-id: U4P+9U
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
 msgid "Configure rotting thresholds"
@@ -4507,6 +4518,11 @@ msgstr ""
 #. js-lingui-id: TiCmQz
 #: src/modules/settings/admin-panel/ai/components/SettingsAdminAI.tsx
 msgid "Configure the default AI models for all workspaces"
+msgstr ""
+
+#. js-lingui-id: z9QmGp
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure the default win probability applied to a deal when it enters a stage"
 msgstr ""
 
 #. js-lingui-id: CcCy4C
@@ -6139,6 +6155,11 @@ msgstr ""
 #. js-lingui-id: wWTYoF
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownDefaultView.tsx
 msgid "Default View"
+msgstr ""
+
+#. js-lingui-id: tWGYaJ
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Default win probability applied to a deal when it enters a stage"
 msgstr ""
 
 #. js-lingui-id: Y2ImVJ
@@ -9322,6 +9343,11 @@ msgstr ""
 #. js-lingui-id: NXEW3h
 #: src/pages/onboarding/InviteTeam.tsx
 msgid "Get the most out of your workspace by inviting your team."
+msgstr ""
+
+#. js-lingui-id: M3hrSX
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWeightedAmount.tsx
+msgid "Gewichtet"
 msgstr ""
 
 #. js-lingui-id: XXtAx5
@@ -13802,6 +13828,7 @@ msgstr ""
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -14989,6 +15016,23 @@ msgstr ""
 #: src/modules/settings/billing/components/internal/SettingsBillingPlanComparisonTable.tsx
 #: src/modules/settings/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Pro plan"
+msgstr ""
+
+#. js-lingui-id: WJIL29
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability"
+msgstr ""
+
+#. js-lingui-id: Fb98lk
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability defaults"
+msgstr ""
+
+#. js-lingui-id: 3ClQ0K
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability defaults updated"
 msgstr ""
 
 #. js-lingui-id: vrnnn9
@@ -16236,6 +16280,7 @@ msgstr ""
 
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
+#: src/modules/settings/data-model/object-details/components/OpportunityProbabilityForm.tsx
 #: src/modules/settings/data-model/object-details/components/OpportunityRottingForm.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "Save"
@@ -21275,6 +21320,7 @@ msgstr ""
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx

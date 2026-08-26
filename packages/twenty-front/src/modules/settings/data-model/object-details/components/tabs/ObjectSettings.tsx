@@ -18,7 +18,12 @@ import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomState
 import { useLingui } from '@lingui/react/macro';
 import { CoreObjectNameSingular, SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
-import { IconArchive, IconClock, IconTrash } from 'twenty-ui/icon';
+import {
+  IconArchive,
+  IconClock,
+  IconPercentage,
+  IconTrash,
+} from 'twenty-ui/icon';
 import { H2Title } from 'twenty-ui/typography';
 import { Button } from 'twenty-ui/input';
 import { Section } from 'twenty-ui/layout';
@@ -140,6 +145,26 @@ export const ObjectSettings = ({
               variant="secondary"
               size="small"
               to={getSettingsPath(SettingsPath.ObjectRotting, {
+                objectNamePlural: objectMetadataItem.namePlural,
+              })}
+            />
+          </Section>
+        </StyledFormSectionContainer>
+      )}
+      {objectMetadataItem.nameSingular ===
+        CoreObjectNameSingular.Opportunity && (
+        <StyledFormSectionContainer>
+          <Section>
+            <H2Title
+              title={t`Probability`}
+              description={t`Configure the default win probability applied to a deal when it enters a stage`}
+            />
+            <Button
+              Icon={IconPercentage}
+              title={t`Configure probability defaults`}
+              variant="secondary"
+              size="small"
+              to={getSettingsPath(SettingsPath.ObjectProbability, {
                 objectNamePlural: objectMetadataItem.namePlural,
               })}
             />

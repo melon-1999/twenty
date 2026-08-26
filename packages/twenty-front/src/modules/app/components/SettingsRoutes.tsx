@@ -520,6 +520,14 @@ const SettingsObjectOpportunityRotting = lazy(() =>
   ),
 );
 
+const SettingsObjectOpportunityProbability = lazy(() =>
+  import('~/pages/settings/data-model/SettingsObjectOpportunityProbability').then(
+    (module) => ({
+      default: module.SettingsObjectOpportunityProbability,
+    }),
+  ),
+);
+
 const SettingsSecuritySSOIdentifyProvider = lazy(() =>
   import('~/pages/settings/security/SettingsSecuritySSOIdentifyProvider').then(
     (module) => ({
@@ -908,6 +916,10 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         <Route
           path={SettingsPath.ObjectRotting}
           element={<SettingsObjectOpportunityRotting />}
+        />
+        <Route
+          path={SettingsPath.ObjectProbability}
+          element={<SettingsObjectOpportunityProbability />}
         />
       </Route>
       <Route

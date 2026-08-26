@@ -410,6 +410,7 @@ msgstr "{days, plural, other {{days}일}}"
 
 #. js-lingui-id: PRMS5Z
 #: src/modules/object-record/record-show/opportunity/components/OpportunityRottingBadge.tsx
+#: src/modules/object-record/record-show/opportunity/components/OpportunityRottingIndicator.tsx
 msgid "{daysInStage} Tage in Phase"
 msgstr ""
 
@@ -562,6 +563,11 @@ msgstr ""
 #: src/modules/object-record/record-merge/components/MergeSettingsTab.tsx
 msgid "{positionLabel} record holds priority"
 msgstr "{positionLabel} 레코드가 우선순위를 가집니다"
+
+#. js-lingui-id: lPumzc
+#: src/modules/object-record/record-show/opportunity/components/OpportunityProbabilityBadge.tsx
+msgid "{probability}%"
+msgstr ""
 
 #. js-lingui-id: 5d0hY6
 #: src/modules/settings/admin-panel/health-status/hooks/useRetryJobs.ts
@@ -4499,6 +4505,11 @@ msgstr "캘린더에 이벤트를 어떻게 표시할지 구성합니다"
 msgid "Configure IMAP settings to receive and sync your emails."
 msgstr "IMAP 설정을 구성하여 이메일을 수신하고 동기화하세요."
 
+#. js-lingui-id: byNCXH
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure probability defaults"
+msgstr ""
+
 #. js-lingui-id: U4P+9U
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
 msgid "Configure rotting thresholds"
@@ -4513,6 +4524,11 @@ msgstr "이메일을 보내기 위해 SMTP 설정을 구성하십시오."
 #: src/modules/settings/admin-panel/ai/components/SettingsAdminAI.tsx
 msgid "Configure the default AI models for all workspaces"
 msgstr "모든 워크스페이스의 기본 AI 모델을 설정합니다"
+
+#. js-lingui-id: z9QmGp
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Configure the default win probability applied to a deal when it enters a stage"
+msgstr ""
 
 #. js-lingui-id: CcCy4C
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
@@ -6145,6 +6161,11 @@ msgstr "기본값"
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownDefaultView.tsx
 msgid "Default View"
 msgstr "기본 보기"
+
+#. js-lingui-id: tWGYaJ
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Default win probability applied to a deal when it enters a stage"
+msgstr ""
 
 #. js-lingui-id: Y2ImVJ
 #: src/pages/settings/data-model/SettingsNewObject.tsx
@@ -9328,6 +9349,11 @@ msgstr "앱을 설치하여 CRM을 최대한 활용하세요"
 #: src/pages/onboarding/InviteTeam.tsx
 msgid "Get the most out of your workspace by inviting your team."
 msgstr "팀을 초대하여 워크스페이스를 최대한 활용하세요."
+
+#. js-lingui-id: M3hrSX
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWeightedAmount.tsx
+msgid "Gewichtet"
+msgstr ""
 
 #. js-lingui-id: XXtAx5
 #: src/modules/settings/data-model/indexes/forms/components/SettingsObjectIndexOptionsForm.tsx
@@ -13830,6 +13856,7 @@ msgstr "개체"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -15018,6 +15045,23 @@ msgstr "프로 요금제"
 #: src/modules/settings/billing/components/SettingsBillingSubscriptionInfo.tsx
 msgid "Pro plan"
 msgstr "프로 요금제"
+
+#. js-lingui-id: WJIL29
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability"
+msgstr ""
+
+#. js-lingui-id: Fb98lk
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability defaults"
+msgstr ""
+
+#. js-lingui-id: 3ClQ0K
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
+msgid "Probability defaults updated"
+msgstr ""
 
 #. js-lingui-id: vrnnn9
 #: src/modules/activities/calendar/components/CalendarEventCallRecorderAvatar.tsx
@@ -16264,6 +16308,7 @@ msgstr "토요일"
 
 #. js-lingui-id: tfDRzk
 #: src/modules/settings/components/SaveAndCancelButtons/SaveButton.tsx
+#: src/modules/settings/data-model/object-details/components/OpportunityProbabilityForm.tsx
 #: src/modules/settings/data-model/object-details/components/OpportunityRottingForm.tsx
 #: src/pages/settings/data-model/new-field/SettingsObjectNewFieldConfigure.tsx
 msgid "Save"
@@ -21333,6 +21378,7 @@ msgstr "Workflows"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
