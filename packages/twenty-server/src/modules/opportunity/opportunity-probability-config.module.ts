@@ -11,5 +11,6 @@ import { OpportunityProbabilityConfigService } from 'src/modules/opportunity/ser
     OpportunityProbabilityConfigService,
     OpportunityProbabilityConfigResolver,
   ],
+  exports: [OpportunityProbabilityConfigService],
 })
 export class OpportunityProbabilityConfigModule {}
