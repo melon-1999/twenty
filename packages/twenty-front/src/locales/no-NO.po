@@ -6071,6 +6071,7 @@ msgid "Deal-Aging"
 msgstr ""
 
 #. js-lingui-id: ZlGycp
+#: src/modules/object-record/opportunity-forecast/components/OpportunityForecastTable.tsx
 #: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 msgid "Deals"
 msgstr ""
@@ -9072,6 +9073,12 @@ msgstr ""
 #: src/modules/settings/applications/hooks/useComputeApplicationContentForLayoutAndLogic.ts
 msgid "for {objectLabel}"
 msgstr "for {objectLabel}"
+
+#. js-lingui-id: z7J3FU
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-forecast/OpportunityForecastPage.tsx
+msgid "Forecast"
+msgstr ""
 
 #. js-lingui-id: glx6on
 #: src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx
@@ -12201,6 +12208,7 @@ msgstr "måned"
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCustomView.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
+#: src/modules/object-record/opportunity-forecast/components/OpportunityForecastTable.tsx
 #: src/modules/object-record/record-calendar/components/RecordCalendarTopBar.tsx
 #: src/modules/side-panel/pages/page-layout/components/dashboard/SidePanelDashboardRecordTableSettings.tsx
 #: src/modules/side-panel/pages/page-layout/components/record-table-settings/RecordTableCalendarLayoutDropdownContent.tsx
@@ -12959,6 +12967,11 @@ msgstr "Ingen chattråder funnet."
 msgid "No chats found"
 msgstr ""
 
+#. js-lingui-id: jp3knk
+#: src/modules/object-record/opportunity-forecast/components/OpportunityForecastTable.tsx
+msgid "No close date"
+msgstr ""
+
 #. js-lingui-id: wgUPZ1
 #: src/pages/settings/ai/SettingsAgentTurnDetail.tsx
 msgid "No comment"
@@ -13253,6 +13266,11 @@ msgstr "Ingen objekter funnet"
 #: src/modules/navigation-menu-item/edit/side-panel/components/SidePanelNewSidebarItemViewObjectPickerSubView.tsx
 msgid "No objects with views found"
 msgstr "Ingen objekter med visninger funnet"
+
+#. js-lingui-id: fykOtB
+#: src/pages/opportunity-forecast/OpportunityForecastPage.tsx
+msgid "No open opportunities to forecast."
+msgstr ""
 
 #. js-lingui-id: daCzI1
 #: src/modules/ui/field/input/components/MultiSelectInput.tsx
@@ -19368,6 +19386,8 @@ msgid "Topics"
 msgstr ""
 
 #. js-lingui-id: 72c5Qo
+#: src/modules/object-record/opportunity-forecast/components/OpportunityForecastTable.tsx
+#: src/modules/object-record/opportunity-forecast/components/OpportunityForecastTable.tsx
 #: src/modules/page-layout/widgets/graph/graph-widget-pie-chart/hooks/usePieChartCenterMetricData.ts
 #: src/modules/settings/billing/components/internal/SettingsBillingSubscriptionInfoCard.tsx
 msgid "Total"
@@ -21142,6 +21162,11 @@ msgstr ""
 #: src/modules/settings/data-model/object-details/components/tabs/SettingsObjectSearchSection.tsx
 msgid "Weight"
 msgstr "Vekt"
+
+#. js-lingui-id: KPtje6
+#: src/modules/object-record/opportunity-forecast/components/OpportunityForecastTable.tsx
+msgid "Weighted"
+msgstr ""
 
 #. js-lingui-id: nTuObL
 #: src/pages/auth/SignInUp.tsx
