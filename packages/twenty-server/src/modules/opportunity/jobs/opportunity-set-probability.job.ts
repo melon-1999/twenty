@@ -21,7 +21,10 @@ export type OpportunitySetProbabilityJobData = {
   probabilityBefore: number | null;
 };
 
-@Processor({ queueName: MessageQueue.entityEventsToDbQueue, scope: Scope.REQUEST })
+@Processor({
+  queueName: MessageQueue.entityEventsToDbQueue,
+  scope: Scope.REQUEST,
+})
 export class OpportunitySetProbabilityJob {
   protected readonly logger = new Logger(OpportunitySetProbabilityJob.name);
 
@@ -63,6 +66,7 @@ export class OpportunitySetProbabilityJob {
         stageBefore,
         stageAfter: opportunity.stage,
         probabilityBefore,
+        currentProbability: opportunity.probability,
         stageDefaults,
       });
       const targetWeighted = computeWeightedAmount(

@@ -7,32 +7,34 @@ export const computeTargetProbability = ({
   stageBefore,
   stageAfter,
   probabilityBefore,
+  currentProbability,
   stageDefaults,
 }: {
   isCreate: boolean;
   stageBefore: string | null;
   stageAfter: string;
   probabilityBefore: number | null;
+  currentProbability: number | null;
   stageDefaults: Record<string, number>;
 }): number => {
   const afterDefault = stageDefaults[stageAfter] ?? 0;
 
   if (isCreate) {
-    return probabilityBefore ?? afterDefault;
+    return currentProbability ?? afterDefault;
   }
 
   const stageChanged = stageBefore !== stageAfter;
 
   if (!stageChanged) {
-    return probabilityBefore ?? afterDefault;
+    return currentProbability ?? afterDefault;
   }
 
   const beforeDefault = isDefined(stageBefore)
-    ? stageDefaults[stageBefore] ?? 0
+    ? (stageDefaults[stageBefore] ?? 0)
     : 0;
   const wasUntouched = probabilityBefore === beforeDefault;
 
-  return wasUntouched ? afterDefault : probabilityBefore ?? afterDefault;
+  return wasUntouched ? afterDefault : (currentProbability ?? afterDefault);
 };
 
 export const computeWeightedAmount = (

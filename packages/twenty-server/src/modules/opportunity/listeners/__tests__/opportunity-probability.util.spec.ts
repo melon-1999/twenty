@@ -20,6 +20,7 @@ describe('computeTargetProbability', () => {
         stageBefore: null,
         stageAfter: 'MEETING',
         probabilityBefore: null,
+        currentProbability: null,
         stageDefaults: defaults,
       }),
     ).toBe(60);
@@ -31,6 +32,7 @@ describe('computeTargetProbability', () => {
         stageBefore: 'NEW',
         stageAfter: 'PROPOSAL',
         probabilityBefore: 20,
+        currentProbability: 20,
         stageDefaults: defaults,
       }),
     ).toBe(80);
@@ -42,6 +44,7 @@ describe('computeTargetProbability', () => {
         stageBefore: 'NEW',
         stageAfter: 'PROPOSAL',
         probabilityBefore: 55,
+        currentProbability: 55,
         stageDefaults: defaults,
       }),
     ).toBe(55);
@@ -53,9 +56,36 @@ describe('computeTargetProbability', () => {
         stageBefore: 'MEETING',
         stageAfter: 'MEETING',
         probabilityBefore: 33,
+        currentProbability: 33,
         stageDefaults: defaults,
       }),
     ).toBe(33);
+  });
+  it('keeps the freshly-edited current value on a same-stage manual edit (no revert)', () => {
+    expect(
+      computeTargetProbability({
+        isCreate: false,
+        stageBefore: 'MEETING',
+        stageAfter: 'MEETING',
+        probabilityBefore: 60,
+        currentProbability: 75,
+        stageDefaults: defaults,
+      }),
+    ).toBe(75);
+  });
+
+  it('is a no-op on the self-triggered second cycle after a reset (target equals current)', () => {
+    // after reset wrote 80 into PROPOSAL, the follow-up event has stageBefore===stageAfter
+    expect(
+      computeTargetProbability({
+        isCreate: false,
+        stageBefore: 'PROPOSAL',
+        stageAfter: 'PROPOSAL',
+        probabilityBefore: 20,
+        currentProbability: 80,
+        stageDefaults: defaults,
+      }),
+    ).toBe(80);
   });
 });
 
@@ -65,7 +95,10 @@ describe('computeWeightedAmount', () => {
   });
   it('is null when probability is null', () => {
     expect(
-      computeWeightedAmount({ amountMicros: 1_000_000, currencyCode: 'EUR' }, null),
+      computeWeightedAmount(
+        { amountMicros: 1_000_000, currencyCode: 'EUR' },
+        null,
+      ),
     ).toBeNull();
   });
   it('multiplies micros by probability/100 and keeps the currency', () => {
@@ -93,9 +126,9 @@ describe('shouldRecomputeProbability', () => {
     ).toBe(true);
   });
   it('is true when probability changed', () => {
-    expect(
-      shouldRecomputeProbability(base, { ...base, probability: 55 }),
-    ).toBe(true);
+    expect(shouldRecomputeProbability(base, { ...base, probability: 55 })).toBe(
+      true,
+    );
   });
   it('is true when amount changed', () => {
     expect(

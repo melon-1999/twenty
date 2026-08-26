@@ -27,7 +27,9 @@ export class OpportunityProbabilityListener {
 
   @OnDatabaseBatchEvent('opportunity', DatabaseEventAction.CREATED)
   async handleCreatedEvent(
-    payload: WorkspaceEventBatch<ObjectRecordCreateEvent<OpportunityWorkspaceEntity>>,
+    payload: WorkspaceEventBatch<
+      ObjectRecordCreateEvent<OpportunityWorkspaceEntity>
+    >,
   ) {
     for (const eventPayload of payload.events) {
       await this.messageQueueService.add<OpportunitySetProbabilityJobData>(
@@ -45,7 +47,9 @@ export class OpportunityProbabilityListener {
 
   @OnDatabaseBatchEvent('opportunity', DatabaseEventAction.UPDATED)
   async handleUpdatedEvent(
-    payload: WorkspaceEventBatch<ObjectRecordUpdateEvent<OpportunityWorkspaceEntity>>,
+    payload: WorkspaceEventBatch<
+      ObjectRecordUpdateEvent<OpportunityWorkspaceEntity>
+    >,
   ) {
     for (const eventPayload of payload.events) {
       const { before, after } = eventPayload.properties;
