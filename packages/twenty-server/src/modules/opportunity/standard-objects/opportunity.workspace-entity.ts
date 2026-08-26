@@ -18,6 +18,8 @@ export class OpportunityWorkspaceEntity extends BaseWorkspaceEntity {
   status: string;
   closedAt: Date | null;
   stageChangedAt: Date | null;
+  probability: number | null;
+  weightedAmount: CurrencyMetadata | null;
   position: number;
   createdBy: ActorMetadata;
   updatedBy: ActorMetadata;
@@ -31,7 +33,5 @@ export class OpportunityWorkspaceEntity extends BaseWorkspaceEntity {
   timelineActivities: EntityRelation<TimelineActivityWorkspaceEntity[]>;
   owner: EntityRelation<WorkspaceMemberWorkspaceEntity> | null;
   ownerId: string | null;
-  /** @deprecated */
-  probability: string;
   searchVector: string;
 }

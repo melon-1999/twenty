@@ -1933,6 +1933,9 @@ exports[`STANDARD_OBJECTS universal identifiers should never change without an e
       "position": {
         "universalIdentifier": "fd8241af-7055-5004-9cfb-edb96f1cfbb4",
       },
+      "probability": {
+        "universalIdentifier": "20202020-5701-4a11-9c31-7e6b2d4f8a13",
+      },
       "searchVector": {
         "universalIdentifier": "05bbfee3-ec29-5d44-a1b0-105955b320af",
       },
@@ -1956,6 +1959,9 @@ exports[`STANDARD_OBJECTS universal identifiers should never change without an e
       },
       "updatedBy": {
         "universalIdentifier": "9118776b-232a-561b-8289-f8f405de8e07",
+      },
+      "weightedAmount": {
+        "universalIdentifier": "20202020-5701-4a11-9c31-7e6b2d4f8a14",
       },
     },
     "indexes": {
