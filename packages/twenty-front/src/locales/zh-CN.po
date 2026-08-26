@@ -10825,6 +10825,16 @@ msgstr "看板"
 msgid "Kanban widget"
 msgstr ""
 
+#. js-lingui-id: TFJyL6
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Kein Budget"
+msgstr ""
+
+#. js-lingui-id: ZFiLlG
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Keine Entscheidung"
+msgstr ""
+
 #. js-lingui-id: 7sMeHQ
 #: src/modules/workflow/workflow-steps/workflow-actions/http-request-action/components/KeyValuePairInput.tsx
 msgid "Key"
@@ -10858,6 +10868,11 @@ msgstr "键盘快捷键"
 #. js-lingui-id: DJokAV
 #: src/modules/settings/admin-panel/components/SettingsAdminChatMessage.tsx
 msgid "Kickoff prompt"
+msgstr ""
+
+#. js-lingui-id: Cglpzs
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Konkurrenz"
 msgstr ""
 
 #. js-lingui-id: h6S9Yz
@@ -13894,6 +13909,11 @@ msgstr "偏移量"
 #: src/modules/workflow/workflow-steps/workflow-actions/find-records-action/components/WorkflowEditActionFindRecords.tsx
 msgid "Offset cannot be negative."
 msgstr "偏移量不能为负数。"
+
+#. js-lingui-id: GBBdXb
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Ohne Grund"
+msgstr ""
 
 #. js-lingui-id: ec0+nM
 #: src/modules/advanced-text-editor/extensions/slash-command/DefaultSlashCommands.ts
@@ -17719,6 +17739,11 @@ msgstr "创建工作区时出现问题。请重试。"
 msgid "Something went wrong while loading logs. Please try again."
 msgstr "加载日志时出现问题。请重试。"
 
+#. js-lingui-id: 0JYYnP
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Sonstiges"
+msgstr ""
+
 #. js-lingui-id: yHwG3y
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
@@ -19168,6 +19193,7 @@ msgstr "时区"
 
 #. js-lingui-id: y3HaQk
 #: src/modules/ai/components/RoutingDebugDisplay.tsx
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Timing"
 msgstr "耗时"
 
@@ -21866,3 +21892,8 @@ msgstr "您的工作区将被禁用"
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Zed"
 msgstr "Zed"
+
+#. js-lingui-id: d7e9Be
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Zu teuer"
+msgstr ""

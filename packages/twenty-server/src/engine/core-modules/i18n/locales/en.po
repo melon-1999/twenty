@@ -552,6 +552,11 @@ msgstr "All recipients are suppressed for this email domain."
 msgid "Amount"
 msgstr "Amount"
 
+#. js-lingui-id: AJD1fR
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Amount multiplied by probability"
+msgstr "Amount multiplied by probability"
+
 #. js-lingui-id: pZEIPj
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-agent-name-uniqueness.util.ts
 msgid "An agent with this name already exists"
@@ -1603,6 +1608,11 @@ msgstr "Client credentials are not configured for this OAuth provider."
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
 msgid "Close date"
 msgstr "Close date"
+
+#. js-lingui-id: WPQrCS
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Closed at"
+msgstr "Closed at"
 
 #. js-lingui-id: T9qjpu
 #: src/engine/core-modules/tool-provider/constants/action-tool-label.constant.ts
@@ -4489,6 +4499,16 @@ msgstr "Kanban main group by field must be a SELECT or a many-to-one relation fi
 msgid "Kanban view must have a main group by field"
 msgstr "Kanban view must have a main group by field"
 
+#. js-lingui-id: TFJyL6
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Kein Budget"
+msgstr "Kein Budget"
+
+#. js-lingui-id: ZFiLlG
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Keine Entscheidung"
+msgstr "Keine Entscheidung"
+
 #. js-lingui-id: WDgCbh
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-permission-flag-validator.service.ts
 msgid "Key cannot be changed"
@@ -4498,6 +4518,11 @@ msgstr "Key cannot be changed"
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-permission-flag-validator.service.ts
 msgid "Key is required"
 msgstr "Key is required"
+
+#. js-lingui-id: Cglpzs
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Konkurrenz"
+msgstr "Konkurrenz"
 
 #. js-lingui-id: 6sFS+I
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-agent-required-properties.util.ts
@@ -4760,6 +4785,16 @@ msgstr "Logic function not found."
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-logic-function-validator.service.ts
 msgid "Logic function with same universal identifier already exists"
 msgstr "Logic function with same universal identifier already exists"
+
+#. js-lingui-id: XbuiBx
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Lost"
+msgstr "Lost"
+
+#. js-lingui-id: iktyiA
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Lost reason"
+msgstr "Lost reason"
 
 #. js-lingui-id: Mwvtvf
 #: src/engine/workspace-manager/workspace-migration/interceptors/utils/__tests__/build-metadata-validation-error-payload.util.spec.ts
@@ -5682,6 +5717,11 @@ msgstr "Only error"
 msgid "Only field restrictions are allowed."
 msgstr "Only field restrictions are allowed."
 
+#. js-lingui-id: 1TNIig
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Open"
+msgstr "Open"
+
 #. js-lingui-id: 6mOUi9
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-workspace-member-standard-flat-field-metadata.util.ts
 msgid "Open Records In"
@@ -5739,6 +5779,11 @@ msgstr "Opportunity close date"
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
 msgid "Opportunity company"
 msgstr "Opportunity company"
+
+#. js-lingui-id: EVH2db
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Opportunity outcome status"
+msgstr "Opportunity outcome status"
 
 #. js-lingui-id: r3rEzW
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
@@ -6332,6 +6377,11 @@ msgstr "Primary axis group by field is required for line chart"
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-line-chart-configuration.util.ts
 msgid "Primary axis group by field is required for line chart widget \"{widgetTitle}\""
 msgstr "Primary axis group by field is required for line chart widget \"{widgetTitle}\""
+
+#. js-lingui-id: WJIL29
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Probability"
+msgstr "Probability"
 
 #. js-lingui-id: vrnnn9
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
@@ -7143,6 +7193,11 @@ msgstr "Some workspace memberships could not be found. They may no longer have a
 msgid "Something went wrong. Please try again."
 msgstr "Something went wrong. Please try again."
 
+#. js-lingui-id: 0JYYnP
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Sonstiges"
+msgstr "Sonstiges"
+
 #. js-lingui-id: J76Dgl
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
 msgid "Source app bot/session id, when the source supports bots"
@@ -7200,6 +7255,11 @@ msgstr "SSO is disabled."
 msgid "Stage"
 msgstr "Stage"
 
+#. js-lingui-id: Ba6I81
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Stage changed at"
+msgstr "Stage changed at"
+
 #. js-lingui-id: 7XNKWU
 #: src/engine/metadata-modules/ai/ai.exception.ts
 msgid "Standard agents cannot be modified."
@@ -7250,6 +7310,7 @@ msgstr "State of the workflow run"
 #. js-lingui-id: uAQUqI
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-message-campaign-standard-flat-field-metadata.util.ts
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-task-standard-flat-field-metadata.util.ts
 msgid "Status"
 msgstr "Status"
@@ -8497,6 +8558,11 @@ msgstr "Timeline Activity"
 msgid "Timeline activity record position"
 msgstr "Timeline activity record position"
 
+#. js-lingui-id: y3HaQk
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Timing"
+msgstr "Timing"
+
 #. js-lingui-id: MHrjPM
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-calendar-event-standard-flat-field-metadata.util.ts
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-calendar-event-standard-flat-field-metadata.util.ts
@@ -9305,6 +9371,11 @@ msgstr "Webhook not found."
 msgid "Wednesday"
 msgstr "Wednesday"
 
+#. js-lingui-id: BJJKBQ
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Weighted amount"
+msgstr "Weighted amount"
+
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
 msgid "Welcome to Twenty: Please Confirm Your Email"
@@ -9315,6 +9386,16 @@ msgstr "Welcome to Twenty: Please Confirm Your Email"
 msgid "When the campaign finished sending"
 msgstr "When the campaign finished sending"
 
+#. js-lingui-id: wZ/tWZ
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "When the opportunity last changed stage"
+msgstr "When the opportunity last changed stage"
+
+#. js-lingui-id: fPeImp
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "When the opportunity was marked won or lost"
+msgstr "When the opportunity was marked won or lost"
+
 #. js-lingui-id: bW8f9B
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-workspace-member-standard-flat-field-metadata.util.ts
 msgid "Where records open for objects that follow the member's preference"
@@ -9324,6 +9405,11 @@ msgstr "Where records open for objects that follow the member's preference"
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-message-standard-flat-field-metadata.util.ts
 msgid "Whether this message is an unsent draft synced from the provider"
 msgstr "Whether this message is an unsent draft synced from the provider"
+
+#. js-lingui-id: zLzbu8
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Why the opportunity was lost"
+msgstr "Why the opportunity was lost"
 
 #. js-lingui-id: OHlJ1X
 #: src/engine/metadata-modules/page-layout-widget/utils/validate-page-layout-widget-grid-position.util.ts
@@ -9375,6 +9461,16 @@ msgstr "Widget type VIEW is not supported yet."
 #: src/engine/metadata-modules/view/services/view-widget-upsert.service.ts
 msgid "Widget views must use a widget view type"
 msgstr "Widget views must use a widget view type"
+
+#. js-lingui-id: Y3Q7yu
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Win probability in percent (0-100)"
+msgstr "Win probability in percent (0-100)"
+
+#. js-lingui-id: 9kZh4H
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Won"
+msgstr "Won"
 
 #. js-lingui-id: qRILxq
 #: src/engine/metadata-modules/view-field-group/constants/standard-view-field-group-names.ts
@@ -10073,3 +10169,8 @@ msgstr "Your workspace has been updated with a new data model. Please refresh th
 #: src/engine/workspace-manager/workspace-cleaner/services/cleaner.workspace-service.ts
 msgid "Your workspace is paused — reactivate to keep your data"
 msgstr "Your workspace is paused — reactivate to keep your data"
+
+#. js-lingui-id: d7e9Be
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Zu teuer"
+msgstr "Zu teuer"

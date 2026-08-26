@@ -10848,6 +10848,16 @@ msgstr "칸반"
 msgid "Kanban widget"
 msgstr ""
 
+#. js-lingui-id: TFJyL6
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Kein Budget"
+msgstr ""
+
+#. js-lingui-id: ZFiLlG
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Keine Entscheidung"
+msgstr ""
+
 #. js-lingui-id: 7sMeHQ
 #: src/modules/workflow/workflow-steps/workflow-actions/http-request-action/components/KeyValuePairInput.tsx
 msgid "Key"
@@ -10881,6 +10891,11 @@ msgstr "키보드 단축키"
 #. js-lingui-id: DJokAV
 #: src/modules/settings/admin-panel/components/SettingsAdminChatMessage.tsx
 msgid "Kickoff prompt"
+msgstr ""
+
+#. js-lingui-id: Cglpzs
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Konkurrenz"
 msgstr ""
 
 #. js-lingui-id: h6S9Yz
@@ -13917,6 +13932,11 @@ msgstr "오프셋"
 #: src/modules/workflow/workflow-steps/workflow-actions/find-records-action/components/WorkflowEditActionFindRecords.tsx
 msgid "Offset cannot be negative."
 msgstr "오프셋은 음수일 수 없습니다."
+
+#. js-lingui-id: GBBdXb
+#: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
+msgid "Ohne Grund"
+msgstr ""
 
 #. js-lingui-id: ec0+nM
 #: src/modules/advanced-text-editor/extensions/slash-command/DefaultSlashCommands.ts
@@ -17742,6 +17762,11 @@ msgstr "워크스페이스를 생성하는 동안 문제가 발생했습니다. 
 msgid "Something went wrong while loading logs. Please try again."
 msgstr "로그를 불러오는 동안 문제가 발생했습니다. 다시 시도해 주세요."
 
+#. js-lingui-id: 0JYYnP
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Sonstiges"
+msgstr ""
+
 #. js-lingui-id: yHwG3y
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownCalendarViewContent.tsx
@@ -19221,6 +19246,7 @@ msgstr "시간대"
 
 #. js-lingui-id: y3HaQk
 #: src/modules/ai/components/RoutingDebugDisplay.tsx
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Timing"
 msgstr "타이밍"
 
@@ -21919,3 +21945,8 @@ msgstr "워크스페이스가 비활성화됩니다"
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Zed"
 msgstr "Zed"
+
+#. js-lingui-id: d7e9Be
+#: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
+msgid "Zu teuer"
+msgstr ""

@@ -557,6 +557,11 @@ msgstr "כל הנמענים חסומים עבור דומיין דוא\"ל זה."
 msgid "Amount"
 msgstr "סכום"
 
+#. js-lingui-id: AJD1fR
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Amount multiplied by probability"
+msgstr ""
+
 #. js-lingui-id: pZEIPj
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-agent-name-uniqueness.util.ts
 msgid "An agent with this name already exists"
@@ -1608,6 +1613,11 @@ msgstr "אישורי הלקוח לא הוגדרו עבור ספק OAuth זה."
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
 msgid "Close date"
 msgstr "תאריך סגירה"
+
+#. js-lingui-id: WPQrCS
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Closed at"
+msgstr ""
 
 #. js-lingui-id: T9qjpu
 #: src/engine/core-modules/tool-provider/constants/action-tool-label.constant.ts
@@ -4494,6 +4504,16 @@ msgstr "שדה הקיבוץ הראשי בקנבן חייב להיות שדה מ�
 msgid "Kanban view must have a main group by field"
 msgstr "תצוגת קנבן חייבת לכלול שדה קיבוץ ראשי"
 
+#. js-lingui-id: TFJyL6
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Kein Budget"
+msgstr ""
+
+#. js-lingui-id: ZFiLlG
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Keine Entscheidung"
+msgstr ""
+
 #. js-lingui-id: WDgCbh
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-permission-flag-validator.service.ts
 msgid "Key cannot be changed"
@@ -4503,6 +4523,11 @@ msgstr "לא ניתן לשנות את המפתח"
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-permission-flag-validator.service.ts
 msgid "Key is required"
 msgstr "נדרש מפתח"
+
+#. js-lingui-id: Cglpzs
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Konkurrenz"
+msgstr ""
 
 #. js-lingui-id: 6sFS+I
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/utils/validate-agent-required-properties.util.ts
@@ -4765,6 +4790,16 @@ msgstr "פונקציה לוגית לא נמצאה."
 #: src/engine/workspace-manager/workspace-migration/workspace-migration-builder/validators/services/flat-logic-function-validator.service.ts
 msgid "Logic function with same universal identifier already exists"
 msgstr "פונקציה לוגית עם אותו מזהה אוניברסלי כבר קיימת"
+
+#. js-lingui-id: XbuiBx
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Lost"
+msgstr ""
+
+#. js-lingui-id: iktyiA
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Lost reason"
+msgstr ""
 
 #. js-lingui-id: Mwvtvf
 #: src/engine/workspace-manager/workspace-migration/interceptors/utils/__tests__/build-metadata-validation-error-payload.util.spec.ts
@@ -5687,6 +5722,11 @@ msgstr "שגיאה יחידה"
 msgid "Only field restrictions are allowed."
 msgstr "מותרות רק הגבלות שדה."
 
+#. js-lingui-id: 1TNIig
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Open"
+msgstr ""
+
 #. js-lingui-id: 6mOUi9
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-workspace-member-standard-flat-field-metadata.util.ts
 msgid "Open Records In"
@@ -5744,6 +5784,11 @@ msgstr "תאריך סגירת ההזדמנות"
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
 msgid "Opportunity company"
 msgstr "חברה של ההזדמנות"
+
+#. js-lingui-id: EVH2db
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Opportunity outcome status"
+msgstr ""
 
 #. js-lingui-id: r3rEzW
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
@@ -6337,6 +6382,11 @@ msgstr "נדרש שדה קיבוץ לפי של הציר הראשי עבור תר
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-line-chart-configuration.util.ts
 msgid "Primary axis group by field is required for line chart widget \"{widgetTitle}\""
 msgstr "נדרש שדה קיבוץ לפי של הציר הראשי עבור וידג'ט תרשים קו \"{widgetTitle}\""
+
+#. js-lingui-id: WJIL29
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Probability"
+msgstr ""
 
 #. js-lingui-id: vrnnn9
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
@@ -7148,6 +7198,11 @@ msgstr "חלק מהחברויות במרחב העבודה לא נמצאו. יי�
 msgid "Something went wrong. Please try again."
 msgstr "משהו השתבש. אנא נסו שוב."
 
+#. js-lingui-id: 0JYYnP
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Sonstiges"
+msgstr ""
+
 #. js-lingui-id: J76Dgl
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
 msgid "Source app bot/session id, when the source supports bots"
@@ -7205,6 +7260,11 @@ msgstr "SSO מושבת."
 msgid "Stage"
 msgstr "שלב"
 
+#. js-lingui-id: Ba6I81
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Stage changed at"
+msgstr ""
+
 #. js-lingui-id: 7XNKWU
 #: src/engine/metadata-modules/ai/ai.exception.ts
 msgid "Standard agents cannot be modified."
@@ -7255,6 +7315,7 @@ msgstr "מצב הרצת זרימת העבודה"
 #. js-lingui-id: uAQUqI
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-message-campaign-standard-flat-field-metadata.util.ts
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-task-standard-flat-field-metadata.util.ts
 msgid "Status"
 msgstr "מצב"
@@ -8502,6 +8563,11 @@ msgstr "פעילות בציר זמנים"
 msgid "Timeline activity record position"
 msgstr "מיקום רשומת פעילות ציר זמן"
 
+#. js-lingui-id: y3HaQk
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Timing"
+msgstr ""
+
 #. js-lingui-id: MHrjPM
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-calendar-event-standard-flat-field-metadata.util.ts
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-calendar-event-standard-flat-field-metadata.util.ts
@@ -9310,6 +9376,11 @@ msgstr "וובהוק לא נמצא."
 msgid "Wednesday"
 msgstr "יום רביעי"
 
+#. js-lingui-id: BJJKBQ
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Weighted amount"
+msgstr ""
+
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
 msgid "Welcome to Twenty: Please Confirm Your Email"
@@ -9320,6 +9391,16 @@ msgstr "ברוך הבא ל-Twenty: נא לאשר את האימייל שלך"
 msgid "When the campaign finished sending"
 msgstr "מועד סיום שליחת הקמפיין"
 
+#. js-lingui-id: wZ/tWZ
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "When the opportunity last changed stage"
+msgstr ""
+
+#. js-lingui-id: fPeImp
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "When the opportunity was marked won or lost"
+msgstr ""
+
 #. js-lingui-id: bW8f9B
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-workspace-member-standard-flat-field-metadata.util.ts
 msgid "Where records open for objects that follow the member's preference"
@@ -9329,6 +9410,11 @@ msgstr ""
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-message-standard-flat-field-metadata.util.ts
 msgid "Whether this message is an unsent draft synced from the provider"
 msgstr "האם הודעה זו היא טיוטה שלא נשלחה שסונכרנה מהספק"
+
+#. js-lingui-id: zLzbu8
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Why the opportunity was lost"
+msgstr ""
 
 #. js-lingui-id: OHlJ1X
 #: src/engine/metadata-modules/page-layout-widget/utils/validate-page-layout-widget-grid-position.util.ts
@@ -9379,6 +9465,16 @@ msgstr "סוג הווידג'ט VIEW עדיין אינו נתמך."
 #. js-lingui-id: s8y6wj
 #: src/engine/metadata-modules/view/services/view-widget-upsert.service.ts
 msgid "Widget views must use a widget view type"
+msgstr ""
+
+#. js-lingui-id: Y3Q7yu
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Win probability in percent (0-100)"
+msgstr ""
+
+#. js-lingui-id: 9kZh4H
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Won"
 msgstr ""
 
 #. js-lingui-id: qRILxq
@@ -10078,3 +10174,8 @@ msgstr "המקום העבודה שלך עודכן עם מודל נתונים ח�
 #: src/engine/workspace-manager/workspace-cleaner/services/cleaner.workspace-service.ts
 msgid "Your workspace is paused — reactivate to keep your data"
 msgstr "מרחב העבודה שלך מושהה — הפעל אותו מחדש כדי לשמור על הנתונים שלך"
+
+#. js-lingui-id: d7e9Be
+#: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-opportunity-standard-flat-field-metadata.util.ts
+msgid "Zu teuer"
+msgstr ""

@@ -58,6 +58,14 @@ export const RecordShowPage = () => {
     },
   ) as string | null;
 
+  const opportunityLostReason = useAtomFamilySelectorValue(
+    recordStoreFamilySelector,
+    {
+      recordId: objectRecordId,
+      fieldName: 'lostReason',
+    },
+  ) as string | null;
+
   const opportunityStage = useAtomFamilySelectorValue(
     recordStoreFamilySelector,
     {
@@ -125,6 +133,7 @@ export const RecordShowPage = () => {
                       recordId={objectRecordId}
                       status={opportunityStatus ?? 'OPEN'}
                       closedAt={opportunityClosedAt}
+                      lostReason={opportunityLostReason}
                     />
                   </>
                 )}
