@@ -4,6 +4,7 @@ import { RecordBoardCardContext } from '@/object-record/record-board/record-boar
 import { isRecordBoardCardSelectedComponentFamilyState } from '@/object-record/record-board/states/isRecordBoardCardSelectedComponentFamilyState';
 
 import { RecordChip } from '@/object-record/components/RecordChip';
+import { OpportunityProbabilityBadge } from '@/object-record/record-show/opportunity/components/OpportunityProbabilityBadge';
 import { OpportunityRottingIndicator } from '@/object-record/record-show/opportunity/components/OpportunityRottingIndicator';
 import { useActiveRecordBoardCard } from '@/object-record/record-board/hooks/useActiveRecordBoardCard';
 import { useFocusedRecordBoardCard } from '@/object-record/record-board/hooks/useFocusedRecordBoardCard';
@@ -103,7 +104,10 @@ export const RecordBoardCardHeader = () => {
 
       {objectMetadataItem.nameSingular ===
         CoreObjectNameSingular.Opportunity && (
-        <OpportunityRottingIndicator recordId={recordId} />
+        <>
+          <OpportunityRottingIndicator recordId={recordId} />
+          <OpportunityProbabilityBadge recordId={recordId} />
+        </>
       )}
 
       {isCompactModeActive && (
