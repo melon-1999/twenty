@@ -17,8 +17,18 @@ describe('computeLostReasonBreakdown', () => {
     ]);
 
     expect(result.buckets).toEqual([
-      { reason: 'LOST_TO_COMPETITOR', hasReason: true, count: 1, totalMicros: 50_000_000 },
-      { reason: 'TOO_EXPENSIVE', hasReason: true, count: 2, totalMicros: 30_000_000 },
+      {
+        reason: 'LOST_TO_COMPETITOR',
+        hasReason: true,
+        count: 1,
+        totalMicros: 50_000_000,
+      },
+      {
+        reason: 'TOO_EXPENSIVE',
+        hasReason: true,
+        count: 2,
+        totalMicros: 30_000_000,
+      },
     ]);
     expect(result.totalCount).toBe(3);
     expect(result.totalMicros).toBe(80_000_000);
