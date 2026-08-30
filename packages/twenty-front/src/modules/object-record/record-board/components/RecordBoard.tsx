@@ -10,6 +10,7 @@ import { RecordBoardEffects } from '@/object-record/record-board/components/Reco
 import { RecordBoardFetchMoreInViewTriggerComponent } from '@/object-record/record-board/components/RecordBoardFetchMoreInViewTriggerComponent';
 import { RecordBoardHeader } from '@/object-record/record-board/components/RecordBoardHeader';
 import { RecordBoardContext } from '@/object-record/record-board/contexts/RecordBoardContext';
+import { RecordBoardOpportunityStatusDropZones } from '@/object-record/record-board/opportunity-status-drag/components/RecordBoardOpportunityStatusDropZones';
 import { isRecordBoardViewSettingsReadOnlyComponentState } from '@/object-record/record-board/states/isRecordBoardViewSettingsReadOnlyComponentState';
 import { useAtomComponentStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomComponentStateValue';
 import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
@@ -59,6 +60,7 @@ export const RecordBoard = () => {
             <StyledContainer ref={boardRef}>
               <RecordBoardDndKitProvider>
                 <RecordBoardColumns />
+                <RecordBoardOpportunityStatusDropZones />
               </RecordBoardDndKitProvider>
               {!isRecordBoardViewSettingsReadOnly && (
                 <RecordBoardDragSelect boardRef={boardRef} />
