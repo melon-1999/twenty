@@ -131,6 +131,14 @@ const OpportunityLostReasonReportPage = lazy(() =>
   ),
 );
 
+const OpportunityStageDurationReportPage = lazy(() =>
+  import('~/pages/opportunity-stage-duration-report/OpportunityStageDurationReportPage').then(
+    (module) => ({
+      default: module.OpportunityStageDurationReportPage,
+    }),
+  ),
+);
+
 const NotFound = lazy(() =>
   import('~/pages/not-found/NotFound').then((module) => ({
     default: module.NotFound,
@@ -211,6 +219,14 @@ const createWorkspaceAppRouter = (
                 element={
                   <LazyRoute>
                     <OpportunityLostReasonReportPage />
+                  </LazyRoute>
+                }
+              />
+              <Route
+                path={AppPath.StageAnalyticsPage}
+                element={
+                  <LazyRoute>
+                    <OpportunityStageDurationReportPage />
                   </LazyRoute>
                 }
               />
