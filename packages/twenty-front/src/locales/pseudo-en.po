@@ -2323,6 +2323,11 @@ msgstr ""
 msgid "Anyone with an email address at these domains is allowed to sign up for this workspace."
 msgstr ""
 
+#. js-lingui-id: Od6Q93
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Anzahl"
+msgstr ""
+
 #. js-lingui-id: OZtEcz
 #: src/modules/settings/mcp-and-apis/components/PlaygroundSetupForm.tsx
 #: src/pages/settings/api-webhooks/SettingsApiWebhooks.tsx
@@ -9310,6 +9315,11 @@ msgstr ""
 msgid "German"
 msgstr ""
 
+#. js-lingui-id: M2GX46
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Gesamt"
+msgstr ""
+
 #. js-lingui-id: q/3eUK
 #: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 msgid "Get AI-powered help across your workspace."
@@ -9535,6 +9545,11 @@ msgstr ""
 #. js-lingui-id: 5FTAZt
 #: src/modules/ai/constants/crud-tool-operation-verbs.constant.ts
 msgid "Grouping {objectLabel}"
+msgstr ""
+
+#. js-lingui-id: qmAoEf
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Grund"
 msgstr ""
 
 #. js-lingui-id: eKiSkN
@@ -10828,6 +10843,11 @@ msgstr ""
 #. js-lingui-id: ZFiLlG
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Keine Entscheidung"
+msgstr ""
+
+#. js-lingui-id: MwKjyA
+#: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
+msgid "Keine verlorenen Opportunities."
 msgstr ""
 
 #. js-lingui-id: 7sMeHQ
@@ -13906,6 +13926,7 @@ msgid "Offset cannot be negative."
 msgstr ""
 
 #. js-lingui-id: GBBdXb
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
 #: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
 msgid "Ohne Grund"
 msgstr ""
@@ -20643,6 +20664,17 @@ msgstr ""
 #. js-lingui-id: 2wBR2/
 #: src/modules/auth/components/VerifyEmail.tsx
 msgid "Verifying your email"
+msgstr ""
+
+#. js-lingui-id: LnAjMG
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Verlorener Betrag"
+msgstr ""
+
+#. js-lingui-id: 30EACP
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
+msgid "Verlustgründe"
 msgstr ""
 
 #. js-lingui-id: eE0JZ4

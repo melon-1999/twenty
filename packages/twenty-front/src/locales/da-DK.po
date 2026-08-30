@@ -2328,6 +2328,11 @@ msgstr "Alle med et godkendt e-maildomæne kan finde og tilslutte sig."
 msgid "Anyone with an email address at these domains is allowed to sign up for this workspace."
 msgstr "Enhver med en e-mailadresse på disse domæner har tilladelse til at tilmelde sig dette arbejdsområde."
 
+#. js-lingui-id: Od6Q93
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Anzahl"
+msgstr ""
+
 #. js-lingui-id: OZtEcz
 #: src/modules/settings/mcp-and-apis/components/PlaygroundSetupForm.tsx
 #: src/pages/settings/api-webhooks/SettingsApiWebhooks.tsx
@@ -9315,6 +9320,11 @@ msgstr "Genererer et Google Meet- eller Microsoft Teams-link afhængigt af konto
 msgid "German"
 msgstr "Tysk"
 
+#. js-lingui-id: M2GX46
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Gesamt"
+msgstr ""
+
 #. js-lingui-id: q/3eUK
 #: src/modules/settings/product-capability/constants/productCapabilityCatalog.ts
 msgid "Get AI-powered help across your workspace."
@@ -9541,6 +9551,11 @@ msgstr "Grupperede {objectLabel}"
 #: src/modules/ai/constants/crud-tool-operation-verbs.constant.ts
 msgid "Grouping {objectLabel}"
 msgstr "Grupperer {objectLabel}"
+
+#. js-lingui-id: qmAoEf
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Grund"
+msgstr ""
 
 #. js-lingui-id: eKiSkN
 #: src/modules/advanced-text-editor/extensions/slash-command/DefaultSlashCommands.ts
@@ -10856,6 +10871,11 @@ msgstr ""
 #. js-lingui-id: ZFiLlG
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Keine Entscheidung"
+msgstr ""
+
+#. js-lingui-id: MwKjyA
+#: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
+msgid "Keine verlorenen Opportunities."
 msgstr ""
 
 #. js-lingui-id: 7sMeHQ
@@ -13934,6 +13954,7 @@ msgid "Offset cannot be negative."
 msgstr "Offset kan ikke være negativ."
 
 #. js-lingui-id: GBBdXb
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
 #: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
 msgid "Ohne Grund"
 msgstr ""
@@ -20704,6 +20725,17 @@ msgstr "Verificerer din <0>login token</0>"
 #: src/modules/auth/components/VerifyEmail.tsx
 msgid "Verifying your email"
 msgstr "Verificerer din e-mail"
+
+#. js-lingui-id: LnAjMG
+#: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
+msgid "Verlorener Betrag"
+msgstr ""
+
+#. js-lingui-id: 30EACP
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
+msgid "Verlustgründe"
+msgstr ""
 
 #. js-lingui-id: eE0JZ4
 #: src/modules/settings/legal/components/SettingsDpaAgreementsTable.tsx

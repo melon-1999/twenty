@@ -10,7 +10,7 @@ import { lazy, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AppPath, CoreObjectNameSingular } from 'twenty-shared/types';
 
-import { IconChartBar } from 'twenty-ui/icon';
+import { IconChartBar, IconTrendingDown } from 'twenty-ui/icon';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 
 const FavoritesSectionDispatcher = lazy(() =>
@@ -52,12 +52,20 @@ export const MainNavigationDrawerScrollableItems = () => {
         <WorkspaceSectionDispatcher />
       </Suspense>
       {hasOpportunityObject && (
-        <NavigationDrawerItem
-          label={t`Forecast`}
-          to={AppPath.ForecastPage}
-          Icon={IconChartBar}
-          active={pathname === AppPath.ForecastPage}
-        />
+        <>
+          <NavigationDrawerItem
+            label={t`Forecast`}
+            to={AppPath.ForecastPage}
+            Icon={IconChartBar}
+            active={pathname === AppPath.ForecastPage}
+          />
+          <NavigationDrawerItem
+            label={t`Verlustgründe`}
+            to={AppPath.LostReasonReportPage}
+            Icon={IconTrendingDown}
+            active={pathname === AppPath.LostReasonReportPage}
+          />
+        </>
       )}
     </StyledScrollableItemsContainer>
   );
