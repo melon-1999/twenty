@@ -10,7 +10,12 @@ import { lazy, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AppPath, CoreObjectNameSingular } from 'twenty-shared/types';
 
-import { IconChartBar, IconHourglassHigh, IconTrendingDown } from 'twenty-ui/icon';
+import {
+  IconChartBar,
+  IconHourglassHigh,
+  IconTrendingDown,
+  IconTrendingUp,
+} from 'twenty-ui/icon';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 
 const FavoritesSectionDispatcher = lazy(() =>
@@ -70,6 +75,12 @@ export const MainNavigationDrawerScrollableItems = () => {
             to={AppPath.StageAnalyticsPage}
             Icon={IconHourglassHigh}
             active={pathname === AppPath.StageAnalyticsPage}
+          />
+          <NavigationDrawerItem
+            label={t`Pipeline-Analyse`}
+            to={AppPath.PipelineAnalysisPage}
+            Icon={IconTrendingUp}
+            active={pathname === AppPath.PipelineAnalysisPage}
           />
         </>
       )}

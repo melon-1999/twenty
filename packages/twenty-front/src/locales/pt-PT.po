@@ -7823,6 +7823,11 @@ msgstr "Ambientes"
 msgid "Erasure of soft-deleted records"
 msgstr "Apagamento de registros excluídos temporariamente"
 
+#. js-lingui-id: HbxIEi
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
+msgid "Erreicht"
+msgstr ""
+
 #. js-lingui-id: SlfejT
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetErrorDisplay.tsx
 #: src/modules/settings/admin-panel/chats/components/SettingsAdminChatsTableRow.tsx
@@ -10878,6 +10883,11 @@ msgstr ""
 msgid "Keine offenen Opportunities."
 msgstr ""
 
+#. js-lingui-id: k7wk4c
+#: src/pages/opportunity-pipeline-analysis/OpportunityPipelineAnalysisPage.tsx
+msgid "Keine Opportunities."
+msgstr ""
+
 #. js-lingui-id: MwKjyA
 #: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
 msgid "Keine verlorenen Opportunities."
@@ -10921,6 +10931,11 @@ msgstr ""
 #. js-lingui-id: Cglpzs
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Konkurrenz"
+msgstr ""
+
+#. js-lingui-id: 97i9Tw
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
+msgid "Konversion → nächste"
 msgstr ""
 
 #. js-lingui-id: h6S9Yz
@@ -13801,6 +13816,11 @@ msgstr ""
 msgid "Numbered list"
 msgstr ""
 
+#. js-lingui-id: Oc4Ex9
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
+msgid "Ø Dauer (Tage)"
+msgstr ""
+
 #. js-lingui-id: 3b+hvA
 #: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
 msgid "Ø Tage in Phase"
@@ -14751,6 +14771,7 @@ msgid "Person ID"
 msgstr ""
 
 #. js-lingui-id: kDRVPV
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
 #: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
 msgid "Phase"
 msgstr ""
@@ -14843,6 +14864,12 @@ msgstr "Rosa"
 #: src/pages/settings/applications/tabs/SettingsApplicationCommandMenuItemSettingsTab.tsx
 msgid "Pinned"
 msgstr "Fixado"
+
+#. js-lingui-id: xIXKpl
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-pipeline-analysis/OpportunityPipelineAnalysisPage.tsx
+msgid "Pipeline-Analyse"
+msgstr ""
 
 #. js-lingui-id: hx1ePY
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowFormFieldSettingsNumber.tsx

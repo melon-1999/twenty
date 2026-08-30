@@ -7823,6 +7823,11 @@ msgstr "Umgebungen"
 msgid "Erasure of soft-deleted records"
 msgstr "Löschung weicher gelöschter Datensätze"
 
+#. js-lingui-id: HbxIEi
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
+msgid "Erreicht"
+msgstr "Erreicht"
+
 #. js-lingui-id: SlfejT
 #: src/modules/page-layout/widgets/components/PageLayoutWidgetErrorDisplay.tsx
 #: src/modules/settings/admin-panel/chats/components/SettingsAdminChatsTableRow.tsx
@@ -10878,6 +10883,11 @@ msgstr "Keine Entscheidung"
 msgid "Keine offenen Opportunities."
 msgstr "Keine offenen Opportunities."
 
+#. js-lingui-id: k7wk4c
+#: src/pages/opportunity-pipeline-analysis/OpportunityPipelineAnalysisPage.tsx
+msgid "Keine Opportunities."
+msgstr "Keine Opportunities."
+
 #. js-lingui-id: MwKjyA
 #: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
 msgid "Keine verlorenen Opportunities."
@@ -10922,6 +10932,11 @@ msgstr "Start-Prompt"
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Konkurrenz"
 msgstr "Konkurrenz"
+
+#. js-lingui-id: 97i9Tw
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
+msgid "Konversion → nächste"
+msgstr "Konversion → nächste"
 
 #. js-lingui-id: h6S9Yz
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -13801,6 +13816,11 @@ msgstr "numbered"
 msgid "Numbered list"
 msgstr "Nummerierte Liste"
 
+#. js-lingui-id: Oc4Ex9
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
+msgid "Ø Dauer (Tage)"
+msgstr "Ø Dauer (Tage)"
+
 #. js-lingui-id: 3b+hvA
 #: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
 msgid "Ø Tage in Phase"
@@ -14751,6 +14771,7 @@ msgid "Person ID"
 msgstr "Personen-ID"
 
 #. js-lingui-id: kDRVPV
+#: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
 #: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
 msgid "Phase"
 msgstr "Phase"
@@ -14843,6 +14864,12 @@ msgstr "Pink"
 #: src/pages/settings/applications/tabs/SettingsApplicationCommandMenuItemSettingsTab.tsx
 msgid "Pinned"
 msgstr "Angeheftet"
+
+#. js-lingui-id: xIXKpl
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-pipeline-analysis/OpportunityPipelineAnalysisPage.tsx
+msgid "Pipeline-Analyse"
+msgstr "Pipeline-Analyse"
 
 #. js-lingui-id: hx1ePY
 #: src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowFormFieldSettingsNumber.tsx
