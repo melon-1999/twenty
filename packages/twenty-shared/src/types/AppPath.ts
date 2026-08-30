@@ -26,6 +26,7 @@ export enum AppPath {
   RecordShowPage = '/object/:objectNameSingular/:objectRecordId',
   PageLayoutPage = '/page/:pageLayoutId',
   ForecastPage = '/opportunities/forecast',
+  LostReasonReportPage = '/opportunities/lost-reasons',
 
   Settings = `settings`,
   SettingsCatchAll = `/${Settings}/*`,

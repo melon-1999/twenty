@@ -123,6 +123,14 @@ const OpportunityForecastPage = lazy(() =>
   ),
 );
 
+const OpportunityLostReasonReportPage = lazy(() =>
+  import('~/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage').then(
+    (module) => ({
+      default: module.OpportunityLostReasonReportPage,
+    }),
+  ),
+);
+
 const NotFound = lazy(() =>
   import('~/pages/not-found/NotFound').then((module) => ({
     default: module.NotFound,
@@ -195,6 +203,14 @@ const createWorkspaceAppRouter = (
                 element={
                   <LazyRoute>
                     <OpportunityForecastPage />
+                  </LazyRoute>
+                }
+              />
+              <Route
+                path={AppPath.LostReasonReportPage}
+                element={
+                  <LazyRoute>
+                    <OpportunityLostReasonReportPage />
                   </LazyRoute>
                 }
               />
