@@ -380,6 +380,23 @@ export const buildOpportunityStandardFlatFieldMetadatas = ({
     twentyStandardApplicationId,
     now,
   }),
+  stageHistory: createStandardFieldFlatMetadata({
+    objectName,
+    workspaceId,
+    context: {
+      fieldName: 'stageHistory',
+      type: FieldMetadataType.RAW_JSON,
+      label: i18nLabel(msg`Stage history`),
+      description: i18nLabel(msg`Chronological log of stage entries`),
+      icon: 'IconHistory',
+      isNullable: true,
+      isUIEditable: false,
+    },
+    standardObjectMetadataRelatedEntityIds,
+    dependencyFlatEntityMaps,
+    twentyStandardApplicationId,
+    now,
+  }),
   position: createStandardFieldFlatMetadata({
     objectName,
     workspaceId,

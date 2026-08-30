@@ -1948,6 +1948,9 @@ exports[`STANDARD_OBJECTS universal identifiers should never change without an e
       "stageChangedAt": {
         "universalIdentifier": "20202020-5701-4a11-9c31-7e6b2d4f8a12",
       },
+      "stageHistory": {
+        "universalIdentifier": "20202020-5701-4a11-9c31-7e6b2d4f8a16",
+      },
       "status": {
         "universalIdentifier": "20202020-5701-4a11-9c31-7e6b2d4f8a10",
       },
