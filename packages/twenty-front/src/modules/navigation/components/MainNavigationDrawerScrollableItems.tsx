@@ -10,7 +10,7 @@ import { lazy, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AppPath, CoreObjectNameSingular } from 'twenty-shared/types';
 
-import { IconChartBar, IconTrendingDown } from 'twenty-ui/icon';
+import { IconChartBar, IconHourglassHigh, IconTrendingDown } from 'twenty-ui/icon';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 
 const FavoritesSectionDispatcher = lazy(() =>
@@ -64,6 +64,12 @@ export const MainNavigationDrawerScrollableItems = () => {
             to={AppPath.LostReasonReportPage}
             Icon={IconTrendingDown}
             active={pathname === AppPath.LostReasonReportPage}
+          />
+          <NavigationDrawerItem
+            label={t`Phasen-Dauer`}
+            to={AppPath.StageAnalyticsPage}
+            Icon={IconHourglassHigh}
+            active={pathname === AppPath.StageAnalyticsPage}
           />
         </>
       )}

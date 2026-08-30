@@ -10850,6 +10850,11 @@ msgstr ""
 msgid "Keine Entscheidung"
 msgstr ""
 
+#. js-lingui-id: V7o94n
+#: src/pages/opportunity-stage-duration-report/OpportunityStageDurationReportPage.tsx
+msgid "Keine offenen Opportunities."
+msgstr ""
+
 #. js-lingui-id: MwKjyA
 #: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
 msgid "Keine verlorenen Opportunities."
@@ -13773,6 +13778,11 @@ msgstr ""
 msgid "Numbered list"
 msgstr ""
 
+#. js-lingui-id: 3b+hvA
+#: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+msgid "Ø Tage in Phase"
+msgstr ""
+
 #. js-lingui-id: b/j06W
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationDetail.tsx
 #: src/pages/settings/applications/SettingsApplicationRegistrationDetails.tsx
@@ -13916,6 +13926,11 @@ msgstr "的"
 #: src/pages/not-found/NotFound.tsx
 msgid "Off the beaten path"
 msgstr "偏離常規路線"
+
+#. js-lingui-id: +loyfb
+#: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+msgid "Offene Deals"
+msgstr ""
 
 #. js-lingui-id: s1X4Cm
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
@@ -14710,6 +14725,17 @@ msgstr "個人已建立"
 #. js-lingui-id: 9Ch1Ry
 #: src/modules/activities/emails/hooks/useCampaignEmailEditorVariables.ts
 msgid "Person ID"
+msgstr ""
+
+#. js-lingui-id: kDRVPV
+#: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+msgid "Phase"
+msgstr ""
+
+#. js-lingui-id: EBPHwh
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-stage-duration-report/OpportunityStageDurationReportPage.tsx
+msgid "Phasen-Dauer"
 msgstr ""
 
 #. js-lingui-id: zmwvG2

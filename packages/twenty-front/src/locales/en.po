@@ -10868,6 +10868,11 @@ msgstr "Kein Budget"
 msgid "Keine Entscheidung"
 msgstr "Keine Entscheidung"
 
+#. js-lingui-id: V7o94n
+#: src/pages/opportunity-stage-duration-report/OpportunityStageDurationReportPage.tsx
+msgid "Keine offenen Opportunities."
+msgstr "Keine offenen Opportunities."
+
 #. js-lingui-id: MwKjyA
 #: src/pages/opportunity-lost-reason-report/OpportunityLostReasonReportPage.tsx
 msgid "Keine verlorenen Opportunities."
@@ -13791,6 +13796,11 @@ msgstr "numbered"
 msgid "Numbered list"
 msgstr "Numbered list"
 
+#. js-lingui-id: 3b+hvA
+#: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+msgid "Ø Tage in Phase"
+msgstr "Ø Tage in Phase"
+
 #. js-lingui-id: b/j06W
 #: src/pages/settings/admin-panel/SettingsAdminApplicationRegistrationDetail.tsx
 #: src/pages/settings/applications/SettingsApplicationRegistrationDetails.tsx
@@ -13934,6 +13944,11 @@ msgstr "of"
 #: src/pages/not-found/NotFound.tsx
 msgid "Off the beaten path"
 msgstr "Off the beaten path"
+
+#. js-lingui-id: +loyfb
+#: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+msgid "Offene Deals"
+msgstr "Offene Deals"
 
 #. js-lingui-id: s1X4Cm
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
@@ -14729,6 +14744,17 @@ msgstr "Person created"
 #: src/modules/activities/emails/hooks/useCampaignEmailEditorVariables.ts
 msgid "Person ID"
 msgstr "Person ID"
+
+#. js-lingui-id: kDRVPV
+#: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+msgid "Phase"
+msgstr "Phase"
+
+#. js-lingui-id: EBPHwh
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-stage-duration-report/OpportunityStageDurationReportPage.tsx
+msgid "Phasen-Dauer"
+msgstr "Phasen-Dauer"
 
 #. js-lingui-id: zmwvG2
 #: src/modules/object-record/record-field/ui/meta-types/input/components/PhonesFieldInput.tsx
