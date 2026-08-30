@@ -11849,11 +11849,13 @@ msgid "Margin"
 msgstr "Margin"
 
 #. js-lingui-id: ra2YB4
+#: src/modules/object-record/record-board/opportunity-status-drag/components/RecordBoardOpportunityStatusDropZones.tsx
 #: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
 msgid "Mark as Lost"
 msgstr "Mark as Lost"
 
 #. js-lingui-id: 8qA8wp
+#: src/modules/object-record/record-board/opportunity-status-drag/components/RecordBoardOpportunityStatusDropZones.tsx
 #: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
 msgid "Mark as Won"
 msgstr "Mark as Won"

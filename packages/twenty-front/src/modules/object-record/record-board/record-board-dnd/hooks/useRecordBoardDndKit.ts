@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { isDefined } from 'twenty-shared/utils';
 
 import { RecordBoardContext } from '@/object-record/record-board/contexts/RecordBoardContext';
+import { getOpportunityStatusFromDropZone } from '@/object-record/record-board/opportunity-status-drag/utils/getOpportunityStatusFromDropZone';
 import { type DragDropItemData } from '@/ui/utilities/drag-and-drop/types/DragDropItemData';
 import { isRecordBoardDropProcessingComponentState } from '@/object-record/record-board/states/isRecordBoardDropProcessingComponentState';
 import { recordBoardSelectedRecordIdsComponentSelector } from '@/object-record/record-board/states/selectors/recordBoardSelectedRecordIdsComponentSelector';
@@ -43,7 +44,7 @@ export const useRecordBoardDndKit = (): {
 } => {
   const store = useStore();
 
-  const { recordBoardId } = useContext(RecordBoardContext);
+  const { recordBoardId, updateOneRecord } = useContext(RecordBoardContext);
 
   const currentRecordSorts = useAtomComponentStateCallbackState(
     currentRecordSortsComponentState,
@@ -140,6 +141,23 @@ export const useRecordBoardDndKit = (): {
     }
 
     const sourceId = source.id;
+
+    const droppedOnStatus = getOpportunityStatusFromDropZone(
+      isDefined(target?.id) ? String(target.id) : null,
+    );
+
+    if (isDefined(droppedOnStatus)) {
+      updateOneRecord({
+        idToUpdate: String(sourceId),
+        updateOneRecordInput: {
+          status: droppedOnStatus,
+          closedAt: new Date().toISOString(),
+        },
+      });
+      clearDragState();
+      return;
+    }
+
     const sourceDroppableId = (source.data as DragDropItemData).droppableId;
     const sourceIndex = (source.data as DragDropItemData).index;
 

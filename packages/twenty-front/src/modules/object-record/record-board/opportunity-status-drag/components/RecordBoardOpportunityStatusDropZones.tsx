@@ -26,6 +26,12 @@ const StyledBar = styled.div`
 
 const StyledZone = styled.div<{ variant: 'won' | 'lost'; isActive: boolean }>`
   align-items: center;
+  background: ${({ variant, isActive }) =>
+    isActive
+      ? variant === 'won'
+        ? themeCssVariables.tag.background.green
+        : themeCssVariables.tag.background.red
+      : 'transparent'};
   border: 1px dashed
     ${({ variant }) =>
       variant === 'won'
@@ -36,12 +42,6 @@ const StyledZone = styled.div<{ variant: 'won' | 'lost'; isActive: boolean }>`
     variant === 'won'
       ? themeCssVariables.tag.text.green
       : themeCssVariables.tag.text.red};
-  background: ${({ variant, isActive }) =>
-    isActive
-      ? variant === 'won'
-        ? themeCssVariables.tag.background.green
-        : themeCssVariables.tag.background.red
-      : 'transparent'};
   display: flex;
   flex: 1;
   font-size: ${themeCssVariables.font.size.sm};
