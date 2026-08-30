@@ -28,6 +28,7 @@ export enum AppPath {
   ForecastPage = '/opportunities/forecast',
   LostReasonReportPage = '/opportunities/lost-reasons',
   StageAnalyticsPage = '/opportunities/stage-analytics',
+  PipelineAnalysisPage = '/opportunities/pipeline-analysis',
 
   Settings = `settings`,
   SettingsCatchAll = `/${Settings}/*`,
