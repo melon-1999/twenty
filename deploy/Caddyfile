@@ -1,0 +1,5 @@
+# Caddy auto-provisions a Let's Encrypt certificate for $DOMAIN and proxies to
+# the Twenty server. $DOMAIN comes from the compose environment (.env).
+{$DOMAIN} {
+	reverse_proxy server:3000
+}
