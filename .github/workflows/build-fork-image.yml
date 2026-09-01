@@ -56,8 +56,10 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          # Twenty validates APP_VERSION as semver at startup, so it must be a
+          # valid version string (not a label like "fork").
           build-args: |
-            APP_VERSION=fork
+            APP_VERSION=1.0.0
           # The frontend build is memory-heavy; GitHub-hosted ubuntu runners
           # have enough RAM. GHA layer cache keeps rebuilds fast.
           cache-from: type=gha
