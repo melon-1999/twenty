@@ -12277,7 +12277,7 @@ msgstr "Module, die in Ihrem Plan für diesen Arbeitsbereich enthalten sind."
 #. js-lingui-id: iPxv2y
 #: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
 msgid "Monat"
-msgstr ""
+msgstr "Monat"
 
 #. js-lingui-id: lThOcv
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
@@ -22134,7 +22134,7 @@ msgstr "Zed"
 #: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
 #: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
 msgid "Ziel"
-msgstr ""
+msgstr "Ziel"
 
 #. js-lingui-id: HjZ1Ll
 #: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
