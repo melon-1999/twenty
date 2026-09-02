@@ -30,6 +30,7 @@ export enum AppPath {
   StageAnalyticsPage = '/opportunities/stage-analytics',
   PipelineAnalysisPage = '/opportunities/pipeline-analysis',
   NextActionsPage = '/opportunities/next-actions',
+  GoalsPage = '/opportunities/goals',
 
   Settings = `settings`,
   SettingsCatchAll = `/${Settings}/*`,
