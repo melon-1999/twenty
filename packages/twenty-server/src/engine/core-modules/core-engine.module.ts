@@ -80,6 +80,7 @@ import { ChannelSyncModule } from 'src/modules/connected-account/channel-sync/ch
 import { CreateCalendarEventModule } from 'src/modules/calendar/calendar-event-creation-manager/create-calendar-event.module';
 import { OpportunityRottingConfigModule } from 'src/modules/opportunity/opportunity-rotting-config.module';
 import { OpportunityProbabilityConfigModule } from 'src/modules/opportunity/opportunity-probability-config.module';
+import { OpportunityMonthlyGoalConfigModule } from 'src/modules/opportunity/opportunity-monthly-goal-config.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { SendEmailModule } from 'src/modules/messaging/message-outbound-manager/send-email.module';
 import { ClientConfigModule } from './client-config/client-config.module';
@@ -140,6 +141,7 @@ import { FileModule } from './file/file.module';
     CreateCalendarEventModule,
     OpportunityRottingConfigModule,
     OpportunityProbabilityConfigModule,
+    OpportunityMonthlyGoalConfigModule,
     FileStorageModule.forRoot(),
     LoggerModule.forRootAsync({
       useFactory: loggerModuleFactory,
