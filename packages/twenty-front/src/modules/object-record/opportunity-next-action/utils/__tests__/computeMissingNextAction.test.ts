@@ -2,7 +2,14 @@ import { computeMissingNextAction } from '@/object-record/opportunity-next-actio
 
 const NOW = new Date('2026-09-01T12:00:00.000Z');
 
-const opp = (id: string): { id: string; name: string | null; stage: string | null; amountMicros: number | null } => ({
+const opp = (
+  id: string,
+): {
+  id: string;
+  name: string | null;
+  stage: string | null;
+  amountMicros: number | null;
+} => ({
   id,
   name: `Deal ${id}`,
   stage: 'NEW',
@@ -14,7 +21,11 @@ describe('computeMissingNextAction', () => {
     const result = computeMissingNextAction(
       [opp('a'), opp('b')],
       [
-        { targetOpportunityId: 'a', dueAt: '2026-09-10T00:00:00.000Z', status: 'TODO' },
+        {
+          targetOpportunityId: 'a',
+          dueAt: '2026-09-10T00:00:00.000Z',
+          status: 'TODO',
+        },
       ],
       NOW,
     );
@@ -26,8 +37,16 @@ describe('computeMissingNextAction', () => {
     const result = computeMissingNextAction(
       [opp('a'), opp('b'), opp('c')],
       [
-        { targetOpportunityId: 'a', dueAt: '2026-09-10T00:00:00.000Z', status: 'DONE' },
-        { targetOpportunityId: 'b', dueAt: '2026-08-01T00:00:00.000Z', status: 'TODO' },
+        {
+          targetOpportunityId: 'a',
+          dueAt: '2026-09-10T00:00:00.000Z',
+          status: 'DONE',
+        },
+        {
+          targetOpportunityId: 'b',
+          dueAt: '2026-08-01T00:00:00.000Z',
+          status: 'TODO',
+        },
         { targetOpportunityId: 'c', dueAt: null, status: 'TODO' },
       ],
       NOW,
@@ -43,14 +62,24 @@ describe('computeMissingNextAction', () => {
   it('ignores task targets whose targetOpportunityId is null', () => {
     const result = computeMissingNextAction(
       [opp('a')],
-      [{ targetOpportunityId: null, dueAt: '2026-09-10T00:00:00.000Z', status: 'TODO' }],
+      [
+        {
+          targetOpportunityId: null,
+          dueAt: '2026-09-10T00:00:00.000Z',
+          status: 'TODO',
+        },
+      ],
       NOW,
     );
     expect(result.opportunities.map((o) => o.id)).toEqual(['a']);
   });
 
   it('preserves input order of opportunities', () => {
-    const result = computeMissingNextAction([opp('x'), opp('y'), opp('z')], [], NOW);
+    const result = computeMissingNextAction(
+      [opp('x'), opp('y'), opp('z')],
+      [],
+      NOW,
+    );
     expect(result.opportunities.map((o) => o.id)).toEqual(['x', 'y', 'z']);
   });
 });
