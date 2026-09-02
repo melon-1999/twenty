@@ -22,6 +22,7 @@ export enum SettingsPath {
   ObjectNewIndex = 'objects/:objectNamePlural/new-index',
   ObjectRotting = 'objects/:objectNamePlural/rotting',
   ObjectProbability = 'objects/:objectNamePlural/probability',
+  ObjectGoal = 'objects/:objectNamePlural/goal',
   ObjectFieldEdit = 'objects/:objectNamePlural/:fieldName',
   NewObject = 'objects/new',
   Layout = 'layout',

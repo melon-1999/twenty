@@ -22,6 +22,7 @@ import {
   IconArchive,
   IconClock,
   IconPercentage,
+  IconTarget,
   IconTrash,
 } from 'twenty-ui/icon';
 import { H2Title } from 'twenty-ui/typography';
@@ -165,6 +166,26 @@ export const ObjectSettings = ({
               variant="secondary"
               size="small"
               to={getSettingsPath(SettingsPath.ObjectProbability, {
+                objectNamePlural: objectMetadataItem.namePlural,
+              })}
+            />
+          </Section>
+        </StyledFormSectionContainer>
+      )}
+      {objectMetadataItem.nameSingular ===
+        CoreObjectNameSingular.Opportunity && (
+        <StyledFormSectionContainer>
+          <Section>
+            <H2Title
+              title={t`Verkaufsziel`}
+              description={t`Monatliches Umsatzziel fürs Team festlegen`}
+            />
+            <Button
+              Icon={IconTarget}
+              title={t`Monatsziel konfigurieren`}
+              variant="secondary"
+              size="small"
+              to={getSettingsPath(SettingsPath.ObjectGoal, {
                 objectNamePlural: objectMetadataItem.namePlural,
               })}
             />

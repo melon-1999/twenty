@@ -528,6 +528,12 @@ const SettingsObjectOpportunityProbability = lazy(() =>
   ),
 );
 
+const SettingsObjectOpportunityGoal = lazy(() =>
+  import('~/pages/settings/data-model/SettingsObjectOpportunityGoal').then(
+    (module) => ({ default: module.SettingsObjectOpportunityGoal }),
+  ),
+);
+
 const SettingsSecuritySSOIdentifyProvider = lazy(() =>
   import('~/pages/settings/security/SettingsSecuritySSOIdentifyProvider').then(
     (module) => ({
@@ -920,6 +926,10 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         <Route
           path={SettingsPath.ObjectProbability}
           element={<SettingsObjectOpportunityProbability />}
+        />
+        <Route
+          path={SettingsPath.ObjectGoal}
+          element={<SettingsObjectOpportunityGoal />}
         />
       </Route>
       <Route
