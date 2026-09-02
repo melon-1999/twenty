@@ -9,6 +9,7 @@ import { MAIN_CONTEXT_STORE_INSTANCE_ID } from '@/context-store/constants/MainCo
 import { ContextStoreComponentInstanceContext } from '@/context-store/states/contexts/ContextStoreComponentInstanceContext';
 import { isLayoutCustomizationModeEnabledState } from '@/layout-customization/states/isLayoutCustomizationModeEnabledState';
 import { RecordComponentInstanceContextsWrapper } from '@/object-record/components/RecordComponentInstanceContextsWrapper';
+import { OpportunityNextActivityBadge } from '@/object-record/record-show/opportunity/components/OpportunityNextActivityBadge';
 import { OpportunityRottingBadge } from '@/object-record/record-show/opportunity/components/OpportunityRottingBadge';
 import { OpportunityWeightedAmount } from '@/object-record/record-show/opportunity/components/OpportunityWeightedAmount';
 import { OpportunityWonLostActions } from '@/object-record/record-show/opportunity/components/OpportunityWonLostActions';
@@ -124,6 +125,10 @@ export const RecordShowPage = () => {
                       status={opportunityStatus ?? 'OPEN'}
                       stage={opportunityStage ?? ''}
                       stageChangedAt={opportunityStageChangedAt}
+                    />
+                    <OpportunityNextActivityBadge
+                      recordId={objectRecordId}
+                      status={opportunityStatus ?? 'OPEN'}
                     />
                     <OpportunityWeightedAmount
                       amount={opportunityAmount}
