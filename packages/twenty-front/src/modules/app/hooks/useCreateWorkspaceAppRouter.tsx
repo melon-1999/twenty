@@ -147,6 +147,14 @@ const OpportunityPipelineAnalysisPage = lazy(() =>
   ),
 );
 
+const OpportunityNextActionReportPage = lazy(() =>
+  import(
+    '~/pages/opportunity-next-action-report/OpportunityNextActionReportPage'
+  ).then((module) => ({
+    default: module.OpportunityNextActionReportPage,
+  })),
+);
+
 const NotFound = lazy(() =>
   import('~/pages/not-found/NotFound').then((module) => ({
     default: module.NotFound,
@@ -243,6 +251,14 @@ const createWorkspaceAppRouter = (
                 element={
                   <LazyRoute>
                     <OpportunityPipelineAnalysisPage />
+                  </LazyRoute>
+                }
+              />
+              <Route
+                path={AppPath.NextActionsPage}
+                element={
+                  <LazyRoute>
+                    <OpportunityNextActionReportPage />
                   </LazyRoute>
                 }
               />
