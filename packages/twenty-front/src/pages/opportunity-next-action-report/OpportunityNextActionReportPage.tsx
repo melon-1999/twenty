@@ -58,7 +58,13 @@ export const OpportunityNextActionReportPage = () => {
     useFindManyRecords<NextActionOpportunityRecord>({
       objectNameSingular: CoreObjectNameSingular.Opportunity,
       filter: { status: { eq: 'OPEN' } },
-      recordGqlFields: { name: true, stage: true, amount: true, status: true },
+      recordGqlFields: {
+        id: true,
+        name: true,
+        stage: true,
+        amount: true,
+        status: true,
+      },
       limit: 1000,
     });
 
