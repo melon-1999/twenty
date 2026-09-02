@@ -2098,6 +2098,11 @@ msgstr "Alle arbeidsområder denne brukeren er medlem av"
 msgid "All your custom objects"
 msgstr "Alle dine egendefinerte objekter"
 
+#. js-lingui-id: 4D3fkc
+#: src/pages/opportunity-next-action-report/OpportunityNextActionReportPage.tsx
+msgid "Alle offenen Opportunities haben eine nächste Aktion."
+msgstr ""
+
 #. js-lingui-id: 2M5OF+
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useActionRolePermissionFlagConfig.ts
 msgid "Allow downloading files and attachments"
@@ -3128,6 +3133,11 @@ msgstr "Best"
 #: src/pages/onboarding/InstallAppsContent.tsx
 msgid "Beta"
 msgstr "Beta"
+
+#. js-lingui-id: GGYV2d
+#: src/modules/object-record/opportunity-next-action/components/OpportunityNextActionTable.tsx
+msgid "Betrag"
+msgstr ""
 
 #. js-lingui-id: NgFKo1
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
@@ -6067,6 +6077,11 @@ msgstr "Deaktiver dette feltet"
 #: src/pages/settings/profile/SettingsProfile.tsx
 msgid "Deactivated"
 msgstr "Deaktivert"
+
+#. js-lingui-id: 3jX0AP
+#: src/modules/object-record/opportunity-next-action/components/OpportunityNextActionTable.tsx
+msgid "Deal"
+msgstr ""
 
 #. js-lingui-id: BgYumF
 #: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
@@ -10878,6 +10893,11 @@ msgstr ""
 msgid "Keine Entscheidung"
 msgstr ""
 
+#. js-lingui-id: wk6+mS
+#: src/modules/object-record/record-show/opportunity/components/OpportunityNextActivityBadge.tsx
+msgid "Keine nächste Aktion"
+msgstr ""
+
 #. js-lingui-id: V7o94n
 #: src/pages/opportunity-stage-duration-report/OpportunityStageDurationReportPage.tsx
 msgid "Keine offenen Opportunities."
@@ -12452,6 +12472,17 @@ msgstr "mySkill"
 #: src/pages/settings/admin-panel/SettingsAdminInstanceStatus.tsx
 msgid "N/A"
 msgstr "N/A"
+
+#. js-lingui-id: r2XkkG
+#: src/modules/object-record/record-show/opportunity/components/OpportunityNextActivityBadge.tsx
+msgid "Nächste Aktion: {formatted}"
+msgstr ""
+
+#. js-lingui-id: hM01Zk
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-next-action-report/OpportunityNextActionReportPage.tsx
+msgid "Nächste Aktionen"
+msgstr ""
 
 #. js-lingui-id: 6YtxFj
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceCreationForm.tsx
@@ -14771,6 +14802,7 @@ msgid "Person ID"
 msgstr ""
 
 #. js-lingui-id: kDRVPV
+#: src/modules/object-record/opportunity-next-action/components/OpportunityNextActionTable.tsx
 #: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
 #: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
 msgid "Phase"

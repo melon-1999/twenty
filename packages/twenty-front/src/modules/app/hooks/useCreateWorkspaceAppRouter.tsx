@@ -148,11 +148,11 @@ const OpportunityPipelineAnalysisPage = lazy(() =>
 );
 
 const OpportunityNextActionReportPage = lazy(() =>
-  import(
-    '~/pages/opportunity-next-action-report/OpportunityNextActionReportPage'
-  ).then((module) => ({
-    default: module.OpportunityNextActionReportPage,
-  })),
+  import('~/pages/opportunity-next-action-report/OpportunityNextActionReportPage').then(
+    (module) => ({
+      default: module.OpportunityNextActionReportPage,
+    }),
+  ),
 );
 
 const NotFound = lazy(() =>

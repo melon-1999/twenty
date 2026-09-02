@@ -11,6 +11,7 @@ import { useLocation } from 'react-router-dom';
 import { AppPath, CoreObjectNameSingular } from 'twenty-shared/types';
 
 import {
+  IconCalendarDue,
   IconChartBar,
   IconHourglassHigh,
   IconTrendingDown,
@@ -81,6 +82,12 @@ export const MainNavigationDrawerScrollableItems = () => {
             to={AppPath.PipelineAnalysisPage}
             Icon={IconTrendingUp}
             active={pathname === AppPath.PipelineAnalysisPage}
+          />
+          <NavigationDrawerItem
+            label={t`Nächste Aktionen`}
+            to={AppPath.NextActionsPage}
+            Icon={IconCalendarDue}
+            active={pathname === AppPath.NextActionsPage}
           />
         </>
       )}
