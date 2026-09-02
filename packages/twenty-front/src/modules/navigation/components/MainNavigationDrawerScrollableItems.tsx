@@ -14,6 +14,7 @@ import {
   IconCalendarDue,
   IconChartBar,
   IconHourglassHigh,
+  IconTarget,
   IconTrendingDown,
   IconTrendingUp,
 } from 'twenty-ui/icon';
@@ -88,6 +89,12 @@ export const MainNavigationDrawerScrollableItems = () => {
             to={AppPath.NextActionsPage}
             Icon={IconCalendarDue}
             active={pathname === AppPath.NextActionsPage}
+          />
+          <NavigationDrawerItem
+            label={t`Ziele`}
+            to={AppPath.GoalsPage}
+            Icon={IconTarget}
+            active={pathname === AppPath.GoalsPage}
           />
         </>
       )}

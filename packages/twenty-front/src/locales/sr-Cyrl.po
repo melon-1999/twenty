@@ -7839,6 +7839,7 @@ msgid "Erasure of soft-deleted records"
 msgstr "Брисање меко-обрисаних записа"
 
 #. js-lingui-id: HbxIEi
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
 #: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
 msgid "Erreicht"
 msgstr ""
@@ -9392,6 +9393,11 @@ msgstr "Искористите максимално свој радни прос
 msgid "Gewichtet"
 msgstr ""
 
+#. js-lingui-id: QOgs6D
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Gewonnen"
+msgstr ""
+
 #. js-lingui-id: XXtAx5
 #: src/modules/settings/data-model/indexes/forms/components/SettingsObjectIndexOptionsForm.tsx
 msgid "GIN (full-text search and JSONB)"
@@ -10888,6 +10894,11 @@ msgstr ""
 msgid "Kein Budget"
 msgstr ""
 
+#. js-lingui-id: 0kRfwK
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Kein Ziel gesetzt"
+msgstr ""
+
 #. js-lingui-id: ZFiLlG
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Keine Entscheidung"
@@ -11316,6 +11327,11 @@ msgstr "Правно"
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
 msgid "Legal entity name"
 msgstr "Назив правног лица"
+
+#. js-lingui-id: ByF8CZ
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Lege ein Monatsziel in den Einstellungen fest."
+msgstr ""
 
 #. js-lingui-id: MP1v+1
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
@@ -12256,6 +12272,36 @@ msgstr "Модели за овог провајдера. Пребаците да
 #. js-lingui-id: LHrHoQ
 #: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
 msgid "Modules included in your plan for this workspace."
+msgstr ""
+
+#. js-lingui-id: iPxv2y
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Monat"
+msgstr ""
+
+#. js-lingui-id: lThOcv
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Monatliches Umsatzziel fürs Team festlegen"
+msgstr ""
+
+#. js-lingui-id: waPuhw
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Monatliches Umsatzziel fürs Team; der Fortschritt zählt gewonnene Deals des Monats"
+msgstr ""
+
+#. js-lingui-id: qc50cb
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Monatsziel"
+msgstr ""
+
+#. js-lingui-id: FY94yV
+#: src/modules/settings/data-model/object-details/components/OpportunityGoalForm.tsx
+msgid "Monatsziel (Umsatz)"
+msgstr ""
+
+#. js-lingui-id: X98PWC
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Monatsziel konfigurieren"
 msgstr ""
 
 #. js-lingui-id: hty0d5
@@ -13972,6 +14018,7 @@ msgstr "објекти"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
@@ -17960,6 +18007,11 @@ msgstr "Шпански"
 msgid "Speed up reads on the fields you filter or sort by most. Each index also slows down writes and uses disk space, so add them with intent."
 msgstr "Убрзајте читање поља по којима најчешће филтрирате или сортирате. Сваки индекс такође успорава уписе и користи простор на диску, зато их додајте промишљено."
 
+#. js-lingui-id: WH4YlL
+#: src/modules/settings/data-model/object-details/components/OpportunityGoalForm.tsx
+msgid "Speichern"
+msgstr ""
+
 #. js-lingui-id: gsifzp
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
@@ -20811,6 +20863,18 @@ msgstr "Провера вашег <0>login token</0>"
 msgid "Verifying your email"
 msgstr "Потврда вашег имејла"
 
+#. js-lingui-id: xL7vap
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Verkaufsziel"
+msgstr ""
+
+#. js-lingui-id: XL06d0
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Verkaufsziel aktualisiert"
+msgstr ""
+
 #. js-lingui-id: LnAjMG
 #: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
 msgid "Verlorener Betrag"
@@ -21548,6 +21612,7 @@ msgstr "Токови Рада"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
@@ -22064,6 +22129,18 @@ msgstr "Ваш радни простор ће бити онемогућен"
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Zed"
 msgstr "Zed"
+
+#. js-lingui-id: zd5NRH
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Ziel"
+msgstr ""
+
+#. js-lingui-id: HjZ1Ll
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-goal/OpportunityGoalPage.tsx
+msgid "Ziele"
+msgstr ""
 
 #. js-lingui-id: d7e9Be
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts

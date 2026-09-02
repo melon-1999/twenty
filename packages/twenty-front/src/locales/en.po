@@ -7834,6 +7834,7 @@ msgid "Erasure of soft-deleted records"
 msgstr "Erasure of soft-deleted records"
 
 #. js-lingui-id: HbxIEi
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
 #: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
 msgid "Erreicht"
 msgstr "Erreicht"
@@ -9387,6 +9388,11 @@ msgstr "Get the most out of your workspace by inviting your team."
 msgid "Gewichtet"
 msgstr "Gewichtet"
 
+#. js-lingui-id: QOgs6D
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Gewonnen"
+msgstr "Gewonnen"
+
 #. js-lingui-id: XXtAx5
 #: src/modules/settings/data-model/indexes/forms/components/SettingsObjectIndexOptionsForm.tsx
 msgid "GIN (full-text search and JSONB)"
@@ -10883,6 +10889,11 @@ msgstr "Kanban widget"
 msgid "Kein Budget"
 msgstr "Kein Budget"
 
+#. js-lingui-id: 0kRfwK
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Kein Ziel gesetzt"
+msgstr "Kein Ziel gesetzt"
+
 #. js-lingui-id: ZFiLlG
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Keine Entscheidung"
@@ -11311,6 +11322,11 @@ msgstr "Legal"
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
 msgid "Legal entity name"
 msgstr "Legal entity name"
+
+#. js-lingui-id: ByF8CZ
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Lege ein Monatsziel in den Einstellungen fest."
+msgstr "Lege ein Monatsziel in den Einstellungen fest."
 
 #. js-lingui-id: MP1v+1
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
@@ -12252,6 +12268,36 @@ msgstr "Models for this provider. Toggle to enable or disable."
 #: src/modules/settings/product-capability/components/SettingsFeaturesContent.tsx
 msgid "Modules included in your plan for this workspace."
 msgstr "Modules included in your plan for this workspace."
+
+#. js-lingui-id: iPxv2y
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Monat"
+msgstr "Monat"
+
+#. js-lingui-id: lThOcv
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Monatliches Umsatzziel fürs Team festlegen"
+msgstr "Monatliches Umsatzziel fürs Team festlegen"
+
+#. js-lingui-id: waPuhw
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Monatliches Umsatzziel fürs Team; der Fortschritt zählt gewonnene Deals des Monats"
+msgstr "Monatliches Umsatzziel fürs Team; der Fortschritt zählt gewonnene Deals des Monats"
+
+#. js-lingui-id: qc50cb
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Monatsziel"
+msgstr "Monatsziel"
+
+#. js-lingui-id: FY94yV
+#: src/modules/settings/data-model/object-details/components/OpportunityGoalForm.tsx
+msgid "Monatsziel (Umsatz)"
+msgstr "Monatsziel (Umsatz)"
+
+#. js-lingui-id: X98PWC
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Monatsziel konfigurieren"
+msgstr "Monatsziel konfigurieren"
 
 #. js-lingui-id: hty0d5
 #: src/pages/settings/profile/appearance/components/DateTimeSettingsCalendarStartDaySelect.tsx
@@ -13967,6 +14013,7 @@ msgstr "objects"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
@@ -17955,6 +18002,11 @@ msgstr "Spanish"
 msgid "Speed up reads on the fields you filter or sort by most. Each index also slows down writes and uses disk space, so add them with intent."
 msgstr "Speed up reads on the fields you filter or sort by most. Each index also slows down writes and uses disk space, so add them with intent."
 
+#. js-lingui-id: WH4YlL
+#: src/modules/settings/data-model/object-details/components/OpportunityGoalForm.tsx
+msgid "Speichern"
+msgstr "Speichern"
+
 #. js-lingui-id: gsifzp
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
@@ -20808,6 +20860,18 @@ msgstr "Verifying your <0>login token</0>"
 msgid "Verifying your email"
 msgstr "Verifying your email"
 
+#. js-lingui-id: xL7vap
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Verkaufsziel"
+msgstr "Verkaufsziel"
+
+#. js-lingui-id: XL06d0
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
+msgid "Verkaufsziel aktualisiert"
+msgstr "Verkaufsziel aktualisiert"
+
 #. js-lingui-id: LnAjMG
 #: src/modules/object-record/opportunity-lost-reason-report/components/OpportunityLostReasonTable.tsx
 msgid "Verlorener Betrag"
@@ -21545,6 +21609,7 @@ msgstr "Workflows"
 #: src/pages/settings/data-model/SettingsNewObject.tsx
 #: src/pages/settings/data-model/SettingsObjectDetailPage.tsx
 #: src/pages/settings/data-model/SettingsObjectFieldEdit.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
@@ -22061,6 +22126,18 @@ msgstr "Your workspace will be disabled"
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Zed"
 msgstr "Zed"
+
+#. js-lingui-id: zd5NRH
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+#: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
+msgid "Ziel"
+msgstr "Ziel"
+
+#. js-lingui-id: HjZ1Ll
+#: src/modules/navigation/components/MainNavigationDrawerScrollableItems.tsx
+#: src/pages/opportunity-goal/OpportunityGoalPage.tsx
+msgid "Ziele"
+msgstr "Ziele"
 
 #. js-lingui-id: d7e9Be
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
