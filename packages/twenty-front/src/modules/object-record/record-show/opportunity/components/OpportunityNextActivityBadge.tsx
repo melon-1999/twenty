@@ -37,10 +37,17 @@ export const OpportunityNextActivityBadge = ({
   status,
 }: OpportunityNextActivityBadgeProps) => {
   const dateLocale = useAtomStateValue(dateLocaleState);
-  const nextActivityAt = useOpportunityNextActivity(recordId);
+  const { nextActivityAt, loading } = useOpportunityNextActivity(recordId, {
+    skip: status !== 'OPEN',
+  });
 
   // Closed deals do not need a next action.
   if (status !== 'OPEN') {
+    return null;
+  }
+
+  // Avoid flashing the "missing" state while the task query is in flight.
+  if (loading) {
     return null;
   }
 
