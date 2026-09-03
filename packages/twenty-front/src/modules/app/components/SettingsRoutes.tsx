@@ -534,6 +534,14 @@ const SettingsObjectOpportunityGoal = lazy(() =>
   ),
 );
 
+const SettingsObjectOpportunityWebForms = lazy(() =>
+  import('~/pages/settings/data-model/SettingsObjectOpportunityWebForms').then(
+    (module) => ({
+      default: module.SettingsObjectOpportunityWebForms,
+    }),
+  ),
+);
+
 const SettingsSecuritySSOIdentifyProvider = lazy(() =>
   import('~/pages/settings/security/SettingsSecuritySSOIdentifyProvider').then(
     (module) => ({
@@ -930,6 +938,10 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         <Route
           path={SettingsPath.ObjectGoal}
           element={<SettingsObjectOpportunityGoal />}
+        />
+        <Route
+          path={SettingsPath.ObjectWebForms}
+          element={<SettingsObjectOpportunityWebForms />}
         />
       </Route>
       <Route

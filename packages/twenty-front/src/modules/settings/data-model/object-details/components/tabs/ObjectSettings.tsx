@@ -24,6 +24,7 @@ import {
   IconPercentage,
   IconTarget,
   IconTrash,
+  IconWorldWww,
 } from 'twenty-ui/icon';
 import { H2Title } from 'twenty-ui/typography';
 import { Button } from 'twenty-ui/input';
@@ -186,6 +187,26 @@ export const ObjectSettings = ({
               variant="secondary"
               size="small"
               to={getSettingsPath(SettingsPath.ObjectGoal, {
+                objectNamePlural: objectMetadataItem.namePlural,
+              })}
+            />
+          </Section>
+        </StyledFormSectionContainer>
+      )}
+      {objectMetadataItem.nameSingular ===
+        CoreObjectNameSingular.Opportunity && (
+        <StyledFormSectionContainer>
+          <Section>
+            <H2Title
+              title={t`Web-Formulare`}
+              description={t`Formulare zur Erfassung von Opportunities einrichten`}
+            />
+            <Button
+              Icon={IconWorldWww}
+              title={t`Web-Formulare konfigurieren`}
+              variant="secondary"
+              size="small"
+              to={getSettingsPath(SettingsPath.ObjectWebForms, {
                 objectNamePlural: objectMetadataItem.namePlural,
               })}
             />
