@@ -542,6 +542,14 @@ const SettingsObjectOpportunityWebForms = lazy(() =>
   ),
 );
 
+const SettingsObjectTaskReminders = lazy(() =>
+  import('~/pages/settings/data-model/SettingsObjectTaskReminders').then(
+    (module) => ({
+      default: module.SettingsObjectTaskReminders,
+    }),
+  ),
+);
+
 const SettingsSecuritySSOIdentifyProvider = lazy(() =>
   import('~/pages/settings/security/SettingsSecuritySSOIdentifyProvider').then(
     (module) => ({
@@ -942,6 +950,10 @@ export const SettingsRoutes = ({ isAdminPageEnabled }: SettingsRoutesProps) => (
         <Route
           path={SettingsPath.ObjectWebForms}
           element={<SettingsObjectOpportunityWebForms />}
+        />
+        <Route
+          path={SettingsPath.ObjectTaskReminders}
+          element={<SettingsObjectTaskReminders />}
         />
       </Route>
       <Route

@@ -20,6 +20,7 @@ import { CoreObjectNameSingular, SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
 import {
   IconArchive,
+  IconBell,
   IconClock,
   IconPercentage,
   IconTarget,
@@ -207,6 +208,25 @@ export const ObjectSettings = ({
               variant="secondary"
               size="small"
               to={getSettingsPath(SettingsPath.ObjectWebForms, {
+                objectNamePlural: objectMetadataItem.namePlural,
+              })}
+            />
+          </Section>
+        </StyledFormSectionContainer>
+      )}
+      {objectMetadataItem.nameSingular === CoreObjectNameSingular.Task && (
+        <StyledFormSectionContainer>
+          <Section>
+            <H2Title
+              title={t`Aktivitäts-Reminder`}
+              description={t`Erinnerungen für fällige Aufgaben konfigurieren`}
+            />
+            <Button
+              Icon={IconBell}
+              title={t`Reminder konfigurieren`}
+              variant="secondary"
+              size="small"
+              to={getSettingsPath(SettingsPath.ObjectTaskReminders, {
                 objectNamePlural: objectMetadataItem.namePlural,
               })}
             />

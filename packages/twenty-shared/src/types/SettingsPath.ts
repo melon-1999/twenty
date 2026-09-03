@@ -24,6 +24,7 @@ export enum SettingsPath {
   ObjectProbability = 'objects/:objectNamePlural/probability',
   ObjectGoal = 'objects/:objectNamePlural/goal',
   ObjectWebForms = 'objects/:objectNamePlural/web-forms',
+  ObjectTaskReminders = 'objects/:objectNamePlural/reminders',
   ObjectFieldEdit = 'objects/:objectNamePlural/:fieldName',
   NewObject = 'objects/new',
   Layout = 'layout',
