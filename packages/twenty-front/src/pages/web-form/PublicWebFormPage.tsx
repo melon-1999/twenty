@@ -1,3 +1,4 @@
+/* oxlint-disable twenty/no-hardcoded-colors -- self-contained public form page renders outside the app ThemeProvider, so theme tokens are unavailable */
 import { styled } from '@linaria/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -229,9 +230,7 @@ export const PublicWebFormPage = () => {
   if (status === 'notFound') {
     return (
       <StyledPage>
-        <StyledCenteredMessage>
-          Formular nicht gefunden
-        </StyledCenteredMessage>
+        <StyledCenteredMessage>Formular nicht gefunden</StyledCenteredMessage>
       </StyledPage>
     );
   }
