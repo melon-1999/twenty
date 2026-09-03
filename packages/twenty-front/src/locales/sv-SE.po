@@ -1923,6 +1923,11 @@ msgstr "AI-arbetsflöde"
 msgid "AKIA..."
 msgstr "AKIA..."
 
+#. js-lingui-id: 3vACUw
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Aktiviert"
+msgstr ""
+
 #. js-lingui-id: Zdun41
 #: src/modules/ui/feedback/snack-bar-manager/components/SnackBar.tsx
 msgid "Alert"
@@ -3123,6 +3128,11 @@ msgstr "Före"
 #: src/modules/settings/admin-panel/utils/getUpgradeHealthStatusBadge.ts
 msgid "Behind"
 msgstr "Släpar efter"
+
+#. js-lingui-id: IXcLSr
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Beschreibung"
+msgstr ""
 
 #. js-lingui-id: KYr9vA
 #: src/pages/settings/ai/components/SettingsAiModelsTab.tsx
@@ -5824,6 +5834,11 @@ msgstr "Faraområde"
 msgid "Danish"
 msgstr "Danish"
 
+#. js-lingui-id: r7iQA6
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Dankestext"
+msgstr ""
+
 #. js-lingui-id: pvnfJD
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownThemesComponents.tsx
 #: src/pages/settings/profile/appearance/components/SettingsExperience.tsx
@@ -6088,6 +6103,11 @@ msgstr ""
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
 msgid "Deal-Aging"
+msgstr ""
+
+#. js-lingui-id: GcuO4z
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Deal-Namensvorlage"
 msgstr ""
 
 #. js-lingui-id: ZlGycp
@@ -9138,6 +9158,16 @@ msgstr "Format: [Minut] [Timme] [Dag i månaden] [Månad] [Veckodag]"
 msgid "Formats"
 msgstr "Formateringar"
 
+#. js-lingui-id: 3W8aDg
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Formulare für die Lead-Erfassung über die Website verwalten"
+msgstr ""
+
+#. js-lingui-id: o4cKiO
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Formulare zur Erfassung von Opportunities einrichten"
+msgstr ""
+
 #. js-lingui-id: nm91BR
 #: src/pages/settings/communications/SettingsWorkspaceCommunicationGroupChannelDetail.tsx
 msgid "Forwarding address"
@@ -10969,6 +10999,11 @@ msgstr ""
 msgid "Konversion → nächste"
 msgstr ""
 
+#. js-lingui-id: eCjqxd
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Kopieren"
+msgstr ""
+
 #. js-lingui-id: h6S9Yz
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
 msgid "Korean"
@@ -11450,6 +11485,11 @@ msgstr "Länk"
 msgid "Link copied to clipboard"
 msgstr "Länk kopierad till urklipp"
 
+#. js-lingui-id: 85fhjY
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Link kopiert"
+msgstr ""
+
 #. js-lingui-id: vH3ZQY
 #: src/modules/navigation-menu-item/display/dnd/hooks/useHandleAddToNavigationDrop.ts
 #: src/modules/navigation-menu-item/edit/side-panel/components/SidePanelEditLinkItemView.tsx
@@ -11740,6 +11780,11 @@ msgstr ""
 #: src/modules/workflow/workflow-diagram/utils/generateNodesAndEdgesForIteratorNode.ts
 msgid "loop"
 msgstr "loop"
+
+#. js-lingui-id: l+O0Qn
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Löschen"
+msgstr ""
 
 #. js-lingui-id: xmp/zU
 #: src/modules/object-record/record-show/opportunity/components/OpportunityWonLostActions.tsx
@@ -12659,6 +12704,11 @@ msgstr ""
 #: src/modules/workflow/workflow-steps/workflow-actions/http-request-action/components/WorkflowRunStepLogsHttpRequestDetail.tsx
 msgid "Network error"
 msgstr "Nätverksfel"
+
+#. js-lingui-id: UJ2yIe
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Neues Formular"
+msgstr ""
 
 #. js-lingui-id: qqeAJM
 #: src/modules/settings/developers/utils/formatExpiration.ts
@@ -14023,6 +14073,7 @@ msgstr "objekt"
 #: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
@@ -14854,6 +14905,7 @@ msgstr ""
 #: src/modules/object-record/opportunity-next-action/components/OpportunityNextActionTable.tsx
 #: src/modules/object-record/opportunity-pipeline-analysis/components/OpportunityPipelineAnalysisTable.tsx
 #: src/modules/object-record/opportunity-stage-duration-report/components/OpportunityStageDurationTable.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
 msgid "Phase"
 msgstr ""
 
@@ -18013,6 +18065,7 @@ msgstr "Snabba upp läsningar på de fält du oftast filtrerar eller sorterar p�
 
 #. js-lingui-id: WH4YlL
 #: src/modules/settings/data-model/object-details/components/OpportunityGoalForm.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
 msgid "Speichern"
 msgstr ""
 
@@ -19417,6 +19470,11 @@ msgstr "Tidszon"
 #: src/modules/object-record/record-show/opportunity/constants/opportunityLostReasons.ts
 msgid "Timing"
 msgstr "Tidsåtgång"
+
+#. js-lingui-id: vDyZ8F
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Titel"
+msgstr ""
 
 #. js-lingui-id: q7F5am
 #: src/modules/advanced-text-editor/extensions/slash-command/DefaultSlashCommands.ts
@@ -21308,6 +21366,24 @@ msgstr "Webbsök"
 msgid "Web searches"
 msgstr "Webbsökningar"
 
+#. js-lingui-id: 0N/PHP
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Web-Formulare"
+msgstr ""
+
+#. js-lingui-id: C7zK+s
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "Web-Formulare aktualisiert"
+msgstr ""
+
+#. js-lingui-id: WtRTSm
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Web-Formulare konfigurieren"
+msgstr ""
+
 #. js-lingui-id: Dq7Z5R
 #: src/modules/metadata-error-handler/hooks/useMetadataErrorHandler.ts
 msgid "webhook"
@@ -21623,6 +21699,7 @@ msgstr "Arbetsflöden"
 #: src/pages/settings/data-model/SettingsObjectOpportunityGoal.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityProbability.tsx
 #: src/pages/settings/data-model/SettingsObjectOpportunityRotting.tsx
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
