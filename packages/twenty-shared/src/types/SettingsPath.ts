@@ -23,6 +23,7 @@ export enum SettingsPath {
   ObjectRotting = 'objects/:objectNamePlural/rotting',
   ObjectProbability = 'objects/:objectNamePlural/probability',
   ObjectGoal = 'objects/:objectNamePlural/goal',
+  ObjectWebForms = 'objects/:objectNamePlural/web-forms',
   ObjectFieldEdit = 'objects/:objectNamePlural/:fieldName',
   NewObject = 'objects/new',
   Layout = 'layout',

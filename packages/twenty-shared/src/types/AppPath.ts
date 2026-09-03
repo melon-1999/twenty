@@ -4,6 +4,7 @@ export enum AppPath {
   VerifyEmail = '/verify-email',
   SignInUp = '/welcome',
   Invite = '/invite/:workspaceInviteHash',
+  WebFormPage = '/forms/:workspaceId/:formId',
   ResetPassword = '/reset-password/:passwordResetToken',
 
   // Onboarding
