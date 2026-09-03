@@ -28,6 +28,12 @@ const PasswordReset = lazy(() =>
   })),
 );
 
+const PublicWebFormPage = lazy(() =>
+  import('~/pages/web-form/PublicWebFormPage').then((module) => ({
+    default: module.PublicWebFormPage,
+  })),
+);
+
 const createRootAppRouter = () =>
   createBrowserRouter(
     createRoutesFromElements(
@@ -51,6 +57,14 @@ const createRootAppRouter = () =>
               }
             />
           </Route>
+          <Route
+            path={AppPath.WebFormPage}
+            element={
+              <LazyRoute fallback={null}>
+                <PublicWebFormPage />
+              </LazyRoute>
+            }
+          />
         </Route>
         <Route element={<AuthFlowLayout />}>
           <Route path={AppPath.VerifyEmail} element={<VerifyEmail />} />

@@ -167,6 +167,12 @@ const NotFound = lazy(() =>
   })),
 );
 
+const PublicWebFormPage = lazy(() =>
+  import('~/pages/web-form/PublicWebFormPage').then((module) => ({
+    default: module.PublicWebFormPage,
+  })),
+);
+
 const preloadOnboardingPages = () => {
   WorkspaceActivation.preload();
   CreateProfile.preload();
@@ -418,6 +424,14 @@ const createWorkspaceAppRouter = (
             element={
               <LazyRoute>
                 <Authorize />
+              </LazyRoute>
+            }
+          />
+          <Route
+            path={AppPath.WebFormPage}
+            element={
+              <LazyRoute fallback={null}>
+                <PublicWebFormPage />
               </LazyRoute>
             }
           />

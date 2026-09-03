@@ -97,6 +97,7 @@ export const usePageChangeEffectNavigateLocation = () => {
     !someMatchingLocationOf([
       ...ONGOING_USER_CREATION_PATHS,
       AppPath.ResetPassword,
+      AppPath.WebFormPage,
     ])
   ) {
     return AppPath.SignInUp;
