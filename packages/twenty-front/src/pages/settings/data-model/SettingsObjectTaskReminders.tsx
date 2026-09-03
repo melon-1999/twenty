@@ -17,7 +17,7 @@ import { H2Title } from 'twenty-ui/typography';
 
 export const SettingsObjectTaskReminders = () => {
   const { objectNamePlural = '' } = useParams();
-  const { enqueueSuccessSnackBar } = useSnackBar();
+  const { enqueueSuccessSnackBar, enqueueErrorSnackBar } = useSnackBar();
 
   const { objectMetadataItem } = useObjectMetadataItem({
     objectNameSingular: CoreObjectNameSingular.Task,
@@ -35,9 +35,15 @@ export const SettingsObjectTaskReminders = () => {
   }
 
   const handleToggle = async (next: boolean) => {
+    const previous = remindersEnabled;
     setRemindersEnabled(next);
-    await updateTaskReminders(next);
-    enqueueSuccessSnackBar({ message: t`Aktivitäts-Reminder aktualisiert` });
+    try {
+      await updateTaskReminders(next);
+      enqueueSuccessSnackBar({ message: t`Aktivitäts-Reminder aktualisiert` });
+    } catch {
+      setRemindersEnabled(previous);
+      enqueueErrorSnackBar({ message: t`Aktualisierung fehlgeschlagen.` });
+    }
   };
 
   return (
