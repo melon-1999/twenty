@@ -83,6 +83,7 @@ import { OpportunityProbabilityConfigModule } from 'src/modules/opportunity/oppo
 import { OpportunityMonthlyGoalConfigModule } from 'src/modules/opportunity/opportunity-monthly-goal-config.module';
 import { WebFormConfigModule } from 'src/modules/opportunity/web-form-config.module';
 import { WebFormPublicModule } from 'src/modules/opportunity/web-form-public.module';
+import { TaskReminderConfigModule } from 'src/modules/task-reminder/task-reminder-config.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { SendEmailModule } from 'src/modules/messaging/message-outbound-manager/send-email.module';
 import { ClientConfigModule } from './client-config/client-config.module';
@@ -146,6 +147,7 @@ import { FileModule } from './file/file.module';
     OpportunityMonthlyGoalConfigModule,
     WebFormConfigModule,
     WebFormPublicModule,
+    TaskReminderConfigModule,
     FileStorageModule.forRoot(),
     LoggerModule.forRootAsync({
       useFactory: loggerModuleFactory,
