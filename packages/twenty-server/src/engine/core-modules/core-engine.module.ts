@@ -81,6 +81,7 @@ import { CreateCalendarEventModule } from 'src/modules/calendar/calendar-event-c
 import { OpportunityRottingConfigModule } from 'src/modules/opportunity/opportunity-rotting-config.module';
 import { OpportunityProbabilityConfigModule } from 'src/modules/opportunity/opportunity-probability-config.module';
 import { OpportunityMonthlyGoalConfigModule } from 'src/modules/opportunity/opportunity-monthly-goal-config.module';
+import { WebFormConfigModule } from 'src/modules/opportunity/web-form-config.module';
 import { DashboardModule } from 'src/modules/dashboard/dashboard.module';
 import { SendEmailModule } from 'src/modules/messaging/message-outbound-manager/send-email.module';
 import { ClientConfigModule } from './client-config/client-config.module';
@@ -142,6 +143,7 @@ import { FileModule } from './file/file.module';
     OpportunityRottingConfigModule,
     OpportunityProbabilityConfigModule,
     OpportunityMonthlyGoalConfigModule,
+    WebFormConfigModule,
     FileStorageModule.forRoot(),
     LoggerModule.forRootAsync({
       useFactory: loggerModuleFactory,
