@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { v4 } from 'uuid';
 
@@ -101,10 +101,10 @@ export const SettingsObjectOpportunityWebForms = () => {
   const { updateWebForms } = useUpdateWebForms();
 
   const [forms, setForms] = useState<WebForm[]>([]);
-  const hasSeededRef = useRef(false);
+  const [hasSeeded, setHasSeeded] = useState(false);
 
-  if (!loading && !hasSeededRef.current) {
-    hasSeededRef.current = true;
+  if (!loading && !hasSeeded) {
+    setHasSeeded(true);
     setForms(webForms);
   }
 
