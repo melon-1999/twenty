@@ -140,7 +140,7 @@ export const PublicWebFormPage = () => {
     const fetchForm = async () => {
       try {
         const res = await fetch(
-          `${REACT_APP_SERVER_BASE_URL}/forms/${workspaceId}/${formId}`,
+          `${REACT_APP_SERVER_BASE_URL}/web-forms/${workspaceId}/${formId}`,
         );
 
         if (!res.ok) {
@@ -177,7 +177,7 @@ export const PublicWebFormPage = () => {
 
     try {
       const res = await fetch(
-        `${REACT_APP_SERVER_BASE_URL}/forms/${workspaceId}/${formId}/submit`,
+        `${REACT_APP_SERVER_BASE_URL}/web-forms/${workspaceId}/${formId}/submit`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

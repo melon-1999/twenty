@@ -12,6 +12,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { Request } from 'express';
+import { ApiPath } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
 import { Repository } from 'typeorm';
 
@@ -24,7 +25,7 @@ import { WebFormSubmissionService } from 'src/modules/opportunity/services/web-f
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-@Controller('forms')
+@Controller(ApiPath.WebForms)
 export class WebFormPublicController {
   constructor(
     private readonly webFormConfigService: WebFormConfigService,

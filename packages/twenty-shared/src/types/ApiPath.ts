@@ -22,5 +22,6 @@ export enum ApiPath {
   Rest = 'rest',
   RouteTrigger = 's',
   Webhooks = 'webhooks',
+  WebForms = 'web-forms',
   WellKnown = '.well-known',
 }
