@@ -1,4 +1,5 @@
 import { isNonEmptyString } from '@sniptt/guards';
+import { type CountryCode } from 'libphonenumber-js';
 
 import { type PersonWorkspaceEntity } from 'src/modules/person/standard-objects/person.workspace-entity';
 
@@ -24,7 +25,7 @@ export const buildWebFormPersonInsert = (
   if (isNonEmptyString(input.phone)) {
     record.phones = {
       primaryPhoneNumber: input.phone,
-      primaryPhoneCountryCode: '',
+      primaryPhoneCountryCode: '' as CountryCode,
       primaryPhoneCallingCode: '',
       additionalPhones: null,
     };

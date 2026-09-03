@@ -3,9 +3,12 @@ export const resolveWebFormDealName = (
   fields: { firstName: string; lastName: string; email: string },
 ): string => {
   const resolved = template
-    .replaceAll('{firstName}', fields.firstName)
-    .replaceAll('{lastName}', fields.lastName)
-    .replaceAll('{email}', fields.email)
+    .split('{firstName}')
+    .join(fields.firstName)
+    .split('{lastName}')
+    .join(fields.lastName)
+    .split('{email}')
+    .join(fields.email)
     .trim();
 
   return resolved.length > 0 ? resolved : 'Web-Lead';
