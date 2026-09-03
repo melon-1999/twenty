@@ -74,6 +74,11 @@ msgid "Dear {userName},"
 msgstr "{userName}様,"
 
 #. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Deine fälligen Aktivitäten"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Developers"
 msgstr "開発者"
@@ -99,6 +104,11 @@ msgid "Good news first: your workspace <0>{workspaceDisplayName}</0> is only pau
 msgstr "まずは良いお知らせです。お客様のワークスペース <0>{workspaceDisplayName}</0> は一時停止されているだけで、データは失われていません。"
 
 #. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Hallo,"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
 #: src/emails/billing-trial-converting.email.tsx
 #: src/emails/billing-trial-ending.email.tsx
@@ -109,10 +119,16 @@ msgid "Hello,"
 msgstr "こんにちは,"
 
 #. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Heute fällig"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
 #: src/emails/billing-trial-converting.email.tsx
 #: src/emails/billing-trial-ending.email.tsx
 #: src/emails/clean-suspended-workspace.email.tsx
+#: src/emails/task-reminder.email.tsx
 #: src/emails/warn-suspended-workspace.email.tsx
 msgid "Hi {userName},"
 msgstr "{userName}様,"
@@ -267,6 +283,11 @@ msgstr "ワークスペースとこれまでに構築された内容を保持す
 #: src/components/Footer.tsx
 msgid "Twenty.com, Public Benefit Corporation"
 msgstr "Twenty.com, 公益企業"
+
+#. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Überfällig"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

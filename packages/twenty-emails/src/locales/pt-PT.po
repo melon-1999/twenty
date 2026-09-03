@@ -74,6 +74,11 @@ msgid "Dear {userName},"
 msgstr "Caro {userName},"
 
 #. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Deine fälligen Aktivitäten"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Developers"
 msgstr "Programadores"
@@ -99,6 +104,11 @@ msgid "Good news first: your workspace <0>{workspaceDisplayName}</0> is only pau
 msgstr "Boas notícias primeiro: o seu espaço de trabalho <0>{workspaceDisplayName}</0> está apenas em pausa — nenhum dos seus dados foi perdido."
 
 #. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Hallo,"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
 #: src/emails/billing-trial-converting.email.tsx
 #: src/emails/billing-trial-ending.email.tsx
@@ -109,10 +119,16 @@ msgid "Hello,"
 msgstr "Olá,"
 
 #. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Heute fällig"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
 #: src/emails/billing-trial-converting.email.tsx
 #: src/emails/billing-trial-ending.email.tsx
 #: src/emails/clean-suspended-workspace.email.tsx
+#: src/emails/task-reminder.email.tsx
 #: src/emails/warn-suspended-workspace.email.tsx
 msgid "Hi {userName},"
 msgstr "Olá {userName},"
@@ -267,6 +283,11 @@ msgstr "Para manter o seu espaço de trabalho e tudo o que criou, adicione um m�
 #: src/components/Footer.tsx
 msgid "Twenty.com, Public Benefit Corporation"
 msgstr "Twenty.com, Corporation de Benefício Público"
+
+#. js-lingui-explicit-id
+#: src/emails/task-reminder.email.tsx
+msgid "Überfällig"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

@@ -1928,6 +1928,25 @@ msgstr "AKIA..."
 msgid "Aktiviert"
 msgstr ""
 
+#. js-lingui-id: ckF5FB
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Aktivitäts-Reminder"
+msgstr ""
+
+#. js-lingui-id: EJIpuq
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Aktivitäts-Reminder aktualisiert"
+msgstr ""
+
+#. js-lingui-id: dwI/bc
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Aktualisierung fehlgeschlagen."
+msgstr ""
+
 #. js-lingui-id: Zdun41
 #: src/modules/ui/feedback/snack-bar-manager/components/SnackBar.tsx
 msgid "Alert"
@@ -7857,6 +7876,16 @@ msgstr "Ambienti"
 #: src/modules/settings/security/components/SettingsSecuritySettings.tsx
 msgid "Erasure of soft-deleted records"
 msgstr "Cancellazione dei record eliminati temporaneamente"
+
+#. js-lingui-id: FiOoxp
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Erinnerungen für fällige Aufgaben aktivieren oder deaktivieren"
+msgstr ""
+
+#. js-lingui-id: drhpHg
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Erinnerungen für fällige Aufgaben konfigurieren"
+msgstr ""
 
 #. js-lingui-id: HbxIEi
 #: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
@@ -14086,6 +14115,7 @@ msgstr "oggetti"
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
 msgid "Objects"
 msgstr "Oggetti"
 
@@ -15900,6 +15930,11 @@ msgstr "Ricarica il token di validità"
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
 msgid "Reloading..."
 msgstr "Ricaricamento in corso..."
+
+#. js-lingui-id: 83REkv
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Reminder konfigurieren"
+msgstr ""
 
 #. js-lingui-id: qlAIQ1
 #: src/modules/settings/components/SettingsItemTypeTag.tsx
@@ -21706,6 +21741,7 @@ msgstr "Workflows"
 #: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 #: src/pages/settings/developers/playground/SettingsGraphQLPlayground.tsx

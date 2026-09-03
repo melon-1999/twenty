@@ -1923,6 +1923,25 @@ msgstr "AKIA..."
 msgid "Aktiviert"
 msgstr "Aktiviert"
 
+#. js-lingui-id: ckF5FB
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Aktivitäts-Reminder"
+msgstr "Aktivitäts-Reminder"
+
+#. js-lingui-id: EJIpuq
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Aktivitäts-Reminder aktualisiert"
+msgstr "Aktivitäts-Reminder aktualisiert"
+
+#. js-lingui-id: dwI/bc
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Aktualisierung fehlgeschlagen."
+msgstr "Aktualisierung fehlgeschlagen."
+
 #. js-lingui-id: Zdun41
 #: src/modules/ui/feedback/snack-bar-manager/components/SnackBar.tsx
 msgid "Alert"
@@ -7852,6 +7871,16 @@ msgstr "Environments"
 #: src/modules/settings/security/components/SettingsSecuritySettings.tsx
 msgid "Erasure of soft-deleted records"
 msgstr "Erasure of soft-deleted records"
+
+#. js-lingui-id: FiOoxp
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
+msgid "Erinnerungen für fällige Aufgaben aktivieren oder deaktivieren"
+msgstr "Erinnerungen für fällige Aufgaben aktivieren oder deaktivieren"
+
+#. js-lingui-id: drhpHg
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Erinnerungen für fällige Aufgaben konfigurieren"
+msgstr "Erinnerungen für fällige Aufgaben konfigurieren"
 
 #. js-lingui-id: HbxIEi
 #: src/modules/object-record/opportunity-goal/components/OpportunityGoalProgress.tsx
@@ -14081,6 +14110,7 @@ msgstr "objects"
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
 msgid "Objects"
 msgstr "Objects"
 
@@ -15895,6 +15925,11 @@ msgstr "Reload validity token"
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
 msgid "Reloading..."
 msgstr "Reloading..."
+
+#. js-lingui-id: 83REkv
+#: src/modules/settings/data-model/object-details/components/tabs/ObjectSettings.tsx
+msgid "Reminder konfigurieren"
+msgstr "Reminder konfigurieren"
 
 #. js-lingui-id: qlAIQ1
 #: src/modules/settings/components/SettingsItemTypeTag.tsx
@@ -21701,6 +21736,7 @@ msgstr "Workflows"
 #: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
 #: src/pages/settings/data-model/SettingsObjectOverview.tsx
 #: src/pages/settings/data-model/SettingsObjects.tsx
+#: src/pages/settings/data-model/SettingsObjectTaskReminders.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeyDetail.tsx
 #: src/pages/settings/developers/api-keys/SettingsDevelopersApiKeysNew.tsx
 #: src/pages/settings/developers/playground/SettingsGraphQLPlayground.tsx
