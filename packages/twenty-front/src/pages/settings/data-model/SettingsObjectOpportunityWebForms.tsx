@@ -76,6 +76,21 @@ const StyledPublicUrl = styled.span`
   white-space: nowrap;
 `;
 
+const StyledIframeSnippetRow = styled.div`
+  align-items: center;
+  display: flex;
+  gap: ${themeCssVariables.spacing[2]};
+`;
+
+const StyledIframeSnippet = styled.span`
+  color: ${themeCssVariables.font.color.tertiary};
+  font-family: monospace;
+  font-size: ${themeCssVariables.font.size.sm};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 const StyledFooter = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -179,6 +194,14 @@ export const SettingsObjectOpportunityWebForms = () => {
             <StyledFormsList>
               {forms.map((form) => {
                 const publicUrl = `${REACT_APP_SERVER_BASE_URL}/forms/${currentWorkspace?.id}/${form.id}`;
+                const iframeSnippet = `<iframe src="${publicUrl}" width="100%" height="600" style="border:0"></iframe>`;
+
+                const handleCopyIframeSnippet = async () => {
+                  await navigator.clipboard.writeText(iframeSnippet);
+                  enqueueSuccessSnackBar({
+                    message: t`In Zwischenablage kopiert`,
+                  });
+                };
 
                 return (
                   <StyledFormCard key={form.id}>
@@ -264,6 +287,16 @@ export const SettingsObjectOpportunityWebForms = () => {
                         }}
                       />
                     </StyledPublicUrlRow>
+                    <StyledIframeSnippetRow>
+                      <StyledIframeSnippet>{iframeSnippet}</StyledIframeSnippet>
+                      <Button
+                        title={t`iframe kopieren`}
+                        variant="secondary"
+                        onClick={() => {
+                          handleCopyIframeSnippet();
+                        }}
+                      />
+                    </StyledIframeSnippetRow>
                   </StyledFormCard>
                 );
               })}
