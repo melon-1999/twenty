@@ -10072,6 +10072,11 @@ msgstr "iFrame"
 msgid "Iframe"
 msgstr "IFrame"
 
+#. js-lingui-id: e1Cdnp
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "iframe kopieren"
+msgstr "iframe kopieren"
+
 #. js-lingui-id: hiXeBh
 #: src/modules/side-panel/pages/page-layout/utils/getPageLayoutPageTitle.ts
 msgid "iFrame Settings"
@@ -10224,6 +10229,11 @@ msgstr "Daten werden importiert ..."
 #: src/modules/settings/developers/utils/formatExpiration.ts
 msgid "In {dateDiff}"
 msgstr "In {dateDiff}"
+
+#. js-lingui-id: 0eK/7/
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "In Zwischenablage kopiert"
+msgstr "In Zwischenablage kopiert"
 
 #. js-lingui-id: hVockd
 #: src/modules/workflow/workflow-steps/workflow-actions/components/WorkflowEditActionEmailBase.tsx

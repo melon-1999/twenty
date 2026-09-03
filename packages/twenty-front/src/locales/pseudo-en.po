@@ -10044,6 +10044,11 @@ msgstr ""
 msgid "Iframe"
 msgstr ""
 
+#. js-lingui-id: e1Cdnp
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "iframe kopieren"
+msgstr ""
+
 #. js-lingui-id: hiXeBh
 #: src/modules/side-panel/pages/page-layout/utils/getPageLayoutPageTitle.ts
 msgid "iFrame Settings"
@@ -10195,6 +10200,11 @@ msgstr ""
 #. js-lingui-id: HiyKEP
 #: src/modules/settings/developers/utils/formatExpiration.ts
 msgid "In {dateDiff}"
+msgstr ""
+
+#. js-lingui-id: 0eK/7/
+#: src/pages/settings/data-model/SettingsObjectOpportunityWebForms.tsx
+msgid "In Zwischenablage kopiert"
 msgstr ""
 
 #. js-lingui-id: hVockd
