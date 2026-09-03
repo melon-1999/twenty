@@ -18,6 +18,8 @@ import { Repository } from 'typeorm';
 
 import { WorkspaceEntity } from 'src/engine/core-modules/workspace/workspace.entity';
 import { ThrottlerService } from 'src/engine/core-modules/throttler/throttler.service';
+import { ThrottlerException } from 'src/engine/core-modules/throttler/throttler.exception';
+import { throttlerToRestApiExceptionHandler } from 'src/engine/core-modules/throttler/utils/throttler-to-rest-api-exception-handler.util';
 import { NoPermissionGuard } from 'src/engine/guards/no-permission.guard';
 import { PublicEndpointGuard } from 'src/engine/guards/public-endpoint.guard';
 import { WebFormConfigService } from 'src/modules/opportunity/services/web-form-config.service';
@@ -62,6 +64,8 @@ export class WebFormPublicController {
       email?: string;
       phone?: string;
       jobTitle?: string;
+      company?: string;
+      message?: string;
       _hp?: string;
     },
     @Req() request: Request,
@@ -70,12 +74,19 @@ export class WebFormPublicController {
       return { ok: true };
     }
 
-    await this.throttlerService.tokenBucketThrottleOrThrow(
-      `web-form-submit:${request.ip}`,
-      1,
-      5,
-      60_000,
-    );
+    try {
+      await this.throttlerService.tokenBucketThrottleOrThrow(
+        `web-form-submit:${request.ip}`,
+        1,
+        5,
+        60_000,
+      );
+    } catch (error) {
+      if (error instanceof ThrottlerException) {
+        throttlerToRestApiExceptionHandler(error);
+      }
+      throw error;
+    }
 
     const email = (body.email ?? '').trim();
 
@@ -95,6 +106,8 @@ export class WebFormPublicController {
         phone: (body.phone ?? '').trim(),
         jobTitle: (body.jobTitle ?? '').trim(),
       },
+      company: (body.company ?? '').trim(),
+      message: (body.message ?? '').trim(),
     });
 
     return { ok: true };
