@@ -84,6 +84,22 @@ const StyledInput = styled.input`
   }
 `;
 
+const StyledTextarea = styled.textarea`
+  border: 1px solid #d1d1d6;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 12px;
+  resize: vertical;
+  width: 100%;
+
+  &:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+`;
+
 const StyledHoneypotWrapper = styled.div`
   left: -9999px;
   position: absolute;
@@ -133,6 +149,8 @@ export const PublicWebFormPage = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [jobTitle, setJobTitle] = useState('');
+  const [company, setCompany] = useState('');
+  const [message, setMessage] = useState('');
   const [hp, setHp] = useState('');
   const [isEmailInvalid, setIsEmailInvalid] = useState(false);
 
@@ -187,6 +205,8 @@ export const PublicWebFormPage = () => {
             email,
             phone,
             jobTitle,
+            company,
+            message,
             _hp: hp,
           }),
         },
@@ -284,6 +304,24 @@ export const PublicWebFormPage = () => {
               type="text"
               value={jobTitle}
               onChange={(event) => setJobTitle(event.target.value)}
+            />
+          </StyledField>
+          <StyledField>
+            <StyledLabel htmlFor="company">Firma</StyledLabel>
+            <StyledInput
+              id="company"
+              type="text"
+              value={company}
+              onChange={(event) => setCompany(event.target.value)}
+            />
+          </StyledField>
+          <StyledField>
+            <StyledLabel htmlFor="message">Nachricht</StyledLabel>
+            <StyledTextarea
+              id="message"
+              rows={4}
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
             />
           </StyledField>
           <StyledHoneypotWrapper aria-hidden="true">
