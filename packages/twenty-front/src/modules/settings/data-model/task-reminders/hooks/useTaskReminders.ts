@@ -6,7 +6,8 @@ import { type TaskReminders } from '@/settings/data-model/task-reminders/types/T
 type GetTaskRemindersResult = { taskReminders: TaskReminders | null };
 
 export const useTaskReminders = (): { enabled: boolean; loading: boolean } => {
-  const { data, loading } = useQuery<GetTaskRemindersResult>(GET_TASK_REMINDERS);
+  const { data, loading } =
+    useQuery<GetTaskRemindersResult>(GET_TASK_REMINDERS);
 
   return { enabled: data?.taskReminders?.enabled ?? false, loading };
 };
