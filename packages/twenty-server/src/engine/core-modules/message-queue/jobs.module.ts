@@ -20,6 +20,8 @@ import { InstallPreInstalledAppsJob } from 'src/engine/core-modules/application/
 import { PreInstalledAppsModule } from 'src/engine/core-modules/application/pre-installed-apps/pre-installed-apps.module';
 import { InstallOnboardingAppsJob } from 'src/engine/core-modules/onboarding/jobs/install-onboarding-apps.job';
 import { OnboardingModule } from 'src/engine/core-modules/onboarding/onboarding.module';
+import { TaskReminderCronJob } from 'src/modules/task-reminder/crons/task-reminder.cron.job';
+import { TaskReminderModule } from 'src/modules/task-reminder/task-reminder.module';
 import { EmailSenderJob } from 'src/engine/core-modules/email/email-sender.job';
 import { EmailModule } from 'src/engine/core-modules/email/email.module';
 import { EmailingModule } from 'src/modules/emailing/emailing.module';
@@ -102,9 +104,11 @@ import { WorkflowModule } from 'src/modules/workflow/workflow.module';
     PreInstalledAppsModule,
     OnboardingModule,
     BillingReminderModule,
+    TaskReminderModule,
   ],
   providers: [
     BillingReminderCronJob,
+    TaskReminderCronJob,
     CleanSuspendedWorkspacesJob,
     CleanOnboardingWorkspacesJob,
     EmailSenderJob,

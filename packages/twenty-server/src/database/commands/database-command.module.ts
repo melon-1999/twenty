@@ -56,6 +56,7 @@ import { MessagingImportManagerModule } from 'src/modules/messaging/message-impo
 import { WorkflowRunQueueModule } from 'src/modules/workflow/workflow-runner/workflow-run-queue/workflow-run-queue.module';
 import { AutomatedTriggerModule } from 'src/modules/workflow/workflow-trigger/automated-trigger/automated-trigger.module';
 import { WorkflowCoreConsistencyModule } from 'src/modules/workflow/workflow-core-consistency/workflow-core-consistency.module';
+import { TaskReminderModule } from 'src/modules/task-reminder/task-reminder.module';
 
 @Module({
   imports: [
@@ -84,6 +85,7 @@ import { WorkflowCoreConsistencyModule } from 'src/modules/workflow/workflow-cor
     WorkspaceMigrationModule,
     TrashCleanupModule,
     BillingReminderModule,
+    TaskReminderModule,
     CodeInterpreterSessionCleanupModule,
     PublicDomainModule,
     EventLogCleanupModule,
