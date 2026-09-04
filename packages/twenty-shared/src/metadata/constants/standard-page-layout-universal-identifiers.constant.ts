@@ -384,6 +384,27 @@ export const STANDARD_PAGE_LAYOUT_UNIVERSAL_IDENTIFIERS = {
       },
     },
   },
+  productRecordPage: {
+    universalIdentifier: '926040fe-a363-455e-bf34-7d8da4362067',
+    tabs: {
+      home: {
+        universalIdentifier: '098e569b-bc99-41c3-b81a-90bdacd9007b',
+        widgets: {
+          fields: {
+            universalIdentifier: '6395f565-00f9-432e-8c5f-8e37a182471e',
+          },
+        },
+      },
+      timeline: {
+        universalIdentifier: '07e74456-b530-4b0b-b422-822eba44854a',
+        widgets: {
+          timeline: {
+            universalIdentifier: '4d00e3e5-1356-4b1a-bce8-db3a6ad43b3a',
+          },
+        },
+      },
+    },
+  },
   blocklistRecordPage: {
     universalIdentifier: '20202020-a109-4009-8009-b10c115b0001',
     tabs: {

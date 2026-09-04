@@ -459,6 +459,9 @@ export const STANDARD_OBJECTS = {
     universalIdentifier: STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.product,
     fields: STANDARD_OBJECT_FIELDS.product,
     indexes: {
+      nameIndex: {
+        universalIdentifier: '1286f5ae-f5e8-4c05-9e1d-b00968f44ec3',
+      },
       searchVectorGinIndex: {
         universalIdentifier: '287863e7-2ea6-4855-8ae1-3c4ca4f42263',
       },
@@ -478,6 +481,37 @@ export const STANDARD_OBJECTS = {
           'createdAt',
         ],
       }),
+      productRecordPageFields: {
+        universalIdentifier: 'fe61a7d5-0dc4-4b52-8683-125abfcdf327',
+        viewFieldGroups: {
+          general: {
+            universalIdentifier: 'f7293ee0-9c58-41bb-9924-059db13b384e',
+          },
+          system: {
+            universalIdentifier: 'efc2bad5-bcf6-408e-b3ed-299f177898db',
+          },
+        },
+        viewFields: {
+          price: {
+            universalIdentifier: 'd58204b9-55b1-484c-bc83-2734a9f977a9',
+          },
+          code: {
+            universalIdentifier: 'd95aa129-f125-4c26-b6ac-2ae9784c2a1c',
+          },
+          description: {
+            universalIdentifier: '13738f11-39ae-496a-80c2-aa23f03646b0',
+          },
+          isActive: {
+            universalIdentifier: '4c9b5502-52cf-43a3-993e-a41a2d236d84',
+          },
+          createdAt: {
+            universalIdentifier: '62122d29-0656-436b-b830-47199deb23e1',
+          },
+          createdBy: {
+            universalIdentifier: '33fbdbfb-0230-427e-9a3f-4df4d081d414',
+          },
+        },
+      },
     },
   },
   dashboard: {
