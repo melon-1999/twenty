@@ -16,6 +16,7 @@ export const STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS = {
   taskTarget: '20202020-5a9a-44e8-95df-771cd06d0fb1',
   person: '20202020-e674-48e5-a542-72570eee7213',
   company: '20202020-b374-4779-a561-80086cb2e17f',
+  product: 'b305c282-2e30-4a15-a8ec-d763c677e21f',
   opportunity: '20202020-9549-49dd-b2b2-883999db8938',
   note: '20202020-0b00-45cd-b6f6-6cd806fc6804',
   task: '20202020-1ba1-48ba-bc83-ef7e5990ed10',

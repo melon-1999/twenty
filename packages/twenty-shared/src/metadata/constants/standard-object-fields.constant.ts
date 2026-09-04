@@ -442,6 +442,18 @@ export const STANDARD_OBJECT_FIELDS = {
       }),
     },
   },
+  product: {
+    ...buildStandardObjectSystemFields(
+      STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.product,
+    ),
+    name: { universalIdentifier: '77b5fb4b-3d35-413c-b91d-961ffeb3b8f3' },
+    price: { universalIdentifier: '07b9ae40-22c9-4218-9a5e-128ecb5d5478' },
+    code: { universalIdentifier: '63c9d098-63e5-41c0-913c-29632c59e8d9' },
+    description: {
+      universalIdentifier: 'c6ca3ba5-f382-4b3b-8a4e-b61182ef7c66',
+    },
+    isActive: { universalIdentifier: '63c5bc70-1f4b-48cf-a23f-7ee570570e23' },
+  },
   dashboard: {
     ...buildStandardObjectSystemFields(
       STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.dashboard,

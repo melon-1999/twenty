@@ -455,6 +455,31 @@ export const STANDARD_OBJECTS = {
       },
     },
   },
+  product: {
+    universalIdentifier: STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.product,
+    fields: STANDARD_OBJECT_FIELDS.product,
+    indexes: {
+      searchVectorGinIndex: {
+        universalIdentifier: '287863e7-2ea6-4855-8ae1-3c4ca4f42263',
+      },
+    },
+    views: {
+      allProducts: buildStandardObjectIndexView({
+        objectUniversalIdentifier:
+          STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.product,
+        fields: STANDARD_OBJECT_FIELDS.product,
+        viewFieldNames: [
+          'name',
+          'price',
+          'code',
+          'description',
+          'isActive',
+          'createdBy',
+          'createdAt',
+        ],
+      }),
+    },
+  },
   dashboard: {
     universalIdentifier: STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.dashboard,
     fields: STANDARD_OBJECT_FIELDS.dashboard,
