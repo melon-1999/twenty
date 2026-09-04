@@ -42,6 +42,10 @@ export const SEARCH_FIELDS_BY_STANDARD_OBJECT_NAME = {
     { name: 'phones', type: FieldMetadataType.PHONES },
     { name: 'jobTitle', type: FieldMetadataType.TEXT },
   ],
+  product: [
+    { name: 'name', type: FieldMetadataType.TEXT },
+    { name: 'code', type: FieldMetadataType.TEXT },
+  ],
   task: [
     { name: 'title', type: FieldMetadataType.TEXT },
     { name: 'bodyV2', type: FieldMetadataType.RICH_TEXT },
