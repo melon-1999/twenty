@@ -27,6 +27,7 @@ import {
 import { twoFactorAuthenticationMethodsValidator } from './two-factor-authentication.validation';
 
 import { OTPStatus } from './strategies/otp/otp.constants';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const PENDING_METHOD_REUSE_WINDOW_MS = 60 * 60 * 1000;
 
@@ -115,7 +116,7 @@ export class TwoFactorAuthenticationService {
         workspaceId,
       });
 
-      const issuer = `Twenty${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`;
+      const issuer = `${PRODUCT_BRANDING.name}${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`;
       const reuseUri = authenticator.keyuri(userEmail, issuer, existingSecret);
 
       return reuseUri;
@@ -125,7 +126,7 @@ export class TwoFactorAuthenticationService {
       TOTP_DEFAULT_CONFIGURATION,
     ).initiate(
       userEmail,
-      `Twenty${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`,
+      `${PRODUCT_BRANDING.name}${workspaceDisplayName ? ` - ${workspaceDisplayName}` : ''}`,
     );
 
     const encryptedSecret = this.secretEncryptionService.encryptVersioned(

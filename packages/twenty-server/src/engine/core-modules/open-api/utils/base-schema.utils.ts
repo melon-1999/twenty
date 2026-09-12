@@ -2,6 +2,7 @@ import { type OpenAPIV3_1 } from 'openapi-types';
 import { ApiPath } from 'twenty-shared/types';
 
 import { computeOpenApiPath } from 'src/engine/core-modules/open-api/utils/path.utils';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export const API_Version = 'v0.1';
 
@@ -12,7 +13,7 @@ export const baseSchema = (
   return {
     openapi: '3.1.1',
     info: {
-      title: 'Twenty Api',
+      title: `${PRODUCT_BRANDING.name} Api`,
       description: `Use this page to explore and call the **REST API**.
 
 ## Authentication
@@ -106,7 +107,7 @@ order_by=id[AscNullsFirst],createdAt[DescNullsLast]
 ## Usage with LLMs
 
 The recommended way to give an LLM agent (Claude Desktop, Cursor, Windsurf, …)
-access to your workspace is the **Twenty MCP server**, not this OpenAPI schema.
+access to your workspace is the **${PRODUCT_BRANDING.name} MCP server**, not this OpenAPI schema.
 The MCP server exposes typed tools the agent can call directly with proper
 header-based auth (OAuth or API key), no tokens in URLs.
 
@@ -128,7 +129,7 @@ curl -H 'Authorization: Bearer <token>' \\
       termsOfService:
         'https://github.com/twentyhq/twenty?tab=coc-ov-file#readme',
       contact: {
-        email: 'felix@twenty.com',
+        email: PRODUCT_BRANDING.supportEmail,
       },
       license: {
         name: 'AGPL-3.0',
@@ -159,8 +160,8 @@ curl -H 'Authorization: Bearer <token>' \\
       },
     ],
     externalDocs: {
-      description: 'Find out more about **Twenty**',
-      url: 'https://twenty.com',
+      description: `Find out more about **${PRODUCT_BRANDING.name}**`,
+      url: PRODUCT_BRANDING.websiteUrl,
     },
     paths: { [`/open-api/${schemaName}`]: computeOpenApiPath(serverUrl) },
   };

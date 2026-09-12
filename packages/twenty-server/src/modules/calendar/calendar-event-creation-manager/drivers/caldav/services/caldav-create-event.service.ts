@@ -14,6 +14,7 @@ import { CalDavClientProvider } from 'src/modules/calendar/calendar-event-import
 import { CalDavFetchEventsService } from 'src/modules/calendar/calendar-event-import-manager/drivers/caldav/services/caldav-fetch-events.service';
 import { CalendarEventParticipantResponseStatus } from 'src/modules/calendar/common/standard-objects/calendar-event-participant.workspace-entity';
 import { type FetchedCalendarEvent } from 'src/modules/calendar/common/types/fetched-calendar-event';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 @Injectable()
 export class CalDavCreateEventService implements CalendarEventCreationDriver {
@@ -42,7 +43,7 @@ export class CalDavCreateEventService implements CalendarEventCreationDriver {
       }
 
       const uid = uuid();
-      const calendar = ical({ prodId: '//Twenty//Calendar//EN' });
+      const calendar = ical({ prodId: `//${PRODUCT_BRANDING.name}//Calendar//EN` });
 
       calendar.createEvent({
         id: uid,

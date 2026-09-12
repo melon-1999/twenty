@@ -1,4 +1,5 @@
 import { MCP_PROTOCOL_VERSION } from 'src/engine/api/mcp/constants/mcp-protocol-version.const';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 type BuildMcpServerCardArgs = {
   baseUrl: string;
@@ -13,12 +14,12 @@ export const buildMcpServerCard = ({
     'https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json',
   name: 'com.twenty/twenty',
   version,
-  title: 'Twenty CRM',
+  title: `${PRODUCT_BRANDING.name} CRM`,
   description:
-    'Read and write your Twenty CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.',
-  websiteUrl: 'https://twenty.com',
+    `Read and write your ${PRODUCT_BRANDING.name} CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.`,
+  websiteUrl: PRODUCT_BRANDING.websiteUrl,
   repository: {
-    url: 'https://github.com/twentyhq/twenty',
+    url: PRODUCT_BRANDING.sourceCodeUrl,
     source: 'github',
   },
   remotes: [
