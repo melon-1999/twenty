@@ -28,8 +28,6 @@ export const SettingsLayout = () => {
     }
   };
 
-  const heroTabs = [];
-
   return (
     <SettingsPageLayout
       title={t`Layout`}
@@ -47,7 +45,7 @@ export const SettingsLayout = () => {
             lightSrc={coverLight}
             darkSrc={coverDark}
             instanceIdPrefix={SETTINGS_LAYOUT_HERO_INSTANCE_ID_PREFIX}
-            tabs={heroTabs}
+            tabs={[]}
             playButtonAriaLabel={t`Watch customization demo`}
             footer={
               <SettingsDiscoveryHeroCardFooter

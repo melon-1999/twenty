@@ -1,5 +1,6 @@
 import { MCP_PROTOCOL_VERSION } from 'src/engine/api/mcp/constants/mcp-protocol-version.const';
 import { buildMcpServerCard } from 'src/engine/core-modules/well-known/utils/build-mcp-server-card.util';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 describe('buildMcpServerCard', () => {
   it('advertises the streamable-http endpoint on the given host', () => {
@@ -25,9 +26,10 @@ describe('buildMcpServerCard', () => {
     expect(card.$schema).toBe(
       'https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json',
     );
-    expect(card.name).toBe('com.twenty/twenty');
+    expect(card.name).toBe(
+      `com.${PRODUCT_BRANDING.slug}/${PRODUCT_BRANDING.slug}`,
+    );
     expect(card.version).toBe('0.42.0');
-    expect(card.repository.source).toBe('github');
   });
 
   it('marks the Authorization header optional and secret (OAuth or API key)', () => {

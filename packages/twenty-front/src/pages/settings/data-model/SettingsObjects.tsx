@@ -24,8 +24,6 @@ export const SettingsObjects = () => {
   const { objectMetadataItems } = useFilteredObjectMetadataItems();
   const isDDLLocked = useAtomStateValue(isDDLLockedState);
 
-  const heroTabs = [];
-
   return (
     <SettingsPageLayout
       title={t`Data model`}
@@ -63,7 +61,7 @@ export const SettingsObjects = () => {
             lightSrc={LightCoverImage}
             darkSrc={DarkCoverImage}
             instanceIdPrefix={SETTINGS_DATA_MODEL_HERO_INSTANCE_ID_PREFIX}
-            tabs={heroTabs}
+            tabs={[]}
             playButtonAriaLabel={t`Watch data model demo`}
           />
         </Section>
