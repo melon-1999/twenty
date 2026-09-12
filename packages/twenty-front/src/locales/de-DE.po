@@ -3702,7 +3702,7 @@ msgstr "von {author}"
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 msgid "By using {0}, you agree to the"
-msgstr ""
+msgstr "Mit der Nutzung von {0} stimmen Sie den"
 
 #. js-lingui-id: Yx41df
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
@@ -4733,11 +4733,6 @@ msgstr "Kommunikation"
 #: src/pages/settings/community/SettingsCommunity.tsx
 msgid "Community"
 msgstr "Community"
-
-#. js-lingui-id: myLjjN
-#: src/utils/title-utils.ts
-msgid "Community - Settings"
-msgstr "Community - Einstellungen"
 
 #. js-lingui-id: NM9bMd
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
@@ -10017,7 +10012,7 @@ msgstr "Mehr Guthaben kaufen"
 #. js-lingui-id: EyYG53
 #: src/pages/settings/community/SettingsCommunity.tsx
 msgid "Get support"
-msgstr ""
+msgstr "Support erhalten"
 
 #. js-lingui-id: wwPywk
 #: src/pages/onboarding/InstallAppsContent.tsx
@@ -10498,7 +10493,7 @@ msgstr "Wie Datensätze, Seiten und Navigation angezeigt werden"
 #. js-lingui-id: 4koXaY
 #: src/pages/settings/legal/SettingsLegal.tsx
 msgid "How we handle your data and the terms that apply to your use of this product."
-msgstr ""
+msgstr "Wie wir mit Ihren Daten umgehen und welche Bedingungen für die Nutzung dieses Produkts gelten."
 
 #. js-lingui-id: e60vNl
 #: src/pages/onboarding/CreateProfile.tsx
@@ -11969,10 +11964,15 @@ msgstr "Verifizierungen mit Legacy HS256 über alle Token hinweg"
 msgid "Legal"
 msgstr "Rechtliches"
 
+#. js-lingui-id: z1+NTf
+#: src/utils/title-utils.ts
+msgid "Legal - Settings"
+msgstr "Rechtliches - Einstellungen"
+
 #. js-lingui-id: fjCnGI
 #: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Legal documents"
-msgstr ""
+msgstr "Rechtsdokumente"
 
 #. js-lingui-id: nc/jNe
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
@@ -15360,7 +15360,7 @@ msgstr "Seitenname"
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/pages/not-found/NotFound.tsx
 msgid "Page Not Found | {0}"
-msgstr ""
+msgstr "Seite nicht gefunden | {0}"
 
 #. js-lingui-id: oIhFvf
 #: src/modules/side-panel/pages/email-block-settings/components/EmailPageStyleSection.tsx
@@ -18805,7 +18805,7 @@ msgstr "smtp.example.com"
 #. js-lingui-id: rcw/Tz
 #: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Software licenses"
-msgstr ""
+msgstr "Software-Lizenzen"
 
 #. js-lingui-id: zfjcH5
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
@@ -18928,7 +18928,7 @@ msgstr "Quelle"
 #. js-lingui-id: joolK7
 #: src/pages/settings/community/SettingsCommunity.tsx
 msgid "Source code"
-msgstr ""
+msgstr "Quellcode"
 
 #. js-lingui-id: 5f1fxa
 #: src/modules/settings/accounts/components/SettingsAccountsNewEmailGroupChannel.tsx
@@ -20246,9 +20246,9 @@ msgstr "Diese Seite hat keinen Inhalt"
 msgid "This page isn't available."
 msgstr "Diese Seite ist nicht verfügbar."
 
-#. js-lingui-id: 1UImp2
+#. js-lingui-id: uyKda0
 #: src/pages/settings/legal/SettingsLegal.tsx
-msgid "This product (version {PRODUCT_VERSION}) includes open-source components licensed under AGPL-3.0 and MIT. The complete corresponding source code of this version is available for download."
+msgid "This product (version {PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download."
 msgstr ""
 
 #. js-lingui-id: R/PuIn
@@ -22512,7 +22512,7 @@ msgstr ""
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/pages/auth/SignInUp.tsx
 msgid "Welcome to {0}"
-msgstr ""
+msgstr "Willkommen bei {0}"
 
 #. js-lingui-id: t8ZvkC
 #: src/modules/onboarding/constants/WelcomeTitleMessage.ts

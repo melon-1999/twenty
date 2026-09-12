@@ -27,6 +27,7 @@ import {
   buildReplitInstallLink,
   buildVsCodeInstallLink,
 } from '@/settings/mcp-and-apis/utils/mcpSetup';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 type BuildMcpSetupCategoriesParams = {
   isHttpsInstallLinkEnabled: boolean;
@@ -189,4 +190,3 @@ export const buildMcpSetupCategories = ({
     ],
   },
 ];
-import { PRODUCT_BRANDING } from 'twenty-shared/constants';

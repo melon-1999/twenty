@@ -2168,12 +2168,6 @@ msgctxt "fieldMetadata.label"
 msgid "Commas and dot"
 msgstr "الفواصل والنقطة"
 
-#. js-lingui-id: snetsR
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.shortLabel"
-msgid "Community"
-msgstr "المجتمع"
-
 #. js-lingui-id: UMn+XF
 #: src/engine/workspace-manager/twenty-standard-application/utils/object-metadata/create-standard-flat-object-metadata.util.ts
 msgctxt "objectMetadata.labelPlural"
@@ -4640,12 +4634,6 @@ msgctxt "commandMenuItem.label"
 msgid "Go to Calendars Settings"
 msgstr "انتقل إلى إعدادات التقويمات"
 
-#. js-lingui-id: u5u/QJ
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.label"
-msgid "Go to Community Settings"
-msgstr "انتقل إلى إعدادات المجتمع"
-
 #. js-lingui-id: dZPXqH
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
 msgctxt "commandMenuItem.label"
@@ -4675,6 +4663,12 @@ msgstr "انتقل إلى إعدادات التجربة"
 msgctxt "commandMenuItem.label"
 msgid "Go to General Settings"
 msgstr "انتقل إلى الإعدادات العامة"
+
+#. js-lingui-id: fA7ECq
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.label"
+msgid "Go to Legal Settings"
+msgstr ""
 
 #. js-lingui-id: 1EPmDp
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
@@ -6153,6 +6147,12 @@ msgstr "التخطيط مطلوب للمخطط الشريطي"
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-bar-chart-configuration.util.ts
 msgid "Layout is required for bar chart widget \"{widgetTitle}\""
 msgstr "التخطيط مطلوب لأداة المخطط الشريطي \"{widgetTitle}\""
+
+#. js-lingui-id: ElMUFv
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.shortLabel"
+msgid "Legal"
+msgstr ""
 
 #. js-lingui-id: cI7XDa
 #: src/engine/core-modules/usage-limit/exceptions/usage-limit.exception.ts

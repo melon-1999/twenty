@@ -2163,12 +2163,6 @@ msgctxt "fieldMetadata.label"
 msgid "Commas and dot"
 msgstr ""
 
-#. js-lingui-id: snetsR
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.shortLabel"
-msgid "Community"
-msgstr ""
-
 #. js-lingui-id: UMn+XF
 #: src/engine/workspace-manager/twenty-standard-application/utils/object-metadata/create-standard-flat-object-metadata.util.ts
 msgctxt "objectMetadata.labelPlural"
@@ -4635,12 +4629,6 @@ msgctxt "commandMenuItem.label"
 msgid "Go to Calendars Settings"
 msgstr ""
 
-#. js-lingui-id: u5u/QJ
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.label"
-msgid "Go to Community Settings"
-msgstr ""
-
 #. js-lingui-id: dZPXqH
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
 msgctxt "commandMenuItem.label"
@@ -4669,6 +4657,12 @@ msgstr ""
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
 msgctxt "commandMenuItem.label"
 msgid "Go to General Settings"
+msgstr ""
+
+#. js-lingui-id: fA7ECq
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.label"
+msgid "Go to Legal Settings"
 msgstr ""
 
 #. js-lingui-id: 1EPmDp
@@ -6147,6 +6141,12 @@ msgstr ""
 #. js-lingui-id: qBrKIA
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-bar-chart-configuration.util.ts
 msgid "Layout is required for bar chart widget \"{widgetTitle}\""
+msgstr ""
+
+#. js-lingui-id: ElMUFv
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.shortLabel"
+msgid "Legal"
 msgstr ""
 
 #. js-lingui-id: cI7XDa

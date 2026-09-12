@@ -1435,15 +1435,15 @@ export const STANDARD_COMMAND_MENU_ITEMS = {
     universalIdentifier: '5d1ba354-0090-4a42-9a43-601461b26068',
     label: i18nLabel(
       msg({
-        message: `Go to Community Settings`,
+        message: `Go to Legal Settings`,
         context: 'commandMenuItem.label',
       }),
     ),
-    icon: 'IconUsers',
+    icon: 'IconFileText',
     isPinned: false,
     position: 63,
     shortLabel: i18nLabel(
-      msg({ message: `Community`, context: 'commandMenuItem.shortLabel' }),
+      msg({ message: `Legal`, context: 'commandMenuItem.shortLabel' }),
     ),
     availabilityType: CommandMenuItemAvailabilityType.GLOBAL,
     conditionalAvailabilityExpression: null,
@@ -1451,7 +1451,7 @@ export const STANDARD_COMMAND_MENU_ITEMS = {
     frontComponentUniversalIdentifier: null,
     engineComponentKey: EngineComponentKey.NAVIGATION,
     hotKeys: null,
-    payload: { path: '/settings/community' },
+    payload: { path: '/settings/legal' },
   },
   composeEmailToPerson: {
     universalIdentifier: 'f01d4b8b-2b4e-4ae0-9c6f-0b9a9a3e5b21',

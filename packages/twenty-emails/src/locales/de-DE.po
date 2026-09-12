@@ -66,7 +66,7 @@ msgstr "Bestätige deine neue E-Mail-Adresse"
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
 msgid "Connect to {productName}"
-msgstr ""
+msgstr "Bei {productName} anmelden"
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
@@ -81,7 +81,7 @@ msgstr "Deaktiviert"
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Download the source code of this version"
-msgstr ""
+msgstr "Quellcode dieser Version herunterladen"
 
 #. js-lingui-explicit-id
 #: src/emails/server-admin-access-changed.email.tsx
@@ -91,7 +91,7 @@ msgstr "Aktiviert"
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Get support"
-msgstr ""
+msgstr "Support erhalten"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -135,7 +135,7 @@ msgstr "Wenn Sie nichts tun, pausieren wir Ihren Arbeitsbereich und bewahren Ihr
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
 msgid "If you'd ever like to give {productName} another try, you can start a fresh workspace in minutes — we'd love to have you back."
-msgstr ""
+msgstr "Wenn Sie {productName} noch einmal ausprobieren möchten, können Sie in wenigen Minuten einen neuen Arbeitsbereich starten — wir würden uns freuen, Sie wiederzusehen."
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -150,7 +150,7 @@ msgstr "Seine Daten wurden entfernt und können nicht mehr wiederhergestellt wer
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
 msgid "Join your team on {productName}"
-msgstr ""
+msgstr "Tritt deinem Team bei {productName} bei"
 
 #. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
@@ -231,7 +231,7 @@ msgstr "Setze dein Passwort 🗝"
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Source code"
-msgstr ""
+msgstr "Quellcode"
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -241,7 +241,7 @@ msgstr "Neuen Arbeitsbereich starten"
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Support"
-msgstr ""
+msgstr "Support"
 
 #. js-lingui-explicit-id
 #: src/emails/test.email.tsx
@@ -277,7 +277,7 @@ msgstr "E-Mail verifizieren"
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Visit our website"
-msgstr ""
+msgstr "Besuchen Sie unsere Website"
 
 #. js-lingui-explicit-id
 #: src/emails/billing-trial-converting.email.tsx
@@ -292,7 +292,7 @@ msgstr "Website"
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
 msgid "What is {productName}?"
-msgstr ""
+msgstr "Was ist {productName}?"
 
 #. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx

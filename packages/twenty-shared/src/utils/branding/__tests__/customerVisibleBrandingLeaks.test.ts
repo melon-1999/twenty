@@ -25,6 +25,8 @@ const CUSTOMER_VISIBLE_FILES = [
   'packages/twenty-emails/src/components/Footer.tsx',
   'packages/twenty-emails/src/components/Logo.tsx',
   'packages/twenty-emails/src/components/BaseHead.tsx',
+  'packages/twenty-server/src/engine/core-modules/well-known/utils/build-mcp-server-card.util.ts',
+  'packages/twenty-server/src/engine/api/mcp/constants/mcp-server-info.const.ts',
 ];
 
 const FORBIDDEN_PATTERNS: { label: string; pattern: RegExp }[] = [

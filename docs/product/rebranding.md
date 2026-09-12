@@ -203,6 +203,9 @@ Kundenoberfläche vollständig von Twenty-/OSS-Projekt-Spuren bereinigt:
 - **Enterprise/Billing**: Route-/Komponenten-Gates ergänzt, keine Guards entfernt: `ChooseYourPlan` (`/plan-required`) leitet ohne aktiviertes Billing auf die App um; `SettingsUsage`/`SettingsUsageUserDetail` erhalten denselben `isBillingEnabled`-Redirect wie die übrigen Billing-Seiten. Enterprise-Seite/-Tab war bereits über `canAccessFullAdminPanel`-Routen-Existenz gegated (verifiziert). **0 `@license Enterprise`-Dateien geändert.**
 - **Externe Requests**: `TELEMETRY_ENABLED` Default `false` (vorher: PII — Name/E-Mail jedes Signups — an twenty-telemetry.com); `MARKETPLACE_CATALOG_SYNC_CRON_ENABLED` Default `false` (vorher: automatischer Import der `@twentyhq/*`-Apps mit Twenty-Support-/Terms-/GitHub-Links von npmjs.org — Marketplace jetzt kuratiert/opt-in); `search_help_center`-AI-Tool nicht mehr automatisch registriert (sendete Kunden-Suchanfragen an twenty-help-search.com; Toolklasse bleibt, nur Announcement entfernt). Bewusst aktiv gelassen: `twenty-icons.com` (Company-Logo-Auflösung, per `ALLOW_REQUESTS_TO_TWENTY_ICONS=false` abschaltbar), Docker-Hub-Versionscheck (nur Admin-Panel/Operator).
 - **Produkt-Polish**: 6 Twenty-Vimeo-Walkthrough-Videos aus Settings-Hero-Karten entfernt (`tabs={[]}`, Muster existierte upstream); "Beta"-Badge im Onboarding-Schritt "Install your first apps" entfernt; SOC2/GDPR-Trust-Badges aus dem Import-Onboarding entfernt (nicht belegte Compliance-Claims).
+- **Review-Fixes**: OpenAPI `termsOfService` zeigt auf `PRODUCT_BRANDING.legalTermsUrl` (der AGPL-`license`-Link auf github.com/twentyhq bleibt als einzige bewusste GitHub-Referenz im OpenAPI-Schema); Standard-"Helper"-Agent neutral umformuliert (hing am entfernten `search_help_center`-Tool); Cmd+K-Eintrag "Community" → "Legal"; og:image absolut auf Platzhalter-Domain (Guard-gesichert); Release-Workflow prüft Branding-Platzhalter zusätzlich serverseitig (twenty-shared, unabhängig vom Front-Build).
+- **Bewusst tote Dateien** (kein Route-Konsument mehr, für minimalen Upstream-Diff behalten): `SettingsCommunity.tsx`, `SettingsLegalDpa.tsx`, `SettingsLegalDpaNew.tsx`, `OnboardingTrustBadges.tsx`.
+- **Bewusste Ausnahme**: `<!-- BEGIN: Twenty Config -->`-Marker in `index.html` bleibt (Server-Env-Injection matcht auf den String; nur im View-Source sichtbar).
 - **Regressionstest**: `packages/twenty-shared/src/utils/branding/__tests__/customerVisibleBrandingLeaks.test.ts` scannt eine feste Liste kundensichtbarer Quelldateien auf `twentyhq`, `twenty.com`, `github.com`, `discord`, ChatGPT-App-Links und "Powered by" — bewusst NICHT global auf "Twenty" (interne Namen und Lizenztexte bleiben legitim).
 
 Operator-Hinweise (kein Code-Change):
@@ -222,7 +225,9 @@ Operator-Hinweise (kein Code-Change):
 8. AGPL §13: öffentliches Repo mit laufendem Stand sicherstellen, sobald die Instanz produktiv extern genutzt wird
 
 9. `sourceDownloadUrl`: Quellcode-Tarball der deployten Version auf eigener Domain bereitstellen (z. B. `https://legal.<domain>/source/product-v0.2.0.tar.gz`); Release-Prozess: Tarball aus dem Release-Tag generieren und hochladen, bevor die Version deployt wird
-10. Eigene Doku-Domain für kontextuelle "Learn more"-Links (aktuell docs.twenty.com)
+10. Eigene Doku-Domain für kontextuelle "Learn more"-Links (aktuell docs.twenty.com): `SettingsApplicationsDeveloperTab`, `SettingsClaimApplicationSection`, `AiChatApiKeyNotConfiguredMessage`, `SettingsBillingCreditsSection`, `WorkflowEditActionFormBuilder` sowie `DOCUMENTATION_BASE_URL`
 11. Operator-Runbook: ersten Account (Server-Admin-Bootstrap) immer selbst anlegen
+12. Übersetzungen der neuen/umformulierten Branding-Strings in weiteren Sprachen nachziehen (de-DE ist gepflegt, Rest fällt auf Englisch zurück)
+13. `og:image`-URL und `manifest`-Werte beim finalen Branding zusammen mit `index.html` aktualisieren
 
 Punkte 1, 3, 5 und 9 werden vom Production Branding Guard erzwungen: solange sie offen sind, schlagen Production-Builds und `product/v*`-Releases absichtlich fehl.

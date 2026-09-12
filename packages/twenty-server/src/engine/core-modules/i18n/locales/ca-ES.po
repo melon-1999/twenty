@@ -2168,12 +2168,6 @@ msgctxt "fieldMetadata.label"
 msgid "Commas and dot"
 msgstr "Comes i punt"
 
-#. js-lingui-id: snetsR
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.shortLabel"
-msgid "Community"
-msgstr "Comunitat"
-
 #. js-lingui-id: UMn+XF
 #: src/engine/workspace-manager/twenty-standard-application/utils/object-metadata/create-standard-flat-object-metadata.util.ts
 msgctxt "objectMetadata.labelPlural"
@@ -4640,12 +4634,6 @@ msgctxt "commandMenuItem.label"
 msgid "Go to Calendars Settings"
 msgstr "Ves a la configuració dels calendaris"
 
-#. js-lingui-id: u5u/QJ
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.label"
-msgid "Go to Community Settings"
-msgstr "Ves a la configuració de la comunitat"
-
 #. js-lingui-id: dZPXqH
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
 msgctxt "commandMenuItem.label"
@@ -4675,6 +4663,12 @@ msgstr "Ves a la configuració de l'experiència"
 msgctxt "commandMenuItem.label"
 msgid "Go to General Settings"
 msgstr "Ves a la configuració general"
+
+#. js-lingui-id: fA7ECq
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.label"
+msgid "Go to Legal Settings"
+msgstr ""
 
 #. js-lingui-id: 1EPmDp
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
@@ -6153,6 +6147,12 @@ msgstr "La disposició és obligatòria per al gràfic de barres"
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-bar-chart-configuration.util.ts
 msgid "Layout is required for bar chart widget \"{widgetTitle}\""
 msgstr "La disposició és obligatòria per al giny de gràfic de barres \"{widgetTitle}\""
+
+#. js-lingui-id: ElMUFv
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.shortLabel"
+msgid "Legal"
+msgstr ""
 
 #. js-lingui-id: cI7XDa
 #: src/engine/core-modules/usage-limit/exceptions/usage-limit.exception.ts

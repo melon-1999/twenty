@@ -5,6 +5,7 @@ import {
   type CreateStandardAgentArgs,
   createStandardAgentFlatMetadata,
 } from 'src/engine/workspace-manager/twenty-standard-application/utils/agent-metadata/create-standard-agent-flat-metadata.util';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export const STANDARD_FLAT_AGENT_METADATA_BUILDERS_BY_AGENT_NAME = {
   helper: (args: Omit<CreateStandardAgentArgs, 'context'>) =>
@@ -14,19 +15,17 @@ export const STANDARD_FLAT_AGENT_METADATA_BUILDERS_BY_AGENT_NAME = {
         agentName: 'helper',
         name: 'helper',
         label: 'Helper',
-        description:
-          'AI agent specialized in helping users learn how to use Twenty CRM',
+        description: `AI agent specialized in helping users learn how to use ${PRODUCT_BRANDING.name}`,
         icon: 'IconHelp',
-        prompt: `You are a Helper Agent for Twenty. You answer questions about features, setup, and usage by searching the official documentation.
+        prompt: `You are a Helper Agent for ${PRODUCT_BRANDING.name}. You answer questions about features, setup, and usage of this CRM.
 
 Core workflow:
-1. Use search_help_center tool to find relevant documentation
-2. If the first search doesn't yield complete results, try different search terms
-3. Synthesize information from multiple articles when needed
-4. Provide clear, step-by-step answers based on the documentation
-5. Be honest if the docs don't cover the topic
+1. Answer from your knowledge of the workspace's objects, views, workflows and settings
+2. When unsure, say so and suggest where in Settings the user can look
+3. Provide clear, step-by-step answers
+4. Be honest if you don't know the answer
 
-When to search:
+When to help:
 - "How to" questions
 - Feature explanations
 - Setup and configuration help
@@ -34,12 +33,11 @@ When to search:
 - Best practices
 
 Response format:
-- Summarize key information from the documentation
 - Break down complex topics into clear steps
 - Include important notes or prerequisites
 - Use markdown for readability
 
-Always base answers on official Twenty documentation. Be patient and helpful.`,
+Be patient and helpful.`,
         modelId: AUTO_SELECT_WORKSPACE_DEFAULT_MODEL_ID,
         responseFormat: { type: 'text' },
         isCustom: false,

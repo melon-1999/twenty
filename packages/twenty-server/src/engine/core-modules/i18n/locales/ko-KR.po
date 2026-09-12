@@ -2168,12 +2168,6 @@ msgctxt "fieldMetadata.label"
 msgid "Commas and dot"
 msgstr "쉼표와 마침표"
 
-#. js-lingui-id: snetsR
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.shortLabel"
-msgid "Community"
-msgstr "커뮤니티"
-
 #. js-lingui-id: UMn+XF
 #: src/engine/workspace-manager/twenty-standard-application/utils/object-metadata/create-standard-flat-object-metadata.util.ts
 msgctxt "objectMetadata.labelPlural"
@@ -4640,12 +4634,6 @@ msgctxt "commandMenuItem.label"
 msgid "Go to Calendars Settings"
 msgstr "캘린더 설정으로 이동"
 
-#. js-lingui-id: u5u/QJ
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.label"
-msgid "Go to Community Settings"
-msgstr "커뮤니티 설정으로 이동"
-
 #. js-lingui-id: dZPXqH
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
 msgctxt "commandMenuItem.label"
@@ -4675,6 +4663,12 @@ msgstr "경험 설정으로 이동"
 msgctxt "commandMenuItem.label"
 msgid "Go to General Settings"
 msgstr "일반 설정으로 이동"
+
+#. js-lingui-id: fA7ECq
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.label"
+msgid "Go to Legal Settings"
+msgstr ""
 
 #. js-lingui-id: 1EPmDp
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
@@ -6153,6 +6147,12 @@ msgstr "막대 차트에는 레이아웃이 필수입니다"
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-bar-chart-configuration.util.ts
 msgid "Layout is required for bar chart widget \"{widgetTitle}\""
 msgstr "막대 차트 위젯 \"{widgetTitle}\"에는 레이아웃이 필수입니다"
+
+#. js-lingui-id: ElMUFv
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.shortLabel"
+msgid "Legal"
+msgstr ""
 
 #. js-lingui-id: cI7XDa
 #: src/engine/core-modules/usage-limit/exceptions/usage-limit.exception.ts

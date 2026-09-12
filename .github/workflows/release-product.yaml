@@ -29,6 +29,23 @@ jobs:
       - name: Build twenty-shared
         run: npx nx build twenty-shared
 
+      # Server/email surfaces render PRODUCT_BRANDING too - gate them even
+      # when the front build is skipped or cached.
+      - name: Branding gate (shared values)
+        run: |
+          node -e "
+            const shared = require('./packages/twenty-shared/dist/index.cjs');
+            const values = Object.fromEntries(
+              Object.entries(shared.PRODUCT_BRANDING).map(([k, v]) => ['PRODUCT_BRANDING.' + k, v]),
+            );
+            const violations = shared.findPlaceholderBrandingViolations(values);
+            if (violations.length > 0) {
+              console.error('Release blocked, placeholder branding active:');
+              violations.forEach((v) => console.error('  - ' + v));
+              process.exit(1);
+            }
+          "
+
       # Production gate: this build runs WITHOUT ALLOW_PLACEHOLDER_BRANDING,
       # so a release fails while placeholder branding (YourCRM, example.com,
       # branch-pinned asset URLs) is still active. This is intentional.

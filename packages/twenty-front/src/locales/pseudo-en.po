@@ -4729,11 +4729,6 @@ msgstr ""
 msgid "Community"
 msgstr ""
 
-#. js-lingui-id: myLjjN
-#: src/utils/title-utils.ts
-msgid "Community - Settings"
-msgstr ""
-
 #. js-lingui-id: NM9bMd
 #: src/modules/object-record/object-options-dropdown/components/ObjectOptionsDropdownLayoutContent.tsx
 msgid "Compact view"
@@ -11962,6 +11957,11 @@ msgstr ""
 #: src/pages/settings/legal/SettingsLegalDpa.tsx
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
 msgid "Legal"
+msgstr ""
+
+#. js-lingui-id: z1+NTf
+#: src/utils/title-utils.ts
+msgid "Legal - Settings"
 msgstr ""
 
 #. js-lingui-id: fjCnGI
@@ -20241,9 +20241,9 @@ msgstr ""
 msgid "This page isn't available."
 msgstr ""
 
-#. js-lingui-id: 1UImp2
+#. js-lingui-id: uyKda0
 #: src/pages/settings/legal/SettingsLegal.tsx
-msgid "This product (version {PRODUCT_VERSION}) includes open-source components licensed under AGPL-3.0 and MIT. The complete corresponding source code of this version is available for download."
+msgid "This product (version {PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download."
 msgstr ""
 
 #. js-lingui-id: R/PuIn

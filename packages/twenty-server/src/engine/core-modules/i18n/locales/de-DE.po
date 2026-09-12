@@ -2168,12 +2168,6 @@ msgctxt "fieldMetadata.label"
 msgid "Commas and dot"
 msgstr "Kommas und Punkt"
 
-#. js-lingui-id: snetsR
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.shortLabel"
-msgid "Community"
-msgstr "Community"
-
 #. js-lingui-id: UMn+XF
 #: src/engine/workspace-manager/twenty-standard-application/utils/object-metadata/create-standard-flat-object-metadata.util.ts
 msgctxt "objectMetadata.labelPlural"
@@ -4640,12 +4634,6 @@ msgctxt "commandMenuItem.label"
 msgid "Go to Calendars Settings"
 msgstr "Zu den Kalendereinstellungen gehen"
 
-#. js-lingui-id: u5u/QJ
-#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
-msgctxt "commandMenuItem.label"
-msgid "Go to Community Settings"
-msgstr "Zu den Community-Einstellungen gehen"
-
 #. js-lingui-id: dZPXqH
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
 msgctxt "commandMenuItem.label"
@@ -4675,6 +4663,12 @@ msgstr "Zu den Experience-Einstellungen gehen"
 msgctxt "commandMenuItem.label"
 msgid "Go to General Settings"
 msgstr "Zu den allgemeinen Einstellungen gehen"
+
+#. js-lingui-id: fA7ECq
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.label"
+msgid "Go to Legal Settings"
+msgstr "Zu den Rechtliches-Einstellungen"
 
 #. js-lingui-id: 1EPmDp
 #: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
@@ -5875,7 +5869,7 @@ msgstr "Join-Tabelle, die Nachrichtenkanal-Nachrichtenassoziationen mit Nachrich
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
 msgid "Join your team on {0}"
-msgstr ""
+msgstr "Tritt deinem Team bei {0} bei"
 
 #. js-lingui-id: +KEn4d
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-call-recording-standard-flat-field-metadata.util.ts
@@ -6153,6 +6147,12 @@ msgstr "Für das Balkendiagramm ist ein Layout erforderlich."
 #: src/engine/metadata-modules/flat-page-layout-widget/validators/utils/validate-bar-chart-configuration.util.ts
 msgid "Layout is required for bar chart widget \"{widgetTitle}\""
 msgstr "Für das Balkendiagramm-Widget \"{widgetTitle}\" ist ein Layout erforderlich."
+
+#. js-lingui-id: ElMUFv
+#: src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts
+msgctxt "commandMenuItem.shortLabel"
+msgid "Legal"
+msgstr "Rechtliches"
 
 #. js-lingui-id: cI7XDa
 #: src/engine/core-modules/usage-limit/exceptions/usage-limit.exception.ts
@@ -12463,7 +12463,7 @@ msgstr "Mittwoch"
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
 msgid "Welcome to {0}: Please Confirm Your Email"
-msgstr ""
+msgstr "Willkommen bei {0}: Bitte bestätigen Sie Ihre E-Mail"
 
 #. js-lingui-id: lKboI8
 #: src/engine/workspace-manager/twenty-standard-application/utils/field-metadata/compute-record-share-standard-flat-field-metadata.util.ts

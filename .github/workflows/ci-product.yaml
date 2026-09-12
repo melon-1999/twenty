@@ -52,8 +52,14 @@ jobs:
       # branding guard in packages/twenty-front/src/config/assertProductionBrandingPlugin.ts)
       - name: Build twenty-front (placeholder branding allowed in CI)
         run: ALLOW_PLACEHOLDER_BRANDING=true npx nx build twenty-front
-      - name: Production branding guard is active
+      # Negative test only while placeholder branding is active; once real
+      # branding lands this step self-disables instead of failing forever.
+      - name: Production branding guard blocks placeholders
         run: |
+          if ! grep -q "name: 'YourCRM'" packages/twenty-shared/src/constants/ProductBranding.ts; then
+            echo "Real branding configured - skipping placeholder guard negative test"
+            exit 0
+          fi
           if npx nx build twenty-front --skip-nx-cache; then
             echo "ERROR: production build succeeded despite placeholder branding"
             exit 1

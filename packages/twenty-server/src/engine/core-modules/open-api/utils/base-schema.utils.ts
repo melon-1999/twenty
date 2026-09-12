@@ -123,11 +123,10 @@ hand the file to your tool — never paste a tokenized URL into a chat:
 
 \`\`\`bash
 curl -H 'Authorization: Bearer <token>' \\
-  ${serverUrl}/${ApiPath.Rest}/open-api/${schemaName} > twenty-${schemaName}.json
+  ${serverUrl}/${ApiPath.Rest}/open-api/${schemaName} > ${PRODUCT_BRANDING.slug}-${schemaName}.json
 \`\`\`
 `,
-      termsOfService:
-        'https://github.com/twentyhq/twenty?tab=coc-ov-file#readme',
+      termsOfService: PRODUCT_BRANDING.legalTermsUrl,
       contact: {
         email: PRODUCT_BRANDING.supportEmail,
       },
