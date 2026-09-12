@@ -74,19 +74,24 @@ msgid "Dear {userName},"
 msgstr "Cher {userName},"
 
 #. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Developers"
-msgstr "Développeurs"
-
-#. js-lingui-explicit-id
 #: src/emails/server-admin-access-changed.email.tsx
 msgid "Disabled"
 msgstr "Désactivé"
 
 #. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Download the source code of this version"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/server-admin-access-changed.email.tsx
 msgid "Enabled"
 msgstr "Activé"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Get support"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -179,11 +184,6 @@ msgid "Reactivate workspace"
 msgstr "Réactiver l’espace de travail"
 
 #. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Read the user guide"
-msgstr ""
-
-#. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
 msgid "Reset"
 msgstr "Réinitialiser"
@@ -239,6 +239,11 @@ msgid "Start a new workspace"
 msgstr "Créer un nouvel espace de travail"
 
 #. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Support"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/test.email.tsx
 msgid "Test email"
 msgstr "E-mail de test"
@@ -259,11 +264,6 @@ msgid "To keep your workspace and everything you've built, add a payment method 
 msgstr "Pour conserver votre espace de travail et tout ce que vous avez créé, ajoutez un mode de paiement et choisissez une formule."
 
 #. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "User guide"
-msgstr "Guide de l'utilisateur"
-
-#. js-lingui-explicit-id
 #: src/emails/validate-approved-access-domain.email.tsx
 #: src/emails/validate-approved-access-domain.email.tsx
 msgid "Validate domain"
@@ -277,16 +277,6 @@ msgstr "Vérifiez l'e-mail"
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
 msgid "Visit our website"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Visit the developer documentation"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Visit the source code repository"
 msgstr ""
 
 #. js-lingui-explicit-id

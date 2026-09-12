@@ -24,22 +24,6 @@ const StyledTitleRow = styled.div`
   gap: 10px;
 `;
 
-const StyledBetaTag = styled.span`
-  align-items: center;
-  background-color: ${themeCssVariables.grayScale.gray3};
-  border: 1px solid ${themeCssVariables.border.color.light};
-  border-radius: ${themeCssVariables.border.radius.pill};
-  box-sizing: border-box;
-  color: ${themeCssVariables.grayScale.gray10};
-  corner-shape: round;
-  display: flex;
-  font-size: ${themeCssVariables.font.size.md};
-  font-weight: ${themeCssVariables.font.weight.medium};
-  height: ${themeCssVariables.spacing[6]};
-  line-height: 1.4;
-  padding: 0 ${themeCssVariables.spacing[2]};
-`;
-
 const StyledCard = styled.div`
   background-color: ${themeCssVariables.background.primary};
   border: 1px solid ${themeCssVariables.border.color.medium};
@@ -126,7 +110,6 @@ export const InstallAppsContent = ({
         <OnboardingStepAnimatedItem index={0}>
           <StyledTitleRow>
             <StyledOnboardingStepTitle>{t`Install your first apps`}</StyledOnboardingStepTitle>
-            <StyledBetaTag>{t`Beta`}</StyledBetaTag>
           </StyledTitleRow>
         </OnboardingStepAnimatedItem>
         <OnboardingStepAnimatedItem index={1}>

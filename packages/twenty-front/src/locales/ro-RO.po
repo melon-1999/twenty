@@ -3444,11 +3444,6 @@ msgstr "Deoarece acest flux de lucru nu folosește un declanșator manual, formu
 msgid "Behind"
 msgstr "În urmă"
 
-#. js-lingui-id: YBt9YP
-#: src/pages/onboarding/InstallAppsContent.tsx
-msgid "Beta"
-msgstr "Beta"
-
 #. js-lingui-id: NgFKo1
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "between {startMonth} and {endMonth}"
@@ -4209,11 +4204,6 @@ msgstr "Sesiuni de chat"
 msgid "Chat with AI agents and use AI features"
 msgstr "Conversați cu agenți AI și utilizați funcții AI"
 
-#. js-lingui-id: yOaaWk
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
-msgid "ChatGPT"
-msgstr "ChatGPT"
-
 #. js-lingui-id: 8Q+lLG
 #: src/modules/settings/admin-panel/ai/components/SettingsAdminAI.tsx
 #: src/pages/settings/admin-panel/SettingsAdminChats.tsx
@@ -4739,7 +4729,6 @@ msgstr "Comunicare"
 
 #. js-lingui-id: chL5IG
 #: src/modules/settings/billing/constants/SettingsBillingPlanComparisonRows.ts
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
 msgid "Community"
@@ -7271,7 +7260,6 @@ msgid "Document"
 msgstr "Document"
 
 #. js-lingui-id: TvY/XA
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/api-webhooks/SettingsApiWebhooks.tsx
 msgid "Documentation"
 msgstr "Documentație"
@@ -7371,6 +7359,11 @@ msgstr "Descărcați fișiere"
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Download sample"
 msgstr "Descarcă fișierul de mostră"
+
+#. js-lingui-id: OuoRj5
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "Download source code (version {PRODUCT_VERSION})"
+msgstr ""
 
 #. js-lingui-id: eneWvv
 #: src/modules/activities/emails/components/EmailThreadPreview.tsx
@@ -10464,7 +10457,7 @@ msgstr ""
 msgid "Horizontal separator line"
 msgstr "Linie orizontală de separare"
 
-#. js-lingui-id: WOXdI6
+#. js-lingui-id: DR9csj
 #: src/pages/settings/applications/utils/getCustomApplicationDescription.ts
 msgid ""
 "Host your workspace's customizations and overrides.\n"
@@ -10479,41 +10472,8 @@ msgid ""
 "#### Why it exists\n"
 "Use this app for workspace-specific customization that should stay local to this workspace.\n"
 "\n"
-"If you are shaping one workspace for one business, keep it here. If you are building a reusable business app with its own data model, UI, and automation that should be versioned, shared, or installed across workspaces, create a dedicated app instead.\n"
-"\n"
-"#### Build your own app\n"
-"\n"
-"Scaffold a new app in one command:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"See the [Getting Started guide](https://twenty.com/developers/extend/apps/getting-started) for the full walkthrough, and [Building Apps](https://twenty.com/developers/extend/apps/building) for the `defineApplication` / `defineEntity` APIs."
+"If you are shaping one workspace for one business, keep it here. If you are building a reusable business app with its own data model, UI, and automation that should be versioned, shared, or installed across workspaces, create a dedicated app instead."
 msgstr ""
-"Găzduiește personalizările și suprascrierile spațiului tău de lucru.\n"
-"\n"
-"#### Ce include\n"
-"Fiecare extensie pe care o creezi peste aplicația standard este grupată sub Custom. Păstrează modificările de schemă, modificările de interfață și logica specifică spațiului de lucru într-un singur loc.\n"
-"\n"
-"- Obiecte și câmpuri personalizate pentru propriul tău model de date\n"
-"- Vizualizări, elemente de navigare și machete ale înregistrărilor care modelează modul în care lucrează echipa ta\n"
-"- Funcții logice, componente front-end și agenți care automatizează sau extind spațiul de lucru\n"
-"\n"
-"#### De ce există\n"
-"Folosește această aplicație pentru personalizări specifice spațiului de lucru care ar trebui să rămână locale acestui spațiu de lucru.\n"
-"\n"
-"Dacă modelezi un singur spațiu de lucru pentru o singură afacere, păstrează-l aici. Dacă construiești o aplicație de business reutilizabilă, cu propriul model de date, interfață (UI) și automatizări care trebuie versiunate, partajate sau instalate în mai multe spații de lucru, creează în schimb o aplicație dedicată.\n"
-"\n"
-"#### Construiește-ți propria aplicație\n"
-"\n"
-"Inițializează o aplicație nouă cu o singură comandă:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"Vezi [Ghidul de pornire](https://twenty.com/developers/extend/apps/getting-started) pentru parcursul complet, și [Construirea aplicațiilor](https://twenty.com/developers/extend/apps/building) pentru API-urile `defineApplication` / `defineEntity`."
 
 #. js-lingui-id: yY8wAv
 #: src/modules/workflow/workflow-steps/workflow-actions/delay-actions/components/WorkflowEditActionDelay.tsx
@@ -10534,6 +10494,11 @@ msgstr "Cum funcționează creditele"
 #: src/pages/settings/applications/tabs/SettingsApplicationDetailContentTab.tsx
 msgid "How records, pages, and navigation are displayed"
 msgstr "Modul în care sunt afișate înregistrările, paginile și navigarea"
+
+#. js-lingui-id: 4koXaY
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "How we handle your data and the terms that apply to your use of this product."
+msgstr ""
 
 #. js-lingui-id: e60vNl
 #: src/pages/onboarding/CreateProfile.tsx
@@ -11996,10 +11961,18 @@ msgid "Legacy HS256 verifications across all tokens"
 msgstr "Verificări HS256 de tip Legacy pentru toate tokenurile"
 
 #. js-lingui-id: vifyyw
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 #: src/pages/settings/legal/SettingsLegalDpa.tsx
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
 msgid "Legal"
 msgstr "Juridic"
+
+#. js-lingui-id: fjCnGI
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "Legal documents"
+msgstr ""
 
 #. js-lingui-id: nc/jNe
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
@@ -14792,11 +14765,6 @@ msgstr "din"
 msgid "Off the beaten path"
 msgstr "În afara cărărilor bătătorite"
 
-#. js-lingui-id: s1X4Cm
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
-msgid "Official app"
-msgstr "Aplicație oficială"
-
 #. js-lingui-id: Zd5vVt
 #: src/modules/workflow/workflow-steps/workflow-actions/find-records-action/components/WorkflowEditActionFindRecords.tsx
 msgid "Offset"
@@ -14985,7 +14953,6 @@ msgstr "Numai dvs. veți putea vedea e-mailurile și evenimentele dvs."
 
 #. js-lingui-id: 1TNIig
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 #: src/pages/settings/members/tabs/SettingsWorkspaceMembersTeamTab.tsx
 msgid "Open"
 msgstr "Deschis"
@@ -15073,11 +15040,6 @@ msgstr "Deschideți înregistrările pe o pagină dedicată"
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Open Replit with the {0} remote server config."
-msgstr ""
-
-#. js-lingui-id: CXEEET
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
-msgid "Open the official ChatGPT integration for your workspace."
 msgstr ""
 
 #. js-lingui-id: OV5wZZ
@@ -15213,6 +15175,7 @@ msgstr "Organizare"
 #: src/pages/settings/admin-panel/SettingsAdminWorkspaceDetail.tsx
 #: src/pages/settings/admin-panel/SettingsAdminWorkspacesStatus.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Other"
 msgstr "Altul"
 
@@ -16015,6 +15978,7 @@ msgstr "Suport prioritar"
 #. js-lingui-id: LcET2C
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Privacy Policy"
 msgstr "Politica de confidențialitate"
 
@@ -18838,6 +18802,11 @@ msgstr "Nume utilizator SMTP"
 msgid "smtp.example.com"
 msgstr "smtp.example.com"
 
+#. js-lingui-id: rcw/Tz
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "Software licenses"
+msgstr ""
+
 #. js-lingui-id: zfjcH5
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelUpdateFieldsValueForObject.tsx
@@ -19706,6 +19675,7 @@ msgstr "Termeni / Confidențialitate"
 #. js-lingui-id: xowcRf
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Terms of Service"
 msgstr "Termeni și Condiții"
 
@@ -19783,11 +19753,10 @@ msgstr "Endpointul API pentru furnizorul dvs. compatibil cu OpenAI"
 msgid "The AWS region for Bedrock"
 msgstr "Regiunea AWS pentru Bedrock"
 
-#. js-lingui-id: +S/+8c
+#. js-lingui-id: V1hsHm
 #. placeholder {0}: PRODUCT_BRANDING.name
 #. placeholder {1}: PRODUCT_BRANDING.name
 #. placeholder {2}: PRODUCT_BRANDING.name
-#. placeholder {3}: PRODUCT_BRANDING.name
 #: src/pages/settings/applications/utils/getStandardApplicationDescription.ts
 msgid ""
 "The base data model every {0} workspace runs on.\n"
@@ -19802,24 +19771,7 @@ msgid ""
 "- **Notes & Tasks**: activity and follow-ups\n"
 "- **Workflows & Dashboards**: automation and reporting\n"
 "\n"
-"Remove this app and the rest of {2} has nothing to hang off.\n"
-"\n"
-"#### Build your own app\n"
-"\n"
-"Extend {3} with your own objects, fields, logic functions, or AI skills. Scaffold a new app in one command:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"Then inside the folder:\n"
-"\n"
-"```bash\n"
-"cd my-twenty-app\n"
-"yarn twenty dev\n"
-"```\n"
-"\n"
-"See the [Getting Started guide](https://twenty.com/developers/extend/apps/getting-started) for the full walkthrough, and [Building Apps](https://twenty.com/developers/extend/apps/building) for the `defineApplication` / `defineEntity` APIs."
+"Remove this app and the rest of {2} has nothing to hang off."
 msgstr ""
 
 #. js-lingui-id: VsxjzF
@@ -20293,6 +20245,11 @@ msgstr "Această pagină nu are conținut"
 #: src/modules/app/routing/components/WorkspaceRouteUnavailable.tsx
 msgid "This page isn't available."
 msgstr "Această pagină nu este disponibilă."
+
+#. js-lingui-id: 1UImp2
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "This product (version {PRODUCT_VERSION}) includes open-source components licensed under AGPL-3.0 and MIT. The complete corresponding source code of this version is available for download."
+msgstr ""
 
 #. js-lingui-id: R/PuIn
 #: src/pages/settings/admin-panel/SettingsAdminNewAiProvider.tsx
@@ -22320,16 +22277,6 @@ msgstr "Copii în așteptare"
 #: src/modules/ai/components/TerminalOutput.tsx
 msgid "Waiting for output..."
 msgstr "Se așteaptă ieșirea..."
-
-#. js-lingui-id: THYlSm
-#: src/pages/settings/ai/SettingsAI.tsx
-#: src/pages/settings/api-webhooks/SettingsApiWebhooks.tsx
-#: src/pages/settings/applications/SettingsApplications.tsx
-#: src/pages/settings/data-model/SettingsObjects.tsx
-#: src/pages/settings/layout/SettingsLayout.tsx
-#: src/pages/settings/members/SettingsWorkspaceMembers.tsx
-msgid "Walkthrough"
-msgstr "Ghid"
 
 #. js-lingui-id: r6y+jM
 #: src/modules/ui/feedback/snack-bar-manager/components/SnackBar.tsx

@@ -176,15 +176,9 @@ const SettingsGeneral = lazy(() =>
   })),
 );
 
-const SettingsLegalDpa = lazy(() =>
-  import('~/pages/settings/legal/SettingsLegalDpa').then((module) => ({
-    default: module.SettingsLegalDpa,
-  })),
-);
-
-const SettingsLegalDpaNew = lazy(() =>
-  import('~/pages/settings/legal/SettingsLegalDpaNew').then((module) => ({
-    default: module.SettingsLegalDpaNew,
+const SettingsLegal = lazy(() =>
+  import('~/pages/settings/legal/SettingsLegal').then((module) => ({
+    default: module.SettingsLegal,
   })),
 );
 
@@ -648,12 +642,6 @@ const SettingsAdminChats = lazy(() =>
   })),
 );
 
-const SettingsCommunity = lazy(() =>
-  import('~/pages/settings/community/SettingsCommunity').then((module) => ({
-    default: module.SettingsCommunity,
-  })),
-);
-
 const SettingsRoleCreate = lazy(() =>
   import('~/pages/settings/members/roles/SettingsRoleCreate').then(
     (module) => ({
@@ -809,10 +797,14 @@ const createSettingsRouteElements = ({
         path={SettingsPath.PublicDomain}
         element={<SettingPublicDomain />}
       />
-      <Route path={SettingsPath.LegalDpa} element={<SettingsLegalDpa />} />
+      <Route path={SettingsPath.Legal} element={<SettingsLegal />} />
+      <Route
+        path={SettingsPath.LegalDpa}
+        element={<Navigate to={getSettingsPath(SettingsPath.Legal)} replace />}
+      />
       <Route
         path={SettingsPath.LegalDpaNew}
-        element={<SettingsLegalDpaNew />}
+        element={<Navigate to={getSettingsPath(SettingsPath.Legal)} replace />}
       />
     </Route>
     <Route
@@ -1180,7 +1172,10 @@ const createSettingsRouteElements = ({
         />
       }
     >
-      <Route path={SettingsPath.Community} element={<SettingsCommunity />} />
+      <Route
+        path={SettingsPath.Community}
+        element={<Navigate to={getSettingsPath(SettingsPath.Legal)} replace />}
+      />
     </Route>
   </>
 );

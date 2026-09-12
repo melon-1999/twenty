@@ -43,7 +43,7 @@ describe('buildMcpConfig', () => {
   it('builds the remote MCP JSON config', () => {
     expect(JSON.parse(buildMcpConfig(mcpServerUrl))).toEqual({
       mcpServers: {
-        twenty: {
+        [PRODUCT_BRANDING.slug]: {
           url: mcpServerUrl,
           headers: {
             Authorization: 'Bearer <YOUR_API_KEY>',
@@ -84,7 +84,9 @@ describe('buildCursorInstallLink', () => {
     const link = buildCursorInstallLink(mcpServerUrl);
 
     expect(link.startsWith('https://cursor.com/en/install-mcp?')).toBe(true);
-    expect(new URLSearchParams(link.split('?')[1]).get('name')).toBe('twenty');
+    expect(new URLSearchParams(link.split('?')[1]).get('name')).toBe(
+      PRODUCT_BRANDING.slug,
+    );
     expect(decodeBase64JsonParam(link, 'config')).toEqual(
       buildRemoteMcpServerConfig(mcpServerUrl),
     );
@@ -100,7 +102,7 @@ describe('buildVsCodeInstallLink', () => {
     );
 
     expect(payload).toEqual({
-      name: 'twenty',
+      name: PRODUCT_BRANDING.slug,
       type: 'http',
       url: mcpServerUrl,
       headers: {
@@ -117,7 +119,7 @@ describe('buildGooseInstallLink', () => {
 
     expect(link.startsWith('goose://extension?')).toBe(true);
     expect(params.get('type')).toBe('streamable_http');
-    expect(params.get('id')).toBe('twenty');
+    expect(params.get('id')).toBe(PRODUCT_BRANDING.slug);
     expect(params.get('name')).toBe(PRODUCT_BRANDING.name);
     expect(params.get('url')).toBe(mcpServerUrl);
     expect(params.get('header')).toBe('Authorization=Bearer <YOUR_API_KEY>');
@@ -147,7 +149,9 @@ describe('buildLmStudioInstallLink', () => {
     const link = buildLmStudioInstallLink(mcpServerUrl);
 
     expect(link.startsWith('lmstudio://add_mcp?')).toBe(true);
-    expect(new URLSearchParams(link.split('?')[1]).get('name')).toBe('twenty');
+    expect(new URLSearchParams(link.split('?')[1]).get('name')).toBe(
+      PRODUCT_BRANDING.slug,
+    );
     expect(decodeBase64JsonParam(link, 'config')).toEqual(
       buildRemoteMcpServerConfig(mcpServerUrl),
     );

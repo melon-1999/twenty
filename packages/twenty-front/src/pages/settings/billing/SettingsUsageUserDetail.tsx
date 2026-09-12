@@ -14,7 +14,10 @@ import { useContext } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useParams } from 'react-router-dom';
 import { SettingsPath } from 'twenty-shared/types';
-import { getSettingsPath } from 'twenty-shared/utils';
+import { Navigate } from 'react-router-dom';
+import { billingState } from '@/client-config/states/billingState';
+import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
+import { getSettingsPath, isDefined } from 'twenty-shared/utils';
 import { Avatar } from 'twenty-ui/data-display';
 import { Section } from 'twenty-ui/layout';
 import { ThemeContext, themeCssVariables } from 'twenty-ui/theme-constants';
@@ -43,6 +46,8 @@ const StyledUserCredits = styled.span`
 `;
 
 export const SettingsUsageUserDetail = () => {
+  const billing = useAtomStateValue(billingState);
+  const isBillingEnabled = billing?.isBillingEnabled ?? false;
   const { t: tLingui } = useLingui();
   const { userWorkspaceId } = useParams<{ userWorkspaceId: string }>();
   const { theme } = useContext(ThemeContext);
@@ -50,8 +55,12 @@ export const SettingsUsageUserDetail = () => {
 
   const { analytics, isInitialLoading } = useUsageAnalyticsData({
     userWorkspaceId,
-    skip: !userWorkspaceId,
+    skip: !userWorkspaceId || !isBillingEnabled,
   });
+
+  if (isDefined(billing) && !isBillingEnabled) {
+    return <Navigate to={getSettingsPath(SettingsPath.General)} replace />;
+  }
 
   const userName = analytics?.usageByUser?.find(
     (item) => item.key === userWorkspaceId,

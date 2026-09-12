@@ -4,28 +4,22 @@
 // Placeholder values are intentional: no final product name exists yet.
 // The production branding guard (findPlaceholderBrandingViolations) blocks
 // production builds while placeholders are active.
-
-// Bump on every product release; the release tag `product/v<version>` must
-// point at the released commit so source and asset URLs stay immutable.
-export const PRODUCT_VERSION = '0.1.0';
-
-export const PRODUCT_RELEASE_TAG = `product/v${PRODUCT_VERSION}`;
-
-const REPOSITORY_URL = 'https://github.com/melon-1999/twenty';
-
-const RAW_ASSETS_BASE_URL = `https://raw.githubusercontent.com/melon-1999/twenty/${PRODUCT_RELEASE_TAG}`;
-
-const DEFAULT_LOGO_ASSET_PATH =
-  'packages/twenty-front/public/images/icons/android/android-launchericon-192-192.png';
+import { PRODUCT_RELEASE_TAG } from './ProductReleaseTag';
+import { PRODUCT_VERSION } from './ProductVersion';
 
 type ProductBranding = {
   name: string;
   shortName: string;
+  // Lowercase technical identifier used for MCP server slugs and config keys
+  slug: string;
   description: string;
   websiteUrl: string;
   supportUrl: string;
   repositoryUrl: string;
   sourceCodeUrl: string;
+  // Customer-facing source archive of the deployed version, served from our
+  // own domain (AGPL section 13 source offer without exposing GitHub)
+  sourceDownloadUrl: string;
   legalTermsUrl: string;
   legalPrivacyUrl: string;
   legalDpaUrl: string;
@@ -39,18 +33,21 @@ type ProductBranding = {
 export const PRODUCT_BRANDING: ProductBranding = {
   name: 'YourCRM',
   shortName: 'YourCRM',
+  slug: 'yourcrm',
   description: 'A modern CRM',
   websiteUrl: 'https://example.com',
   supportUrl: 'https://example.com/support',
-  repositoryUrl: REPOSITORY_URL,
-  // Exact source of the deployed version (AGPL section 13 source offer)
-  sourceCodeUrl: `${REPOSITORY_URL}/tree/${PRODUCT_RELEASE_TAG}`,
+  repositoryUrl: 'https://github.com/melon-1999/twenty',
+  // Exact source of the deployed version, internal reference for operators
+  sourceCodeUrl: `https://github.com/melon-1999/twenty/tree/${PRODUCT_RELEASE_TAG}`,
+  sourceDownloadUrl: `https://legal.example.com/source/product-v${PRODUCT_VERSION}.tar.gz`,
   legalTermsUrl: 'https://example.com/legal/terms',
   legalPrivacyUrl: 'https://example.com/legal/privacy',
   legalDpaUrl: 'https://example.com/legal/dpa',
   supportEmail: 'support@example.com',
-  emailLogoUrl: `${RAW_ASSETS_BASE_URL}/${DEFAULT_LOGO_ASSET_PATH}`,
-  defaultWorkspaceLogoUrl: `${RAW_ASSETS_BASE_URL}/${DEFAULT_LOGO_ASSET_PATH}`,
+  emailLogoUrl: 'https://assets.example.com/brand/email-logo.png',
+  defaultWorkspaceLogoUrl:
+    'https://assets.example.com/brand/workspace-logo.png',
   legalEntityLine: 'YourCRM',
   legalEntityLocationLine: '',
 };

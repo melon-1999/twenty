@@ -4,13 +4,22 @@ import { OnboardingStepPageLoader } from '@/onboarding/components/OnboardingStep
 import { ChooseYourPlanErrorState } from '@/onboarding/components/upgrade-free-trial/ChooseYourPlanErrorState';
 import { usePlans } from '@/settings/billing/hooks/usePlans';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
+import { Navigate } from 'react-router-dom';
+import { AppPath } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
 import { UpgradeFreeTrial } from '~/pages/onboarding/UpgradeFreeTrial';
 
 export const ChooseYourPlan = () => {
-  const { isPlansLoaded, error, refetch } = usePlans();
   const billing = useAtomStateValue(billingState);
+  const isBillingEnabled = billing?.isBillingEnabled ?? false;
+  const { isPlansLoaded, error, refetch } = usePlans({
+    skip: !isBillingEnabled,
+  });
   const onboardingConfig = useAtomStateValue(onboardingConfigState);
+
+  if (isDefined(billing) && !isBillingEnabled) {
+    return <Navigate to={AppPath.Index} replace />;
+  }
 
   if (isDefined(billing) && isPlansLoaded) {
     return (

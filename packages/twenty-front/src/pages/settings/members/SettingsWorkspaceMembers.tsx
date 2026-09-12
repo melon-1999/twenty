@@ -3,7 +3,6 @@ import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
 import {
   IconLock,
-  IconSparkle2,
   IconUserPlus,
   IconUsers,
 } from 'twenty-ui/icon';
@@ -83,15 +82,7 @@ export const SettingsWorkspaceMembers = () => {
             lightSrc={coverLight}
             darkSrc={coverDark}
             instanceIdPrefix={SETTINGS_MEMBERS_HERO_INSTANCE_ID_PREFIX}
-            tabs={[
-              {
-                id: 'members_walkthrough',
-                title: t`Walkthrough`,
-                Icon: IconSparkle2,
-                vimeoId: '1217964364',
-                hasSound: true,
-              },
-            ]}
+            tabs={[]}
             playButtonAriaLabel={t`Watch members demo`}
           />
         </Section>

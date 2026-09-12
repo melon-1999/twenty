@@ -28,27 +28,18 @@ export const Footer = ({ i18n }: FooterProps) => {
         <Column>
           <ShadowText>
             <Link
-              href={PRODUCT_BRANDING.sourceCodeUrl}
+              href={PRODUCT_BRANDING.supportUrl}
+              value={i18n._('Support')}
+              aria-label={i18n._('Get support')}
+            />
+          </ShadowText>
+        </Column>
+        <Column>
+          <ShadowText>
+            <Link
+              href={PRODUCT_BRANDING.sourceDownloadUrl}
               value={i18n._('Source code')}
-              aria-label={i18n._('Visit the source code repository')}
-            />
-          </ShadowText>
-        </Column>
-        <Column>
-          <ShadowText>
-            <Link
-              href="https://docs.twenty.com/getting-started/introduction"
-              value={i18n._('User guide')}
-              aria-label={i18n._('Read the user guide')}
-            />
-          </ShadowText>
-        </Column>
-        <Column>
-          <ShadowText>
-            <Link
-              href="https://docs.twenty.com/"
-              value={i18n._('Developers')}
-              aria-label={i18n._('Visit the developer documentation')}
+              aria-label={i18n._('Download the source code of this version')}
             />
           </ShadowText>
         </Column>

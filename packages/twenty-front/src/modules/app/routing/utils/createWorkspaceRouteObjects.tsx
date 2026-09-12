@@ -142,7 +142,7 @@ export const createWorkspaceRouteObjects = ({
     },
     {
       path: AppPath.Dpa,
-      element: <Navigate to={getSettingsPath(SettingsPath.LegalDpa)} replace />,
+      element: <Navigate to={getSettingsPath(SettingsPath.Legal)} replace />,
     },
     {
       path: AppPath.NotFoundWildcard,

@@ -18,7 +18,7 @@ jobs:
       - name: Verify tag matches PRODUCT_VERSION
         run: |
           TAG="${GITHUB_REF_NAME}"
-          VERSION=$(sed -n "s/^export const PRODUCT_VERSION = '\(.*\)';$/\1/p" packages/twenty-shared/src/constants/ProductBranding.ts)
+          VERSION=$(sed -n "s/^export const PRODUCT_VERSION = '\(.*\)';$/\1/p" packages/twenty-shared/src/constants/ProductVersion.ts)
           if [ "$TAG" != "product/v${VERSION}" ]; then
             echo "ERROR: tag ${TAG} does not match PRODUCT_VERSION ${VERSION} in ProductBranding.ts"
             exit 1

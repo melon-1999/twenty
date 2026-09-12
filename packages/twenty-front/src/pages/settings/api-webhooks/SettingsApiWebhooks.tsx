@@ -19,7 +19,6 @@ import { getSettingsPath } from 'twenty-shared/utils';
 import {
   IconApi,
   IconPlus,
-  IconSparkle2,
   IconSparkles,
   IconWebhook,
 } from 'twenty-ui/icon';
@@ -110,15 +109,7 @@ export const SettingsApiWebhooks = () => {
             lightSrc={isMcpTab ? McpCoverLight : PlaygroundCoverLight}
             darkSrc={isMcpTab ? McpCoverDark : PlaygroundCoverDark}
             instanceIdPrefix={SETTINGS_API_HERO_INSTANCE_ID_PREFIX}
-            tabs={[
-              {
-                id: 'api_webhook_walkthrough',
-                title: t`Walkthrough`,
-                Icon: IconSparkle2,
-                vimeoId: '1217967646',
-                hasSound: true,
-              },
-            ]}
+            tabs={[]}
             playButtonAriaLabel={t`Watch API demo`}
           />
         </Section>

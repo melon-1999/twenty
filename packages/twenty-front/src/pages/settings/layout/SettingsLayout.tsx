@@ -28,15 +28,7 @@ export const SettingsLayout = () => {
     }
   };
 
-  const heroTabs = [
-    {
-      id: 'layout_walkthrough',
-      title: t`Walkthrough`,
-      Icon: IconSparkle2,
-      vimeoId: '1217964357',
-      hasSound: true,
-    },
-  ];
+  const heroTabs = [];
 
   return (
     <SettingsPageLayout

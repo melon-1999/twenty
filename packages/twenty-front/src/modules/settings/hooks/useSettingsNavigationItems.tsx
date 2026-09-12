@@ -6,7 +6,6 @@ import { currentWorkspaceMemberState } from '@/auth/states/currentWorkspaceMembe
 import { billingState } from '@/client-config/states/billingState';
 import { supportChatState } from '@/client-config/states/supportChatState';
 import { usePermissionFlagMap } from '@/settings/roles/hooks/usePermissionFlagMap';
-import { getDocumentationUrl } from '@/support/utils/getDocumentationUrl';
 import {
   type NavigationDrawerItemIndentationLevel,
   type NavigationDrawerItemModifier,
@@ -24,7 +23,7 @@ import {
   type IconComponent,
   IconCreditCard,
   IconDoorEnter,
-  IconHelpCircle,
+  IconFileText,
   IconHierarchy,
   IconMail,
   IconMessage,
@@ -193,9 +192,9 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
           isHidden: !isAdminEnabled,
         },
         {
-          label: t`Community`,
-          path: SettingsPath.Community,
-          Icon: IconUsers,
+          label: t`Legal`,
+          path: SettingsPath.Legal,
+          Icon: IconFileText,
           isHidden: !permissionMap[PermissionFlagType.WORKSPACE],
         },
         {
@@ -203,15 +202,6 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
           onClick: () => window.FrontChat?.('show'),
           Icon: IconMessage,
           isHidden: !isSupportChatConfigured,
-        },
-        {
-          label: t`Documentation`,
-          onClick: () =>
-            window.open(
-              getDocumentationUrl({ locale: currentWorkspaceMember?.locale }),
-              '_blank',
-            ),
-          Icon: IconHelpCircle,
         },
         {
           label: t`Logout`,

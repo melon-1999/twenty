@@ -12,15 +12,11 @@ export const buildMcpServerCard = ({
 }: BuildMcpServerCardArgs) => ({
   $schema:
     'https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json',
-  name: 'com.twenty/twenty',
+  name: `com.${PRODUCT_BRANDING.slug}/${PRODUCT_BRANDING.slug}`,
   version,
   title: `${PRODUCT_BRANDING.name} CRM`,
   description: `Read and write your ${PRODUCT_BRANDING.name} CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.`,
   websiteUrl: PRODUCT_BRANDING.websiteUrl,
-  repository: {
-    url: PRODUCT_BRANDING.repositoryUrl,
-    source: 'github',
-  },
   remotes: [
     {
       type: 'streamable-http',

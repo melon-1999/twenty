@@ -192,6 +192,24 @@ Feature-/Produktarbeit ausschließlich auf `product/*`-Branches.
 - `emailLogoUrl`/`defaultWorkspaceLogoUrl` sind an denselben Tag gepinnt statt an einen Branch.
 - Release-Ablauf: `PRODUCT_VERSION` bumpen → committen → `git tag product/v<version>` auf den Commit → Tag pushen. Der Release-Workflow validiert die Übereinstimmung.
 
+## SaaS Product Cleanup (v0.2.0)
+
+Kundenoberfläche vollständig von Twenty-/OSS-Projekt-Spuren bereinigt:
+
+- **Community-Seite entfernt**: `/settings/community` leitet auf den neuen Legal-Bereich um; Nav-Item ersetzt. `SettingsCommunity.tsx` bleibt als Datei (kein Route-Konsument mehr) — bewusst nicht gelöscht, um Upstream-Diff klein zu halten. Labs (`SettingsLabContent`) war nur dort eingebunden und ist damit unerreichbar; `PUBLIC_FEATURE_FLAGS` serverseitig unangetastet.
+- **Legal-Bereich** (`/settings/legal`, Nav "Other → Legal"): Datenschutz, Nutzungsbedingungen, Software-Lizenzen-Hinweis (AGPL-3.0/MIT) + "Quellcode dieser Version herunterladen" über `PRODUCT_BRANDING.sourceDownloadUrl` (eigene Domain, Platzhalter `legal.example.com` → Production-Guard blockt bis echt). Versionsanzeige ohne GitHub-Branding. DPA-Routen (`/settings/legal/dpa*`, `/dpa`) leiten auf Legal um — die Twenty-PBC-DPA-Dokumente (Servercode unangetastet) sind für Kunden unerreichbar.
+- **GitHub für Kunden unsichtbar**: E-Mail-Footer Source-Link → `sourceDownloadUrl`; harte `docs.twenty.com`-Footer-Links entfernt (ersetzt durch Support); MCP-Server-Card ohne `repository`-Block, Name `com.<slug>/<slug>`; MCP-Client-Slug `twenty` → `PRODUCT_BRANDING.slug`; ChatGPT-Karte (Twenty-App auf chatgpt.com) entfernt; Beispieldaten (`tim@twenty.com`, `github.com/twentyhq`) neutralisiert; Dev-Scaffolding-Abschnitte (`create-twenty-app`, twenty.com-Doku-Links) aus App-Beschreibungen entfernt. `sourceCodeUrl` (GitHub-Tag) bleibt als interne Operator-Referenz ohne Kunden-Konsument.
+- **Navigation "Documentation"** (docs.twenty.com) entfernt. Verstreute kontextuelle "Learn more"-Doku-Links (z. B. Workflow-Form-Builder) bewusst belassen — funktionierende technische Doku; eigener Docs-Ersatz ist Open Item.
+- **Enterprise/Billing**: Route-/Komponenten-Gates ergänzt, keine Guards entfernt: `ChooseYourPlan` (`/plan-required`) leitet ohne aktiviertes Billing auf die App um; `SettingsUsage`/`SettingsUsageUserDetail` erhalten denselben `isBillingEnabled`-Redirect wie die übrigen Billing-Seiten. Enterprise-Seite/-Tab war bereits über `canAccessFullAdminPanel`-Routen-Existenz gegated (verifiziert). **0 `@license Enterprise`-Dateien geändert.**
+- **Externe Requests**: `TELEMETRY_ENABLED` Default `false` (vorher: PII — Name/E-Mail jedes Signups — an twenty-telemetry.com); `MARKETPLACE_CATALOG_SYNC_CRON_ENABLED` Default `false` (vorher: automatischer Import der `@twentyhq/*`-Apps mit Twenty-Support-/Terms-/GitHub-Links von npmjs.org — Marketplace jetzt kuratiert/opt-in); `search_help_center`-AI-Tool nicht mehr automatisch registriert (sendete Kunden-Suchanfragen an twenty-help-search.com; Toolklasse bleibt, nur Announcement entfernt). Bewusst aktiv gelassen: `twenty-icons.com` (Company-Logo-Auflösung, per `ALLOW_REQUESTS_TO_TWENTY_ICONS=false` abschaltbar), Docker-Hub-Versionscheck (nur Admin-Panel/Operator).
+- **Produkt-Polish**: 6 Twenty-Vimeo-Walkthrough-Videos aus Settings-Hero-Karten entfernt (`tabs={[]}`, Muster existierte upstream); "Beta"-Badge im Onboarding-Schritt "Install your first apps" entfernt; SOC2/GDPR-Trust-Badges aus dem Import-Onboarding entfernt (nicht belegte Compliance-Claims).
+- **Regressionstest**: `packages/twenty-shared/src/utils/branding/__tests__/customerVisibleBrandingLeaks.test.ts` scannt eine feste Liste kundensichtbarer Quelldateien auf `twentyhq`, `twenty.com`, `github.com`, `discord`, ChatGPT-App-Links und "Powered by" — bewusst NICHT global auf "Twenty" (interne Namen und Lizenztexte bleiben legitim).
+
+Operator-Hinweise (kein Code-Change):
+
+- **Erster Signup erhält Server-Admin**: Twentys Bootstrap vergibt `canAccessFullAdminPanel`+`canImpersonate` an den ersten registrierten User der Instanz (`sign-in-up.service.ts`). Vor Kundenöffnung zwingend zuerst den Operator-Account anlegen.
+- Admin Panel (Server Health, Config, Version, Enterprise) ist bereits sauber operator-gated (`canAccessFullAdminPanel`) — Customer-Settings und Operator-Bereich sind getrennt, keine neue Admin-Architektur nötig.
+
 ## Open Items
 
 1. Finaler Produktname → `ProductBranding.ts`, `index.html`, `manifest.json`, `.env EMAIL_FROM_NAME`
@@ -203,4 +221,8 @@ Feature-/Produktarbeit ausschließlich auf `product/*`-Branches.
 7. DPA-Feature ggf. ausblenden (zeigt Twenty-PBC-Dokumente)
 8. AGPL §13: öffentliches Repo mit laufendem Stand sicherstellen, sobald die Instanz produktiv extern genutzt wird
 
-Punkte 1, 3 und 5 werden vom Production Branding Guard erzwungen: solange sie offen sind, schlagen Production-Builds und `product/v*`-Releases absichtlich fehl.
+9. `sourceDownloadUrl`: Quellcode-Tarball der deployten Version auf eigener Domain bereitstellen (z. B. `https://legal.<domain>/source/product-v0.2.0.tar.gz`); Release-Prozess: Tarball aus dem Release-Tag generieren und hochladen, bevor die Version deployt wird
+10. Eigene Doku-Domain für kontextuelle "Learn more"-Links (aktuell docs.twenty.com)
+11. Operator-Runbook: ersten Account (Server-Admin-Bootstrap) immer selbst anlegen
+
+Punkte 1, 3, 5 und 9 werden vom Production Branding Guard erzwungen: solange sie offen sind, schlagen Production-Builds und `product/v*`-Releases absichtlich fehl.

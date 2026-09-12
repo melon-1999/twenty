@@ -24,15 +24,7 @@ export const SettingsObjects = () => {
   const { objectMetadataItems } = useFilteredObjectMetadataItems();
   const isDDLLocked = useAtomStateValue(isDDLLockedState);
 
-  const heroTabs = [
-    {
-      id: 'data_model_walkthrough',
-      title: t`Walkthrough`,
-      Icon: IconSparkle2,
-      vimeoId: '1217964359',
-      hasSound: true,
-    },
-  ];
+  const heroTabs = [];
 
   return (
     <SettingsPageLayout

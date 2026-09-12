@@ -3439,11 +3439,6 @@ msgstr "Because this workflow is not using a manual trigger, the form will not o
 msgid "Behind"
 msgstr "Behind"
 
-#. js-lingui-id: YBt9YP
-#: src/pages/onboarding/InstallAppsContent.tsx
-msgid "Beta"
-msgstr "Beta"
-
 #. js-lingui-id: NgFKo1
 #: src/modules/workflow/workflow-trigger/utils/cron-to-human/descriptors/getMonthsDescription.ts
 msgid "between {startMonth} and {endMonth}"
@@ -4204,11 +4199,6 @@ msgstr "Chat Sessions"
 msgid "Chat with AI agents and use AI features"
 msgstr "Chat with AI agents and use AI features"
 
-#. js-lingui-id: yOaaWk
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
-msgid "ChatGPT"
-msgstr "ChatGPT"
-
 #. js-lingui-id: 8Q+lLG
 #: src/modules/settings/admin-panel/ai/components/SettingsAdminAI.tsx
 #: src/pages/settings/admin-panel/SettingsAdminChats.tsx
@@ -4734,7 +4724,6 @@ msgstr "Communication"
 
 #. js-lingui-id: chL5IG
 #: src/modules/settings/billing/constants/SettingsBillingPlanComparisonRows.ts
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
 msgid "Community"
@@ -7266,7 +7255,6 @@ msgid "Document"
 msgstr "Document"
 
 #. js-lingui-id: TvY/XA
-#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
 #: src/pages/settings/api-webhooks/SettingsApiWebhooks.tsx
 msgid "Documentation"
 msgstr "Documentation"
@@ -7366,6 +7354,11 @@ msgstr "Download Files"
 #: src/modules/spreadsheet-import/steps/components/UploadStep/components/DropZone.tsx
 msgid "Download sample"
 msgstr "Download sample"
+
+#. js-lingui-id: OuoRj5
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "Download source code (version {PRODUCT_VERSION})"
+msgstr "Download source code (version {PRODUCT_VERSION})"
 
 #. js-lingui-id: eneWvv
 #: src/modules/activities/emails/components/EmailThreadPreview.tsx
@@ -10459,7 +10452,7 @@ msgstr "Horizontal Bar Chart"
 msgid "Horizontal separator line"
 msgstr "Horizontal separator line"
 
-#. js-lingui-id: WOXdI6
+#. js-lingui-id: DR9csj
 #: src/pages/settings/applications/utils/getCustomApplicationDescription.ts
 msgid ""
 "Host your workspace's customizations and overrides.\n"
@@ -10474,17 +10467,7 @@ msgid ""
 "#### Why it exists\n"
 "Use this app for workspace-specific customization that should stay local to this workspace.\n"
 "\n"
-"If you are shaping one workspace for one business, keep it here. If you are building a reusable business app with its own data model, UI, and automation that should be versioned, shared, or installed across workspaces, create a dedicated app instead.\n"
-"\n"
-"#### Build your own app\n"
-"\n"
-"Scaffold a new app in one command:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"See the [Getting Started guide](https://twenty.com/developers/extend/apps/getting-started) for the full walkthrough, and [Building Apps](https://twenty.com/developers/extend/apps/building) for the `defineApplication` / `defineEntity` APIs."
+"If you are shaping one workspace for one business, keep it here. If you are building a reusable business app with its own data model, UI, and automation that should be versioned, shared, or installed across workspaces, create a dedicated app instead."
 msgstr ""
 "Host your workspace's customizations and overrides.\n"
 "\n"
@@ -10498,17 +10481,7 @@ msgstr ""
 "#### Why it exists\n"
 "Use this app for workspace-specific customization that should stay local to this workspace.\n"
 "\n"
-"If you are shaping one workspace for one business, keep it here. If you are building a reusable business app with its own data model, UI, and automation that should be versioned, shared, or installed across workspaces, create a dedicated app instead.\n"
-"\n"
-"#### Build your own app\n"
-"\n"
-"Scaffold a new app in one command:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"See the [Getting Started guide](https://twenty.com/developers/extend/apps/getting-started) for the full walkthrough, and [Building Apps](https://twenty.com/developers/extend/apps/building) for the `defineApplication` / `defineEntity` APIs."
+"If you are shaping one workspace for one business, keep it here. If you are building a reusable business app with its own data model, UI, and automation that should be versioned, shared, or installed across workspaces, create a dedicated app instead."
 
 #. js-lingui-id: yY8wAv
 #: src/modules/workflow/workflow-steps/workflow-actions/delay-actions/components/WorkflowEditActionDelay.tsx
@@ -10529,6 +10502,11 @@ msgstr "How credits work"
 #: src/pages/settings/applications/tabs/SettingsApplicationDetailContentTab.tsx
 msgid "How records, pages, and navigation are displayed"
 msgstr "How records, pages, and navigation are displayed"
+
+#. js-lingui-id: 4koXaY
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "How we handle your data and the terms that apply to your use of this product."
+msgstr "How we handle your data and the terms that apply to your use of this product."
 
 #. js-lingui-id: e60vNl
 #: src/pages/onboarding/CreateProfile.tsx
@@ -11991,10 +11969,18 @@ msgid "Legacy HS256 verifications across all tokens"
 msgstr "Legacy HS256 verifications across all tokens"
 
 #. js-lingui-id: vifyyw
+#: src/modules/settings/hooks/useSettingsNavigationItems.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 #: src/pages/settings/legal/SettingsLegalDpa.tsx
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
 msgid "Legal"
 msgstr "Legal"
+
+#. js-lingui-id: fjCnGI
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "Legal documents"
+msgstr "Legal documents"
 
 #. js-lingui-id: nc/jNe
 #: src/pages/settings/legal/SettingsLegalDpaNew.tsx
@@ -14787,11 +14773,6 @@ msgstr "of"
 msgid "Off the beaten path"
 msgstr "Off the beaten path"
 
-#. js-lingui-id: s1X4Cm
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
-msgid "Official app"
-msgstr "Official app"
-
 #. js-lingui-id: Zd5vVt
 #: src/modules/workflow/workflow-steps/workflow-actions/find-records-action/components/WorkflowEditActionFindRecords.tsx
 msgid "Offset"
@@ -14980,7 +14961,6 @@ msgstr "Only you will be able to see your emails and events"
 
 #. js-lingui-id: 1TNIig
 #: src/modules/settings/data-model/objects/forms/components/SettingsDataModelObjectAboutForm.tsx
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 #: src/pages/settings/members/tabs/SettingsWorkspaceMembersTeamTab.tsx
 msgid "Open"
 msgstr "Open"
@@ -15069,11 +15049,6 @@ msgstr "Open records on a dedicated page"
 #: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
 msgid "Open Replit with the {0} remote server config."
 msgstr "Open Replit with the {0} remote server config."
-
-#. js-lingui-id: CXEEET
-#: src/modules/settings/mcp-and-apis/utils/buildMcpSetupCategories.tsx
-msgid "Open the official ChatGPT integration for your workspace."
-msgstr "Open the official ChatGPT integration for your workspace."
 
 #. js-lingui-id: OV5wZZ
 #: src/modules/navigation-menu-item/display/sections/components/NavigationDrawerOpenedSection.tsx
@@ -15208,6 +15183,7 @@ msgstr "Organize"
 #: src/pages/settings/admin-panel/SettingsAdminWorkspaceDetail.tsx
 #: src/pages/settings/admin-panel/SettingsAdminWorkspacesStatus.tsx
 #: src/pages/settings/community/SettingsCommunity.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Other"
 msgstr "Other"
 
@@ -16010,6 +15986,7 @@ msgstr "Priority support"
 #. js-lingui-id: LcET2C
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
@@ -18833,6 +18810,11 @@ msgstr "SMTP Username"
 msgid "smtp.example.com"
 msgstr "smtp.example.com"
 
+#. js-lingui-id: rcw/Tz
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "Software licenses"
+msgstr "Software licenses"
+
 #. js-lingui-id: zfjcH5
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelSeeFieldsValueForObject.tsx
 #: src/modules/settings/roles/role-permissions/object-level-permissions/components/SettingsRolePermissionsObjectLevelUpdateFieldsValueForObject.tsx
@@ -19701,6 +19683,7 @@ msgstr "Terms / Privacy"
 #. js-lingui-id: xowcRf
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
+#: src/pages/settings/legal/SettingsLegal.tsx
 msgid "Terms of Service"
 msgstr "Terms of Service"
 
@@ -19778,11 +19761,10 @@ msgstr "The API endpoint for your OpenAI-compatible provider"
 msgid "The AWS region for Bedrock"
 msgstr "The AWS region for Bedrock"
 
-#. js-lingui-id: +S/+8c
+#. js-lingui-id: V1hsHm
 #. placeholder {0}: PRODUCT_BRANDING.name
 #. placeholder {1}: PRODUCT_BRANDING.name
 #. placeholder {2}: PRODUCT_BRANDING.name
-#. placeholder {3}: PRODUCT_BRANDING.name
 #: src/pages/settings/applications/utils/getStandardApplicationDescription.ts
 msgid ""
 "The base data model every {0} workspace runs on.\n"
@@ -19797,24 +19779,7 @@ msgid ""
 "- **Notes & Tasks**: activity and follow-ups\n"
 "- **Workflows & Dashboards**: automation and reporting\n"
 "\n"
-"Remove this app and the rest of {2} has nothing to hang off.\n"
-"\n"
-"#### Build your own app\n"
-"\n"
-"Extend {3} with your own objects, fields, logic functions, or AI skills. Scaffold a new app in one command:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"Then inside the folder:\n"
-"\n"
-"```bash\n"
-"cd my-twenty-app\n"
-"yarn twenty dev\n"
-"```\n"
-"\n"
-"See the [Getting Started guide](https://twenty.com/developers/extend/apps/getting-started) for the full walkthrough, and [Building Apps](https://twenty.com/developers/extend/apps/building) for the `defineApplication` / `defineEntity` APIs."
+"Remove this app and the rest of {2} has nothing to hang off."
 msgstr ""
 "The base data model every {0} workspace runs on.\n"
 "\n"
@@ -19828,24 +19793,7 @@ msgstr ""
 "- **Notes & Tasks**: activity and follow-ups\n"
 "- **Workflows & Dashboards**: automation and reporting\n"
 "\n"
-"Remove this app and the rest of {2} has nothing to hang off.\n"
-"\n"
-"#### Build your own app\n"
-"\n"
-"Extend {3} with your own objects, fields, logic functions, or AI skills. Scaffold a new app in one command:\n"
-"\n"
-"```bash\n"
-"npx create-twenty-app@latest my-twenty-app\n"
-"```\n"
-"\n"
-"Then inside the folder:\n"
-"\n"
-"```bash\n"
-"cd my-twenty-app\n"
-"yarn twenty dev\n"
-"```\n"
-"\n"
-"See the [Getting Started guide](https://twenty.com/developers/extend/apps/getting-started) for the full walkthrough, and [Building Apps](https://twenty.com/developers/extend/apps/building) for the `defineApplication` / `defineEntity` APIs."
+"Remove this app and the rest of {2} has nothing to hang off."
 
 #. js-lingui-id: VsxjzF
 #: src/modules/page-layout/widgets/call-recording/utils/getCallRecordingStatusDisplayConfiguration.ts
@@ -20320,6 +20268,11 @@ msgstr "This page has no content"
 #: src/modules/app/routing/components/WorkspaceRouteUnavailable.tsx
 msgid "This page isn't available."
 msgstr "This page isn't available."
+
+#. js-lingui-id: 1UImp2
+#: src/pages/settings/legal/SettingsLegal.tsx
+msgid "This product (version {PRODUCT_VERSION}) includes open-source components licensed under AGPL-3.0 and MIT. The complete corresponding source code of this version is available for download."
+msgstr "This product (version {PRODUCT_VERSION}) includes open-source components licensed under AGPL-3.0 and MIT. The complete corresponding source code of this version is available for download."
 
 #. js-lingui-id: R/PuIn
 #: src/pages/settings/admin-panel/SettingsAdminNewAiProvider.tsx
@@ -22347,16 +22300,6 @@ msgstr "Waiting Children"
 #: src/modules/ai/components/TerminalOutput.tsx
 msgid "Waiting for output..."
 msgstr "Waiting for output..."
-
-#. js-lingui-id: THYlSm
-#: src/pages/settings/ai/SettingsAI.tsx
-#: src/pages/settings/api-webhooks/SettingsApiWebhooks.tsx
-#: src/pages/settings/applications/SettingsApplications.tsx
-#: src/pages/settings/data-model/SettingsObjects.tsx
-#: src/pages/settings/layout/SettingsLayout.tsx
-#: src/pages/settings/members/SettingsWorkspaceMembers.tsx
-msgid "Walkthrough"
-msgstr "Walkthrough"
 
 #. js-lingui-id: r6y+jM
 #: src/modules/ui/feedback/snack-bar-manager/components/SnackBar.tsx

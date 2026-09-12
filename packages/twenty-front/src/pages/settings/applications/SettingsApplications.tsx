@@ -11,7 +11,6 @@ import {
   IconApps,
   IconCode,
   IconShoppingBag,
-  IconSparkle2,
 } from 'twenty-ui/icon';
 import { Section } from 'twenty-ui/layout';
 import { PermissionFlagType } from '~/generated-metadata/graphql';
@@ -87,15 +86,7 @@ export const SettingsApplications = () => {
             lightSrc={coverLight}
             darkSrc={coverDark}
             instanceIdPrefix={APPLICATIONS_HERO_INSTANCE_ID_PREFIX}
-            tabs={[
-              {
-                id: 'app_marketplace_walkthrough',
-                title: t`Walkthrough`,
-                Icon: IconSparkle2,
-                vimeoId: '1217964666',
-                hasSound: true,
-              },
-            ]}
+            tabs={[]}
             playButtonAriaLabel={t`Watch apps demo`}
           />
         </Section>

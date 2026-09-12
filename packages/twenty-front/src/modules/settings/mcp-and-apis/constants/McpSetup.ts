@@ -1,8 +1,6 @@
 import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export const MCP_SETUP = {
-  chatGptTwentyAppUrl:
-    'https://chatgpt.com/apps/twenty/asdk_app_6a0ac8d7e28c8191a58ea65bb0ca3d5c',
   tooltipIds: {
     claudeInstallDisabled: 'mcp-claude-install-disabled',
     replitInstallDisabled: 'mcp-replit-install-disabled',
@@ -12,7 +10,7 @@ export const MCP_SETUP = {
     value: 'Bearer <YOUR_API_KEY>',
   },
   server: {
-    name: 'twenty',
+    name: PRODUCT_BRANDING.slug,
     displayName: PRODUCT_BRANDING.name,
   },
   clientDocsUrls: {

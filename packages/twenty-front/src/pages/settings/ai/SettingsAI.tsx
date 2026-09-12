@@ -13,7 +13,6 @@ import {
   IconCpu,
   IconLayoutDashboard,
   IconPlus,
-  IconSparkle2,
   IconTool,
 } from 'twenty-ui/icon';
 import { Button } from 'twenty-ui/input';
@@ -118,15 +117,7 @@ export const SettingsAI = () => {
             lightSrc={AI_HERO_LIGHT}
             darkSrc={AI_HERO_DARK}
             instanceIdPrefix={SETTINGS_AI_HERO_INSTANCE_ID_PREFIX}
-            tabs={[
-              {
-                id: 'ai_walkthrough',
-                title: t`Walkthrough`,
-                Icon: IconSparkle2,
-                vimeoId: '1217964358',
-                hasSound: true,
-              },
-            ]}
+            tabs={[]}
             playButtonAriaLabel={t`Watch AI demo`}
           />
         </Section>

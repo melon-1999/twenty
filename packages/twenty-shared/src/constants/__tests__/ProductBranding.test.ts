@@ -1,8 +1,6 @@
-import {
-  PRODUCT_BRANDING,
-  PRODUCT_RELEASE_TAG,
-  PRODUCT_VERSION,
-} from '../ProductBranding';
+import { PRODUCT_BRANDING } from '../ProductBranding';
+import { PRODUCT_RELEASE_TAG } from '../ProductReleaseTag';
+import { PRODUCT_VERSION } from '../ProductVersion';
 
 describe('PRODUCT_BRANDING', () => {
   it('should define a non-empty product name and short name', () => {
@@ -28,6 +26,7 @@ describe('PRODUCT_BRANDING', () => {
       PRODUCT_BRANDING.websiteUrl,
       PRODUCT_BRANDING.supportUrl,
       PRODUCT_BRANDING.sourceCodeUrl,
+      PRODUCT_BRANDING.sourceDownloadUrl,
       PRODUCT_BRANDING.legalTermsUrl,
       PRODUCT_BRANDING.legalPrivacyUrl,
       PRODUCT_BRANDING.legalDpaUrl,
@@ -44,13 +43,23 @@ describe('PRODUCT_BRANDING', () => {
     expect(PRODUCT_RELEASE_TAG).toBe(`product/v${PRODUCT_VERSION}`);
   });
 
-  it('should pin source code and asset URLs to the release tag, not a branch', () => {
+  it('should pin the source code reference to the release tag, not a branch', () => {
     expect(PRODUCT_BRANDING.sourceCodeUrl).toBe(
       `${PRODUCT_BRANDING.repositoryUrl}/tree/${PRODUCT_RELEASE_TAG}`,
     );
-    expect(PRODUCT_BRANDING.emailLogoUrl).toContain(`/${PRODUCT_RELEASE_TAG}/`);
-    expect(PRODUCT_BRANDING.defaultWorkspaceLogoUrl).toContain(
-      `/${PRODUCT_RELEASE_TAG}/`,
-    );
+  });
+
+  it('should version the customer source download and keep it off github', () => {
+    expect(PRODUCT_BRANDING.sourceDownloadUrl).toContain(PRODUCT_VERSION);
+    expect(PRODUCT_BRANDING.sourceDownloadUrl).not.toContain('github');
+  });
+
+  it('should keep customer-visible asset URLs off github', () => {
+    expect(PRODUCT_BRANDING.emailLogoUrl).not.toContain('github');
+    expect(PRODUCT_BRANDING.defaultWorkspaceLogoUrl).not.toContain('github');
+  });
+
+  it('should use a lowercase url-safe slug', () => {
+    expect(PRODUCT_BRANDING.slug).toMatch(/^[a-z][a-z0-9-]*$/);
   });
 });

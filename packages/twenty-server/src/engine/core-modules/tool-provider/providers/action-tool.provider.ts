@@ -186,15 +186,6 @@ export class ActionToolProvider implements ToolProvider {
 
     descriptors.push(
       this.buildDescriptor(
-        'search_help_center',
-        this.searchHelpCenterTool,
-        includeSchemas,
-        context.locale,
-      ),
-    );
-
-    descriptors.push(
-      this.buildDescriptor(
         'navigate_app',
         this.navigateAppTool,
         includeSchemas,
