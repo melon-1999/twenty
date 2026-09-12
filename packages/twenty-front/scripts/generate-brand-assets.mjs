@@ -1,0 +1,56 @@
+// Regenerates every app icon and the social card from the canonical brand
+// mark at public/images/brand/logo.svg. Run after replacing the logo:
+//   node packages/twenty-front/scripts/generate-brand-assets.mjs
+import { readdir, readFile, copyFile, mkdir } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
+
+const publicDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'public');
+const logoPath = join(publicDir, 'images', 'brand', 'logo.svg');
+const logoSvg = await readFile(logoPath);
+
+const iconDirs = [
+  join(publicDir, 'images', 'icons', 'android'),
+  join(publicDir, 'images', 'icons', 'ios'),
+  join(publicDir, 'images', 'icons', 'windows11'),
+];
+
+for (const dir of iconDirs) {
+  const files = (await readdir(dir)).filter((file) => file.endsWith('.png'));
+  for (const file of files) {
+    const target = join(dir, file);
+    const { width, height } = await sharp(target).metadata();
+    await sharp(logoSvg, { density: 300 })
+      .resize(width, height, { fit: 'contain', background: '#1b1b1b' })
+      .png()
+      .toFile(`${target}.tmp`);
+    await copyFile(`${target}.tmp`, target);
+    const { unlink } = await import('node:fs/promises');
+    await unlink(`${target}.tmp`);
+    console.log(`regenerated ${target} (${width}x${height})`);
+  }
+}
+
+// In-app mark (onboarding header, splash loader, import badge, OAuth consent)
+await copyFile(logoPath, join(publicDir, 'images', 'integrations', 'twenty-logo.svg'));
+console.log('regenerated images/integrations/twenty-logo.svg');
+
+// Social preview card referenced by index.html og:image / twitter:image
+await mkdir(join(publicDir, 'images', 'brand'), { recursive: true });
+const logoPng = await sharp(logoSvg, { density: 300 })
+  .resize(320, 320)
+  .png()
+  .toBuffer();
+await sharp({
+  create: {
+    width: 1200,
+    height: 630,
+    channels: 4,
+    background: '#fcfcfc',
+  },
+})
+  .composite([{ input: logoPng, gravity: 'center' }])
+  .png()
+  .toFile(join(publicDir, 'images', 'brand', 'social-card.png'));
+console.log('regenerated images/brand/social-card.png');
