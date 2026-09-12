@@ -7214,10 +7214,11 @@ msgstr "단계 {current}/{total}"
 msgid "Step-by-step workflow logs"
 msgstr "단계별 워크플로 로그"
 
-#. js-lingui-id: jKt86V
+#. js-lingui-id: inr0J7
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/Faq.tsx
-msgid "Stop fighting custom. *Start building, with Twenty*"
-msgstr "커스텀과 싸우는 건 그만두고, *Twenty와 함께 구축을 시작하세요*"
+msgid "Stop fighting custom. *Start building, with {0}*"
+msgstr ""
 
 #. js-lingui-id: UCLArd
 #: src/sections/three-cards/ThreeCards.tsx

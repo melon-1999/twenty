@@ -7216,10 +7216,11 @@ msgstr "Шаг {current} из {total}"
 msgid "Step-by-step workflow logs"
 msgstr "Пошаговые журналы рабочих процессов"
 
-#. js-lingui-id: jKt86V
+#. js-lingui-id: inr0J7
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/Faq.tsx
-msgid "Stop fighting custom. *Start building, with Twenty*"
-msgstr "Перестаньте бороться с кастомизацией. *Начните строить с Twenty*"
+msgid "Stop fighting custom. *Start building, with {0}*"
+msgstr ""
 
 #. js-lingui-id: UCLArd
 #: src/sections/three-cards/ThreeCards.tsx

@@ -7216,10 +7216,11 @@ msgstr "Pasul {current} din {total}"
 msgid "Step-by-step workflow logs"
 msgstr "Jurnale pas cu pas ale fluxurilor de lucru"
 
-#. js-lingui-id: jKt86V
+#. js-lingui-id: inr0J7
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/Faq.tsx
-msgid "Stop fighting custom. *Start building, with Twenty*"
-msgstr "Nu te mai lupta cu custom. *Începe să construiești, cu Twenty*"
+msgid "Stop fighting custom. *Start building, with {0}*"
+msgstr ""
 
 #. js-lingui-id: UCLArd
 #: src/sections/three-cards/ThreeCards.tsx

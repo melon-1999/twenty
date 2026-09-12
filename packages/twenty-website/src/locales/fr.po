@@ -7216,10 +7216,11 @@ msgstr "Étape {current} sur {total}"
 msgid "Step-by-step workflow logs"
 msgstr "Journaux de workflow étape par étape"
 
-#. js-lingui-id: jKt86V
+#. js-lingui-id: inr0J7
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/Faq.tsx
-msgid "Stop fighting custom. *Start building, with Twenty*"
-msgstr "Cessez de lutter contre le sur-mesure. *Commencez à construire, avec Twenty*"
+msgid "Stop fighting custom. *Start building, with {0}*"
+msgstr ""
 
 #. js-lingui-id: UCLArd
 #: src/sections/three-cards/ThreeCards.tsx

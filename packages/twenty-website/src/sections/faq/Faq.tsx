@@ -21,6 +21,7 @@ import {
 
 import { FAQ_QUESTIONS } from './faq.data';
 import { FaqItems } from './FaqItems';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const HeadingMeasure = styled.div`
   ${mediaUp('md')} {
@@ -47,7 +48,9 @@ export function Faq() {
           <Eyebrow>{i18n._(msg`Any Questions?`)}</Eyebrow>
           <HeadingMeasure>
             <Heading as="h2" size="lg" weight="light">
-              {i18n._(msg`Stop fighting custom. *Start building, with Twenty*`)}
+              {i18n._(
+                msg`Stop fighting custom. *Start building, with ${PRODUCT_BRANDING.name}*`,
+              )}
             </Heading>
           </HeadingMeasure>
           <CtaRow>

@@ -7216,10 +7216,11 @@ msgstr "Adım {current} / {total}"
 msgid "Step-by-step workflow logs"
 msgstr "Adım adım iş akışı günlükleri"
 
-#. js-lingui-id: jKt86V
+#. js-lingui-id: inr0J7
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/Faq.tsx
-msgid "Stop fighting custom. *Start building, with Twenty*"
-msgstr "Özelleştirmeyle savaşmayı bırakın. *Twenty ile inşa etmeye başlayın*"
+msgid "Stop fighting custom. *Start building, with {0}*"
+msgstr ""
 
 #. js-lingui-id: UCLArd
 #: src/sections/three-cards/ThreeCards.tsx
