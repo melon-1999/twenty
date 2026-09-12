@@ -33,6 +33,7 @@ import { GetAiSystemPromptPreviewDocument } from '~/generated-metadata/graphql';
 import { SettingsAiModelTiersPreview } from '~/pages/settings/ai/components/SettingsAiModelTiersPreview';
 import { useSettingsAiModelsActions } from '~/pages/settings/ai/hooks/useSettingsAiModelsActions';
 import { formatNumber } from '~/utils/format/formatNumber';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const StyledPinnedModelsContainer = styled.div`
   padding-top: ${themeCssVariables.spacing[4]};
@@ -83,7 +84,7 @@ export const SettingsAiModelsTab = () => {
           <SettingsOptionCardContentSelect
             Icon={IconMessage}
             title={t`AI chat`}
-            description={t`Model used when you chat with Twenty`}
+            description={t`Model used when you chat with ${PRODUCT_BRANDING.name}`}
             divider
           >
             <Select
@@ -111,7 +112,7 @@ export const SettingsAiModelsTab = () => {
           <SettingsOptionCardContentSwitch
             Icon={IconRefresh}
             title={t`Choose automatically`}
-            description={t`Twenty fills each level with the best model that meets your requirements`}
+            description={t`${PRODUCT_BRANDING.name} fills each level with the best model that meets your requirements`}
             checked={isAutoModelSelectionEnabled}
             onChange={handleAutoModelSelectionToggle}
           />

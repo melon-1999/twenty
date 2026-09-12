@@ -1,4 +1,5 @@
 import { t } from '@lingui/core/macro';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { AppBasePath, AppPath, SettingsPath } from 'twenty-shared/types';
 
 enum SettingsPathPrefixes {
@@ -60,6 +61,6 @@ export const getPageTitleFromPath = (pathname: string): string => {
     case SettingsPathPrefixes.Community:
       return t`Community - Settings`;
     default:
-      return 'Twenty';
+      return PRODUCT_BRANDING.name;
   }
 };

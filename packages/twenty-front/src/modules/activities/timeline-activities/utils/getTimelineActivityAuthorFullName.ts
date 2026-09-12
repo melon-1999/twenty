@@ -1,5 +1,6 @@
 import { type TimelineActivity } from '@/activities/timeline-activities/types/TimelineActivity';
 import { type CurrentWorkspaceMember } from '@/auth/states/currentWorkspaceMemberState';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { isDefined } from 'twenty-shared/utils';
 
 export const getTimelineActivityAuthorFullName = (
@@ -11,5 +12,5 @@ export const getTimelineActivityAuthorFullName = (
       ? 'You'
       : `${event.workspaceMember?.name.firstName} ${event.workspaceMember?.name.lastName}`;
   }
-  return 'Twenty';
+  return PRODUCT_BRANDING.name;
 };

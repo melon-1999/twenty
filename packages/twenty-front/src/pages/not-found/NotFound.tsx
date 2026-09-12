@@ -6,6 +6,7 @@ const BackgroundMockPage = lazy(() =>
     (module) => ({ default: module.BackgroundMockPage }),
   ),
 );
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { AppPath } from 'twenty-shared/types';
 
 import { RootStackingContextZIndices } from '@/ui/layout/constants/RootStackingContextZIndices';
@@ -46,7 +47,7 @@ export const NotFound = () => {
 
   return (
     <>
-      <PageTitle title={t`Page Not Found | Twenty`} />
+      <PageTitle title={t`Page Not Found | ${PRODUCT_BRANDING.name}`} />
       <StyledBackDrop>
         <AnimatedPlaceholderErrorContainer>
           <AnimatedPlaceholder type="error404" />

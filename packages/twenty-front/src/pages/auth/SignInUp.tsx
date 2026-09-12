@@ -25,6 +25,7 @@ import { useGetPublicWorkspaceDataByDomain } from '@/domain-manager/hooks/useGet
 import { useIsCurrentLocationOnAWorkspace } from '@/domain-manager/hooks/useIsCurrentLocationOnAWorkspace';
 import { useIsCurrentLocationOnDefaultDomain } from '@/domain-manager/hooks/useIsCurrentLocationOnDefaultDomain';
 import { useMemo } from 'react';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 import { SignInUpGlobalScopeFormEffect } from '@/auth/sign-in-up/components/internal/SignInUpGlobalScopeFormEffect';
 import { SignInUpSsoExchangeTokenEffect } from '@/auth/sign-in-up/components/internal/SignInUpSsoExchangeTokenEffect';
@@ -117,7 +118,7 @@ export const SignInUp = () => {
     }
 
     if (isGlobalScope) {
-      return t`Welcome to Twenty`;
+      return t`Welcome to ${PRODUCT_BRANDING.name}`;
     }
 
     const workspaceName = workspacePublicData?.displayName;

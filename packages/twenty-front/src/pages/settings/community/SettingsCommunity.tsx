@@ -7,14 +7,15 @@ import { styled } from '@linaria/react';
 import { t } from '@lingui/core/macro';
 import { useContext } from 'react';
 import {
-  IconBrandX,
   IconBriefcase,
+  IconHelpCircle,
   IconTransform,
   type IconComponent,
   useIcons,
 } from 'twenty-ui/icon';
 import { H2Title } from 'twenty-ui/typography';
 import { Section } from 'twenty-ui/layout';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
 import {
@@ -58,20 +59,20 @@ type SettingsCommunityLink = {
 export const SettingsCommunity = () => {
   const { theme } = useContext(ThemeContext);
   const { getIcon } = useIcons();
-  const IconBrandDiscord = getIcon('IconBrandDiscord');
+  const IconBrandGithub = getIcon('IconBrandGithub');
 
   const socialLinks: SettingsCommunityLink[] = [
     {
-      href: 'https://discord.com/invite/cx5n4Jzs57',
-      Icon: IconBrandDiscord,
-      iconColor: themeCssVariables.color.blue9,
-      cardTitle: t`Join our Discord`,
+      href: PRODUCT_BRANDING.sourceCodeUrl,
+      Icon: IconBrandGithub,
+      iconColor: themeCssVariables.font.color.primary,
+      cardTitle: t`Source code`,
     },
     {
-      href: 'https://x.com/twentycrm',
-      Icon: IconBrandX,
-      iconColor: themeCssVariables.font.color.primary,
-      cardTitle: t`Follow us on X`,
+      href: PRODUCT_BRANDING.supportUrl,
+      Icon: IconHelpCircle,
+      iconColor: themeCssVariables.color.blue9,
+      cardTitle: t`Get support`,
     },
   ];
 
@@ -127,10 +128,10 @@ export const SettingsCommunity = () => {
         <Section>
           <H2Title
             title={t`Partners`}
-            description={t`Hire a partner to help you implement and customize Twenty.`}
+            description={t`Hire a partner to help you implement and customize ${PRODUCT_BRANDING.name}.`}
           />
           <StyledCardLink
-            href="https://twenty.com/partners/list"
+            href={PRODUCT_BRANDING.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -154,7 +155,7 @@ export const SettingsCommunity = () => {
           <StyledFeaturesContent>
             <SettingsLabContent />
             <StyledCardLink
-              href="https://twenty.com/releases"
+              href={`${PRODUCT_BRANDING.sourceCodeUrl}/releases`}
               target="_blank"
               rel="noopener noreferrer"
             >
