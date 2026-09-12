@@ -1,6 +1,5 @@
 import { msg } from '@lingui/core/macro';
 
-import { getCommunityStats } from '@/platform/community';
 import {
   getRouteI18n,
   type LocaleRouteParams,
@@ -22,10 +21,7 @@ export default async function TermsPage({
 }: {
   params: Promise<LocaleRouteParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const i18n = getServerI18n();
   const locale = resolveLocaleParam((await params).locale);
 
@@ -40,7 +36,7 @@ export default async function TermsPage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} />
+      <Menu />
       <main>
         <LegalDocument title={i18n._(msg`Terms of Service`)}>
           <TermsDocument />

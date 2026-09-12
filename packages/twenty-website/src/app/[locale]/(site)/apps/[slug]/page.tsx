@@ -3,7 +3,6 @@ import { type Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { AppDetail, fetchMarketplaceAppDetailBySlug } from '@/apps-marketplace';
-import { getCommunityStats } from '@/platform/community';
 import { getRouteI18n } from '@/platform/i18n/get-route-i18n';
 import { getServerI18n } from '@/platform/i18n/get-server-i18n';
 import { resolveLocaleParam } from '@/platform/i18n/resolve-locale-param';
@@ -39,10 +38,7 @@ export default async function AppDetailPage({
 }: {
   params: Promise<AppParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const { locale: rawLocale, slug } = await params;
   const locale = resolveLocaleParam(rawLocale);
   const app = await fetchMarketplaceAppDetailBySlug(slug);
@@ -63,7 +59,7 @@ export default async function AppDetailPage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} scheme="light" />
+      <Menu scheme="light" />
       <main>
         <AppDetail app={app} />
       </main>

@@ -3,6 +3,7 @@ import { type Metadata } from 'next';
 import {
   DOCUMENTATION_DEFAULT_LANGUAGE,
   type DocumentationSupportedLanguage,
+  PRODUCT_BRANDING,
 } from 'twenty-shared/constants';
 
 import { createI18nInstance } from '@/platform/i18n/create-i18n-instance';
@@ -10,8 +11,7 @@ import { WEBSITE_LOCALE_LIST } from '@/platform/i18n/website-locale-list';
 
 import { getSiteUrl } from './get-site-url';
 
-const SITE_NAME = 'Twenty';
-const TWITTER_HANDLE = '@twentycrm';
+const SITE_NAME = PRODUCT_BRANDING.name;
 const DEFAULT_OG_IMAGE_PATH = '/images/og/default.png';
 
 type MetadataText = MessageDescriptor | string;
@@ -84,8 +84,6 @@ export function buildPageMetadata({
       card: 'summary_large_image',
       title: resolvedTitle,
       description: resolvedDescription,
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
       images: ogImages.map((image) => image.url),
     },
   };

@@ -1,5 +1,4 @@
 import { PartnerApplicationModalRoot } from '@/partner-application';
-import { getCommunityStats } from '@/platform/community';
 import {
   getRouteI18n,
   type LocaleRouteParams,
@@ -25,10 +24,7 @@ export default async function BecomePartnerPage({
 }: {
   params: Promise<LocaleRouteParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const locale = resolveLocaleParam((await params).locale);
 
   return (
@@ -43,7 +39,7 @@ export default async function BecomePartnerPage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} />
+      <Menu />
       <main>
         <PartnerHero />
         <PartnerTestimonials />

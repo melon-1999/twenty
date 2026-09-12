@@ -6,7 +6,6 @@ import { PartnerApplicationModalRoot } from '@/partner-application';
 import { MarketplaceBriefPrompt } from '@/partners-marketplace/MarketplaceBriefPrompt';
 import { getMarketplacePartners } from '@/partners-marketplace/marketplace-partners-source';
 import { MarketplaceListSkeleton } from '@/partners-marketplace/MarketplaceListSkeleton';
-import { getCommunityStats } from '@/platform/community';
 import {
   getRouteI18n,
   type LocaleRouteParams,
@@ -45,10 +44,7 @@ export default async function PartnersPage({
 }: {
   params: Promise<LocaleRouteParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const locale = resolveLocaleParam((await params).locale);
 
   return (
@@ -63,7 +59,7 @@ export default async function PartnersPage({
             locale,
           )}
         />
-        <Menu communityStats={communityStats} />
+        <Menu />
         <main>
           <PartnerLeadHero />
           <PartnerDirectory>

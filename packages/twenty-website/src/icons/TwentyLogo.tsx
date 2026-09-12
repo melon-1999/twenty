@@ -2,12 +2,11 @@ import { styled } from '@linaria/react';
 
 import { DURATION, EASING, semanticColor } from '@/tokens';
 
-const TWENTY_MARK_PATH =
-  'M6.822 14.174c0-2.435 1.996-4.411 4.456-4.411h8.574c.125 0 .241.075.293.19a.31.31 0 0 1-.056.344l-1.88 2.023c-.326.35-.787.552-1.27.552H11.3c-.738 0-1.338.594-1.338 1.325v3.336a.78.78 0 0 1-.783.777H7.61a.78.78 0 0 1-.783-.777v-3.36zM33.5 25.553c0 2.434-1.996 4.411-4.456 4.411h-3.642c-2.46 0-4.454-1.977-4.454-4.411v-6.315c0-.43.16-.842.456-1.16l2.124-2.285a.33.33 0 0 1 .355-.081.32.32 0 0 1 .205.295v9.527c0 .73.598 1.322 1.337 1.322h3.6a1.33 1.33 0 0 0 1.337-1.322V14.197c0-.73-.599-1.325-1.337-1.325H24.84c-.481 0-.938.201-1.265.547L11.088 26.856h7.503a.78.78 0 0 1 .784.778v1.552a.78.78 0 0 1-.784.778H8.481a1.655 1.655 0 0 1-1.662-1.644v-.824c0-.412.156-.809.44-1.114l13.999-15.06a4.9 4.9 0 0 1 3.594-1.56h4.189c2.46 0 4.454 1.977 4.454 4.412v11.379z';
-
+// Placeholder brand mark, matching packages/twenty-front/public/images/brand/logo.svg.
+// Replace together with the final logo (see docs/product/rebranding.md).
 const LogoSvg = styled.svg`
   rect,
-  path {
+  circle {
     transition: fill ${DURATION.md} ${EASING.gentle};
   }
 `;
@@ -25,8 +24,15 @@ export function TwentyLogo({ sizePx = 40 }: TwentyLogoProps) {
       width={sizePx}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect fill={semanticColor.ink} height={40} rx={4} width={40} />
-      <path d={TWENTY_MARK_PATH} fill={semanticColor.surface} />
+      <rect fill={semanticColor.ink} height={40} rx={7.5} width={40} />
+      <circle
+        cx={20}
+        cy={20}
+        fill="none"
+        r={9.4}
+        stroke={semanticColor.surface}
+        strokeWidth={3.75}
+      />
     </LogoSvg>
   );
 }

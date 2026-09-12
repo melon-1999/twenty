@@ -11,6 +11,7 @@ import { SITE_URLS } from '@/platform/site-urls';
 import { APP_PREVIEW_STAGE } from '@/tokens/app-preview/app-preview-stage';
 import { GRADIENT, HERO_COMPOSITION, spacing } from '@/tokens';
 import { Body, Button, Heading, HeadingPair, SectionShell } from '@/ui';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const GradientBackdrop = styled.div`
   background: ${GRADIENT.heroGlow};
@@ -96,7 +97,7 @@ export function HomeHero() {
           <BodyMeasure>
             <Body muted size="sm">
               {i18n._(
-                msg`Twenty gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves.`,
+                msg`${PRODUCT_BRANDING.name} gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves.`,
               )}
             </Body>
           </BodyMeasure>

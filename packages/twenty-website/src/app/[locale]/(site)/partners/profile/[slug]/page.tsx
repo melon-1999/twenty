@@ -3,7 +3,6 @@ import { type Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { ClientBriefModalRoot, GetMatchedButton } from '@/client-brief';
-import { getCommunityStats } from '@/platform/community';
 import { getRouteI18n } from '@/platform/i18n/get-route-i18n';
 import { getServerI18n } from '@/platform/i18n/get-server-i18n';
 import { resolveLocaleParam } from '@/platform/i18n/resolve-locale-param';
@@ -42,10 +41,7 @@ export default async function PartnerProfilePage({
 }: {
   params: Promise<PartnerProfileParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const { locale: rawLocale, slug } = await params;
   const locale = resolveLocaleParam(rawLocale);
   const partner = await getMarketplacePartnerBySlug(slug);
@@ -65,7 +61,7 @@ export default async function PartnerProfilePage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} scheme="muted" />
+      <Menu scheme="muted" />
       <ClientBriefModalRoot>
         <main aria-labelledby="partner-name">
           <PartnerProfile

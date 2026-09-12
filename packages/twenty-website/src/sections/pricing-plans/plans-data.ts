@@ -2,6 +2,8 @@ import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
 
 import { type PlansHostingMode } from '@/pricing-state';
+import { SITE_URLS } from '@/platform/site-urls';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export type PlansBillingPeriod = 'monthly' | 'yearly';
 export type PlansTierId = 'enterprise' | 'organization' | 'pro';
@@ -68,7 +70,7 @@ const ORGANIZATION_BULLETS_SELF_HOST = [
   msg`Custom AI models`,
   msg`Row-level permissions`,
   msg`SAML/OIDC SSO`,
-  msg`Twenty team support`,
+  msg`${PRODUCT_BRANDING.name} team support`,
 ];
 
 const ENTERPRISE_BULLETS_CLOUD = [
@@ -153,11 +155,11 @@ export const PLANS_DATA: Record<PlansTierId, PlansTier> = {
     },
     cta: {
       cloud: {
-        href: 'https://app.twenty.com/welcome',
+        href: SITE_URLS.appWelcome,
         label: msg`Start for free`,
       },
       selfHost: {
-        href: 'https://app.twenty.com/welcome',
+        href: SITE_URLS.appWelcome,
         label: msg`Start for free`,
       },
     },
@@ -192,11 +194,11 @@ export const PLANS_DATA: Record<PlansTierId, PlansTier> = {
     },
     cta: {
       cloud: {
-        href: 'https://app.twenty.com/welcome',
+        href: SITE_URLS.appWelcome,
         label: msg`Start for free`,
       },
       selfHost: {
-        href: 'https://app.twenty.com/welcome',
+        href: SITE_URLS.appWelcome,
         label: msg`Start for free`,
       },
     },

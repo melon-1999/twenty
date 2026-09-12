@@ -1,4 +1,3 @@
-import { getCommunityStats } from '@/platform/community';
 import {
   getRouteI18n,
   type LocaleRouteParams,
@@ -15,14 +14,11 @@ export default async function CompareSapPricingPage({
 }: {
   params: Promise<LocaleRouteParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
 
   return (
     <>
-      <Menu communityStats={communityStats} scheme="muted" />
+      <Menu scheme="muted" />
       <main>
         <ComparePage comparison={COMPARISONS.sap} />
       </main>

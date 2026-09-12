@@ -209,7 +209,7 @@ const WRAPUP_PARAGRAPH: StreamingSegment[] = [
   node(
     'w-docs',
     <ReferenceLink
-      href="https://twenty.com/developers"
+      href="https://docs.example.com"
       onClick={(event) => event.preventDefault()}
     >
       Twenty app-building docs

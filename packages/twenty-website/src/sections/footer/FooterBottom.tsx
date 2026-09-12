@@ -16,6 +16,7 @@ import { ExternalLink, VerticalDivider } from '@/ui';
 
 import { FOOTER } from './footer.data';
 import { LocaleSwitcher } from './LocaleSwitcher';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const BottomGrid = styled.div`
   display: grid;
@@ -90,7 +91,9 @@ export function FooterBottom() {
   return (
     <BottomGrid>
       <CopyrightRow>
-        <Copyright>{i18n._(msg`© ${year} – Twenty`)}</Copyright>
+        <Copyright>
+          {i18n._(msg`© ${year} – ${PRODUCT_BRANDING.legalEntityLine}`)}
+        </Copyright>
         <LocaleSwitcher />
       </CopyrightRow>
       <SocialNav aria-label={i18n._(msg`Social media`)}>

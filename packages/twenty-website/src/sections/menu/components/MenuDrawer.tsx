@@ -7,9 +7,6 @@ import { useLingui } from '@lingui/react';
 import { styled } from '@linaria/react';
 import { Fragment, useState } from 'react';
 
-import { formatCompactCount } from '@/platform/community/format-compact-count';
-import { type CommunityStats } from '@/platform/community';
-import { useLocale } from '@/platform/i18n';
 import { LocalizedLink } from '@/platform/i18n/LocalizedLink';
 import {
   buildSchemeDeclarations,
@@ -23,11 +20,10 @@ import {
   spacing,
   Z_INDEX,
 } from '@/tokens';
-import { Button, ExternalArrow, ExternalLink, VerticalDivider } from '@/ui';
+import { Button, ExternalArrow, ExternalLink } from '@/ui';
 
 import { MENU } from '../data/menu';
 import { type MenuNavItem } from '../types/menu-nav-item';
-import { type MenuSocialLink } from '../types/menu-social-link';
 
 const DrawerPanel = styled(Drawer.Popup)`
   &[data-scheme='light'] {
@@ -170,48 +166,13 @@ const CtaRow = styled.div`
   margin-bottom: ${spacing(10)};
 `;
 
-const SocialRow = styled.div`
-  align-items: center;
-  column-gap: ${spacing(6)};
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-`;
-
-const SocialAnchor = styled(ExternalLink)`
-  align-items: center;
-  color: ${semanticColor.ink};
-  column-gap: ${spacing(3)};
-  display: grid;
-  font-family: ${fontFamily('sans')};
-  font-size: ${fontSize(3)};
-  font-weight: ${FONT_WEIGHT.medium};
-  grid-auto-flow: column;
-  line-height: 14px;
-  text-decoration: none;
-  white-space: nowrap;
-
-  &:focus-visible {
-    outline: 1px solid ${color('blue')};
-    outline-offset: 1px;
-  }
-`;
-
 export type MenuDrawerProps = {
   navItems: readonly MenuNavItem[];
   scheme: Scheme;
-  socialLinks: readonly MenuSocialLink[];
-  stats: CommunityStats;
 };
 
-export function MenuDrawer({
-  navItems,
-  scheme,
-  socialLinks,
-  stats,
-}: MenuDrawerProps) {
+export function MenuDrawer({ navItems, scheme }: MenuDrawerProps) {
   const { i18n } = useLingui();
-  const locale = useLocale();
   const [isGroupExpanded, setIsGroupExpanded] = useState(false);
 
   return (
@@ -274,26 +235,6 @@ export function MenuDrawer({
             variant="outlined"
           />
         </CtaRow>
-        <SocialRow>
-          {socialLinks.map((link, index) => {
-            const IconComponent = link.icon;
-            return (
-              <Fragment key={link.href}>
-                {index > 0 && <VerticalDivider aria-hidden />}
-                <SocialAnchor
-                  aria-label={i18n._(link.ariaLabel)}
-                  href={link.href}
-                >
-                  <IconComponent aria-hidden size={16} />
-                  {link.statKey
-                    ? formatCompactCount(stats[link.statKey], locale)
-                    : null}
-                  {link.statKey ? <ExternalArrow /> : null}
-                </SocialAnchor>
-              </Fragment>
-            );
-          })}
-        </SocialRow>
       </DrawerPanel>
     </Drawer.Portal>
   );

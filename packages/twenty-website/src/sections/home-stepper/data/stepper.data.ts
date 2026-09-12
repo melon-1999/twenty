@@ -1,5 +1,6 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export type StepperStep = {
   body: MessageDescriptor;
@@ -17,6 +18,6 @@ export const STEPPER_STEPS: readonly StepperStep[] = [
   },
   {
     heading: msg`Stay in control with our *open-source software*`,
-    body: msg`Don't get locked into someone else's ecosystem. Twenty's developer experience looks like normal software, with local setup, real data, live testing, and no proprietary tooling.`,
+    body: msg`Don't get locked into someone else's ecosystem. ${PRODUCT_BRANDING.name}'s developer experience looks like normal software, with local setup, real data, live testing, and no proprietary tooling.`,
   },
 ];

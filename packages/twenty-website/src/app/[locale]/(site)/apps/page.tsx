@@ -3,7 +3,6 @@ import {
   AppsMarketplaceHeader,
   fetchMarketplaceApps,
 } from '@/apps-marketplace';
-import { getCommunityStats } from '@/platform/community';
 import {
   getRouteI18n,
   type LocaleRouteParams,
@@ -25,9 +24,8 @@ export default async function AppsMarketplacePage({
 }: {
   params: Promise<LocaleRouteParams>;
 }) {
-  const [, communityStats, apps] = await Promise.all([
+  const [, apps] = await Promise.all([
     getRouteI18n(params),
-    getCommunityStats(),
     fetchMarketplaceApps(),
   ]);
   const locale = resolveLocaleParam((await params).locale);
@@ -43,7 +41,7 @@ export default async function AppsMarketplacePage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} scheme="light" />
+      <Menu scheme="light" />
       <main>
         <AppsMarketplaceHeader />
         <AppsMarketplaceClient apps={apps} />

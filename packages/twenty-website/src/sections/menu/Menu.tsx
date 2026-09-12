@@ -9,7 +9,6 @@ import { styled } from '@linaria/react';
 import { useCallback, useState } from 'react';
 
 import { TwentyLogo } from '@/icons';
-import { type CommunityStats } from '@/platform/community';
 import { LocalizedLink } from '@/platform/i18n/LocalizedLink';
 import { MENU_STYLE_BACKGROUND_VAR, useMenuStyle } from '@/platform/menu-style';
 import {
@@ -29,7 +28,6 @@ import { Button, Container, IconButton } from '@/ui';
 
 import { MenuDrawer } from './components/MenuDrawer';
 import { MenuNav } from './components/MenuNav';
-import { MenuSocial } from './components/MenuSocial';
 import { MENU } from './data/menu';
 import { CloseDrawerOnDesktopEffect } from './effect-components/CloseDrawerOnDesktopEffect';
 import { ScrollStateEffect } from './effect-components/ScrollStateEffect';
@@ -106,11 +104,10 @@ const MobileActions = styled.div`
 `;
 
 export type MenuProps = {
-  communityStats: CommunityStats;
   scheme?: Scheme;
 };
 
-export function Menu({ communityStats, scheme = 'light' }: MenuProps) {
+export function Menu({ scheme = 'light' }: MenuProps) {
   const { i18n } = useLingui();
   const { activeScheme, override } = useMenuStyle();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -147,7 +144,6 @@ export function Menu({ communityStats, scheme = 'light' }: MenuProps) {
               <TwentyLogo sizePx={40} />
             </Drawer.Close>
             <MenuNav items={MENU.navItems} />
-            <MenuSocial links={MENU.socialLinks} stats={communityStats} />
             <DesktopActions>
               <Button
                 href={MENU.appUrl}
@@ -181,12 +177,7 @@ export function Menu({ communityStats, scheme = 'light' }: MenuProps) {
           </MenuRow>
         </Container>
       </header>
-      <MenuDrawer
-        scheme={resolvedScheme}
-        navItems={MENU.navItems}
-        socialLinks={MENU.socialLinks}
-        stats={communityStats}
-      />
+      <MenuDrawer scheme={resolvedScheme} navItems={MENU.navItems} />
     </Drawer.Root>
   );
 }

@@ -4,12 +4,6 @@ import { styled } from '@linaria/react';
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
-import {
-  IconBrandDiscord,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconBrandX,
-} from '@tabler/icons-react';
 import { type MouseEvent, useCallback, useRef, useState } from 'react';
 
 import { getMessageDescriptorSource } from '@/platform/i18n/get-message-descriptor-source';
@@ -27,10 +21,6 @@ import {
   Z_INDEX,
 } from '@/tokens';
 
-import { type IconComponent } from '@/icons';
-import { SITE_URLS } from '@/platform/site-urls';
-import { ExternalLink } from '@/ui';
-
 import { CASE_STUDY_HIGHLIGHTS_ANCHOR } from './case-study-highlights-anchor';
 import { caseStudySectionId } from './case-study-section-id';
 
@@ -38,35 +28,6 @@ const READING_LINE_FRACTION = 0.3;
 const STAT_APPEAR_FRACTION = 0.35;
 const ARTICLE_TAIL_FRACTION = 0.6;
 const FADE_RAMP_FRACTION = 0.06;
-
-type SocialLink = {
-  ariaLabel: MessageDescriptor;
-  href: string;
-  icon: IconComponent;
-};
-
-const SOCIAL_LINKS: readonly SocialLink[] = [
-  {
-    ariaLabel: msg`GitHub (opens in new tab)`,
-    href: SITE_URLS.github,
-    icon: IconBrandGithub,
-  },
-  {
-    ariaLabel: msg`Discord (opens in new tab)`,
-    href: SITE_URLS.discord,
-    icon: IconBrandDiscord,
-  },
-  {
-    ariaLabel: msg`LinkedIn (opens in new tab)`,
-    href: SITE_URLS.linkedin,
-    icon: IconBrandLinkedin,
-  },
-  {
-    ariaLabel: msg`X (opens in new tab)`,
-    href: SITE_URLS.x,
-    icon: IconBrandX,
-  },
-];
 
 const Shell = styled.aside`
   display: none;
@@ -179,29 +140,6 @@ const NavIndex = styled.span`
   margin-right: ${spacing(2)};
 `;
 
-const SocialRow = styled.div`
-  align-items: center;
-  display: flex;
-  gap: ${spacing(6)};
-`;
-
-const SocialItem = styled(ExternalLink)`
-  align-items: center;
-  color: ${color('black')};
-  display: flex;
-  flex-shrink: 0;
-  transition: color 0.15s ease;
-
-  &:hover {
-    color: ${color('blue')};
-  }
-
-  &:focus-visible {
-    outline: 1px solid ${color('blue')};
-    outline-offset: 1px;
-  }
-`;
-
 const handleNavClick = (
   event: MouseEvent<HTMLAnchorElement>,
   targetId: string,
@@ -302,21 +240,6 @@ export function CaseStudyArticleNav({ items }: CaseStudyArticleNavProps) {
           </NavList>
         </NavBody>
       </Panel>
-
-      <SocialRow>
-        {SOCIAL_LINKS.map((social) => {
-          const IconComponent = social.icon;
-          return (
-            <SocialItem
-              key={social.href}
-              aria-label={i18n._(social.ariaLabel)}
-              href={social.href}
-            >
-              <IconComponent aria-hidden size={20} />
-            </SocialItem>
-          );
-        })}
-      </SocialRow>
     </Shell>
   );
 }

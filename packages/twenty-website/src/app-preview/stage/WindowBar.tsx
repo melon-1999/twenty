@@ -5,6 +5,7 @@ import { APP_PREVIEW_STAGE } from '@/tokens/app-preview/app-preview-stage';
 import { THEME_LIGHT } from 'twenty-ui/theme';
 
 import { TrafficLights } from './TrafficLights';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const stage = APP_PREVIEW_STAGE.windowBar;
 
@@ -40,7 +41,7 @@ const RightSpacer = styled.div`
 export function WindowBar({
   isDragging = false,
   onDragStart,
-  title = 'Twenty',
+  title = PRODUCT_BRANDING.name,
 }: {
   isDragging?: boolean;
   onDragStart?: (event: React.PointerEvent<HTMLDivElement>) => void;

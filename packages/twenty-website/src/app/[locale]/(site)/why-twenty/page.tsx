@@ -1,4 +1,3 @@
-import { getCommunityStats } from '@/platform/community';
 import {
   getRouteI18n,
   type LocaleRouteParams,
@@ -22,10 +21,7 @@ export default async function WhyTwentyPage({
 }: {
   params: Promise<LocaleRouteParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const locale = resolveLocaleParam((await params).locale);
 
   return (
@@ -39,7 +35,7 @@ export default async function WhyTwentyPage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} scheme="dark" />
+      <Menu scheme="dark" />
       <main>
         <WhyTwentyHero />
         <WhyTwentyEditorials />

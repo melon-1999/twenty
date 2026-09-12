@@ -3,7 +3,7 @@ import { SITE_URLS } from '@/platform/site-urls';
 // Route handler (not a public/ file) so the RFC 9727 application/linkset+json
 // content type survives the site's global nosniff header.
 //
-// Twenty is multi-tenant, so anchors use a `{your-workspace-url}` placeholder
+// The platform is multi-tenant, so anchors use a `{your-workspace-url}` placeholder
 // (a workspace host such as `mycompany.twenty.com` or a custom domain).
 
 const WORKSPACE = 'https://{your-workspace-url}';
@@ -41,7 +41,7 @@ const apiCatalog = {
       anchor: `${WORKSPACE}/mcp`,
       'service-desc': [
         {
-          href: 'https://twenty.com/.well-known/mcp/server-card.json',
+          href: 'https://www.example.com/.well-known/mcp/server-card.json',
           type: 'application/json',
         },
       ],

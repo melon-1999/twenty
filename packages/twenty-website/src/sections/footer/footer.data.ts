@@ -1,10 +1,10 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
 
-import { DiscordMark, GitHubMark, type IconComponent } from '@/icons';
-import { SITE_URLS } from '@/platform/site-urls';
+import { type IconComponent } from '@/icons';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
-import { IconBrandLinkedin, IconBrandX } from '@tabler/icons-react';
+import { SITE_URLS } from '@/platform/site-urls';
 
 export type FooterNavLink = {
   label: MessageDescriptor;
@@ -50,38 +50,20 @@ export const FOOTER: {
         { label: msg`Home`, href: '/' },
         { label: msg`Product`, href: '/product' },
         { label: msg`Pricing`, href: '/pricing' },
-        { label: msg`Customers`, href: '/customers' },
-        { label: msg`Partners`, href: '/partners' },
-        { label: msg`Why Twenty`, href: '/why-twenty' },
-      ],
-    },
-    {
-      id: 'footer-help',
-      title: msg`Help`,
-      links: [
-        {
-          label: msg`Developers`,
-          href: SITE_URLS.docsDevelopers,
-          external: true,
-        },
-        {
-          label: msg`User Guide`,
-          href: SITE_URLS.docsGettingStarted,
-          external: true,
-        },
-        { label: msg`Release Notes`, href: '/releases' },
-        { label: msg`Halftone generator`, href: '/halftone' },
       ],
     },
     {
       id: 'footer-legal',
       title: msg`Legal`,
       links: [
-        { label: msg`Privacy Policy`, href: '/privacy-policy' },
-        { label: msg`Terms and Conditions`, href: '/terms' },
         {
-          label: msg`Trust Center`,
-          href: SITE_URLS.trustCenter,
+          label: msg`Privacy Policy`,
+          href: PRODUCT_BRANDING.legalPrivacyUrl,
+          external: true,
+        },
+        {
+          label: msg`Terms and Conditions`,
+          href: PRODUCT_BRANDING.legalTermsUrl,
           external: true,
         },
       ],
@@ -89,13 +71,7 @@ export const FOOTER: {
     {
       id: 'footer-connect',
       title: msg`Connect`,
-      links: [
-        {
-          label: msg`LinkedIn`,
-          href: SITE_URLS.linkedin,
-          external: true,
-        },
-      ],
+      links: [],
       ctas: [
         {
           kind: 'contact-modal',
@@ -111,26 +87,5 @@ export const FOOTER: {
       ],
     },
   ],
-  socialLinks: [
-    {
-      ariaLabel: msg`GitHub (opens in new tab)`,
-      href: SITE_URLS.github,
-      icon: GitHubMark,
-    },
-    {
-      ariaLabel: msg`Discord (opens in new tab)`,
-      href: SITE_URLS.discord,
-      icon: DiscordMark,
-    },
-    {
-      ariaLabel: msg`LinkedIn (opens in new tab)`,
-      href: SITE_URLS.linkedin,
-      icon: IconBrandLinkedin,
-    },
-    {
-      ariaLabel: msg`X (opens in new tab)`,
-      href: SITE_URLS.x,
-      icon: IconBrandX,
-    },
-  ],
+  socialLinks: [],
 };

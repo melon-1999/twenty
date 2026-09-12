@@ -40,17 +40,101 @@ msgstr "{0} — Twenty 앱"
 msgid "{0} — Twenty Partner"
 msgstr "{0} — Twenty 파트너"
 
+#. js-lingui-id: lgtUt0
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} | modern CRM platform"
+msgstr ""
+
+#. js-lingui-id: Et7ehJ
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} Apps — Vetted Apps for the modern CRM"
+msgstr ""
+
 #. js-lingui-id: sGt3Jm
 #. placeholder {0}: i18n._(card.attribution.company)
 #: src/sections/three-cards/IllustrationCard.tsx
 msgid "{0} case study"
 msgstr "{0} 케이스 스터디"
 
+#. js-lingui-id: bv8cAd
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} Customers — How Modern Teams Run Their CRM"
+msgstr ""
+
+#. js-lingui-id: Ky/Z+M
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} Features — Modern CRM Platform"
+msgstr ""
+
+#. js-lingui-id: iVcLku
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/home-hero/HomeHero.tsx
+msgid "{0} gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves."
+msgstr ""
+
+#. js-lingui-id: AdSKRt
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/feature-cards/feature-cards.data.ts
+msgid "{0} makes it simple. It's clean, intuitive, and built to feel like Notion."
+msgstr ""
+
+#. js-lingui-id: uf04R1
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} Pricing — Plans from $9 per User per Month"
+msgstr ""
+
+#. js-lingui-id: AIidOe
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} Releases — What's New in the modern CRM"
+msgstr ""
+
 #. js-lingui-id: tYTgTe
 #. placeholder {0}: app.name
 #: src/apps-marketplace/AppDetail.tsx
 msgid "{0} screenshot"
 msgstr "{0} 스크린샷"
+
+#. js-lingui-id: InOr4h
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/pricing-plans/plans-data.ts
+msgid "{0} team support"
+msgstr ""
+
+#. js-lingui-id: IKHfK+
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} vs HubSpot Pricing — The Real Cost Compared"
+msgstr ""
+
+#. js-lingui-id: /R4tQU
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} vs Microsoft Dynamics Pricing — The Real Cost Compared"
+msgstr ""
+
+#. js-lingui-id: 2+tpXV
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} vs Pipedrive Pricing — The Real Cost Compared"
+msgstr ""
+
+#. js-lingui-id: ASMNnS
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} vs Salesforce Pricing — The Real Cost Compared"
+msgstr ""
+
+#. js-lingui-id: KSeone
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "{0} vs SAP Sales Cloud Pricing — The Real Cost Compared"
+msgstr ""
 
 #. js-lingui-id: jC5JCB
 #: src/sections/case-study-promo/CaseStudyPromo.tsx
@@ -110,10 +194,11 @@ msgstr "/사용자/월"
 msgid "/year"
 msgstr "/year"
 
-#. js-lingui-id: UEDohT
+#. js-lingui-id: ToVqfn
+#. placeholder {0}: PRODUCT_BRANDING.legalEntityLine
 #: src/sections/footer/FooterBottom.tsx
-msgid "© {year} – Twenty"
-msgstr "© {year} – Twenty"
+msgid "© {year} – {0}"
+msgstr ""
 
 #. js-lingui-id: 2ygf/L
 #: src/partner-application/partner-application-copy.ts
@@ -793,10 +878,11 @@ msgstr "AC&T Education Migration"
 msgid "AC&T Education Migration (actimmi.com) is an education agency in Australia. They help international students with applications to education providers and visas. They had been on a previous CRM until the vendor shut the system down, leaving nothing but a CSV export."
 msgstr "AC&T Education Migration(actimmi.com)은 호주의 유학 에이전시입니다. 이들은 유학생들의 교육 기관 및 비자 신청을 지원합니다. 이전에는 다른 CRM을 사용했지만, 벤더가 시스템을 종료하면서 CSV 내보내기만 남겨두고 사라졌습니다."
 
-#. js-lingui-id: MPzy5R
+#. js-lingui-id: w6kvTX
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/three-cards/three-cards.data.ts
-msgid "AC&T moved to a self-hosted Twenty instance with no vendor risk, no forced migration, and CRM costs reduced by more than 90%."
-msgstr "AC&T는 벤더 리스크와 강제 마이그레이션이 없고 CRM 비용을 90% 이상 줄일 수 있는 셀프 호스팅 Twenty 인스턴스로 이전했습니다."
+msgid "AC&T moved to a self-hosted {0} instance with no vendor risk, no forced migration, and CRM costs reduced by more than 90%."
+msgstr ""
 
 #. js-lingui-id: J+A83M
 #: src/sections/helped/helped.data.ts
@@ -819,10 +905,11 @@ msgstr "계정 담당자"
 msgid "Action"
 msgstr "동작"
 
-#. js-lingui-id: Kqfsda
+#. js-lingui-id: z9O83G
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Activate your Twenty enterprise license after checkout and copy your key into your self-hosted instance."
-msgstr "결제 후 Twenty 엔터프라이즈 라이선스를 활성화하고, 키를 자체 호스팅 인스턴스에 복사하세요."
+msgid "Activate your {0} enterprise license after checkout and copy your key into your self-hosted instance."
+msgstr ""
 
 #. js-lingui-id: muhZ+X
 #: src/sections/enterprise-activate/EnterpriseActivateClient.tsx
@@ -1229,11 +1316,6 @@ msgstr "API 우선"
 msgid "APIs are extra. Simplicity has a price."
 msgstr "API는 추가 요금입니다. 단순함에는 가격이 따릅니다."
 
-#. js-lingui-id: MqJvvH
-#: src/sections/menu/data/menu.ts
-msgid "APIs, SDKs and webhooks to extend Twenty and ship apps on top of your CRM data."
-msgstr "CRM 데이터 위에 Twenty를 확장하고 앱을 구축하기 위한 API, SDK, 웹훅을 제공합니다."
-
 #. js-lingui-id: L/34fX
 #: src/app/[locale]/(site)/apps/[slug]/page.tsx
 msgid "App not found — Twenty"
@@ -1248,15 +1330,11 @@ msgstr ""
 "CRM의\n"
 "*미래를 함께 만들기 위해* 지원하기"
 
-#. js-lingui-id: LJCDxT
+#. js-lingui-id: yswBDg
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Apply to join the Twenty partner ecosystem and grow your practice with the #1 open source CRM."
-msgstr "Twenty 파트너 에코시스템에 합류해, 1위 오픈 소스 CRM과 함께 비즈니스를 성장시키세요."
-
-#. js-lingui-id: VDvaN2
-#: src/sections/menu/data/menu.ts
-msgid "Apps"
-msgstr "앱"
+msgid "Apply to join the {0} partner ecosystem and grow your practice with the #1 modern CRM."
+msgstr ""
 
 #. js-lingui-id: lAg+Wy
 #: src/apps-marketplace/AppsMarketplaceHeader.tsx
@@ -1434,6 +1512,18 @@ msgstr ""
 "우리의\n"
 "*파트너가 되세요*"
 
+#. js-lingui-id: DLkhFj
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "Become a {0} Partner — Apply"
+msgstr ""
+
+#. js-lingui-id: ayiPpF
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "Become a {0} Partner — Join the modern CRM Ecosystem"
+msgstr ""
+
 #. js-lingui-id: PKMHNe
 #: src/sections/pricing-salesfarce/salesfarce-data.ts
 msgid "become a genius!"
@@ -1445,16 +1535,6 @@ msgstr "천재가 되어 보세요!"
 #: src/sections/partner-hero/PartnerHero.tsx
 msgid "Become a partner"
 msgstr "파트너 되기"
-
-#. js-lingui-id: j+1dcz
-#: src/platform/routing/static-website-routes.ts
-msgid "Become a Twenty Partner — Apply"
-msgstr "Twenty 파트너 되기 — 신청"
-
-#. js-lingui-id: 8x+SS7
-#: src/platform/routing/static-website-routes.ts
-msgid "Become a Twenty Partner — Join the Open Source CRM Ecosystem"
-msgstr "Twenty 파트너 되기 — 오픈 소스 CRM 생태계에 참여하세요."
 
 #. js-lingui-id: r8MUXZ
 #: src/sections/faq/BecomePartnerFaq.tsx
@@ -1540,11 +1620,6 @@ msgstr "Bhutan 🇧🇹"
 #: src/sections/pricing-plans/BillingToggle.tsx
 msgid "Billing period"
 msgstr "청구 주기"
-
-#. js-lingui-id: BpyJwa
-#: src/sections/menu/data/menu.ts
-msgid "Blue developer illustration with branching arrows"
-msgstr "분기되는 화살표가 있는 파란색 개발자 일러스트"
 
 #. js-lingui-id: TVJDFA
 #: src/partner-application/data/partner-country-options.ts
@@ -1637,11 +1712,6 @@ msgstr "AI로 대시보드 만들기"
 msgid "Build it in an afternoon. *AI made the gap that small.*"
 msgstr "오후에 앱 하나를 만드세요. *AI가 그 격차를 그만큼 줄여 주었습니다.*"
 
-#. js-lingui-id: e1u+Zh
-#: src/sections/menu/data/menu.ts
-msgid "Build on an open platform"
-msgstr "오픈 플랫폼 위에 구축하세요"
-
 #. js-lingui-id: yEKs3h
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Build with your favorite tools"
@@ -1712,10 +1782,11 @@ msgstr "Cameroon 🇨🇲"
 msgid "Can a partner run my migration?"
 msgstr "파트너가 마이그레이션을 진행해 줄 수 있나요?"
 
-#. js-lingui-id: wCALve
+#. js-lingui-id: gRC4XM
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/faq.data.ts
-msgid "Can developers extend Twenty with code?"
-msgstr "개발자가 코드를 이용해 Twenty를 확장할 수 있나요?"
+msgid "Can developers extend {0} with code?"
+msgstr ""
 
 #. js-lingui-id: 6mytgb
 #: src/sections/faq/faq.data.ts
@@ -1966,7 +2037,6 @@ msgstr "커머셜"
 
 #. js-lingui-id: chL5IG
 #: src/sections/pricing-plan-table/plan-table-data.ts
-#: src/sections/menu/components/MenuSocial.tsx
 msgid "Community"
 msgstr "커뮤니티"
 
@@ -2209,11 +2279,6 @@ msgstr "커스텀 역할을 생성·관리하세요. 각 오브젝트에 대해 
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Create and organize sidebar items more easily with a cleaner navigation setup."
 msgstr "더 깔끔한 내비게이션 설정으로 사이드바 항목을 더 쉽게 생성하고 정리할 수 있습니다."
-
-#. js-lingui-id: B9nLrl
-#: src/sections/menu/data/menu.ts
-msgid "Create apps on Twenty"
-msgstr "Twenty에서 앱 만들기"
 
 #. js-lingui-id: CA2rtv
 #: src/platform/releases/ReleaseNotes.tsx
@@ -2502,12 +2567,6 @@ msgstr "고객 사례"
 msgid "Customer story not found — Twenty"
 msgstr "고객 스토리를 찾을 수 없습니다 — Twenty"
 
-#. js-lingui-id: NihQNk
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-msgid "Customers"
-msgstr "고객"
-
 #. js-lingui-id: qqLY+j
 #: src/sections/product-stepper/components/ProductStepperContent.tsx
 #: src/sections/pricing-plan-table/plan-table-data.ts
@@ -2695,8 +2754,6 @@ msgstr "개발자"
 
 #. js-lingui-id: n+SX4g
 #: src/sections/pricing-plan-table/plan-table-data.ts
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
 msgid "Developers"
 msgstr "개발자"
 
@@ -2744,22 +2801,10 @@ msgstr "Director, W3villa Technologies, 파트너"
 msgid "Directory"
 msgstr "디렉터리"
 
-#. js-lingui-id: 30qcNY
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-#: src/sections/case-study-detail/CaseStudyArticleNav.tsx
-msgid "Discord (opens in new tab)"
-msgstr "Discord (새 탭에서 열기)"
-
 #. js-lingui-id: old0Lj
 #: src/sections/releases-hero/ReleasesHero.tsx
 msgid "Discover the newest features and improvements in Twenty, the #1 Open Source CRM."
 msgstr "Twenty, #1 오픈 소스 CRM의 최신 기능과 향상점을 확인하세요."
-
-#. js-lingui-id: W+b/DF
-#: src/sections/menu/data/menu.ts
-msgid "Discover what's new"
-msgstr "새로 나온 소식 살펴보기"
 
 #. js-lingui-id: EVc4nZ
 #: src/platform/releases/ReleaseNotes.tsx
@@ -2781,25 +2826,27 @@ msgstr "레코드 페이지 내에서 관련 레코드를 테이블, 칸반 보�
 msgid "Djibouti 🇩🇯"
 msgstr "Djibouti 🇩🇯"
 
-#. js-lingui-id: Zjjbne
+#. js-lingui-id: q5BVjc
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/faq.data.ts
-msgid "Do I need a developer to customize Twenty?"
-msgstr "Twenty를 커스터마이징하려면 개발자가 꼭 필요하나요?"
+msgid "Do I need a developer to customize {0}?"
+msgstr ""
 
 #. js-lingui-id: ISZL/U
 #: src/sections/faq/partner-faq.data.ts
 msgid "Do partners support self-hosting?"
 msgstr "파트너가 셀프 호스팅을 지원하나요?"
 
+#. js-lingui-id: Ie8KLc
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/faq/faq.data.ts
+msgid "Does {0} work with Claude, ChatGPT, and Cursor?"
+msgstr ""
+
 #. js-lingui-id: xSh4Vw
 #: src/sections/faq/become-partner-faq.data.ts
 msgid "Does it cost anything?"
 msgstr "비용이 드나요?"
-
-#. js-lingui-id: Zx22Ih
-#: src/sections/faq/faq.data.ts
-msgid "Does Twenty work with Claude, ChatGPT, and Cursor?"
-msgstr "Twenty는 Claude, ChatGPT, Cursor와 함께 사용할 수 있나요?"
 
 #. js-lingui-id: bMDnQR
 #: src/partner-application/data/partner-country-options.ts
@@ -2811,10 +2858,11 @@ msgstr "Dominica 🇩🇲"
 msgid "Dominican Republic 🇩🇴"
 msgstr "Dominican Republic 🇩🇴"
 
-#. js-lingui-id: pOLPPB
+#. js-lingui-id: uvzcRH
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/home-stepper/data/stepper.data.ts
-msgid "Don't get locked into someone else's ecosystem. Twenty's developer experience looks like normal software, with local setup, real data, live testing, and no proprietary tooling."
-msgstr "남의 생태계에 갇히지 마세요. Twenty의 개발자 경험은 로컬 환경 구성, 실제 데이터, 라이브 테스트, 비독점 툴링 등 일반적인 소프트웨어 개발과 다르지 않습니다."
+msgid "Don't get locked into someone else's ecosystem. {0}'s developer experience looks like normal software, with local setup, real data, live testing, and no proprietary tooling."
+msgstr ""
 
 #. js-lingui-id: DPfwMq
 #: src/sections/product-stepper/LayoutVisual/LayoutVisual.tsx
@@ -2869,10 +2917,11 @@ msgstr "단계 간 딜을 드래그 앤 드롭"
 msgid "Dutch"
 msgstr "네덜란드어"
 
-#. js-lingui-id: kUOwve
+#. js-lingui-id: rul/2M
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Dynamics 365 Sales runs $105/user/month plus $40/GB database storage. See the full comparison with Twenty, from $9 per user, open source."
-msgstr "Dynamics 365 Sales는 사용자 1인당 월 $105에, 데이터베이스 스토리지는 $40/GB가 추가됩니다. $9부터 시작하는 오픈 소스 Twenty와의 전체 비교를 확인하세요."
+msgid "Dynamics 365 Sales runs $105/user/month plus $40/GB database storage. See the full comparison with {0}, from $9 per user, open source."
+msgstr ""
 
 #. js-lingui-id: kqC52U
 #: src/sections/compare/compare-data.ts
@@ -3155,10 +3204,11 @@ msgstr "Enterprise"
 msgid "Enterprise *activation*"
 msgstr "엔터프라이즈 *활성화*"
 
-#. js-lingui-id: NTskGY
+#. js-lingui-id: WvgMHB
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Enterprise Activation | Twenty"
-msgstr "엔터프라이즈 활성화 | Twenty"
+msgid "Enterprise Activation | {0}"
+msgstr ""
 
 #. js-lingui-id: aDpB6R
 #: src/sections/compare/compare-data.ts
@@ -3221,10 +3271,11 @@ msgstr "유럽"
 msgid "Even the training material is a feature worth celebrating."
 msgstr "교육 자료조차 축하할 만한 훌륭한 기능입니다."
 
-#. js-lingui-id: sQP1sF
+#. js-lingui-id: 9LWHi5
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Every new release of Twenty, the #1 Open Source CRM, with changelogs, demos, and the highlights teams care about most."
-msgstr "최신 변경 로그, 데모, 팀이 가장 중요하게 여기는 하이라이트와 함께, 오픈 소스 CRM 1위 Twenty의 모든 새 릴리스를 확인하세요."
+msgid "Every new release of {0}, the modern CRM platform, with changelogs, demos, and the highlights teams care about most."
+msgstr ""
 
 #. js-lingui-id: xt/iek
 #: src/sections/faq/partner-faq.data.ts
@@ -3299,20 +3350,16 @@ msgstr "전문성을 알려 주세요."
 msgid "Explore customer stories"
 msgstr "고객 사례 더 보기"
 
+#. js-lingui-id: hGOVLB
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "Extend {0} with vetted apps — call recording, enrichment, Slack, Linear and more. Install any app on your modern CRM workspace in one click."
+msgstr ""
+
 #. js-lingui-id: JmyCnz
 #: src/sections/compare/compare-data.ts
 msgid "Extend beyond the CRM screens"
 msgstr "CRM 화면을 넘어 확장"
-
-#. js-lingui-id: qu9kGK
-#: src/platform/routing/static-website-routes.ts
-msgid "Extend Twenty with vetted apps — call recording, enrichment, Slack, Discord, Linear and more. Install any app on your open source CRM workspace in one click."
-msgstr "검증된 앱으로 Twenty를 확장하세요 — 통화 녹음, 데이터 보강, Slack, Discord, Linear 등 다양한 앱을 사용할 수 있습니다. 오픈 소스 CRM 워크스페이스에 어떤 앱이든 한 번의 클릭만으로 설치하세요."
-
-#. js-lingui-id: ZToPid
-#: src/sections/menu/data/menu.ts
-msgid "Extend your CRM"
-msgstr "CRM 확장하기"
 
 #. js-lingui-id: wmJ4p4
 #: src/apps-marketplace/AppsMarketplaceHeader.tsx
@@ -3499,15 +3546,11 @@ msgstr "AI 채팅 목록에서 대화를 필터링, 보관 및 관리하세요."
 msgid "Filtered metrics from any object"
 msgstr "임의 오브젝트에서 필터링된 지표"
 
-#. js-lingui-id: MD032e
-#: src/sections/menu/data/menu.ts
-msgid "Find a Twenty partner"
-msgstr "Twenty 파트너 찾기"
-
-#. js-lingui-id: AwJQl7
+#. js-lingui-id: X9R0t/
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Find a Twenty Partner — Certified Open Source CRM Experts"
-msgstr "Twenty 파트너 찾기 — 공인 오픈 소스 CRM 전문가"
+msgid "Find a {0} Partner — Certified modern CRM Experts"
+msgstr ""
 
 #. js-lingui-id: RiVrPY
 #: src/platform/releases/ReleaseNotes.tsx
@@ -3817,13 +3860,6 @@ msgstr "실제로 작동하는 CRM을 갖추기까지"
 msgid "Ghana 🇬🇭"
 msgstr "Ghana 🇬🇭"
 
-#. js-lingui-id: 3QRTgQ
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-#: src/sections/case-study-detail/CaseStudyArticleNav.tsx
-msgid "GitHub (opens in new tab)"
-msgstr "GitHub (새 탭에서 열기)"
-
 #. js-lingui-id: wuH0g5
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Gmail integration"
@@ -3904,15 +3940,11 @@ msgstr "Guyana 🇬🇾"
 msgid "Haiti 🇭🇹"
 msgstr "Haiti 🇭🇹"
 
-#. js-lingui-id: Xf5EJg
-#: src/sections/footer/footer.data.ts
-msgid "Halftone generator"
-msgstr "하프톤 생성기"
-
-#. js-lingui-id: DHC85F
+#. js-lingui-id: fjWKDy
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Halftone Generator | Twenty"
-msgstr "하프톤 생성기 | Twenty"
+msgid "Halftone Generator | {0}"
+msgstr ""
 
 #. js-lingui-id: nYmi60
 #: src/sections/product-feature/EmailsVisual/data/threads.ts
@@ -3921,7 +3953,6 @@ msgstr "안녕하세요, 최근 고객 만족도 조사에서 나온 긍정적�
 
 #. js-lingui-id: c3XJ18
 #: src/sections/pricing-salesfarce/SalesfarceWindow.tsx
-#: src/sections/footer/footer.data.ts
 msgid "Help"
 msgstr "도움말"
 
@@ -4013,6 +4044,12 @@ msgstr "시간당"
 msgid "Hourly rate *"
 msgstr "시간당 요율 *"
 
+#. js-lingui-id: GuyGhA
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "How {0} collects, uses, and protects your data — our GDPR- and CCPA-compliant privacy policy."
+msgstr ""
+
 #. js-lingui-id: XnFo3G
 #: src/case-studies/case-study-stories.ts
 msgid "How AC&T Education Migration and Flycoder replaced a shuttered vendor CRM with self-hosted Twenty, with 90%+ lower cost and full ownership."
@@ -4082,11 +4119,6 @@ msgstr ""
 "팀이 Twenty로\n"
 "*어떻게 구축했는지*"
 
-#. js-lingui-id: Z3Cabh
-#: src/platform/routing/static-website-routes.ts
-msgid "How Twenty collects, uses, and protects your data — our GDPR- and CCPA-compliant privacy policy."
-msgstr "Twenty가 데이터를 수집, 사용, 보호하는 방식 — GDPR 및 CCPA를 준수하는 개인정보 처리방침입니다."
-
 #. js-lingui-id: URQPvK
 #: src/case-studies/case-study-stories.ts
 msgid "How W3villa Technologies shipped W3Grads, an AI mock interview platform for institutions, on Twenty as the operational backbone."
@@ -4102,10 +4134,11 @@ msgstr "https://"
 msgid "HubSpot brings a full marketing suite and a huge agency ecosystem. If you need marketing automation more than a CRM, it is a fair choice."
 msgstr "HubSpot은 완전한 마케팅 제품군과 거대한 에이전시 생태계를 제공합니다. CRM보다 마케팅 자동화가 더 중요하다면 합리적인 선택입니다."
 
-#. js-lingui-id: EITYKN
+#. js-lingui-id: va8Zok
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "HubSpot gates custom objects behind its $150/seat Enterprise tier. See the full price comparison, with sources, and what Twenty includes from $9 per user."
-msgstr "HubSpot은 커스텀 오브젝트를 시트당 $150인 Enterprise 티어 뒤에 가둬 둡니다. 출처까지 포함된 전체 가격 비교와, Twenty가 사용자당 $9부터 어떤 기능을 포함하는지 확인하세요."
+msgid "HubSpot gates custom objects behind its $150/seat Enterprise tier. See the full price comparison, with sources, and what {0} includes from $9 per user."
+msgstr ""
 
 #. js-lingui-id: htrFcw
 #: src/partner-application/data/partner-country-options.ts
@@ -4342,11 +4375,6 @@ msgstr "워크플로 실행의 각 단계에 대한 AI 호출, 코드 출력, HT
 msgid "Install"
 msgstr "설치"
 
-#. js-lingui-id: qq1x6K
-#: src/sections/menu/data/menu.ts
-msgid "Install call recording, enrichment, Slack, Linear and more — every app built and maintained by Twenty."
-msgstr "통화 녹음, 데이터 보강, Slack, Linear 등 다양한 앱을 설치하세요 — 모든 앱은 Twenty가 제작하고 유지 관리합니다."
-
 #. js-lingui-id: R6HbUq
 #: src/apps-marketplace/AppDetail.tsx
 msgid "Install on Twenty"
@@ -4368,10 +4396,11 @@ msgstr "통합"
 msgid "Interactive call recordings"
 msgstr "대화형 통화 녹음"
 
-#. js-lingui-id: OChKCc
+#. js-lingui-id: VZSbDX
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Interactive halftone generator exported from Twenty."
-msgstr "Twenty에서 내보낸 인터랙티브 하프톤 생성기입니다."
+msgid "Interactive halftone generator exported from {0}."
+msgstr ""
 
 #. js-lingui-id: MAqMna
 #: src/platform/releases/ReleaseNotes.tsx
@@ -4439,10 +4468,11 @@ msgstr "Iraq 🇮🇶"
 msgid "Ireland 🇮🇪"
 msgstr "Ireland 🇮🇪"
 
-#. js-lingui-id: /yQIKP
+#. js-lingui-id: O/+KNx
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/faq/faq.data.ts
-msgid "Is Twenty really open-source?"
-msgstr "Twenty는 정말 오픈 소스인가요?"
+msgid "Is {0} built on open source?"
+msgstr ""
 
 #. js-lingui-id: SdtpDP
 #: src/partner-application/data/partner-country-options.ts
@@ -4522,16 +4552,17 @@ msgstr "우리 생태계에 합류하여, 오픈 소스 프리미티브로 기�
 msgid "Join our growing partner ecosystem"
 msgstr "성장 중인 파트너 생태계에 합류하세요"
 
+#. js-lingui-id: 51L47d
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/platform/routing/static-website-routes.ts
+msgid "Join the {0} partner ecosystem: implement, migrate, and support the #1 modern CRM, and grow your practice with the teams building it."
+msgstr ""
+
 #. js-lingui-id: m/pXki
 #: src/sections/customers-catalog-signoff/CustomersCatalogSignoff.tsx
 #: src/sections/case-study-detail/CustomersCaseStudySignoff.tsx
 msgid "Join the teams that chose to own their CRM. Start building with Twenty today."
 msgstr "CRM을 스스로 소유하기로 선택한 팀에 합류하세요. 지금 Twenty로 구축을 시작해 보세요."
-
-#. js-lingui-id: DqW4G2
-#: src/platform/routing/static-website-routes.ts
-msgid "Join the Twenty partner ecosystem: implement, migrate, and support the #1 open source CRM, and grow your practice with the teams building it."
-msgstr "Twenty 파트너 생태계에 참여하세요. 최고의 오픈 소스 CRM을 구현, 마이그레이션 및 지원하고, 이를 구축하는 팀과 함께 비즈니스를 성장시키세요."
 
 #. js-lingui-id: QbxNys
 #: src/partner-application/data/partner-country-options.ts
@@ -4681,11 +4712,6 @@ msgstr "Latvia 🇱🇻"
 msgid "Layout"
 msgstr "레이아웃"
 
-#. js-lingui-id: +Ss/og
-#: src/sections/menu/data/menu.ts
-msgid "Learn how to use Twenty"
-msgstr "Twenty 사용 방법 학습하기"
-
 #. js-lingui-id: zwWKhA
 #: src/apps-marketplace/AppCard.tsx
 msgid "Learn more"
@@ -4756,18 +4782,6 @@ msgstr "일반 객체와 마찬가지로, 작업과 회사에 사용자 지정 �
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Link field"
 msgstr "Link 필드"
-
-#. js-lingui-id: gggTBm
-#: src/sections/footer/footer.data.ts
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#. js-lingui-id: 3hSKC5
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-#: src/sections/case-study-detail/CaseStudyArticleNav.tsx
-msgid "LinkedIn (opens in new tab)"
-msgstr "LinkedIn (새 탭에서 열기)"
 
 #. js-lingui-id: Gg69LR
 #: src/partner-application/partner-application-copy.ts
@@ -4980,11 +4994,6 @@ msgstr "마켓플레이스"
 msgid "Marshall Islands 🇲🇭"
 msgstr "Marshall Islands 🇲🇭"
 
-#. js-lingui-id: bJNKJ1
-#: src/sections/menu/data/menu.ts
-msgid "Master every corner of Twenty"
-msgstr "Twenty隅々까지 완벽하게 익히세요"
-
 #. js-lingui-id: HG/EUg
 #: src/partner-application/data/partner-country-options.ts
 msgid "Mauritania 🇲🇷"
@@ -5004,11 +5013,6 @@ msgstr "5월"
 #: src/sections/pricing-plan-table/plan-table-data.ts
 msgid "MCP server"
 msgstr "MCP 서버"
-
-#. js-lingui-id: bwCiCi
-#: src/sections/menu/data/menu.ts
-msgid "Meet the certified agencies and consultants implementing Twenty for teams worldwide."
-msgstr "전 세계 팀을 위해 Twenty를 구현하고 있는 인증 에이전시와 컨설턴트를 만나보세요."
 
 #. js-lingui-id: ujYZ+f
 #: src/sections/case-study-promo/CaseStudyPromo.tsx
@@ -5731,10 +5735,11 @@ msgstr "스택을 직접 소유하는 일은 이상하게도 늘 품절 상태�
 msgid "Package"
 msgstr "패키지"
 
-#. js-lingui-id: h/oMMb
+#. js-lingui-id: dqaqpo
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Packaged CRMs make every company look the same. Twenty is the open source CRM teams shape around their workflow, with a modern UI and a developer-first platform."
-msgstr "패키지형 CRM은 모든 회사를 똑같이 보이게 만듭니다. Twenty는 팀이 워크플로우에 맞게 직접 빚어 쓰는 오픈 소스 CRM으로, 현대적인 UI와 개발자 우선 플랫폼을 갖추고 있습니다."
+msgid "Packaged CRMs make every company look the same. {0} is the modern CRM teams shape around their workflow, with a modern UI and a developer-first platform."
+msgstr ""
 
 #. js-lingui-id: +AiiMt
 #: src/sections/pricing-salesfarce/salesfarce-data.ts
@@ -5795,12 +5800,6 @@ msgstr "파트너를 찾을 수 없음 — Twenty Partners"
 #: src/sections/testimonials/PartnerTestimonialsCarousel.tsx
 msgid "Partner testimonials"
 msgstr "파트너 추천 후기"
-
-#. js-lingui-id: mPkInZ
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-msgid "Partners"
-msgstr "파트너"
 
 #. js-lingui-id: /Zw40D
 #: src/sections/product-feature/EmailsVisual/data/threads.ts
@@ -5878,10 +5877,11 @@ msgstr "해당되는 모든 카테고리를 선택하세요."
 msgid "Pick your model, build agents that write emails or enrich records inside workflows, and expose your workspace to any MCP-compatible client."
 msgstr "모델을 선택하고, 이메일을 작성하거나 워크플로우 내에서 레코드를 보강(enrich)하는 에이전트를 만들고, 워크스페이스를 MCP 호환 클라이언트에 노출하세요."
 
-#. js-lingui-id: j3vw0M
+#. js-lingui-id: NJJMAY
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Pipedrive caps automations per company and keeps SSO for its top tier. Compare real per-seat costs with Twenty, from $9 per user with no caps."
-msgstr "Pipedrive는 회사당 자동화 개수에 상한을 두고, SSO는 최상위 티어에만 제공합니다. Twenty는 사용자당 $9부터 한도 없이 제공하는 실제 시트당 비용과 비교해 보세요."
+msgid "Pipedrive caps automations per company and keeps SSO for its top tier. Compare real per-seat costs with {0}, from $9 per user with no caps."
+msgstr ""
 
 #. js-lingui-id: SxlMNM
 #: src/sections/compare/compare-data.ts
@@ -5898,10 +5898,11 @@ msgstr "파이프라인 관리"
 msgid "Pipeline, contacts, email sync"
 msgstr "파이프라인, 연락처, 이메일 동기화"
 
-#. js-lingui-id: gzkkC3
+#. js-lingui-id: A1Gxkz
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Pipelines, custom objects, AI assistants, and a native API on top of Postgres. Twenty is the open source CRM with the modern UX teams actually want to use."
-msgstr "파이프라인, 커스텀 오브젝트, AI 도우미, Postgres 위의 네이티브 API까지. Twenty는 팀이 실제로 쓰고 싶어 하는 현대적 UX를 갖춘 오픈 소스 CRM입니다."
+msgid "Pipelines, custom objects, AI assistants, and a native API on top of Postgres. {0} is the modern CRM with the modern UX teams actually want to use."
+msgstr ""
 
 #. js-lingui-id: z7gnI9
 #: src/partner-application/partner-application-copy.ts
@@ -6031,10 +6032,11 @@ msgstr "Organization 플랜에서의 우선 지원"
 msgid "Privacy Policy"
 msgstr "개인정보 처리방침"
 
-#. js-lingui-id: DJ3uVe
+#. js-lingui-id: copVL3
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Privacy Policy | Twenty"
-msgstr "개인정보 처리방침 | Twenty"
+msgid "Privacy Policy | {0}"
+msgstr ""
 
 #. js-lingui-id: 3fPjUY
 #: src/sections/pricing-plans/plans-data.ts
@@ -6193,10 +6195,11 @@ msgstr "Twenty와 함께 *성장할 준비가 되셨나요?*"
 msgid "Ready-to-use object pages"
 msgstr "바로 사용할 수 있는 객체 페이지"
 
-#. js-lingui-id: zTY2by
+#. js-lingui-id: a0cb67
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Real customer stories from teams running their business on Twenty: how they migrated, what they customised, and what changed once their CRM finally fit."
-msgstr "Twenty로 비즈니스를 운영하는 팀들의 실제 고객 사례입니다. 어떻게 마이그레이션했는지, 무엇을 커스터마이징했는지, CRM이 마침내 업무 방식에 맞아떨어진 뒤 무엇이 달라졌는지 확인해 보세요."
+msgid "Real customer stories from teams running their business on {0}: how they migrated, what they customised, and what changed once their CRM finally fit."
+msgstr ""
 
 #. js-lingui-id: NIwjHh
 #: src/case-studies/case-study-catalog.ts
@@ -6285,14 +6288,8 @@ msgstr "레코드 페이지의 관계 테이블"
 msgid "Relations on Record Pages"
 msgstr "레코드 페이지의 관계"
 
-#. js-lingui-id: rwWjWg
-#: src/sections/footer/footer.data.ts
-msgid "Release Notes"
-msgstr "릴리즈 노트"
-
 #. js-lingui-id: 5icoS1
 #: src/sections/releases-feed/ReleasesFeed.tsx
-#: src/sections/menu/data/menu.ts
 msgid "Releases"
 msgstr "릴리즈"
 
@@ -6361,11 +6358,6 @@ msgstr "크기 조절 가능한 칸반 열"
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Resize navbar and side panel"
 msgstr "내비게이션 바와 사이드 패널 크기 조절"
-
-#. js-lingui-id: s+MGs7
-#: src/sections/menu/data/menu.ts
-msgid "Resources"
-msgstr "리소스"
 
 #. js-lingui-id: oC2l7f
 #: src/sections/pricing-plan-table/plan-table-data.ts
@@ -6511,10 +6503,11 @@ msgstr "Saint Lucia 🇱🇨"
 msgid "Saint Vincent 🇻🇨"
 msgstr "Saint Vincent 🇻🇨"
 
-#. js-lingui-id: SYZcC7
+#. js-lingui-id: VimOHh
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Sales Cloud Enterprise lists at $175/user/month before support, sandboxes, and AI add-ons. Compare the real cost with Twenty, from $9 per user."
-msgstr "Sales Cloud Enterprise는 사용자 1인당 월 $175(지원, 샌드박스, AI 애드온 제외)부터 시작합니다. 사용자당 $9부터인 Twenty와 실제 비용을 비교해 보세요."
+msgid "Sales Cloud Enterprise lists at $175/user/month before support, sandboxes, and AI add-ons. Compare the real cost with {0}, from $9 per user."
+msgstr ""
 
 #. js-lingui-id: KfBfN6
 #: src/sections/compare/compare-data.ts
@@ -6622,10 +6615,11 @@ msgstr "샌드박스"
 msgid "São Tomé & Príncipe 🇸🇹"
 msgstr "São Tomé & Príncipe 🇸🇹"
 
-#. js-lingui-id: Tme4Lo
+#. js-lingui-id: qRd25c
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "SAP Sales Cloud lists at $134/user/month before a year-one implementation project that often exceeds the licenses. Compare with Twenty, from $9 per user."
-msgstr "SAP Sales Cloud는 사용자 1인당 월 $134(라이선스 비용을 초과하는 경우가 많은 첫해 구축 프로젝트 비용 제외)부터 시작합니다. 사용자당 $9부터인 Twenty와 비교해 보세요."
+msgid "SAP Sales Cloud lists at $134/user/month before a year-one implementation project that often exceeds the licenses. Compare with {0}, from $9 per user."
+msgstr ""
 
 #. js-lingui-id: jv/Hsj
 #: src/sections/compare/compare-data.ts
@@ -6742,12 +6736,6 @@ msgstr "Twenty 요금제 보기"
 #: src/sections/three-cards/product-three-cards-data.ts
 msgid "See updates as they happen. Work with your team and agents seamlessly."
 msgstr "변경 사항이 발생하는 즉시 확인하고, 팀과 에이전트와의 협업을 끊김 없이 이어가세요."
-
-#. js-lingui-id: 0kgOPB
-#. placeholder {0}: LATEST_RELEASE.release
-#: src/sections/menu/data/menu.ts
-msgid "See what shipped in {0}"
-msgstr "{0}에 어떤 것이 출시되었는지 확인하기"
 
 #. js-lingui-id: 02ePaq
 #. placeholder {0}: company.name
@@ -7221,11 +7209,6 @@ msgstr "Flow 상태 유지"
 msgid "Step {current} of {total}"
 msgstr "단계 {current}/{total}"
 
-#. js-lingui-id: bxgoJR
-#: src/sections/menu/data/menu.ts
-msgid "Step-by-step guides and playbooks to help your team get the most out of their workspace."
-msgstr "팀이 워크스페이스를 최대한 활용할 수 있도록 돕는 단계별 가이드와 플레이북입니다."
-
 #. js-lingui-id: 6xMwu3
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Step-by-step workflow logs"
@@ -7262,10 +7245,10 @@ msgstr "하위 필드 필터링"
 msgid "Sub-field filtering is now supported for currency, address, name, email, link, phone, and actor fields. For example, you can filter by the amount in a currency without needing the full field."
 msgstr "이제 통화(currency), 주소, 이름, 이메일, 링크, 전화번호, 액터(actor) 필드에 대해 하위 필드 필터링이 지원됩니다. 예를 들어 전체 필드가 없어도 통화의 금액만으로 필터링할 수 있습니다."
 
-#. js-lingui-id: Sv4BSp
+#. js-lingui-id: vkXMsX
 #: src/sections/pricing-plan-table/plan-table-data.ts
-msgid "Subdomain (yourco.twenty.com)"
-msgstr "서브도메인(yourco.twenty.com)"
+msgid "Subdomain (yourco.example.com)"
+msgstr ""
 
 #. js-lingui-id: 578pU6
 #: src/app/[locale]/(site)/partners/page.tsx
@@ -7273,15 +7256,17 @@ msgstr "서브도메인(yourco.twenty.com)"
 msgid "Submit a brief"
 msgstr "요청서 제출"
 
-#. js-lingui-id: 1LJhtF
+#. js-lingui-id: SiI6gN
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Submit a Client Brief — Twenty Partners"
-msgstr "클라이언트 요청서 제출 — Twenty 파트너"
+msgid "Submit a Client Brief — {0} Partners"
+msgstr ""
 
-#. js-lingui-id: Tp3Gi6
+#. js-lingui-id: vSlzRM
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Submit a project brief and get matched with a certified Twenty partner for migration, customisation, and CRM implementation."
-msgstr "프로젝트 요청서를 제출하면, 마이그레이션, 커스터마이징, CRM 구현을 도와줄 공인 Twenty 파트너와 매칭해 드립니다."
+msgid "Submit a project brief and get matched with a certified {0} partner for migration, customisation, and CRM implementation."
+msgstr ""
 
 #. js-lingui-id: H5/rZQ
 #: src/partner-application/partner-application-copy.ts
@@ -7434,11 +7419,6 @@ msgstr "작업 및 활동"
 msgid "Team size / seats"
 msgstr "팀 규모 / 좌석 수"
 
-#. js-lingui-id: Ye3KKA
-#: src/sections/menu/data/menu.ts
-msgid "Team up with a Twenty expert"
-msgstr "Twenty 전문가와 함께하기"
-
 #. js-lingui-id: 1TcKFc
 #: src/sections/compare/compare-data.ts
 msgid "Teams & permission sets"
@@ -7474,10 +7454,11 @@ msgstr ""
 "필요한 내용을 알려 주세요\n"
 "*저희가 알맞은 파트너를 찾아드립니다*"
 
-#. js-lingui-id: cgFMCg
+#. js-lingui-id: 77eNAH
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Tell us what you need and get matched with a certified Twenty partner in 48 hours, or browse the directory of agencies and consultants who migrate, customise, and operate the open source CRM."
-msgstr "필요한 사항을 알려주시면 48시간 이내에 공인 Twenty 파트너와 매칭해 드립니다. 또는 오픈 소스 CRM을 마이그레이션, 커스터마이징 및 운영하는 에이전시와 컨설턴트의 디렉터리를 둘러보세요."
+msgid "Tell us what you need and get matched with a certified {0} partner in 48 hours, or browse the directory of agencies and consultants who migrate, customise, and operate the modern CRM."
+msgstr ""
 
 #. js-lingui-id: kjnQvE
 #: src/partners-marketplace/MarketplaceBriefPrompt.tsx
@@ -7499,10 +7480,11 @@ msgstr "이용 약관"
 msgid "Terms of Service"
 msgstr "이용 약관"
 
-#. js-lingui-id: BEX1RA
+#. js-lingui-id: CJl2N1
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Terms of Service | Twenty"
-msgstr "이용 약관 | Twenty"
+msgid "Terms of Service | {0}"
+msgstr ""
 
 #. js-lingui-id: WHDrjh
 #: src/sections/compare/compare-data.ts
@@ -7543,11 +7525,6 @@ msgstr "이 결정은 더 강력한 가능성을 열었습니다. Justin은 각 
 #: src/case-studies/case-study-stories.ts
 msgid "That works until you need to understand the business underneath. Which deals are stuck? Where are leads coming from? What is the close rate? With spreadsheets and a legacy custom CRM that could not keep up, those questions were nearly impossible to answer."
 msgstr "이 방식은, 그 아래 깔린 비즈니스를 이해해야 할 때 한계를 드러냅니다. 어떤 딜이 막혀 있는지, 리드는 어디에서 오는지, 성사율은 어떤지 등을 알고 싶을 때 말이죠. 스프레드시트와 뒤처진 커스텀 CRM만으로는 그런 질문에 답하기가 거의 불가능했습니다."
-
-#. js-lingui-id: zXlFuT
-#: src/platform/routing/static-website-routes.ts
-msgid "The #1 Open Source CRM for modern teams. Modular, scalable, and built to fit your business."
-msgstr "현대 팀을 위한 오픈 소스 CRM 1위. 모듈형, 확장 가능하며, 비즈니스에 꼭 맞게 설계됩니다."
 
 #. js-lingui-id: K1T7Mn
 #: src/platform/releases/ReleaseNotes.tsx
@@ -7686,6 +7663,11 @@ msgstr ""
 "리스트 가격은 시작에 불과합니다.\n"
 "실제 팀이 사용하기 시작하면 인보이스가 어떻게 바뀌는지 보여드립니다."
 
+#. js-lingui-id: 98qRH5
+#: src/platform/routing/static-website-routes.ts
+msgid "The modern CRM platform for growing teams. Modular, scalable, and built to fit your business."
+msgstr ""
+
 #. js-lingui-id: nf1NnD
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "The new <0>Address Field</0> Type enables entry of a full address in one field, while structurally storing each address part - such as street name and number - in separate subfields."
@@ -7700,11 +7682,6 @@ msgstr "새로운 평점 필드는 zero부터 five까지의 숫자 값을 나타
 #: src/sections/why-twenty-editorial/editorials.data.ts
 msgid "The opportunity"
 msgstr "기회"
-
-#. js-lingui-id: 80f4ed
-#: src/sections/menu/data/menu.ts
-msgid "The principles and product philosophy behind the open source CRM."
-msgstr "오픈 소스 CRM 뒤에 있는 원칙과 제품 철학입니다."
 
 #. js-lingui-id: 2NJdyz
 #: src/sections/problem/Problem.tsx
@@ -7771,15 +7748,11 @@ msgstr "사이드 패널은 이제 콘텐츠 위가 아니라 옆에 열려, 워
 msgid "The situation"
 msgstr "상황"
 
-#. js-lingui-id: gXGp3Q
-#: src/sections/menu/data/menu.ts
-msgid "The story behind Twenty"
-msgstr "Twenty의 이야기"
-
-#. js-lingui-id: axo4rg
+#. js-lingui-id: BO62DA
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "The terms governing your use of Twenty and its open source CRM services."
-msgstr "Twenty와 그 오픈 소스 CRM 서비스를 사용하는 데 적용되는 약관입니다."
+msgid "The terms governing your use of {0} and its modern CRM services."
+msgstr ""
 
 #. js-lingui-id: xCAT8U
 #: src/platform/releases/ReleaseNotes.tsx
@@ -7881,11 +7854,6 @@ msgstr "고정비 포함 월 총액"
 msgid "Track amount and close date"
 msgstr "금액 및 종료 예정일 추적"
 
-#. js-lingui-id: POzmFl
-#: src/sections/menu/data/menu.ts
-msgid "Track every release with changelogs, highlights and demos of the newest features."
-msgstr "모든 릴리스를 추적하고, 최신 기능의 변경 로그·하이라이트·데모를 확인하세요."
-
 #. js-lingui-id: 6vHPh9
 #: src/sections/product-hero/ProductHero.tsx
 msgid "Track relationships, manage pipelines, and take action quickly with an intuitive CRM that helps your team move faster from day one with confidence."
@@ -7921,11 +7889,6 @@ msgstr "레코드 변경 시 액션 트리거"
 #: src/partner-application/data/partner-country-options.ts
 msgid "Trinidad & Tobago 🇹🇹"
 msgstr "Trinidad & Tobago 🇹🇹"
-
-#. js-lingui-id: tdZpCd
-#: src/sections/footer/footer.data.ts
-msgid "Trust Center"
-msgstr "신뢰 센터(Trust Center)"
 
 #. js-lingui-id: KtyN0b
 #: src/sections/trusted-by/TrustedBy.tsx
@@ -7972,21 +7935,6 @@ msgstr "투르크메니스탄 🇹🇲"
 msgid "Tuvalu 🇹🇻"
 msgstr "투발루 🇹🇻"
 
-#. js-lingui-id: O5dAmW
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty | #1 Open Source CRM"
-msgstr "Twenty | 오픈 소스 CRM 1위"
-
-#. js-lingui-id: XxKVz4
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty Apps — Vetted Apps for the Open Source CRM"
-msgstr "Twenty 앱 — 오픈 소스 CRM을 위한 검증된 앱"
-
-#. js-lingui-id: jwNPEV
-#: src/sections/menu/data/menu.ts
-msgid "Twenty apps marketplace"
-msgstr "Twenty 앱 마켓플레이스"
-
 #. js-lingui-id: NalB1c
 #: src/sections/testimonials/partner-testimonials.data.ts
 msgid "Twenty Apps opens the door to building products, not just implementations. For example, we're developing a WhatsApp Business integration that any Twenty's client could get. That's a recurring revenue stream we wouldn't have if we were just configuring someone else's platform."
@@ -8011,21 +7959,6 @@ msgstr "고투마켓 스택의 API 백본으로서의 Twenty"
 msgid "Twenty as the API backbone of a go-to-market stack | Elevate Consulting"
 msgstr "고투마켓 스택의 API 백본으로서의 Twenty | Elevate Consulting"
 
-#. js-lingui-id: neM1Ol
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty CRM Features — Modern Open Source CRM Platform"
-msgstr "Twenty CRM 기능 — 현대적 오픈 소스 CRM 플랫폼"
-
-#. js-lingui-id: 8zCqPL
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty CRM Pricing — Plans from $9 per User per Month"
-msgstr "Twenty CRM 가격 — 사용자당 월 9달러부터 시작하는 플랜"
-
-#. js-lingui-id: D05UQH
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty Customers — How Modern Teams Run Their CRM"
-msgstr "Twenty 고객사 — 현대 팀이 CRM을 운영하는 방식"
-
 #. js-lingui-id: MYHdd/
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty delivers on what CRMs should have always been: fairly priced software with a fully modular and customizable model, a clean and modern UI, granular permissions, automations, enterprise features. A compelling solution with high potential to rightfully disrupt the CRM market."
@@ -8040,11 +7973,6 @@ msgstr "Twenty 필드"
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty gave us the flexibility to model the entire interview lifecycle as custom objects and workflows. We could build something genuinely complex without fighting the platform to do it."
 msgstr "Twenty 덕분에 전체 인터뷰 라이프사이클을 커스텀 오브젝트와 워크플로로 모델링할 수 있는 유연성을 얻었습니다. 플랫폼과 싸우지 않고도 진정으로 복잡한 것을 구축할 수 있었습니다."
-
-#. js-lingui-id: 0qyMhk
-#: src/sections/home-hero/HomeHero.tsx
-msgid "Twenty gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves."
-msgstr "Twenty는 복잡한 비즈니스 니즈를 충족하고 비즈니스가 진화함에 따라 빠르게 적응할 수 있는 커스텀 CRM을 구축할 수 있도록 기술 팀에 빌딩 블록을 제공합니다."
 
 #. js-lingui-id: jVhq41
 #: src/sections/testimonials/partner-testimonials.data.ts
@@ -8067,48 +7995,11 @@ msgstr "Twenty는 이 시스템의 심장입니다. 모든 것이 여기에서 �
 msgid "Twenty lets us build a CRM around the business and not the business around the CRM."
 msgstr "Twenty 덕분에 우리는 비즈니스에 CRM을 맞출 수 있고, 더 이상 비즈니스를 CRM에 끼워 맞출 필요가 없습니다."
 
-#. js-lingui-id: AxT+g4
-#: src/sections/feature-cards/feature-cards.data.ts
-msgid "Twenty makes it simple. It's clean, intuitive, and built to feel like Notion."
-msgstr "Twenty가 모든 것을 단순하게 만들어 줍니다. 깔끔하고 직관적이며, Notion처럼 느껴지도록 설계되어 있습니다."
-
-#. js-lingui-id: mZ3xRm
-#: src/sections/menu/data/menu.ts
-msgid "Twenty partner ecosystem"
-msgstr "Twenty 파트너 에코시스템"
-
-#. js-lingui-id: vD7S1X
-#. placeholder {0}: LATEST_RELEASE.release
-#. placeholder {1}: LATEST_RELEASE.title
-#: src/sections/menu/data/menu.ts
-msgid "Twenty release {0} — {1}"
-msgstr "Twenty 릴리스 {0} — {1}"
-
-#. js-lingui-id: X1GHuJ
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty Releases — What's New in the Open Source CRM"
-msgstr "Twenty 릴리스 — 오픈 소스 CRM의 새로운 소식"
-
-#. js-lingui-id: V1lV7B
-#: src/sections/pricing-plans/plans-data.ts
-msgid "Twenty team support"
-msgstr "Twenty 팀 지원"
-
-#. js-lingui-id: osa7Xg
-#: src/sections/menu/data/menu.ts
-msgid "Twenty user guide preview"
-msgstr "Twenty 사용자 가이드 미리보기"
-
 #. js-lingui-id: mMNI6u
 #: src/sections/pricing-salesfarce/PricingSalesfarce.tsx
 #: src/sections/compare/compare-data.ts
 msgid "Twenty vs HubSpot"
 msgstr "Twenty vs HubSpot"
-
-#. js-lingui-id: 1f7tJr
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty vs HubSpot Pricing — The Real Cost Compared"
-msgstr "Twenty vs HubSpot 요금 — 실제 비용 비교"
 
 #. js-lingui-id: PU2vgp
 #: src/sections/pricing-salesfarce/PricingSalesfarce.tsx
@@ -8116,21 +8007,11 @@ msgstr "Twenty vs HubSpot 요금 — 실제 비용 비교"
 msgid "Twenty vs Microsoft Dynamics"
 msgstr "Twenty vs Microsoft Dynamics"
 
-#. js-lingui-id: YwgbXH
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty vs Microsoft Dynamics Pricing — The Real Cost Compared"
-msgstr "Twenty vs Microsoft Dynamics 요금 — 실제 비용 비교"
-
 #. js-lingui-id: jqVcCJ
 #: src/sections/pricing-salesfarce/PricingSalesfarce.tsx
 #: src/sections/compare/compare-data.ts
 msgid "Twenty vs Pipedrive"
 msgstr "Twenty vs Pipedrive"
-
-#. js-lingui-id: Ure+SU
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty vs Pipedrive Pricing — The Real Cost Compared"
-msgstr "Twenty vs Pipedrive 요금 — 실제 비용 비교"
 
 #. js-lingui-id: BpUVzg
 #: src/sections/pricing-salesfarce/PricingSalesfarce.tsx
@@ -8138,21 +8019,11 @@ msgstr "Twenty vs Pipedrive 요금 — 실제 비용 비교"
 msgid "Twenty vs Salesforce"
 msgstr "Twenty vs Salesforce"
 
-#. js-lingui-id: g9RXI4
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty vs Salesforce Pricing — The Real Cost Compared"
-msgstr "Twenty vs Salesforce 요금 — 실제 비용 비교"
-
 #. js-lingui-id: AKwcOh
 #: src/sections/pricing-salesfarce/PricingSalesfarce.tsx
 #: src/sections/compare/compare-data.ts
 msgid "Twenty vs SAP Sales Cloud"
 msgstr "Twenty vs SAP Sales Cloud"
-
-#. js-lingui-id: 6ix7s6
-#: src/platform/routing/static-website-routes.ts
-msgid "Twenty vs SAP Sales Cloud Pricing — The Real Cost Compared"
-msgstr "Twenty vs SAP Sales Cloud 요금 — 실제 비용 비교"
 
 #. js-lingui-id: tuvLv1
 #: src/platform/releases/ReleaseNotes.tsx
@@ -8342,12 +8213,6 @@ msgstr "미국 🇺🇸"
 msgid "Use the Q3 template."
 msgstr "3분기 템플릿을 사용하세요."
 
-#. js-lingui-id: Roaswv
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-msgid "User Guide"
-msgstr "사용자 가이드"
-
 #. js-lingui-id: 9iX1i3
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "User impersonation"
@@ -8388,11 +8253,6 @@ msgstr "베네수엘라 🇻🇪"
 #: src/platform/releases/ReleaseNotes.tsx
 msgid "Version control"
 msgstr "버전 관리"
-
-#. js-lingui-id: vNIHYX
-#: src/sections/menu/data/menu.ts
-msgid "Vetted apps for your workspace"
-msgstr "워크스페이스를 위한 검증된 앱"
 
 #. js-lingui-id: k5HTQK
 #: src/apps-marketplace/AppDetail.tsx
@@ -8480,10 +8340,11 @@ msgstr "W3villa Technologies"
 msgid "W3villa Technologies set out to solve it properly, not with a workaround, but with a product."
 msgstr "W3villa Technologies는 임시방편이 아닌, 제대로 된 제품으로 이 문제를 해결하기로 했습니다."
 
-#. js-lingui-id: 3v2ipf
+#. js-lingui-id: 4SdUuC
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/three-cards/three-cards.data.ts
-msgid "W3villa used Twenty as a production-grade framework for the data model, permissions, authentication, and workflow engine they would otherwise have rebuilt themselves."
-msgstr "W3villa는 Twenty를 데이터 모델, 권한, 인증, 워크플로 엔진용 프로덕션급 프레임워크로 활용해, 스스로 다시 구축해야 했을 요소들을 대체했습니다."
+msgid "W3villa used {0} as a production-grade framework for the data model, permissions, authentication, and workflow engine they would otherwise have rebuilt themselves."
+msgstr ""
 
 #. js-lingui-id: +uJeMJ
 #: src/sections/partner-lead/PartnerBecomeStrip.tsx
@@ -8682,15 +8543,16 @@ msgstr ""
 "\n"
 "*SAP Sales Cloud*의 실제 비용은 얼마일까요?"
 
+#. js-lingui-id: 0VIQ7z
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/faq/faq.data.ts
+msgid "What does {0} cost?"
+msgstr ""
+
 #. js-lingui-id: MIVJ8U
 #: src/sections/faq/become-partner-faq.data.ts
 msgid "What does certification involve?"
 msgstr "인증 절차에는 무엇이 포함되나요?"
-
-#. js-lingui-id: phiBjc
-#: src/sections/faq/faq.data.ts
-msgid "What does Twenty cost?"
-msgstr "Twenty 비용은 얼마인가요?"
 
 #. js-lingui-id: WVQaGB
 #: src/case-studies/case-study-stories.ts
@@ -8802,30 +8664,11 @@ msgstr "NetZero는 여전히 브라질 농가와의 WhatsApp 중심 운영을 �
 msgid "Who it was for, what you built, which of the four areas you used…"
 msgstr "누구를 위해 어떤 것을 만들었는지, 네 가지 영역 중 어떤 것을 사용했는지 등을 적어 주세요."
 
-#. js-lingui-id: DJlSwA
-#: src/sections/menu/data/menu.ts
-msgid "Why"
-msgstr "이유"
-
-#. js-lingui-id: mrxgOV
-#: src/sections/menu/data/menu.ts
-msgid "Why teams choose Twenty"
-msgstr "팀이 Twenty를 선택하는 이유"
-
-#. js-lingui-id: 4sOVu+
-#: src/sections/footer/footer.data.ts
-msgid "Why Twenty"
-msgstr "왜 Twenty인가"
-
-#. js-lingui-id: DH7vVZ
+#. js-lingui-id: oAoDan
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/platform/routing/static-website-routes.ts
-msgid "Why Twenty — The Open Source CRM Built to Be Customised"
-msgstr "왜 Twenty인가 — 커스터마이즈를 위해 만들어진 오픈 소스 CRM"
-
-#. js-lingui-id: tetjz4
-#: src/sections/menu/data/menu.ts
-msgid "Why Twenty illustration"
-msgstr "Twenty를 선택하는 이유 일러스트레이션"
+msgid "Why {0} — The modern CRM Built to Be Customised"
+msgstr ""
 
 #. js-lingui-id: baquqN
 #: src/sections/product-feature/DashboardVisual/data/dashboard-visual-data.ts
@@ -8938,13 +8781,6 @@ msgstr "*Twenty 파트너*와 협업하기"
 msgid "Workspace"
 msgstr "워크스페이스"
 
-#. js-lingui-id: p3ZD6C
-#: src/sections/menu/data/menu.ts
-#: src/sections/footer/footer.data.ts
-#: src/sections/case-study-detail/CaseStudyArticleNav.tsx
-msgid "X (opens in new tab)"
-msgstr "X (새 탭에서 열림)"
-
 #. js-lingui-id: zkWmBh
 #: src/sections/pricing-plans/BillingToggle.tsx
 msgid "Yearly"
@@ -9008,10 +8844,16 @@ msgstr "예멘 🇾🇪"
 msgid "Yes"
 msgstr "예"
 
-#. js-lingui-id: bo6pUs
+#. js-lingui-id: mqvE5a
 #: src/sections/faq/faq.data.ts
-msgid "Yes, with our Apps framework. Scaffold an extension with `npx create-twenty-app` and ship custom objects, server-side logic functions, React components that render inside Twenty’s UI, AI skills and agents, views, and navigation, all in TypeScript, deployable to any workspace."
-msgstr "예. 우리의 Apps 프레임워크로 가능합니다. `npx create-twenty-app`으로 익스텐션을 스캐폴딩하고, 커스텀 오브젝트, 서버 사이드 로직 함수, Twenty UI 안에 렌더링되는 React 컴포넌트, AI 스킬과 에이전트, 뷰, 내비게이션 등을 모두 TypeScript로 작성해 어떤 워크스페이스에도 배포할 수 있습니다."
+msgid "Yes, with our Apps framework: ship custom objects, server-side logic functions, React components that render inside the UI, AI skills and agents, views, and navigation, all in TypeScript, deployable to any workspace."
+msgstr ""
+
+#. js-lingui-id: Afu8fQ
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/faq/faq.data.ts
+msgid "Yes. {0} is built on open-source software, and the full source code of every released version is available for download from within the product."
+msgstr ""
 
 #. js-lingui-id: yIcBW6
 #: src/sections/faq/faq.data.ts
@@ -9032,11 +8874,6 @@ msgstr "예. 마이그레이션 파트너는 Salesforce, HubSpot 또는 스프�
 #: src/sections/faq/partner-faq.data.ts
 msgid "Yes. Some partners specialise in deploying, upgrading, and operating self-hosted Twenty instances on your own infrastructure."
 msgstr "예. 일부 파트너는 자체 인프라에서 셀프 호스팅 Twenty 인스턴스를 배포, 업그레이드 및 운영하는 데 특화되어 있습니다."
-
-#. js-lingui-id: 8m0eN9
-#: src/sections/faq/faq.data.ts
-msgid "Yes. Twenty is the #1 Open Source CRM on GitHub. You can self-host to fully own your infrastructure, or run it on our managed cloud for a zero-ops setup."
-msgstr "예. Twenty는 GitHub에서 1위 오픈 소스 CRM입니다. 인프라를 완전히 소유하기 위해 자체 호스팅을 하거나, 제로-옵스 구성을 위해 관리형 클라우드에서 실행할 수 있습니다."
 
 #. js-lingui-id: kWJmRL
 #: src/client-brief/client-brief-copy.ts

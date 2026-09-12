@@ -1,4 +1,4 @@
-const DEFAULT_TWENTY_APP_BASE_URL = 'https://app.twenty.com';
+const DEFAULT_TWENTY_APP_BASE_URL = 'https://app.example.com';
 
 export const buildAppInstallUrl = (universalIdentifier: string): string => {
   const baseUrl =

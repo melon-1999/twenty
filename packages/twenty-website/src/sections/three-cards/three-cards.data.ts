@@ -1,5 +1,6 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 // Identifies which halftone model fills the card's stage.
 export type IllustrationId =
@@ -23,7 +24,7 @@ export type IllustrationCardRecord = {
 export const ILLUSTRATION_CARDS: readonly IllustrationCardRecord[] = [
   {
     heading: msg`Production grade quality`,
-    body: msg`W3villa used Twenty as a production-grade framework for the data model, permissions, authentication, and workflow engine they would otherwise have rebuilt themselves.`,
+    body: msg`W3villa used ${PRODUCT_BRANDING.name} as a production-grade framework for the data model, permissions, authentication, and workflow engine they would otherwise have rebuilt themselves.`,
     attribution: {
       role: msg`VP of Engineering`,
       company: msg`W3villa Technologies`,
@@ -43,7 +44,7 @@ export const ILLUSTRATION_CARDS: readonly IllustrationCardRecord[] = [
   },
   {
     heading: msg`Control without drag`,
-    body: msg`AC&T moved to a self-hosted Twenty instance with no vendor risk, no forced migration, and CRM costs reduced by more than 90%.`,
+    body: msg`AC&T moved to a self-hosted ${PRODUCT_BRANDING.name} instance with no vendor risk, no forced migration, and CRM costs reduced by more than 90%.`,
     attribution: {
       role: msg`CRM Engineer`,
       company: msg`AC&T Education Migration`,

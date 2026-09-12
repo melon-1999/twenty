@@ -1,5 +1,6 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 // Which animated product scene mounts in the card frame when the mockup
 // wave (with AppPreview) lands; until then the gradient backdrop — the
@@ -20,7 +21,7 @@ export type FeatureCardRecord = {
 export const FEATURE_CARDS: readonly FeatureCardRecord[] = [
   {
     heading: msg`Familiar, modern interface`,
-    body: msg`Twenty makes it simple. It's clean, intuitive, and built to feel like Notion.`,
+    body: msg`${PRODUCT_BRANDING.name} makes it simple. It's clean, intuitive, and built to feel like Notion.`,
     backgroundImageSrc:
       '/images/home/three-cards-feature/familiar-interface-gradient.webp',
     icon: 'users-group',

@@ -7,7 +7,6 @@ import {
   CASE_STUDY_STORIES,
   getCaseStudyAccent,
 } from '@/case-studies';
-import { getCommunityStats } from '@/platform/community';
 import { getRouteI18n } from '@/platform/i18n/get-route-i18n';
 import { getServerI18n } from '@/platform/i18n/get-server-i18n';
 import { resolveLocaleParam } from '@/platform/i18n/resolve-locale-param';
@@ -50,10 +49,7 @@ export default async function CaseStudyPage({
 }: {
   params: Promise<CaseStudyParams>;
 }) {
-  const [, communityStats] = await Promise.all([
-    getRouteI18n(params),
-    getCommunityStats(),
-  ]);
+  await getRouteI18n(params);
   const i18n = getServerI18n();
   const { locale: rawLocale, slug } = await params;
   const locale = resolveLocaleParam(rawLocale);
@@ -76,7 +72,7 @@ export default async function CaseStudyPage({
           locale,
         )}
       />
-      <Menu communityStats={communityStats} scheme="dark" />
+      <Menu scheme="dark" />
       <main>
         <CaseStudyHero
           accent={getCaseStudyAccent(index)}

@@ -7,5 +7,4 @@ export type MenuSocialLink = {
   href: string;
   icon: IconComponent;
   showInDesktop: boolean;
-  statKey?: 'githubStars' | 'discordMembers';
 };
