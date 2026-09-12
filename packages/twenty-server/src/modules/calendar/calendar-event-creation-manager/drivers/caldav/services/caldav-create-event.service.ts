@@ -43,7 +43,9 @@ export class CalDavCreateEventService implements CalendarEventCreationDriver {
       }
 
       const uid = uuid();
-      const calendar = ical({ prodId: `//${PRODUCT_BRANDING.name}//Calendar//EN` });
+      const calendar = ical({
+        prodId: `//${PRODUCT_BRANDING.name}//Calendar//EN`,
+      });
 
       calendar.createEvent({
         id: uid,

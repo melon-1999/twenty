@@ -1,4 +1,8 @@
-import { PRODUCT_BRANDING } from '../ProductBranding';
+import {
+  PRODUCT_BRANDING,
+  PRODUCT_RELEASE_TAG,
+  PRODUCT_VERSION,
+} from '../ProductBranding';
 
 describe('PRODUCT_BRANDING', () => {
   it('should define a non-empty product name and short name', () => {
@@ -34,5 +38,19 @@ describe('PRODUCT_BRANDING', () => {
     for (const url of urls) {
       expect(url).toMatch(/^https:\/\//);
     }
+  });
+
+  it('should derive the release tag from the product version', () => {
+    expect(PRODUCT_RELEASE_TAG).toBe(`product/v${PRODUCT_VERSION}`);
+  });
+
+  it('should pin source code and asset URLs to the release tag, not a branch', () => {
+    expect(PRODUCT_BRANDING.sourceCodeUrl).toBe(
+      `${PRODUCT_BRANDING.repositoryUrl}/tree/${PRODUCT_RELEASE_TAG}`,
+    );
+    expect(PRODUCT_BRANDING.emailLogoUrl).toContain(`/${PRODUCT_RELEASE_TAG}/`);
+    expect(PRODUCT_BRANDING.defaultWorkspaceLogoUrl).toContain(
+      `/${PRODUCT_RELEASE_TAG}/`,
+    );
   });
 });

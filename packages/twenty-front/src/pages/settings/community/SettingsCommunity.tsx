@@ -155,7 +155,7 @@ export const SettingsCommunity = () => {
           <StyledFeaturesContent>
             <SettingsLabContent />
             <StyledCardLink
-              href={`${PRODUCT_BRANDING.sourceCodeUrl}/releases`}
+              href={`${PRODUCT_BRANDING.repositoryUrl}/releases`}
               target="_blank"
               rel="noopener noreferrer"
             >

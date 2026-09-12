@@ -15,11 +15,10 @@ export const buildMcpServerCard = ({
   name: 'com.twenty/twenty',
   version,
   title: `${PRODUCT_BRANDING.name} CRM`,
-  description:
-    `Read and write your ${PRODUCT_BRANDING.name} CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.`,
+  description: `Read and write your ${PRODUCT_BRANDING.name} CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.`,
   websiteUrl: PRODUCT_BRANDING.websiteUrl,
   repository: {
-    url: PRODUCT_BRANDING.sourceCodeUrl,
+    url: PRODUCT_BRANDING.repositoryUrl,
     source: 'github',
   },
   remotes: [
