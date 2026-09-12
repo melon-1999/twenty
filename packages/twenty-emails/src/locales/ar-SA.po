@@ -65,8 +65,8 @@ msgstr "تأكيد عنوان بريدك الإلكتروني الجديد"
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "الاتصال بـ Twenty"
+msgid "Connect to {productName}"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
@@ -87,11 +87,6 @@ msgstr "معطل"
 #: src/emails/server-admin-access-changed.email.tsx
 msgid "Enabled"
 msgstr "مفعَّل"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Github"
-msgstr "جيتهاب"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -134,8 +129,8 @@ msgstr "إذا لم تفعل شيئًا، سنُوقف مساحة عملك مؤ�
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you'd ever like to give Twenty another try, you can start a fresh workspace in minutes — we'd love to have you back."
-msgstr "إذا رغبت في تجربة Twenty مرة أخرى في أي وقت، يمكنك بدء مساحة عمل جديدة خلال دقائق — سنسعد بعودتك."
+msgid "If you'd ever like to give {productName} another try, you can start a fresh workspace in minutes — we'd love to have you back."
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -149,8 +144,8 @@ msgstr "تمت إزالة بياناتها ولم يَعُد بالإمكان ا
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "انضم إلى فريقك في Twenty"
+msgid "Join your team on {productName}"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
@@ -185,8 +180,8 @@ msgstr "إعادة تفعيل مساحة العمل"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "اقرأ دليل المستخدم لـTwenty"
+msgid "Read the user guide"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -197,11 +192,6 @@ msgstr "إعادة تعيين"
 #: src/emails/password-reset-link.email.tsx
 msgid "Reset your password 🗝"
 msgstr "إعادة تعيين كلمة مرورك 🗝"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "San Francisco / Paris"
-msgstr "سان فرانسيسكو / باريس"
 
 #. js-lingui-explicit-id
 #: src/emails/server-admin-access-changed.email.tsx
@@ -239,6 +229,11 @@ msgid "Set your password 🗝"
 msgstr "قم بتعيين كلمة مرورك 🗝"
 
 #. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Source code"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
 msgid "Start a new workspace"
 msgstr "بدء مساحة عمل جديدة"
@@ -265,11 +260,6 @@ msgstr "للاحتفاظ بمساحة عملك وكل ما أنشأته، أضِ
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com، مؤسسة لنشر الفائدة العامة"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
 msgid "User guide"
 msgstr "دليل المستخدم"
 
@@ -286,18 +276,18 @@ msgstr "تحقق من البريد الإلكتروني"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "قم بزيارة وثائق المطورين لـTwenty"
+msgid "Visit our website"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "قم بزيارة مخزن جيتهاب لـTwenty"
+msgid "Visit the developer documentation"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "قم بزيارة موقع Twenty"
+msgid "Visit the source code repository"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/billing-trial-converting.email.tsx
@@ -311,8 +301,8 @@ msgstr "الموقع الإلكتروني"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "ما هو Twenty؟"
+msgid "What is {productName}?"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx

@@ -65,8 +65,8 @@ msgstr "新しいメールアドレスを確認してください"
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Twentyに接続"
+msgid "Connect to {productName}"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
@@ -87,11 +87,6 @@ msgstr "無効"
 #: src/emails/server-admin-access-changed.email.tsx
 msgid "Enabled"
 msgstr "有効"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Github"
-msgstr "ギットハブ"
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -134,8 +129,8 @@ msgstr "何も操作されない場合、こちらでワークスペースを一
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you'd ever like to give Twenty another try, you can start a fresh workspace in minutes — we'd love to have you back."
-msgstr "今後、もし再び Twenty をお試しいただけるようであれば、数分で新しいワークスペースを開始できます。お帰りいただけることを心よりお待ちしています。"
+msgid "If you'd ever like to give {productName} another try, you can start a fresh workspace in minutes — we'd love to have you back."
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -149,8 +144,8 @@ msgstr "そのデータは削除され、今後復元することはできませ
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Twentyでチームに参加"
+msgid "Join your team on {productName}"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx
@@ -185,8 +180,8 @@ msgstr "ワークスペースを再有効化"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Twentyのユーザーガイドを読む"
+msgid "Read the user guide"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -197,11 +192,6 @@ msgstr "リセット"
 #: src/emails/password-reset-link.email.tsx
 msgid "Reset your password 🗝"
 msgstr "パスワードをリセット"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "San Francisco / Paris"
-msgstr "サンフランシスコ / パリ"
 
 #. js-lingui-explicit-id
 #: src/emails/server-admin-access-changed.email.tsx
@@ -239,6 +229,11 @@ msgid "Set your password 🗝"
 msgstr "パスワードを設定してください 🗝"
 
 #. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Source code"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
 msgid "Start a new workspace"
 msgstr "新しいワークスペースを開始"
@@ -265,11 +260,6 @@ msgstr "ワークスペースとこれまでに構築された内容を保持す
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, 公益企業"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
 msgid "User guide"
 msgstr "ユーザーガイド"
 
@@ -286,18 +276,18 @@ msgstr "メールを確認"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Twentyの開発者向けドキュメントを訪問"
+msgid "Visit our website"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "TwentyのGitHubリポジトリを訪問"
+msgid "Visit the developer documentation"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Twentyのウェブサイトを訪問"
+msgid "Visit the source code repository"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/billing-trial-converting.email.tsx
@@ -311,8 +301,8 @@ msgstr "ウェブサイト"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Twentyとは？"
+msgid "What is {productName}?"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/billing-subscription-renewing.email.tsx

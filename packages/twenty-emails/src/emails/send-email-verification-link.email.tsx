@@ -4,6 +4,7 @@ import { CallToAction } from 'src/components/CallToAction';
 import { MainText } from 'src/components/MainText';
 import { Title } from 'src/components/Title';
 import { createI18nInstance } from 'src/utils/i18n.utils';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { type APP_LOCALES } from 'twenty-shared/translations';
 
 type SendEmailVerificationLinkEmailProps = {
@@ -22,8 +23,8 @@ export const SendEmailVerificationLinkEmail = ({
     ? i18n._('Confirm your new email address')
     : i18n._('Confirm your email address');
   const bodyId = isEmailUpdate
-    ? 'We received a request to change the email address associated with your Twenty account. Click below to confirm this change.'
-    : 'Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address.';
+    ? 'We received a request to change the email address associated with your account. Click below to confirm this change.'
+    : 'Thanks for registering for an account on {productName}! Before we get started, we just need to confirm that this is you. Click below to verify your email address.';
   const ctaLabel = isEmailUpdate
     ? i18n._('Confirm new email')
     : i18n._('Verify Email');
@@ -32,7 +33,7 @@ export const SendEmailVerificationLinkEmail = ({
     <BaseEmail width={333} locale={locale}>
       <Title value={title} />
       <MainText>
-        <Trans id={bodyId} />
+        <Trans id={bodyId} values={{ productName: PRODUCT_BRANDING.name }} />
       </MainText>
       <br />
       <CallToAction href={link} value={ctaLabel} />

@@ -5,6 +5,7 @@ import { MainText } from 'src/components/MainText';
 import { Title } from 'src/components/Title';
 import { createI18nInstance } from 'src/utils/i18n.utils';
 import { type APP_LOCALES } from 'twenty-shared/translations';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 type CleanSuspendedWorkspaceEmailProps = {
   daysSinceInactive: number;
@@ -42,11 +43,14 @@ export const CleanSuspendedWorkspaceEmail = ({
         <Trans id="Its data has been removed and can no longer be recovered." />
         <br />
         <br />
-        <Trans id="If you'd ever like to give Twenty another try, you can start a fresh workspace in minutes — we'd love to have you back." />
+        <Trans
+          id="If you'd ever like to give {productName} another try, you can start a fresh workspace in minutes — we'd love to have you back."
+          values={{ productName: PRODUCT_BRANDING.name }}
+        />
       </MainText>
       <br />
       <CallToAction
-        href="https://app.twenty.com/"
+        href={PRODUCT_BRANDING.websiteUrl}
         value={i18n._('Start a new workspace')}
       />
       <br />
