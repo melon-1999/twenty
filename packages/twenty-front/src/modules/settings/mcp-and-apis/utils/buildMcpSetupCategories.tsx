@@ -21,7 +21,6 @@ import { McpClientLogo } from '@/settings/mcp-and-apis/components/McpClientLogo'
 import { MCP_SETUP } from '@/settings/mcp-and-apis/constants/McpSetup';
 import { type McpSetupCategory } from '@/settings/mcp-and-apis/types/McpSetup';
 import {
-import { PRODUCT_BRANDING } from 'twenty-shared/constants';
   buildClaudeInstallLink,
   buildCursorInstallLink,
   buildGooseInstallLink,
@@ -199,3 +198,4 @@ export const buildMcpSetupCategories = ({
     ],
   },
 ];
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
