@@ -77,10 +77,9 @@ const PUBLIC_SVG_BRAND_FILES = new Set([
   'public/images/logo-bar/fora.svg',
   'public/images/logo-bar/wazoku.svg',
   'public/images/shared/companies/logos/linear.svg',
-  'public/images/shared/companies/logos/twenty.svg',
   // The halftone studio's default image input: fetched at runtime as an
   // <img> and fed through the halftone shader, not rendered as an icon glyph.
-  'public/images/shared/halftone/twenty-logo.svg',
+  'public/images/shared/halftone/logo.svg',
 ]);
 // Root README documentation assets: the repo's top-level README.md embeds
 // these SVGs by URL. They are not site UI (so not src/icons components) nor

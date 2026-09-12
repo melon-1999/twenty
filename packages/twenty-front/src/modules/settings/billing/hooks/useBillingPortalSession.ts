@@ -6,6 +6,7 @@ import { useLazyQuery } from '@apollo/client/react';
 import { useLingui } from '@lingui/react/macro';
 import { isDefined } from 'twenty-shared/utils';
 import { BillingPortalSessionDocument } from '~/generated-metadata/graphql';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export const useBillingPortalSession = (returnUrlPath: string) => {
   const { t } = useLingui();
@@ -25,7 +26,7 @@ export const useBillingPortalSession = (returnUrlPath: string) => {
 
   const showBillingPortalSessionError = () => {
     enqueueErrorSnackBar({
-      message: t`Billing portal session error. Please retry or contact Twenty team`,
+      message: t`Billing portal session error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
     });
   };
 

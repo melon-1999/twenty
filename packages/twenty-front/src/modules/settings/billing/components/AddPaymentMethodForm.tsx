@@ -21,6 +21,7 @@ import { Info } from 'twenty-ui/feedback';
 import { Button } from 'twenty-ui/input';
 import { themeCssVariables } from 'twenty-ui/theme-constants';
 import { CreateBillingPaymentMethodSetupIntentDocument } from '~/generated-metadata/graphql';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 type AddPaymentMethodFormContentProps = {
   finalRedirectPath?: string;
@@ -96,7 +97,7 @@ const AddPaymentMethodFormContent = ({
         data?.createBillingPaymentMethodSetupIntent?.clientSecret;
       if (!isDefined(clientSecret)) {
         enqueueErrorSnackBar({
-          message: t`Subscription error. Please retry or contact Twenty team`,
+          message: t`Subscription error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
         });
         setIsSubmitting(false);
         return;
@@ -127,7 +128,7 @@ const AddPaymentMethodFormContent = ({
         enqueueErrorSnackBar({ apolloError: error });
       } else {
         enqueueErrorSnackBar({
-          message: t`Subscription error. Please retry or contact Twenty team`,
+          message: t`Subscription error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
         });
       }
       setIsSubmitting(false);

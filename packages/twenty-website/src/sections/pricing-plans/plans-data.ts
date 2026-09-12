@@ -54,7 +54,7 @@ const PRO_BULLETS_SELF_HOST = [
   msg`Full customization`,
   msg`Create custom apps`,
   msg`Up to 5 workspaces`,
-  msg`Community support`,
+  msg`Self-serve support`,
 ];
 
 const ORGANIZATION_BULLETS_CLOUD = [

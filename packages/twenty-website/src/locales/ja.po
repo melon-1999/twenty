@@ -70,6 +70,12 @@ msgstr ""
 msgid "{0} Features — Modern CRM Platform"
 msgstr ""
 
+#. js-lingui-id: stCODw
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
+msgid "{0} fields"
+msgstr ""
+
 #. js-lingui-id: iVcLku
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/home-hero/HomeHero.tsx
@@ -2037,16 +2043,6 @@ msgstr "商用ライセンス（AGPL義務なし）"
 msgid "Commercials"
 msgstr "料金"
 
-#. js-lingui-id: chL5IG
-#: src/sections/pricing-plan-table/plan-table-data.ts
-msgid "Community"
-msgstr "コミュニティ"
-
-#. js-lingui-id: 8CLnho
-#: src/sections/pricing-plans/plans-data.ts
-msgid "Community support"
-msgstr "コミュニティサポート"
-
 #. js-lingui-id: RxpseA
 #: src/partner-application/data/partner-country-options.ts
 msgid "Comoros 🇰🇲"
@@ -2803,10 +2799,10 @@ msgstr "W3villa Technologies ディレクター、パートナー"
 msgid "Directory"
 msgstr "ディレクトリ"
 
-#. js-lingui-id: old0Lj
+#. js-lingui-id: BjtA+9
 #: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Discover the newest features and improvements in Twenty, the #1 Open Source CRM."
-msgstr "Twentyは#1のオープンソースCRMであり、その最新機能と改善点をご紹介します。"
+msgid "Discover the newest features and improvements in each release."
+msgstr ""
 
 #. js-lingui-id: EVc4nZ
 #: src/platform/releases/ReleaseNotes.tsx
@@ -6824,6 +6820,16 @@ msgstr "セルフホスティング、いまやレンタル可能！"
 msgid "Self-Onboarding"
 msgstr "セルフオンボーディング"
 
+#. js-lingui-id: gBtzlY
+#: src/sections/pricing-plan-table/plan-table-data.ts
+msgid "Self-serve"
+msgstr ""
+
+#. js-lingui-id: TBJ0Pi
+#: src/sections/pricing-plans/plans-data.ts
+msgid "Self-serve support"
+msgstr ""
+
 #. js-lingui-id: wF0e4y
 #: src/sections/compare/compare-data.ts
 #: src/sections/compare/compare-data.ts
@@ -7427,11 +7433,6 @@ msgstr "チーム規模 / 席数"
 msgid "Teams & permission sets"
 msgstr "チームとパーミッションセット"
 
-#. js-lingui-id: vsdUaL
-#: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Technical notes"
-msgstr "テクニカルノート"
-
 #. js-lingui-id: y+bLyB
 #: src/partners-marketplace/PartnerCoverageSection.tsx
 #: src/partner-application/partner-application-copy.ts
@@ -7966,11 +7967,6 @@ msgstr "ゴートゥーマーケットスタックのAPIバックボーンとし
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty delivers on what CRMs should have always been: fairly priced software with a fully modular and customizable model, a clean and modern UI, granular permissions, automations, enterprise features. A compelling solution with high potential to rightfully disrupt the CRM market."
 msgstr "Twenty は、CRM が本来あるべき姿を体現しています。適正な価格、完全にモジュール化されカスタマイズ可能なモデル、クリーンでモダンな UI、きめ細かな権限設定、自動化、エンタープライズ機能。CRM 市場を正当に変革しうる、高い可能性を秘めた説得力のあるソリューションです。"
-
-#. js-lingui-id: JnaRPe
-#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
-msgid "Twenty fields"
-msgstr "Twenty フィールド"
 
 #. js-lingui-id: fwep/o
 #: src/case-studies/case-study-stories.ts

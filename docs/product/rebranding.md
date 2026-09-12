@@ -208,6 +208,19 @@ Kundenoberfläche vollständig von Twenty-/OSS-Projekt-Spuren bereinigt:
 - **Bewusste Ausnahme**: `<!-- BEGIN: Twenty Config -->`-Marker in `index.html` bleibt (Server-Env-Injection matcht auf den String; nur im View-Source sichtbar).
 - **Regressionstest**: `packages/twenty-shared/src/utils/branding/__tests__/customerVisibleBrandingLeaks.test.ts` scannt eine feste Liste kundensichtbarer Quelldateien auf `twentyhq`, `twenty.com`, `github.com`, `discord`, ChatGPT-App-Links und "Powered by" — bewusst NICHT global auf "Twenty" (interne Namen und Lizenztexte bleiben legitim).
 
+## Marketing-Website (`packages/twenty-website`)
+
+Die Next.js-Marketing-Site wurde als eigene Kunden-Surface bereinigt:
+
+- **Navbar/Footer**: nur noch Product + Pricing (+ Login/Get started auf `SITE_URLS.appWelcome`-Platzhalter); GitHub-Stars-/Discord-Member-Zähler samt `platform/community/`-Modul (GitHub-/Discord-API-Polling) vollständig entfernt; keine Social-Links; Footer-Legal-Links auf `PRODUCT_BRANDING.legal*Url`; Copyright über `legalEntityLine`.
+- **Zentrale URLs**: `src/platform/site-urls.ts` enthält nur noch `appWelcome`/`docsApi`/`docsMcp` als eigene Platzhalter-Domains — keine Twenty-Ziele mehr.
+- **Retired Routen** (308 → `/`, de-indexed in `static-website-routes.ts`): `why-twenty`, `partners*`, `releases`, `customers*`, `apps*`, `compare-pricing/*`, `enterprise/*`, `terms`, `privacy-policy`, `halftone` sowie die Legacy-`/user-guide|/developers|/twenty-ui`-Doku-Redirects. Damit ist auch Twentys Enterprise-Checkout (`/enterprise/activate`, Stripe-`success_url`) bewusst stillgelegt — unser Produkt verkauft keine Twenty-Enterprise-Keys. Seiten-/Sektionscode bleibt für minimalen Upstream-Diff im Repo.
+- **SEO/Meta**: `SITE_NAME`/Titles/Descriptions über `PRODUCT_BRANDING`, Twitter-Handle entfernt, `getSiteUrl`-Default `https://www.example.com` (per `NEXT_PUBLIC_WEBSITE_URL` setzen), Sitemap nur `/`, `/product`, `/pricing`.
+- **Assets**: Website-Logo (`src/icons/TwentyLogo.tsx` — Name intern beibehalten), `favicon.ico` und `public/images/og/default.png` durch die Placeholder-Marke ersetzt; Twenty-Wortmarken-SVGs gelöscht; Homepage-Sektionen mit Twenty-Kundenzitaten (TrustedBy/Helped/Testimonials) entfernt; Twenty-Demo-Firma in Mockups durch Figma ersetzt; `twenty-icons.com`-Favicon-Fallback der Mockups entfernt (lokale Logos/Initialen); fremde Domain-Verifikationsdateien (`openai-apps-challenge`, `microsoft-identity-association.json`) gelöscht; `llms.txt`, `security.txt`, MCP-`server-card.json` neutralisiert.
+- **Guard**: `next.config.ts` wirft bei Production-Build mit Platzhalter-Branding (gleicher Opt-out `ALLOW_PLACEHOLDER_BRANDING=true` wie die App).
+- **Funktionale Twenty-Kopplungen (Open Items)**: Apps-Marketplace-Daten (`TWENTY_MARKETPLACE_API_URL`, Default api.twenty.com) und Partner-API betreffen nur retired Routen; Cal.com-Buchung zentral in `contact-cal-config.ts` mit Platzhalter-Formular-ID; `/api/enterprise/*`-Backend unangetastet (nur unerreichbar aus der UI).
+- **Bewusst intern bleibend**: `twenty-sdk`-Demo-Code im Homepage-Terminal-Mockup (reales Paket, Fiction-Code), Paket-/Ordnernamen, Lingui-Kataloge enthalten Strings retirte Routen (nicht gerendert; Pruning = Open Item), "Twenty CLI"-OAuth-App-Name (reales CLI-Paket).
+
 Operator-Hinweise (kein Code-Change):
 
 - **Erster Signup erhält Server-Admin**: Twentys Bootstrap vergibt `canAccessFullAdminPanel`+`canImpersonate` an den ersten registrierten User der Instanz (`sign-in-up.service.ts`). Vor Kundenöffnung zwingend zuerst den Operator-Account anlegen.

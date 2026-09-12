@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import semver from 'semver';
 import { UpgradeStatusService } from 'src/engine/core-modules/upgrade/services/upgrade-status.service';
 import { isDefined } from 'twenty-shared/utils';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 export type VersionValidationFailureReason =
   | 'INVALID_REQUIRED_VERSION'
@@ -180,12 +181,12 @@ export class ApplicationVersionValidationService {
         ? {
             compatible: false,
             reason: 'WORKSPACE_INCOMPATIBLE',
-            message: `App requires Twenty server ${requiredVersionRange} but this workspace has only completed the upgrade to ${version}.`,
+            message: `App requires ${PRODUCT_BRANDING.name} server ${requiredVersionRange} but this workspace has only completed the upgrade to ${version}.`,
           }
         : {
             compatible: false,
             reason: 'INSTANCE_INCOMPATIBLE',
-            message: `App requires Twenty server ${requiredVersionRange} but this server is ${version}.`,
+            message: `App requires ${PRODUCT_BRANDING.name} server ${requiredVersionRange} but this server is ${version}.`,
           };
     }
 

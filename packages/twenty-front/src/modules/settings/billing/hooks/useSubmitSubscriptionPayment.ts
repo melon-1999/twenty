@@ -1,3 +1,4 @@
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
 import { CombinedGraphQLErrors } from '@apollo/client/errors';
 import { useMutation } from '@apollo/client/react';
@@ -59,7 +60,7 @@ export const useSubmitSubscriptionPayment = ({
       const paymentIntent = data?.createSubscriptionPaymentIntent;
       if (!isDefined(paymentIntent?.clientSecret)) {
         enqueueErrorSnackBar({
-          message: t`Subscription error. Please retry or contact Twenty team`,
+          message: t`Subscription error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
         });
         setIsSubmitting(false);
         return;
@@ -96,7 +97,7 @@ export const useSubmitSubscriptionPayment = ({
         enqueueErrorSnackBar({ apolloError: error });
       } else {
         enqueueErrorSnackBar({
-          message: t`Subscription error. Please retry or contact Twenty team`,
+          message: t`Subscription error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
         });
       }
       setIsSubmitting(false);

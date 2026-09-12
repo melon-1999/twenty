@@ -38,21 +38,8 @@ const FaviconImage = styled.img`
   width: 100%;
 `;
 
-function sanitizeUrl(link: string | null | undefined) {
-  return link
-    ? link.replace(/(https?:\/\/)|(www\.)/g, '').replace(/\/$/, '')
-    : '';
-}
-
 function getLogoUrlFromDomainName(domainName?: string): string | undefined {
-  const sharedLogoUrl = sharedAssetUrls.companyLogoForDomain(domainName);
-  if (sharedLogoUrl) {
-    return sharedLogoUrl;
-  }
-  const sanitizedDomain = sanitizeUrl(domainName);
-  return sanitizedDomain
-    ? `https://twenty-icons.com/${sanitizedDomain}`
-    : undefined;
+  return sharedAssetUrls.companyLogoForDomain(domainName);
 }
 
 export function FaviconLogo({

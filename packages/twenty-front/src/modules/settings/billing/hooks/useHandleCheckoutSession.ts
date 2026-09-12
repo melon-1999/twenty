@@ -1,3 +1,4 @@
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { useRedirect } from '@/domain-manager/hooks/useRedirect';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
 import { t } from '@lingui/core/macro';
@@ -41,14 +42,14 @@ export const useHandleCheckoutSession = ({
       });
       if (!data?.checkoutSession.url) {
         enqueueErrorSnackBar({
-          message: t`Checkout session error. Please retry or contact Twenty team`,
+          message: t`Checkout session error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
         });
         return;
       }
       redirect(data.checkoutSession.url);
     } catch {
       enqueueErrorSnackBar({
-        message: t`Checkout session error. Please retry or contact Twenty team`,
+        message: t`Checkout session error. Please retry or contact ${PRODUCT_BRANDING.name} support`,
       });
     } finally {
       setIsSubmitting(false);

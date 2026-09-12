@@ -70,6 +70,12 @@ msgstr ""
 msgid "{0} Features — Modern CRM Platform"
 msgstr ""
 
+#. js-lingui-id: stCODw
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
+msgid "{0} fields"
+msgstr ""
+
 #. js-lingui-id: iVcLku
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/home-hero/HomeHero.tsx
@@ -2037,16 +2043,6 @@ msgstr "商业许可（无 AGPL 义务）"
 msgid "Commercials"
 msgstr "商务条款"
 
-#. js-lingui-id: chL5IG
-#: src/sections/pricing-plan-table/plan-table-data.ts
-msgid "Community"
-msgstr "社区"
-
-#. js-lingui-id: 8CLnho
-#: src/sections/pricing-plans/plans-data.ts
-msgid "Community support"
-msgstr "社区支持"
-
 #. js-lingui-id: RxpseA
 #: src/partner-application/data/partner-country-options.ts
 msgid "Comoros 🇰🇲"
@@ -2803,10 +2799,10 @@ msgstr "W3villa Technologies 董事、合作伙伴"
 msgid "Directory"
 msgstr "目录"
 
-#. js-lingui-id: old0Lj
+#. js-lingui-id: BjtA+9
 #: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Discover the newest features and improvements in Twenty, the #1 Open Source CRM."
-msgstr "发现 Twenty，这款排名第 1 的开源 CRM，所带来的最新功能和改进。"
+msgid "Discover the newest features and improvements in each release."
+msgstr ""
 
 #. js-lingui-id: EVc4nZ
 #: src/platform/releases/ReleaseNotes.tsx
@@ -6824,6 +6820,16 @@ msgstr "自托管，现在也可以租用！"
 msgid "Self-Onboarding"
 msgstr "自助式初始引导"
 
+#. js-lingui-id: gBtzlY
+#: src/sections/pricing-plan-table/plan-table-data.ts
+msgid "Self-serve"
+msgstr ""
+
+#. js-lingui-id: TBJ0Pi
+#: src/sections/pricing-plans/plans-data.ts
+msgid "Self-serve support"
+msgstr ""
+
 #. js-lingui-id: wF0e4y
 #: src/sections/compare/compare-data.ts
 #: src/sections/compare/compare-data.ts
@@ -7427,11 +7433,6 @@ msgstr "团队规模 / 席位数"
 msgid "Teams & permission sets"
 msgstr "团队与权限集"
 
-#. js-lingui-id: vsdUaL
-#: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Technical notes"
-msgstr "技术说明"
-
 #. js-lingui-id: y+bLyB
 #: src/partners-marketplace/PartnerCoverageSection.tsx
 #: src/partner-application/partner-application-copy.ts
@@ -7966,11 +7967,6 @@ msgstr "将 Twenty 作为市场拓展技术栈的 API 支柱 | Elevate Consultin
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty delivers on what CRMs should have always been: fairly priced software with a fully modular and customizable model, a clean and modern UI, granular permissions, automations, enterprise features. A compelling solution with high potential to rightfully disrupt the CRM market."
 msgstr "Twenty 实现了 CRM 本应具备的一切：合理定价的软件、完全模块化且可自定义的模型、简洁现代的 UI、细粒度权限、自动化和企业级功能。这是一套极具吸引力的解决方案，极有潜力为 CRM 市场带来实至名归的颠覆。"
-
-#. js-lingui-id: JnaRPe
-#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
-msgid "Twenty fields"
-msgstr "Twenty 字段"
 
 #. js-lingui-id: fwep/o
 #: src/case-studies/case-study-stories.ts

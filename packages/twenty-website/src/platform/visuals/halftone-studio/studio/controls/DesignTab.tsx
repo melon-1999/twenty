@@ -18,8 +18,8 @@ import { SegmentedControl } from './SegmentedControl';
 import { SelectInput } from './select-input';
 import { SliderControl } from './SliderControl';
 
-const DEFAULT_IMAGE_FILE_NAME = 'twenty-logo.svg';
-const DEFAULT_IMAGE_OPTION_LABEL = 'Twenty image';
+const DEFAULT_IMAGE_FILE_NAME = 'logo.svg';
+const DEFAULT_IMAGE_OPTION_LABEL = 'Brand image';
 const IMAGE_SOURCE_VALUE = '__image__';
 
 const ColorSectionHeader = styled(CONTROLS_PANEL_SHELL.ColorControlRow)`

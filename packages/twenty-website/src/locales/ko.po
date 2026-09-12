@@ -70,6 +70,12 @@ msgstr ""
 msgid "{0} Features — Modern CRM Platform"
 msgstr ""
 
+#. js-lingui-id: stCODw
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
+msgid "{0} fields"
+msgstr ""
+
 #. js-lingui-id: iVcLku
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/home-hero/HomeHero.tsx
@@ -2035,16 +2041,6 @@ msgstr "상업용 라이선스(AGPL 의무 없음)"
 msgid "Commercials"
 msgstr "커머셜"
 
-#. js-lingui-id: chL5IG
-#: src/sections/pricing-plan-table/plan-table-data.ts
-msgid "Community"
-msgstr "커뮤니티"
-
-#. js-lingui-id: 8CLnho
-#: src/sections/pricing-plans/plans-data.ts
-msgid "Community support"
-msgstr "커뮤니티 지원"
-
 #. js-lingui-id: RxpseA
 #: src/partner-application/data/partner-country-options.ts
 msgid "Comoros 🇰🇲"
@@ -2801,10 +2797,10 @@ msgstr "Director, W3villa Technologies, 파트너"
 msgid "Directory"
 msgstr "디렉터리"
 
-#. js-lingui-id: old0Lj
+#. js-lingui-id: BjtA+9
 #: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Discover the newest features and improvements in Twenty, the #1 Open Source CRM."
-msgstr "Twenty, #1 오픈 소스 CRM의 최신 기능과 향상점을 확인하세요."
+msgid "Discover the newest features and improvements in each release."
+msgstr ""
 
 #. js-lingui-id: EVc4nZ
 #: src/platform/releases/ReleaseNotes.tsx
@@ -6822,6 +6818,16 @@ msgstr "자체 호스팅, 이제는 월세로!"
 msgid "Self-Onboarding"
 msgstr "셀프 온보딩"
 
+#. js-lingui-id: gBtzlY
+#: src/sections/pricing-plan-table/plan-table-data.ts
+msgid "Self-serve"
+msgstr ""
+
+#. js-lingui-id: TBJ0Pi
+#: src/sections/pricing-plans/plans-data.ts
+msgid "Self-serve support"
+msgstr ""
+
 #. js-lingui-id: wF0e4y
 #: src/sections/compare/compare-data.ts
 #: src/sections/compare/compare-data.ts
@@ -7425,11 +7431,6 @@ msgstr "팀 규모 / 좌석 수"
 msgid "Teams & permission sets"
 msgstr "팀 및 권한 세트"
 
-#. js-lingui-id: vsdUaL
-#: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Technical notes"
-msgstr "기술 노트"
-
 #. js-lingui-id: y+bLyB
 #: src/partners-marketplace/PartnerCoverageSection.tsx
 #: src/partner-application/partner-application-copy.ts
@@ -7964,11 +7965,6 @@ msgstr "고투마켓 스택의 API 백본으로서의 Twenty | Elevate Consultin
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty delivers on what CRMs should have always been: fairly priced software with a fully modular and customizable model, a clean and modern UI, granular permissions, automations, enterprise features. A compelling solution with high potential to rightfully disrupt the CRM market."
 msgstr "Twenty는 CRM이 마땅히 그랬어야 했던 모습을 제공합니다. 합리적인 가격의 소프트웨어에 완전한 모듈식·맞춤형 모델, 깔끔하고 현대적인 UI, 세분화된 권한, 자동화, 엔터프라이즈 기능까지 갖추었습니다. CRM 시장을 제대로 뒤흔들 잠재력을 지닌 매력적인 솔루션입니다."
-
-#. js-lingui-id: JnaRPe
-#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
-msgid "Twenty fields"
-msgstr "Twenty 필드"
 
 #. js-lingui-id: fwep/o
 #: src/case-studies/case-study-stories.ts

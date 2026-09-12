@@ -236,7 +236,7 @@ export const PLAN_TABLE_DATA: PlanTableDataType = {
     },
     { title: msg`Support`, type: 'category' },
     {
-      featureLabel: msg`Community`,
+      featureLabel: msg`Self-serve`,
       tiers: {
         organization: { kind: 'yes', label: msg`Yes` },
         pro: { kind: 'yes', label: msg`Yes` },

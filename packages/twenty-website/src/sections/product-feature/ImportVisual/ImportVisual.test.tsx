@@ -3,6 +3,7 @@ import { I18nProvider } from '@lingui/react';
 import { render, screen } from '@testing-library/react';
 
 import { ImportVisual } from './ImportVisual';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 i18n.load('en', {});
 i18n.activate('en');
@@ -16,11 +17,13 @@ function renderVisual() {
 }
 
 describe('ImportVisual', () => {
-  it('renders the imported-data and twenty-fields columns', () => {
+  it('renders the imported-data and product-fields columns', () => {
     renderVisual();
 
     expect(screen.getByText('Imported data')).toBeInTheDocument();
-    expect(screen.getByText('Twenty fields')).toBeInTheDocument();
+    expect(
+      screen.getByText(`${PRODUCT_BRANDING.name} fields`),
+    ).toBeInTheDocument();
   });
 
   it('renders each imported column with its example value', () => {
@@ -31,7 +34,7 @@ describe('ImportVisual', () => {
     expect(screen.getByText('ex: dario@anthropic.com')).toBeInTheDocument();
   });
 
-  it('maps the imported columns onto Twenty fields', () => {
+  it('maps the imported columns onto product fields', () => {
     renderVisual();
 
     expect(screen.getByText('Name')).toBeInTheDocument();

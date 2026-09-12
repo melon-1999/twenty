@@ -29,6 +29,7 @@ import { styled } from '@linaria/react';
 import {
   ENTERPRISE_INSTANCE_TYPE,
   type EnterpriseInstanceType,
+  PRODUCT_BRANDING,
 } from 'twenty-shared/constants';
 import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath, isDefined } from 'twenty-shared/utils';
@@ -598,7 +599,7 @@ export const SettingsEnterprise = ({
         description={
           instanceType === ENTERPRISE_INSTANCE_TYPE.DEVELOPMENT
             ? t`This server is registered as a development instance and is not billed additionally. A subscription can have a single development instance in addition to its production one. Switching it back to a production instance will make its seats count toward billing.`
-            : t`One subscription provides one enterprise key that powers one production instance and one potential staging or test instance. To run a staging or test environment, install Twenty on a second server, activate it with this same enterprise key, then register that server as a development instance. Development instances unlock enterprise features without extra billing and do not count toward your production seats.`
+            : t`One subscription provides one enterprise key that powers one production instance and one potential staging or test instance. To run a staging or test environment, install ${PRODUCT_BRANDING.name} on a second server, activate it with this same enterprise key, then register that server as a development instance. Development instances unlock enterprise features without extra billing and do not count toward your production seats.`
         }
       />
       {instanceType === ENTERPRISE_INSTANCE_TYPE.DEVELOPMENT ? (

@@ -70,6 +70,12 @@ msgstr ""
 msgid "{0} Features — Modern CRM Platform"
 msgstr ""
 
+#. js-lingui-id: stCODw
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
+msgid "{0} fields"
+msgstr ""
+
 #. js-lingui-id: iVcLku
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/home-hero/HomeHero.tsx
@@ -2037,16 +2043,6 @@ msgstr "Licenza commerciale (nessun obbligo AGPL)"
 msgid "Commercials"
 msgstr "Commerciali"
 
-#. js-lingui-id: chL5IG
-#: src/sections/pricing-plan-table/plan-table-data.ts
-msgid "Community"
-msgstr "Community"
-
-#. js-lingui-id: 8CLnho
-#: src/sections/pricing-plans/plans-data.ts
-msgid "Community support"
-msgstr "Supporto della community"
-
 #. js-lingui-id: RxpseA
 #: src/partner-application/data/partner-country-options.ts
 msgid "Comoros 🇰🇲"
@@ -2803,10 +2799,10 @@ msgstr "Direttore, W3villa Technologies, Partner"
 msgid "Directory"
 msgstr "Directory"
 
-#. js-lingui-id: old0Lj
+#. js-lingui-id: BjtA+9
 #: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Discover the newest features and improvements in Twenty, the #1 Open Source CRM."
-msgstr "Scopri le funzionalità e i miglioramenti più recenti di Twenty, il CRM Open Source n. 1."
+msgid "Discover the newest features and improvements in each release."
+msgstr ""
 
 #. js-lingui-id: EVc4nZ
 #: src/platform/releases/ReleaseNotes.tsx
@@ -6822,6 +6818,16 @@ msgstr "Self‑hosting, ora in affitto!"
 msgid "Self-Onboarding"
 msgstr "Self-onboarding"
 
+#. js-lingui-id: gBtzlY
+#: src/sections/pricing-plan-table/plan-table-data.ts
+msgid "Self-serve"
+msgstr ""
+
+#. js-lingui-id: TBJ0Pi
+#: src/sections/pricing-plans/plans-data.ts
+msgid "Self-serve support"
+msgstr ""
+
 #. js-lingui-id: wF0e4y
 #: src/sections/compare/compare-data.ts
 #: src/sections/compare/compare-data.ts
@@ -7425,11 +7431,6 @@ msgstr "Dimensione del team / postazioni"
 msgid "Teams & permission sets"
 msgstr "Team e set di permessi"
 
-#. js-lingui-id: vsdUaL
-#: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Technical notes"
-msgstr "Note tecniche"
-
 #. js-lingui-id: y+bLyB
 #: src/partners-marketplace/PartnerCoverageSection.tsx
 #: src/partner-application/partner-application-copy.ts
@@ -7964,11 +7965,6 @@ msgstr "Twenty come backbone API di uno stack go-to-market | Elevate Consulting"
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty delivers on what CRMs should have always been: fairly priced software with a fully modular and customizable model, a clean and modern UI, granular permissions, automations, enterprise features. A compelling solution with high potential to rightfully disrupt the CRM market."
 msgstr "Twenty offre ciò che i CRM avrebbero sempre dovuto essere: software a prezzo equo con un modello completamente modulare e personalizzabile, un'interfaccia pulita e moderna, permission granulari, automazioni, funzionalità enterprise. Una soluzione convincente con un alto potenziale per sconvolgere a pieno titolo il mercato dei CRM."
-
-#. js-lingui-id: JnaRPe
-#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
-msgid "Twenty fields"
-msgstr "Campi Twenty"
 
 #. js-lingui-id: fwep/o
 #: src/case-studies/case-study-stories.ts

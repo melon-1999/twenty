@@ -3507,10 +3507,11 @@ msgstr "Інтервал виставлення рахунків"
 msgid "Billing period"
 msgstr "Розрахунковий період"
 
-#. js-lingui-id: xF/NXI
+#. js-lingui-id: nt1Pg9
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/hooks/useBillingPortalSession.ts
-msgid "Billing portal session error. Please retry or contact Twenty team"
-msgstr "Помилка сеансу білінгового порталу. Спробуйте ще раз або зв’яжіться з командою Twenty"
+msgid "Billing portal session error. Please retry or contact {0} support"
+msgstr ""
 
 #. js-lingui-id: 8kIU+G
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
@@ -4242,11 +4243,12 @@ msgstr "Перевірте свою електронну пошту"
 msgid "Check your inbox to verify your new email address."
 msgstr "Перевірте свою поштову скриньку, щоб підтвердити нову електронну адресу."
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: RwgnEX
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Помилка сеансу оформлення. Спробуйте ще раз або зв'яжіться з командою Twenty"
+msgid "Checkout session error. Please retry or contact {0} support"
+msgstr ""
 
 #. js-lingui-id: SviKkE
 #: src/localization/hooks/useLocaleOptions.ts
@@ -8498,10 +8500,11 @@ msgstr "Помилка при скасуванні перемикання інт
 msgid "Error while cancelling plan switching."
 msgstr "Помилка при скасуванні перемикання плану."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: BLe2o6
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Помилка під час завершення пробного періоду. Будь ласка, звʼяжіться з командою Twenty."
+msgid "Error while ending trial period. Please contact {0} support."
+msgstr ""
 
 #. js-lingui-id: 5g78zo
 #: src/pages/settings/members/SettingsWorkspaceMember.tsx
@@ -14877,10 +14880,11 @@ msgstr "Вступна винагорода"
 msgid "One or more filters reference deactivated or deleted fields and will be automatically removed on save."
 msgstr "Один або кілька фільтрів посилаються на деактивовані або видалені поля й будуть автоматично видалені під час збереження."
 
-#. js-lingui-id: 2l4SGU
+#. js-lingui-id: nIWaE5
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
-msgid "One subscription provides one enterprise key that powers one production instance and one potential staging or test instance. To run a staging or test environment, install Twenty on a second server, activate it with this same enterprise key, then register that server as a development instance. Development instances unlock enterprise features without extra billing and do not count toward your production seats."
-msgstr "Одна підписка надає один корпоративний ключ, який забезпечує роботу одного продуктивного інстансу та одного потенційного тестового або staging-інстансу. Щоб запустити staging- або тестове середовище, встановіть Twenty на другий сервер, активуйте його тим самим корпоративним ключем, а потім зареєструйте цей сервер як інстанс для розробки. Інстанси для розробки розблоковують корпоративні можливості без додаткової оплати та не враховуються у кількості продуктивних місць."
+msgid "One subscription provides one enterprise key that powers one production instance and one potential staging or test instance. To run a staging or test environment, install {0} on a second server, activate it with this same enterprise key, then register that server as a development instance. Development instances unlock enterprise features without extra billing and do not count toward your production seats."
+msgstr ""
 
 #. js-lingui-id: oFTo3P
 #: src/modules/settings/event-logs/components/SettingsLogs.tsx
@@ -19217,10 +19221,10 @@ msgstr "Підполя"
 msgid "Subdomain"
 msgstr "Субдомен"
 
-#. js-lingui-id: Sv4BSp
+#. js-lingui-id: vkXMsX
 #: src/modules/settings/billing/constants/SettingsBillingPlanComparisonRows.ts
-msgid "Subdomain (yourco.twenty.com)"
-msgstr "Субдомен (yourco.twenty.com)"
+msgid "Subdomain (yourco.example.com)"
+msgstr ""
 
 #. js-lingui-id: mGO3xy
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceCreationForm.tsx
@@ -19313,13 +19317,14 @@ msgstr "Підписка"
 msgid "Subscription activated."
 msgstr "Підписка активована."
 
-#. js-lingui-id: 0okvpx
+#. js-lingui-id: FrYxRN
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/components/AddPaymentMethodForm.tsx
 #: src/modules/settings/billing/components/AddPaymentMethodForm.tsx
 #: src/modules/settings/billing/hooks/useSubmitSubscriptionPayment.ts
 #: src/modules/settings/billing/hooks/useSubmitSubscriptionPayment.ts
-msgid "Subscription error. Please retry or contact Twenty team"
-msgstr "Помилка передплати. Спробуйте ще раз або зв’яжіться з командою Twenty"
+msgid "Subscription error. Please retry or contact {0} support"
+msgstr ""
 
 #. js-lingui-id: FooJUj
 #. placeholder {0}: getTargetPlanLabel(targetPlanKey)

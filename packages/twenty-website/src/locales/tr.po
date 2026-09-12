@@ -70,6 +70,12 @@ msgstr ""
 msgid "{0} Features — Modern CRM Platform"
 msgstr ""
 
+#. js-lingui-id: stCODw
+#. placeholder {0}: PRODUCT_BRANDING.name
+#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
+msgid "{0} fields"
+msgstr ""
+
 #. js-lingui-id: iVcLku
 #. placeholder {0}: PRODUCT_BRANDING.name
 #: src/sections/home-hero/HomeHero.tsx
@@ -2037,16 +2043,6 @@ msgstr "Ticari lisans (AGPL yükümlülüğü yok)"
 msgid "Commercials"
 msgstr "Ticari Koşullar"
 
-#. js-lingui-id: chL5IG
-#: src/sections/pricing-plan-table/plan-table-data.ts
-msgid "Community"
-msgstr "Topluluk"
-
-#. js-lingui-id: 8CLnho
-#: src/sections/pricing-plans/plans-data.ts
-msgid "Community support"
-msgstr "Topluluk desteği"
-
 #. js-lingui-id: RxpseA
 #: src/partner-application/data/partner-country-options.ts
 msgid "Comoros 🇰🇲"
@@ -2803,10 +2799,10 @@ msgstr "Direktör, W3villa Technologies, İş Ortağı"
 msgid "Directory"
 msgstr "Dizin"
 
-#. js-lingui-id: old0Lj
+#. js-lingui-id: BjtA+9
 #: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Discover the newest features and improvements in Twenty, the #1 Open Source CRM."
-msgstr "#1 Açık Kaynak CRM olan Twenty’deki en yeni özellikleri ve iyileştirmeleri keşfedin."
+msgid "Discover the newest features and improvements in each release."
+msgstr ""
 
 #. js-lingui-id: EVc4nZ
 #: src/platform/releases/ReleaseNotes.tsx
@@ -6824,6 +6820,16 @@ msgstr "Self-hosting, artık kiralık!"
 msgid "Self-Onboarding"
 msgstr "Kendi Kendine İlk Kullanım"
 
+#. js-lingui-id: gBtzlY
+#: src/sections/pricing-plan-table/plan-table-data.ts
+msgid "Self-serve"
+msgstr ""
+
+#. js-lingui-id: TBJ0Pi
+#: src/sections/pricing-plans/plans-data.ts
+msgid "Self-serve support"
+msgstr ""
+
 #. js-lingui-id: wF0e4y
 #: src/sections/compare/compare-data.ts
 #: src/sections/compare/compare-data.ts
@@ -7427,11 +7433,6 @@ msgstr "Ekip büyüklüğü / koltuk sayısı"
 msgid "Teams & permission sets"
 msgstr "Ekipler ve izin setleri"
 
-#. js-lingui-id: vsdUaL
-#: src/sections/releases-hero/ReleasesHero.tsx
-msgid "Technical notes"
-msgstr "Teknik notlar"
-
 #. js-lingui-id: y+bLyB
 #: src/partners-marketplace/PartnerCoverageSection.tsx
 #: src/partner-application/partner-application-copy.ts
@@ -7966,11 +7967,6 @@ msgstr "Twenty, pazara çıkış yığınının API omurgası olarak | Elevate C
 #: src/case-studies/case-study-stories.ts
 msgid "Twenty delivers on what CRMs should have always been: fairly priced software with a fully modular and customizable model, a clean and modern UI, granular permissions, automations, enterprise features. A compelling solution with high potential to rightfully disrupt the CRM market."
 msgstr "Twenty, CRM’lerin her zaman olması gerekeni sunuyor: adil fiyatlandırılan, tamamen modüler ve özelleştirilebilir bir modele sahip yazılım, temiz ve modern bir arayüz, ayrıntılı izinler, otomasyonlar, kurumsal özellikler. CRM pazarını hak ettiği şekilde sarsma potansiyeli yüksek, etkileyici bir çözüm."
-
-#. js-lingui-id: JnaRPe
-#: src/sections/product-feature/ImportVisual/ImportVisual.tsx
-msgid "Twenty fields"
-msgstr "Twenty alanları"
 
 #. js-lingui-id: fwep/o
 #: src/case-studies/case-study-stories.ts

@@ -59,18 +59,6 @@ const nextConfig: LinariaConfig = {
   reactCompiler: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        hostname: 'avatars.githubusercontent.com',
-        pathname: '/**',
-        protocol: 'https',
-      },
-      {
-        hostname: 'twenty-icons.com',
-        pathname: '/**',
-        protocol: 'https',
-      },
-    ],
   },
   linaria: {
     configFile: path.resolve(__dirname, 'wyw-in-js.config.cjs'),
@@ -115,34 +103,6 @@ const nextConfig: LinariaConfig = {
   },
   async redirects() {
     return [
-      // Canonicalise www → apex. Host-based; fires before any locale logic.
-      // The root-path rule must come before the :path* one — Next.js's
-      // path-to-regexp leaves a literal `:path*` in the Location header
-      // when the parameter matches empty against an absolute destination.
-      {
-        source: '/',
-        has: [{ type: 'host', value: 'www.twenty.com' }],
-        destination: 'https://twenty.com/',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.twenty.com' }],
-        destination: 'https://twenty.com/:path*',
-        permanent: true,
-      },
-      {
-        source: '/',
-        has: [{ type: 'host', value: 'www.twenty-main.com' }],
-        destination: 'https://twenty-main.com/',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.twenty-main.com' }],
-        destination: 'https://twenty-main.com/:path*',
-        permanent: true,
-      },
       // Strip the source-locale prefix: /en/foo → /foo (301).
       { source: '/en', destination: '/', statusCode: 301 },
       { source: '/en/:path*', destination: '/:path*', statusCode: 301 },
@@ -171,12 +131,13 @@ const nextConfig: LinariaConfig = {
         'customers/:path*',
         'terms',
         'privacy-policy',
+        'halftone',
       ].flatMap((retiredPath) => [
-        { source: `/${retiredPath}`, destination: '/', permanent: false },
+        { source: `/${retiredPath}`, destination: '/', permanent: true },
         {
           source: `/:locale(${WEBSITE_LOCALE_LIST.join('|')})/${retiredPath}`,
           destination: '/:locale',
-          permanent: false,
+          permanent: true,
         },
       ]),
       {

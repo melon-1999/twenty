@@ -96,22 +96,24 @@ export function FooterBottom() {
         </Copyright>
         <LocaleSwitcher />
       </CopyrightRow>
-      <SocialNav aria-label={i18n._(msg`Social media`)}>
-        {FOOTER.socialLinks.map((link, index) => {
-          const IconComponent = link.icon;
-          return (
-            <Fragment key={link.href}>
-              {index > 0 && <VerticalDivider aria-hidden />}
-              <SocialAnchor
-                aria-label={i18n._(link.ariaLabel)}
-                href={link.href}
-              >
-                <IconComponent aria-hidden size={16} />
-              </SocialAnchor>
-            </Fragment>
-          );
-        })}
-      </SocialNav>
+      {FOOTER.socialLinks.length > 0 && (
+        <SocialNav aria-label={i18n._(msg`Social media`)}>
+          {FOOTER.socialLinks.map((link, index) => {
+            const IconComponent = link.icon;
+            return (
+              <Fragment key={link.href}>
+                {index > 0 && <VerticalDivider aria-hidden />}
+                <SocialAnchor
+                  aria-label={i18n._(link.ariaLabel)}
+                  href={link.href}
+                >
+                  <IconComponent aria-hidden size={16} />
+                </SocialAnchor>
+              </Fragment>
+            );
+          })}
+        </SocialNav>
+      )}
     </BottomGrid>
   );
 }

@@ -16,12 +16,7 @@ import { styled } from '@linaria/react';
 import { useLingui } from '@lingui/react/macro';
 import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
-import {
-  IconApi,
-  IconPlus,
-  IconSparkles,
-  IconWebhook,
-} from 'twenty-ui/icon';
+import { IconApi, IconPlus, IconSparkles, IconWebhook } from 'twenty-ui/icon';
 import { Button } from 'twenty-ui/input';
 import { Section } from 'twenty-ui/layout';
 import { MOBILE_VIEWPORT, themeCssVariables } from 'twenty-ui/theme-constants';

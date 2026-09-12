@@ -30,7 +30,6 @@ export const ILLUSTRATION_CARDS: readonly IllustrationCardRecord[] = [
       company: msg`W3villa Technologies`,
     },
     illustration: 'diamond',
-    caseStudySlug: 'w3villa',
   },
   {
     heading: msg`AI for rapid iterations`,
@@ -40,7 +39,6 @@ export const ILLUSTRATION_CARDS: readonly IllustrationCardRecord[] = [
       company: msg`Alternative Partners`,
     },
     illustration: 'flash',
-    caseStudySlug: 'alternative-partners',
   },
   {
     heading: msg`Control without drag`,
@@ -50,6 +48,5 @@ export const ILLUSTRATION_CARDS: readonly IllustrationCardRecord[] = [
       company: msg`AC&T Education Migration`,
     },
     illustration: 'lock',
-    caseStudySlug: 'act-education',
   },
 ];

@@ -9,6 +9,7 @@ import { previewFontSize } from '@/app-preview/preview-font-size';
 
 import { MappingRow } from './components/MappingRow';
 import { MAPPINGS } from './data/import-mappings';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 const Root = styled.div`
   background-color: ${THEME_LIGHT.background.primary};
@@ -44,7 +45,7 @@ export function ImportVisual({ active: _active }: { active: boolean }) {
     <Root>
       <HeaderRow>
         <HeaderCell>{i18n._(msg`Imported data`)}</HeaderCell>
-        <HeaderCell>{i18n._(msg`Twenty fields`)}</HeaderCell>
+        <HeaderCell>{i18n._(msg`${PRODUCT_BRANDING.name} fields`)}</HeaderCell>
       </HeaderRow>
       {MAPPINGS.map((mapping) => (
         <MappingRow key={mapping.header} mapping={mapping} />

@@ -1,10 +1,9 @@
 import { styled } from '@linaria/react';
 import { msg } from '@lingui/core/macro';
 
-import { GitHubMark } from '@/icons';
 import { getServerI18n } from '@/platform/i18n/get-server-i18n';
 import { GRADIENT, HERO_COMPOSITION, mediaUp, spacing } from '@/tokens';
-import { Body, Button, Heading, HeadingPair, SectionShell } from '@/ui';
+import { Body, Heading, HeadingPair, SectionShell } from '@/ui';
 
 import { ReleasesVisual } from './ReleasesVisual';
 
@@ -46,13 +45,6 @@ const BodyMeasure = styled.div`
   }
 `;
 
-const CtaRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${spacing(3)};
-  justify-content: center;
-`;
-
 const VisualStage = styled.div`
   margin-top: ${HERO_COMPOSITION.ctaToVisualGapPx}px;
   width: 100%;
@@ -77,19 +69,11 @@ export function ReleasesHero() {
           <BodyMeasure>
             <Body muted size="sm">
               {i18n._(
-                msg`Discover the newest features and improvements in Twenty, the #1 Open Source CRM.`,
+                msg`Discover the newest features and improvements in each release.`,
               )}
             </Body>
           </BodyMeasure>
         </HeadingPair>
-        <CtaRow>
-          <Button
-            href="https://github.com/twentyhq/twenty/releases"
-            label={i18n._(msg`Technical notes`)}
-            leadingIcon={<GitHubMark size={14} />}
-            variant="outlined"
-          />
-        </CtaRow>
       </IntroStack>
       <VisualStage>
         <ReleasesVisual />

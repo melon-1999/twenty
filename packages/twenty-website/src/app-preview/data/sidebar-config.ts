@@ -61,12 +61,6 @@ export const APP_PREVIEW_CONFIG: AppPreviewConfig = {
         page: DASHBOARDS_TABLE_PAGE,
       },
       WORKFLOWS_FOLDER,
-      {
-        id: 'book-demo',
-        label: 'Book a demo',
-        href: 'https://cal.com/forms/f7841033-0a20-4958-8c92-4e34ec128a81',
-        icon: { kind: 'brand', brand: 'twenty', overlay: 'link' },
-      },
     ],
   },
 };

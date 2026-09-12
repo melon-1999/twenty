@@ -1,3 +1,4 @@
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
 import { useRedirect } from '@/domain-manager/hooks/useRedirect';
 import { START_SUBSCRIPTION_AFTER_PAYMENT_METHOD_QUERY_PARAM } from '@/settings/billing/constants/StartSubscriptionAfterPaymentMethodQueryParam';
@@ -159,7 +160,7 @@ export const useEndSubscriptionTrialPeriod = () => {
       return { success: true, hasPaymentMethod: true };
     } catch {
       enqueueErrorSnackBar({
-        message: t`Error while ending trial period. Please contact Twenty team.`,
+        message: t`Error while ending trial period. Please contact ${PRODUCT_BRANDING.name} support.`,
       });
       return { success: false };
     } finally {

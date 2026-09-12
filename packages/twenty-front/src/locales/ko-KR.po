@@ -3507,10 +3507,11 @@ msgstr "청구 주기"
 msgid "Billing period"
 msgstr "청구 기간"
 
-#. js-lingui-id: xF/NXI
+#. js-lingui-id: nt1Pg9
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/hooks/useBillingPortalSession.ts
-msgid "Billing portal session error. Please retry or contact Twenty team"
-msgstr "결제 포털 세션 오류입니다. 다시 시도하거나 Twenty 팀에 문의하세요"
+msgid "Billing portal session error. Please retry or contact {0} support"
+msgstr ""
 
 #. js-lingui-id: 8kIU+G
 #: src/modules/advanced-text-editor/constants/AdvancedTextEditorBlockCatalog.ts
@@ -4242,11 +4243,12 @@ msgstr "이메일을 확인하세요"
 msgid "Check your inbox to verify your new email address."
 msgstr "새 이메일 주소를 확인하려면 받은 편지함을 확인하세요."
 
-#. js-lingui-id: SxwQE8
+#. js-lingui-id: RwgnEX
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "결제 세션 오류입니다. 다시 시도하거나 Twenty 팀에 문의하십시오"
+msgid "Checkout session error. Please retry or contact {0} support"
+msgstr ""
 
 #. js-lingui-id: SviKkE
 #: src/localization/hooks/useLocaleOptions.ts
@@ -8498,10 +8500,11 @@ msgstr "간격 전환 취소 중 오류 발생."
 msgid "Error while cancelling plan switching."
 msgstr "플랜 전환 취소 중 오류 발생."
 
-#. js-lingui-id: QmR+2U
+#. js-lingui-id: BLe2o6
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "시험 기간 종료 중 오류가 발생했습니다. Twenty 팀에 문의하세요."
+msgid "Error while ending trial period. Please contact {0} support."
+msgstr ""
 
 #. js-lingui-id: 5g78zo
 #: src/pages/settings/members/SettingsWorkspaceMember.tsx
@@ -14877,10 +14880,11 @@ msgstr "온보딩 보상"
 msgid "One or more filters reference deactivated or deleted fields and will be automatically removed on save."
 msgstr "하나 이상의 필터가 비활성화되었거나 삭제된 필드를 참조하고 있어, 저장 시 자동으로 제거됩니다."
 
-#. js-lingui-id: 2l4SGU
+#. js-lingui-id: nIWaE5
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/pages/settings/enterprise/SettingsEnterprise.tsx
-msgid "One subscription provides one enterprise key that powers one production instance and one potential staging or test instance. To run a staging or test environment, install Twenty on a second server, activate it with this same enterprise key, then register that server as a development instance. Development instances unlock enterprise features without extra billing and do not count toward your production seats."
-msgstr "하나의 구독은 하나의 프로덕션 인스턴스와 하나의 스테이징 또는 테스트 인스턴스를 구동하는 엔터프라이즈 키 한 개를 제공합니다. 스테이징 또는 테스트 환경을 실행하려면 두 번째 서버에 Twenty를 설치하고, 동일한 엔터프라이즈 키로 활성화한 다음 해당 서버를 개발 인스턴스로 등록하세요. 개발 인스턴스는 추가 청구 없이 엔터프라이즈 기능을 활성화하며 프로덕션 좌석 수에 포함되지 않습니다."
+msgid "One subscription provides one enterprise key that powers one production instance and one potential staging or test instance. To run a staging or test environment, install {0} on a second server, activate it with this same enterprise key, then register that server as a development instance. Development instances unlock enterprise features without extra billing and do not count toward your production seats."
+msgstr ""
 
 #. js-lingui-id: oFTo3P
 #: src/modules/settings/event-logs/components/SettingsLogs.tsx
@@ -19217,10 +19221,10 @@ msgstr "하위 필드"
 msgid "Subdomain"
 msgstr "하위 도메인"
 
-#. js-lingui-id: Sv4BSp
+#. js-lingui-id: vkXMsX
 #: src/modules/settings/billing/constants/SettingsBillingPlanComparisonRows.ts
-msgid "Subdomain (yourco.twenty.com)"
-msgstr "서브도메인 (yourco.twenty.com)"
+msgid "Subdomain (yourco.example.com)"
+msgstr ""
 
 #. js-lingui-id: mGO3xy
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceCreationForm.tsx
@@ -19313,13 +19317,14 @@ msgstr "구독"
 msgid "Subscription activated."
 msgstr "구독이 활성화되었습니다."
 
-#. js-lingui-id: 0okvpx
+#. js-lingui-id: FrYxRN
+#. placeholder {0}: PRODUCT_BRANDING.name
 #: src/modules/settings/billing/components/AddPaymentMethodForm.tsx
 #: src/modules/settings/billing/components/AddPaymentMethodForm.tsx
 #: src/modules/settings/billing/hooks/useSubmitSubscriptionPayment.ts
 #: src/modules/settings/billing/hooks/useSubmitSubscriptionPayment.ts
-msgid "Subscription error. Please retry or contact Twenty team"
-msgstr "구독 오류입니다. 다시 시도하거나 Twenty 팀에 문의하세요"
+msgid "Subscription error. Please retry or contact {0} support"
+msgstr ""
 
 #. js-lingui-id: FooJUj
 #. placeholder {0}: getTargetPlanLabel(targetPlanKey)

@@ -46,6 +46,24 @@ const CUSTOMER_VISIBLE_FILES = [
   'packages/twenty-website/public/llms.txt',
   'packages/twenty-website/public/.well-known/security.txt',
   'packages/twenty-website/public/.well-known/mcp/server-card.json',
+  'packages/twenty-website/next.config.ts',
+  'packages/twenty-website/src/sections/menu/Menu.tsx',
+  'packages/twenty-website/src/sections/three-cards/three-cards.data.ts',
+  'packages/twenty-website/src/sections/home-stepper/data/stepper.data.ts',
+  'packages/twenty-website/src/sections/feature-cards/feature-cards.data.ts',
+  'packages/twenty-website/src/sections/faq/Faq.tsx',
+  'packages/twenty-website/src/app/[locale]/(site)/product/page.tsx',
+  'packages/twenty-website/src/app/[locale]/(site)/pricing/page.tsx',
+  'packages/twenty-website/src/app/.well-known/api-catalog/route.ts',
+  'packages/twenty-website/src/app-preview/data/sidebar-config.ts',
+  'packages/twenty-website/src/app-preview/primitives/FaviconLogo.tsx',
+  'packages/twenty-website/src/sections/product-feature/ImportVisual/ImportVisual.tsx',
+  'packages/twenty-front/src/modules/settings/billing/components/AddPaymentMethodForm.tsx',
+  'packages/twenty-front/src/modules/settings/billing/hooks/useHandleCheckoutSession.ts',
+  'packages/twenty-front/src/modules/settings/billing/hooks/useSubmitSubscriptionPayment.ts',
+  'packages/twenty-front/src/modules/settings/billing/hooks/useEndSubscriptionTrialPeriod.ts',
+  'packages/twenty-front/src/modules/settings/billing/hooks/useBillingPortalSession.ts',
+  'packages/twenty-front/src/modules/settings/billing/constants/SettingsBillingPlanComparisonRows.ts',
 ];
 
 const FORBIDDEN_PATTERNS: { label: string; pattern: RegExp }[] = [
@@ -55,6 +73,14 @@ const FORBIDDEN_PATTERNS: { label: string; pattern: RegExp }[] = [
   { label: 'discord link', pattern: /discord/i },
   { label: 'ChatGPT Twenty app link', pattern: /chatgpt\.com\/apps/i },
   { label: 'visible "Powered by" credit', pattern: /powered by/i },
+  {
+    label: 'twenty-icons.com service reference',
+    pattern: /twenty-icons\.com/i,
+  },
+  {
+    label: 'upstream Cal.com booking form (centralise in contact-cal-config)',
+    pattern: /cal\.com\/forms\/[a-z0-9]/i,
+  },
 ];
 
 const stripLineComments = (source: string): string =>
@@ -68,6 +94,7 @@ describe('customer-visible branding leaks', () => {
     'should not leak upstream branding in %s',
     (relativeFilePath) => {
       const absolutePath = path.join(REPO_ROOT, relativeFilePath);
+      expect(fs.existsSync(absolutePath)).toBe(true);
       const source = stripLineComments(fs.readFileSync(absolutePath, 'utf-8'));
 
       const leaks = FORBIDDEN_PATTERNS.filter(({ pattern }) =>

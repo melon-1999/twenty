@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Placeholder brand mark. Replace this file with the final logo and run
+       packages/twenty-front/scripts/generate-brand-assets.mjs to regenerate
+       all app icons. See docs/product/rebranding.md -->
+  <rect width="512" height="512" rx="96" fill="#1b1b1b"/>
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#ffffff" stroke-width="48"/>
+</svg>

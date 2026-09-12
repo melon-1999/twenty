@@ -3,7 +3,7 @@ import { type ExplorerNode } from './editor-types';
 export const EXPLORER_NODES: ExplorerNode[] = [
   {
     id: 'root',
-    name: 'my-twenty-app',
+    name: 'my-crm-app',
     depth: 0,
     kind: 'folder',
     expanded: true,

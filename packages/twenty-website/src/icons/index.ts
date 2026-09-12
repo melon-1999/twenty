@@ -5,11 +5,9 @@ export { ArrowUpRight, type ArrowUpRightProps } from './ArrowUpRight';
 export { CheckMark, type CheckMarkProps } from './CheckMark';
 export { ChevronDown, type ChevronDownProps } from './ChevronDown';
 export { ClaudeMark } from './ClaudeMark';
-export { DiscordMark, type DiscordMarkProps } from './DiscordMark';
 export { FastPathIcon, type FastPathIconProps } from './FastPath';
 export { MarkerCursor, type MarkerCursorProps } from './MarkerCursor';
 export { PeopleGroupMark } from './PeopleGroupMark';
-export { GitHubMark, type GitHubMarkProps } from './GithubMark';
 export {
   INFORMATIVE_MARKS,
   type InformativeMarkProps,

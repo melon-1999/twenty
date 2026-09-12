@@ -4,7 +4,7 @@ import { SITE_URLS } from '@/platform/site-urls';
 // content type survives the site's global nosniff header.
 //
 // The platform is multi-tenant, so anchors use a `{your-workspace-url}` placeholder
-// (a workspace host such as `mycompany.twenty.com` or a custom domain).
+// (a workspace host such as `mycompany.example.com` or a custom domain).
 
 const WORKSPACE = 'https://{your-workspace-url}';
 
