@@ -1,0 +1,51 @@
+name: Release Product
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - 'product/v*'
+
+jobs:
+  verify-release:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - name: Verify tag matches PRODUCT_VERSION
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION=$(sed -n "s/^export const PRODUCT_VERSION = '\(.*\)';$/\1/p" packages/twenty-shared/src/constants/ProductBranding.ts)
+          if [ "$TAG" != "product/v${VERSION}" ]; then
+            echo "ERROR: tag ${TAG} does not match PRODUCT_VERSION ${VERSION} in ProductBranding.ts"
+            exit 1
+          fi
+          echo "Tag ${TAG} matches PRODUCT_VERSION ${VERSION}"
+      - name: Install dependencies
+        uses: ./.github/actions/yarn-install
+      - name: Build twenty-shared
+        run: npx nx build twenty-shared
+
+      # Production gate: this build runs WITHOUT ALLOW_PLACEHOLDER_BRANDING,
+      # so a release fails while placeholder branding (YourCRM, example.com,
+      # branch-pinned asset URLs) is still active. This is intentional.
+      - name: Production branding gate + front build
+        run: npx nx build twenty-front
+
+      - name: Build twenty-server
+        run: npx nx build twenty-server
+
+  publish-release:
+    needs: verify-release
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${GITHUB_REF_NAME}" --generate-notes --title "${GITHUB_REF_NAME}" || echo "release already exists"

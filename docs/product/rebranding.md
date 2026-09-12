@@ -160,6 +160,38 @@ Beim Rebranding gestreift und bewusst vermieden:
 - Sichtbarer Source-Link (AGPL §13): "Source code"-Karte in Settings → Community sowie "Source code"-Link im Footer jeder Transaktions-E-Mail, beide auf `PRODUCT_BRANDING.sourceCodeUrl` (aktuell `github.com/melon-1999/twenty` — muss öffentlich bleiben bzw. auf ein öffentliches Repo mit dem laufenden Stand zeigen, solange die Instanz von Dritten genutzt wird).
 - Es wurden keine Lizenz-/Copyright-Informationen entfernt oder verfälscht.
 
+## Branch-Schutz und Sync-Prozess
+
+`main` spiegelt ausschließlich den offiziellen Twenty-Upstream. Branch-Protection ist auf GitHub aktiv (per API gesetzt, Stand 2026-09-12):
+
+- Force-Pushes verboten, Löschen verboten, lineare History erzwungen, gilt auch für Admins (`enforce_admins`).
+- Direkte Feature-Commits auf `main` sind damit technisch nur als Fast-Forward möglich; per Konvention ist der einzige erlaubte Push der Upstream-Sync:
+
+```bash
+git fetch upstream
+git push origin upstream/main:main
+```
+
+Feature-/Produktarbeit ausschließlich auf `product/*`-Branches.
+
+## CI und Release
+
+- **`.github/workflows/ci-product.yaml`** (neu): läuft bei Push/PR auf `product/**`. Baut twenty-shared/-emails/-server/-front, Typecheck front+server, Lint (diff-with-main + shared/emails), Branding-Unit-Tests, und verifiziert, dass der Production-Branding-Guard aktiv ist (Build ohne Opt-out-Flag muss fehlschlagen, solange Platzhalter aktiv sind).
+- **`.github/workflows/release-product.yaml`** (neu): läuft bei Tags `product/v*`. Prüft Tag == `product/v${PRODUCT_VERSION}`, baut front OHNE `ALLOW_PLACEHOLDER_BRANDING` (Production-Gate: Release schlägt fehl, solange Platzhalter aktiv — bei `product/v0.1.0` gewollt rot), erstellt bei Erfolg ein GitHub-Release.
+
+## Production Branding Guard
+
+- Logik: `packages/twenty-shared/src/utils/branding/findPlaceholderBrandingViolations.ts` (+ Tests). Erkennt `YourCRM`, `example.com`, `support@example.com` und `raw.githubusercontent.com`-URLs, die auf bewegliche Refs statt `product/v*`-Tags zeigen.
+- Enforcement: Vite-Plugin `packages/twenty-front/src/config/assertProductionBrandingPlugin.ts`, eingehängt in `vite.config.ts` (2-Zeilen-Diff). Blockt `vite build` im Mode `production` und prüft zusätzlich `index.html` und `public/manifest.json`.
+- Dev-Server (`nx start twenty-front`) ist nie betroffen. CI-/Test-Builds setzen `ALLOW_PLACEHOLDER_BRANDING=true`; Deployment-Pipelines dürfen das Flag nicht setzen.
+
+## Versionierung / Source-Link
+
+- `PRODUCT_VERSION` in `ProductBranding.ts` ist die Produktversion; `PRODUCT_RELEASE_TAG` = `product/v${PRODUCT_VERSION}`.
+- `PRODUCT_BRANDING.sourceCodeUrl` zeigt auf `…/tree/product/v<version>` (exakt deployter Stand, AGPL §13), `repositoryUrl` auf das Repo-Root (Releases-Link, MCP-Server-Card).
+- `emailLogoUrl`/`defaultWorkspaceLogoUrl` sind an denselben Tag gepinnt statt an einen Branch.
+- Release-Ablauf: `PRODUCT_VERSION` bumpen → committen → `git tag product/v<version>` auf den Commit → Tag pushen. Der Release-Workflow validiert die Übereinstimmung.
+
 ## Open Items
 
 1. Finaler Produktname → `ProductBranding.ts`, `index.html`, `manifest.json`, `.env EMAIL_FROM_NAME`
@@ -170,3 +202,5 @@ Beim Rebranding gestreift und bewusst vermieden:
 6. Brand-Farbe entscheiden → `design-tokens/accent.ts`
 7. DPA-Feature ggf. ausblenden (zeigt Twenty-PBC-Dokumente)
 8. AGPL §13: öffentliches Repo mit laufendem Stand sicherstellen, sobald die Instanz produktiv extern genutzt wird
+
+Punkte 1, 3 und 5 werden vom Production Branding Guard erzwungen: solange sie offen sind, schlagen Production-Builds und `product/v*`-Releases absichtlich fehl.

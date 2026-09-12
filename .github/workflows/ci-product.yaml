@@ -1,0 +1,62 @@
+name: CI Product
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+      - 'product/**'
+  pull_request:
+    branches:
+      - 'product/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  product-build-and-test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    env:
+      NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+    steps:
+      - name: Checkout with main history for diff-based lint
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        uses: ./.github/actions/yarn-install
+      - name: Build twenty-shared
+        run: npx nx build twenty-shared
+      - name: Typecheck
+        run: npx nx run-many -t typecheck -p twenty-front twenty-server
+      - name: Lint (diff with main)
+        run: |
+          npx nx lint:diff-with-main twenty-front
+          npx nx lint:diff-with-main twenty-server
+          npx nx lint twenty-shared
+          npx nx lint twenty-emails
+      - name: Branding unit tests
+        run: |
+          cd packages/twenty-shared && npx jest src/constants/__tests__/ProductBranding.test.ts src/utils/branding && cd ../..
+          cd packages/twenty-front && npx jest src/utils/__tests__/title-utils.test.ts src/modules/settings/mcp-and-apis/utils/__tests__/mcpSetup.test.ts src/modules/activities/timeline-activities/utils/__tests__/getTimelineActivityAuthorFullName.test.ts && cd ../..
+          cd packages/twenty-server && npx jest src/engine/core-modules/approved-access-domain/services/approved-access-domain.spec.ts src/engine/core-modules/email/__tests__/email-templates-rendering.spec.ts src/engine/core-modules/well-known && cd ../..
+      - name: Build twenty-emails
+        run: npx nx build twenty-emails
+      - name: Build twenty-server
+        run: npx nx build twenty-server
+      # ALLOW_PLACEHOLDER_BRANDING keeps CI green while the branding is still
+      # placeholder; deployment pipelines must NOT set it (see the production
+      # branding guard in packages/twenty-front/src/config/assertProductionBrandingPlugin.ts)
+      - name: Build twenty-front (placeholder branding allowed in CI)
+        run: ALLOW_PLACEHOLDER_BRANDING=true npx nx build twenty-front
+      - name: Production branding guard is active
+        run: |
+          if npx nx build twenty-front --skip-nx-cache; then
+            echo "ERROR: production build succeeded despite placeholder branding"
+            exit 1
+          else
+            echo "Guard correctly blocks placeholder production builds"
+          fi
