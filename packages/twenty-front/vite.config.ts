@@ -19,6 +19,7 @@ import {
   API_PROXY_PATHS,
   buildApiProxyMatcher,
 } from './src/config/apiProxyPrefixes';
+import { assertProductionBrandingPlugin } from './src/config/assertProductionBrandingPlugin';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname, '');
@@ -88,6 +89,7 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
+      assertProductionBrandingPlugin(mode, __dirname),
       react({
         plugins: [['@lingui/swc-plugin', {}]],
       }),
