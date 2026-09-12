@@ -22,6 +22,7 @@ import { type WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-membe
 
 import { FileUrlService } from 'src/engine/core-modules/file/file-url/file-url.service';
 import { ApprovedAccessDomainService } from './approved-access-domain.service';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 // render() resolves through a streaming scheduler that never advances under the
 // globally enabled fake timers; the real render path is covered by
@@ -356,7 +357,7 @@ describe('ApprovedAccessDomainService', () => {
       });
 
       expect(emailService.send).toHaveBeenCalledWith({
-        from: 'John Doe (via Twenty) <no-reply@example.com>',
+        from: `John Doe (via ${PRODUCT_BRANDING.name}) <no-reply@example.com>`,
         to: email,
         subject: 'Approve your access domain',
         text: expect.any(String),
