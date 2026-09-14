@@ -22,6 +22,8 @@ const CUSTOMER_VISIBLE_FILES = [
   'packages/twenty-front/src/pages/settings/applications/utils/getStandardApplicationDescription.ts',
   'packages/twenty-front/src/pages/settings/applications/utils/getCustomApplicationDescription.ts',
   'packages/twenty-front/src/modules/settings/data-model/constants/SettingsCompositeFieldTypeConfigs.ts',
+  'packages/twenty-shared/src/constants/DocumentationBaseUrl.ts',
+  'packages/twenty-front/src/modules/workflow/workflow-steps/workflow-actions/form-action/components/WorkflowEditActionFormBuilder.tsx',
   'packages/twenty-emails/src/components/Footer.tsx',
   'packages/twenty-emails/src/components/Logo.tsx',
   'packages/twenty-emails/src/components/BaseHead.tsx',
@@ -29,6 +31,15 @@ const CUSTOMER_VISIBLE_FILES = [
   'packages/twenty-server/src/engine/api/mcp/constants/mcp-server-info.const.ts',
   'packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts',
   'packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/agent-metadata/create-standard-flat-agent-metadata.util.ts',
+  'packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/page-layout-widget/compute-my-first-dashboard-widgets.util.ts',
+  'packages/twenty-server/src/engine/workspace-manager/standard-objects-prefill-data/utils/prefill-people.util.ts',
+  'packages/twenty-server/src/engine/workspace-manager/standard-objects-prefill-data/utils/prefill-workflows.util.ts',
+  'packages/twenty-server/src/engine/core-modules/well-known/utils/build-api-catalog.util.ts',
+  // Dev/demo seeds render directly into the customer navigation and dashboards
+  'packages/twenty-server/src/engine/workspace-manager/dev-seeder/core/utils/get-navigation-menu-item-data-seeds.util.ts',
+  'packages/twenty-server/src/engine/workspace-manager/dev-seeder/core/utils/get-page-layout-widget-data-seeds.util.ts',
+  'packages/twenty-server/src/engine/workspace-manager/dev-seeder/core/utils/get-page-layout-widget-data-seeds-v2.util.ts',
+  'packages/twenty-server/src/engine/workspace-manager/dev-seeder/core/constants/navigation-menu-item-seeds.constant.ts',
   // Marketing website: navbar, footer, central URLs, SEO, public well-known
   'packages/twenty-website/src/sections/menu/data/menu.ts',
   'packages/twenty-website/src/sections/footer/footer.data.ts',
@@ -80,6 +91,10 @@ const FORBIDDEN_PATTERNS: { label: string; pattern: RegExp }[] = [
   {
     label: 'upstream Cal.com booking form (centralise in contact-cal-config)',
     pattern: /cal\.com\/forms\/[a-z0-9]/i,
+  },
+  {
+    label: 'GitHub star-history widget or navigation item',
+    pattern: /star[-\s]history/i,
   },
 ];
 

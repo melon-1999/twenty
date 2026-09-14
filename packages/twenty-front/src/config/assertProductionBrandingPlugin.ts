@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { PRODUCT_BRANDING } from 'twenty-shared/constants';
+import {
+  DOCUMENTATION_BASE_URL,
+  PRODUCT_BRANDING,
+} from 'twenty-shared/constants';
 import { findPlaceholderBrandingViolations } from 'twenty-shared/utils';
 import { type PluginOption } from 'vite';
 
@@ -38,6 +41,7 @@ export const assertProductionBrandingPlugin = (
 
     const violations = findPlaceholderBrandingViolations({
       ...brandingValues,
+      DOCUMENTATION_BASE_URL,
       ...staticFiles,
     });
 

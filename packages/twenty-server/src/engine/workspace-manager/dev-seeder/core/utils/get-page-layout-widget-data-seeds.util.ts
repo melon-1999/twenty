@@ -1,4 +1,8 @@
-import { CalendarStartDay } from 'twenty-shared/constants';
+import {
+  CalendarStartDay,
+  DOCUMENTATION_BASE_URL,
+  DOCUMENTATION_PATHS,
+} from 'twenty-shared/constants';
 import { STANDARD_OBJECTS } from 'twenty-shared/metadata';
 import {
   AggregateOperations,
@@ -504,7 +508,7 @@ export const getPageLayoutWidgetDataSeeds = (
         workspaceId,
         PAGE_LAYOUT_TAB_SEEDS.DOCUMENTATION,
       ),
-      title: 'Twenty Star History',
+      title: 'Documentation',
       type: WidgetType.IFRAME,
       position: {
         layoutMode: PageLayoutTabLayoutMode.GRID,
@@ -515,7 +519,7 @@ export const getPageLayoutWidgetDataSeeds = (
       },
       configuration: {
         configurationType: WidgetConfigurationType.IFRAME,
-        url: 'https://www.star-history.com/?repos=twentyhq%2Ftwenty&type=date&legend=top-left',
+        url: `${DOCUMENTATION_BASE_URL}${DOCUMENTATION_PATHS.GETTING_STARTED_INTRODUCTION}`,
       },
       objectMetadataId: null,
       overrides: null,

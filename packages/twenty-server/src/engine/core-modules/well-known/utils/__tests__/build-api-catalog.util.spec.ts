@@ -1,3 +1,5 @@
+import { DOCUMENTATION_BASE_URL } from 'twenty-shared/constants';
+
 import { buildApiCatalog } from 'src/engine/core-modules/well-known/utils/build-api-catalog.util';
 
 describe('buildApiCatalog', () => {
@@ -54,7 +56,7 @@ describe('buildApiCatalog', () => {
 
     for (const entry of catalog.linkset) {
       expect(entry['service-doc']?.[0]?.href).toMatch(
-        /^https:\/\/docs\.twenty\.com\//,
+        new RegExp(`^${DOCUMENTATION_BASE_URL}/`),
       );
     }
   });

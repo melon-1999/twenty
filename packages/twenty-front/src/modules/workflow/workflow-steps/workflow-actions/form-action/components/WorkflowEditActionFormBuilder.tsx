@@ -1,3 +1,4 @@
+import { getDocumentationUrl } from '@/support/utils/getDocumentationUrl';
 import { FormFieldInputContainer } from '@/ui/input/components/FormFieldInputContainer';
 import { FormFieldInputInnerContainer } from '@/object-record/record-field/ui/form-types/components/FormFieldInputInnerContainer';
 import { FormFieldInputRowContainer } from '@/object-record/record-field/ui/form-types/components/FormFieldInputRowContainer';
@@ -20,6 +21,7 @@ import { styled } from '@linaria/react';
 import { useLingui } from '@lingui/react/macro';
 import { isNonEmptyString } from '@sniptt/guards';
 import { useContext, useEffect, useState } from 'react';
+import { DOCUMENTATION_PATHS } from 'twenty-shared/constants';
 import { FieldMetadataType } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
 import { Callout } from 'twenty-ui/feedback';
@@ -252,7 +254,9 @@ export const WorkflowEditActionFormBuilder = ({
                 label: t`Learn more`,
                 onClick: () =>
                   window.open(
-                    'https://docs.twenty.com/user-guide/workflows/capabilities/workflow-actions#form',
+                    getDocumentationUrl({
+                      path: `${DOCUMENTATION_PATHS.USER_GUIDE_WORKFLOWS_CAPABILITIES_WORKFLOW_ACTIONS}#form`,
+                    }),
                     '_blank',
                     'noopener,noreferrer',
                   ),

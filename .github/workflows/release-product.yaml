@@ -34,11 +34,12 @@ jobs:
       - name: Branding gate (shared values)
         run: |
           node -e "
-            const { PRODUCT_BRANDING } = require('./packages/twenty-shared/dist/constants.cjs');
+            const { PRODUCT_BRANDING, DOCUMENTATION_BASE_URL } = require('./packages/twenty-shared/dist/constants.cjs');
             const { findPlaceholderBrandingViolations } = require('./packages/twenty-shared/dist/utils.cjs');
             const values = Object.fromEntries(
               Object.entries(PRODUCT_BRANDING).map(([k, v]) => ['PRODUCT_BRANDING.' + k, v]),
             );
+            values.DOCUMENTATION_BASE_URL = DOCUMENTATION_BASE_URL;
             const violations = findPlaceholderBrandingViolations(values);
             if (violations.length > 0) {
               console.error('Release blocked, placeholder branding active:');

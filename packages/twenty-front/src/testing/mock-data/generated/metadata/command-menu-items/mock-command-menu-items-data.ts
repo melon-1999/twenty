@@ -1439,7 +1439,7 @@ export const mockedCommandMenuItems: CommandMenuItemFieldsFragment[] =
     "isPinned": false,
     "payload": {
       "__typename": "PathCommandMenuItemPayload",
-      "path": "/settings/community"
+      "path": "/settings/legal"
     },
     "hotKeys": null,
     "conditionalAvailabilityExpression": null,
@@ -1448,9 +1448,9 @@ export const mockedCommandMenuItems: CommandMenuItemFieldsFragment[] =
     "pageLayoutId": null,
     "isActive": true,
     "frontComponent": null,
-    "label": "Go to Community Settings",
-    "icon": "IconUsers",
-    "shortLabel": "Community",
+    "label": "Go to Legal Settings",
+    "icon": "IconFileText",
+    "shortLabel": "Legal",
     "navigationTargetObjectMetadataId": null
   },
   {
