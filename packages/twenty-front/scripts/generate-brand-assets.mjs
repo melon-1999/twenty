@@ -7,6 +7,44 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const publicDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'public');
+
+// Standalone mode keeps legacy generated assets untouched.
+if (process.argv.includes('--brand-pngs-only')) {
+  const brandDir = join(publicDir, 'images', 'brand');
+  const brandPngs = [
+    { basename: 'icon-dark', width: 1024, height: 1024 },
+    { basename: 'icon-light', width: 1024, height: 1024 },
+    { basename: 'mark-black', width: 1024, height: 1024 },
+    { basename: 'mark-white', width: 1024, height: 1024 },
+    { basename: 'wordmark-horizontal', width: 2048 },
+    { basename: 'wordmark-horizontal-minimal', width: 2048 },
+    { basename: 'wordmark-stacked', width: 2048 },
+    { basename: 'wordmark-dark', width: 2048 },
+  ];
+
+  for (const { basename, width, height } of brandPngs) {
+    const target = join(brandDir, `${basename}.png`);
+    const image = sharp(join(brandDir, `${basename}.svg`), { density: 300 });
+
+    if (height === undefined) {
+      image.resize({ width });
+    } else {
+      image.resize(width, height, {
+        fit: 'contain',
+        background: { r: 0, g: 0, b: 0, alpha: 0 },
+      });
+    }
+
+    await image.ensureAlpha().png().toFile(target);
+    const metadata = await sharp(target).metadata();
+    console.log(
+      `${target}: ${metadata.width}x${metadata.height}, hasAlpha=${metadata.hasAlpha}`,
+    );
+  }
+
+  process.exit(0);
+}
+
 const logoPath = join(publicDir, 'images', 'brand', 'logo.svg');
 const logoSvg = await readFile(logoPath);
 
