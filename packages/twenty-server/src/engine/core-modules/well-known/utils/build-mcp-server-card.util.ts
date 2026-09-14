@@ -15,7 +15,7 @@ export const buildMcpServerCard = ({
   name: `com.${PRODUCT_BRANDING.slug}/${PRODUCT_BRANDING.slug}`,
   version,
   title: PRODUCT_BRANDING.name,
-  description: `Read and write your ${PRODUCT_BRANDING.name} CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.`,
+  description: `Read and write your ${PRODUCT_BRANDING.name} data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.`,
   websiteUrl: PRODUCT_BRANDING.websiteUrl,
   remotes: [
     {

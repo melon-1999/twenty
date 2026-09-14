@@ -29,6 +29,11 @@ const CUSTOMER_VISIBLE_FILES = [
   'packages/twenty-emails/src/components/BaseHead.tsx',
   'packages/twenty-server/src/engine/core-modules/well-known/utils/build-mcp-server-card.util.ts',
   'packages/twenty-server/src/engine/api/mcp/constants/mcp-server-info.const.ts',
+  // AI-visible self-descriptions: the assistant introduces itself with these
+  'packages/twenty-server/src/engine/api/mcp/utils/build-mcp-server-instructions.util.ts',
+  'packages/twenty-server/src/engine/metadata-modules/ai/ai-chat/constants/chat-system-prompts.const.ts',
+  'packages/twenty-server/src/engine/metadata-modules/ai/ai-agent/constants/workflow-base-system-prompt.const.ts',
+  'packages/twenty-server/src/engine/metadata-modules/ai/ai-agent/constants/agent-run-base-system-prompt.const.ts',
   'packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/constants/standard-command-menu-item.constant.ts',
   'packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/agent-metadata/create-standard-flat-agent-metadata.util.ts',
   'packages/twenty-server/src/engine/workspace-manager/twenty-standard-application/utils/page-layout-widget/compute-my-first-dashboard-widgets.util.ts',
@@ -95,6 +100,19 @@ const FORBIDDEN_PATTERNS: { label: string; pattern: RegExp }[] = [
   {
     label: 'GitHub star-history widget or navigation item',
     pattern: /star[-\s]history/i,
+  },
+  { label: 'forbidden brand spelling "NoviCRM"', pattern: /novicrm/i },
+  {
+    label: 'forbidden brand spelling "Novicode CRM"',
+    pattern: /novicode crm/i,
+  },
+  {
+    label: 'doubled product suffix "Novi CRM CRM"',
+    pattern: /novi crm crm/i,
+  },
+  {
+    label: 'doubled CRM suffix after an interpolated product name',
+    pattern: /PRODUCT_BRANDING\.(name|shortName)\}\s*CRM/,
   },
 ];
 

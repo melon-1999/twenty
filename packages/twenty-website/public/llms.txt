@@ -1,6 +1,6 @@
-# YourCRM
+# Novi CRM
 
-> YourCRM is a modern CRM. AI assistants and agents can read and write CRM data through the Model Context Protocol (MCP) server or the REST/GraphQL API.
+> Novi CRM is a modern CRM by Novicode. AI assistants and agents can read and write CRM data through the Model Context Protocol (MCP) server or the REST/GraphQL API.
 
 Every endpoint is workspace-scoped: replace `{your-workspace-url}` with your workspace host. The MCP server is at `https://{your-workspace-url}/mcp` (transport: streamable-http; auth: OAuth 2.1 or an API-key Bearer token). The REST base is `https://{your-workspace-url}/rest`, with per-workspace OpenAPI at `/rest/open-api/core` and `/rest/open-api/metadata` (send an `Authorization: Bearer <token>` header). GraphQL is at `/graphql` and `/metadata`.
 

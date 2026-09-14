@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
-  "name": "com.yourcrm/yourcrm",
+  "name": "com.novi/novi",
   "version": "0.2.1",
-  "title": "YourCRM",
-  "description": "Read and write your YourCRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.",
+  "title": "Novi CRM",
+  "description": "Read and write your Novi CRM data - companies, people, opportunities, tasks, notes and any custom objects - from AI assistants. Tools are discovered at runtime and scoped to the authenticated workspace.",
   "websiteUrl": "https://www.example.com",
   "remotes": [
     {

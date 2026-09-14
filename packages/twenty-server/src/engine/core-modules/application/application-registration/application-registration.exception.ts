@@ -1,5 +1,6 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { assertUnreachable } from 'twenty-shared/utils';
 
 import { CustomException } from 'src/utils/custom-exception';
@@ -46,7 +47,7 @@ const getExceptionUserFriendlyMessage = (
     case ApplicationRegistrationExceptionCode.VERSION_ALREADY_EXISTS:
       return msg`This version is not higher than the currently deployed version. Please bump the version in package.json before deploying again.`;
     case ApplicationRegistrationExceptionCode.SERVER_VERSION_INCOMPATIBLE:
-      return msg`This app requires a newer version of the Twenty server. Please upgrade your server or use a compatible app version.`;
+      return msg`This app requires a newer version of the ${PRODUCT_BRANDING.name} server. Please upgrade your server or use a compatible app version.`;
     case ApplicationRegistrationExceptionCode.INVALID_APP_ENGINE_REQUIREMENT:
       return msg`The app manifest declares an invalid server version requirement.`;
     case ApplicationRegistrationExceptionCode.INVALID_SERVER_VERSION:

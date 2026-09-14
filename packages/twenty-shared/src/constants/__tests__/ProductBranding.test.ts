@@ -62,4 +62,23 @@ describe('PRODUCT_BRANDING', () => {
   it('should use a lowercase url-safe slug', () => {
     expect(PRODUCT_BRANDING.slug).toMatch(/^[a-z][a-z0-9-]*$/);
   });
+
+  // The name is final; the sole literal-pinning site so a regression to the
+  // placeholder or a forbidden spelling fails here and nowhere else.
+  describe('final product naming', () => {
+    it('should brand the product as Novi CRM by Novicode', () => {
+      expect(PRODUCT_BRANDING.name).toBe('Novi CRM');
+      expect(PRODUCT_BRANDING.shortName).toBe('Novi');
+      expect(PRODUCT_BRANDING.slug).toBe('novi');
+      expect(PRODUCT_BRANDING.legalEntityLine).toBe('Novicode');
+    });
+
+    it('should never use forbidden spellings', () => {
+      const allValues = Object.values(PRODUCT_BRANDING).join(' ');
+
+      expect(allValues).not.toMatch(/novicrm/i);
+      expect(allValues).not.toMatch(/novicode crm/i);
+      expect(allValues).not.toMatch(/novi crm crm/i);
+    });
+  });
 });

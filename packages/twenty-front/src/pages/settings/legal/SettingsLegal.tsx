@@ -76,7 +76,7 @@ export const SettingsLegal = () => {
         <Section>
           <H2Title
             title={t`Software licenses`}
-            description={t`This product (version ${PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download.`}
+            description={t`${PRODUCT_BRANDING.name} by ${PRODUCT_BRANDING.legalEntityLine} (version ${PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download.`}
           />
           <StyledCardLink
             href={PRODUCT_BRANDING.sourceDownloadUrl}

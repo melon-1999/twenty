@@ -20251,10 +20251,10 @@ msgstr "Diese Seite hat keinen Inhalt"
 msgid "This page isn't available."
 msgstr "Diese Seite ist nicht verfügbar."
 
-#. js-lingui-id: uyKda0
+#. js-lingui-id: 6/ZyQ5
 #: src/pages/settings/legal/SettingsLegal.tsx
-msgid "This product (version {PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download."
-msgstr ""
+msgid "{0} by {1} (version {PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download."
+msgstr "{0} by {1} (Version {PRODUCT_VERSION}) basiert auf Software unter der GNU AGPL-3.0-Lizenz, mit MIT-lizenzierten Komponenten. Der vollständige zugehörige Quellcode dieser Version steht zum Download bereit."
 
 #. js-lingui-id: R/PuIn
 #: src/pages/settings/admin-panel/SettingsAdminNewAiProvider.tsx

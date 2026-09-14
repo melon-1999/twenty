@@ -119,8 +119,8 @@ msgstr "Здравствуйте, {userName},"
 
 #. js-lingui-explicit-id
 #: src/emails/billing-trial-converting.email.tsx
-msgid "If Twenty is working for you, you're all set — there's nothing to do. If it's not the right fit, you can cancel in one click before then and you won't be charged."
-msgstr "Если Twenty вам подходит, ничего делать не нужно — все уже настроено. Если это не совсем то, что вам нужно, вы можете отменить подписку в один клик до этой даты, и с вас ничего не спишут."
+msgid "If {productName} is working for you, you're all set — there's nothing to do. If it's not the right fit, you can cancel in one click before then and you won't be charged."
+msgstr "Если {productName} вам подходит, ничего делать не нужно — все уже настроено. Если это не совсем то, что вам нужно, вы можете отменить подписку в один клик до этой даты, и с вас ничего не спишут."
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx

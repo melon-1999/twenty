@@ -1,6 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
 import { msg } from '@lingui/core/macro';
+import {
+  MAX_CUSTOM_INDEXES_PER_OBJECT,
+  PRODUCT_BRANDING,
+} from 'twenty-shared/constants';
 import { compositeTypeDefinitions, RelationType } from 'twenty-shared/types';
 import { isNonEmptyString } from '@sniptt/guards';
 import { isDefined } from 'twenty-shared/utils';
@@ -13,7 +17,6 @@ import { WorkspaceManyOrAllFlatEntityMapsCacheService } from 'src/engine/metadat
 import { findFlatEntityByIdInFlatEntityMaps } from 'src/engine/metadata-modules/flat-entity/utils/find-flat-entity-by-id-in-flat-entity-maps.util';
 import { findFlatEntityByUniversalIdentifier } from 'src/engine/metadata-modules/flat-entity/utils/find-flat-entity-by-universal-identifier.util';
 import { type FlatIndexMetadata } from 'src/engine/metadata-modules/flat-index-metadata/types/flat-index-metadata.type';
-import { MAX_CUSTOM_INDEXES_PER_OBJECT } from 'twenty-shared/constants';
 import { type CreateIndexInput } from 'src/engine/metadata-modules/index-metadata/dtos/create-index.input';
 import {
   IndexMetadataException,
@@ -348,7 +351,7 @@ export class IndexMetadataService {
         `Index ${id} is a system index and cannot be deleted`,
         IndexMetadataExceptionCode.CANNOT_DELETE_SYSTEM_INDEX,
         {
-          userFriendlyMessage: msg`System indexes are required for Twenty to work and cannot be deleted.`,
+          userFriendlyMessage: msg`System indexes are required for ${PRODUCT_BRANDING.name} to work and cannot be deleted.`,
         },
       );
     }

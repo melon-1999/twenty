@@ -119,8 +119,8 @@ msgstr "Szia {userName},"
 
 #. js-lingui-explicit-id
 #: src/emails/billing-trial-converting.email.tsx
-msgid "If Twenty is working for you, you're all set — there's nothing to do. If it's not the right fit, you can cancel in one click before then and you won't be charged."
-msgstr "Ha a Twenty bevált számodra, minden rendben — nincs további teendőd. Ha mégsem ez a megfelelő megoldás, egy kattintással lemondhatod addig, és nem számítunk fel díjat."
+msgid "If {productName} is working for you, you're all set — there's nothing to do. If it's not the right fit, you can cancel in one click before then and you won't be charged."
+msgstr "Ha a {productName} bevált számodra, minden rendben — nincs további teendőd. Ha mégsem ez a megfelelő megoldás, egy kattintással lemondhatod addig, és nem számítunk fel díjat."
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx

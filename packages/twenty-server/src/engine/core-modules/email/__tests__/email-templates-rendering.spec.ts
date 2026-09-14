@@ -1,5 +1,7 @@
 import { createElement } from 'react';
 
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
+
 import {
   BillingSubscriptionRenewingEmail,
   BillingTrialConvertingEmail,
@@ -193,6 +195,27 @@ describe('email templates rendering', () => {
     );
 
     expect(html).toContain('mot de passe');
+  });
+
+  // The trial-converting email carried a hardcoded upstream "Twenty" that the
+  // German catalog rendered to customers; brand it through PRODUCT_BRANDING.
+  it('should brand the German trial-converting email without upstream traces', async () => {
+    const html = await renderEmail(
+      BillingTrialConvertingEmail({
+        userName: 'Tim',
+        workspaceDisplayName: 'Acme Inc',
+        trialEndsAt: new Date('2026-01-01'),
+        interval: 'month',
+        link: 'https://app.example-crm.test/settings/billing',
+        locale: 'de-DE',
+      }),
+    );
+
+    expect(html).toContain(PRODUCT_BRANDING.name);
+    expect(html).toContain(
+      `${PRODUCT_BRANDING.name} by ${PRODUCT_BRANDING.legalEntityLine}`,
+    );
+    expect(html).not.toContain('Twenty');
   });
 });
 

@@ -1,9 +1,10 @@
 // Base system prompt for programmatic agent runs outside workflows (runAgent API, evaluations)
 // NOTE: For user-facing chat, use CHAT_SYSTEM_PROMPTS from ai-chat/constants
 
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { TOOL_USAGE_STRATEGY } from 'src/engine/metadata-modules/ai/ai-agent/constants/tool-usage-strategy.const';
 
-export const AGENT_RUN_BASE_SYSTEM_PROMPT = `You are an AI agent in Twenty CRM, invoked programmatically to complete a request.
+export const AGENT_RUN_BASE_SYSTEM_PROMPT = `You are an AI agent in ${PRODUCT_BRANDING.name}, invoked programmatically to complete a request.
 
 ${TOOL_USAGE_STRATEGY}
 

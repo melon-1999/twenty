@@ -16,14 +16,15 @@ Exportiert `PRODUCT_BRANDING` mit: `name`, `shortName`, `description`, `websiteU
 
 `twenty-shared` wird von `twenty-front`, `twenty-server` und `twenty-emails` konsumiert — eine Quelle für alle drei Oberflächen. Nach Änderung: `npx nx build twenty-shared` (regeneriert auch den Barrel-Export).
 
-Aktuelle Werte sind **Platzhalter** (`YourCRM`, `example.com`) — bewusst kein finaler Produktname erfunden.
+Produktname ist final: **Novi CRM by Novicode** (`name: 'Novi CRM'`, `shortName: 'Novi'`, `slug: 'novi'`, `legalEntityLine: 'Novicode'`). Verbotene Schreibweisen (NoviCRM, Novicode CRM, "Novi CRM CRM") werden vom Leak-Test erzwungen. Die Domains (`example.com`-Familie, `docs.example.com`) sind weiterhin **Platzhalter**, bis die echten Domains konfiguriert werden — der Production Guard blockt bis dahin.
 
 ### Statische Dateien (können nicht aus TS lesen)
 
-- `packages/twenty-front/index.html` — `<title>`, Meta/OpenGraph/Twitter-Tags (Platzhalter `YourCRM` direkt eingetragen)
-- `packages/twenty-front/public/manifest.json` — PWA `name`/`short_name`
+- `packages/twenty-front/index.html` — `<title>`, Meta/OpenGraph/Twitter-Tags (Titel auf `Novi CRM` gesetzt; Descriptions generisch, og:image-Domain bleibt Platzhalter)
+- `packages/twenty-front/public/manifest.json` — PWA `name: Novi CRM`/`short_name: Novi`
+- `packages/twenty-website/public/llms.txt` und `public/.well-known/mcp/server-card.json` — auf Novi CRM/`com.novi/novi` gesetzt
 
-Diese zwei Dateien müssen beim finalen Naming von Hand angefasst werden.
+Beim Domain-Finale bleiben statisch anzufassen: `index.html` og:image/twitter:image (app.example.com) und `server-card.json` `websiteUrl` (www.example.com); siehe auch Open Item 14 (`com.novi`-Namespace).
 
 ### Assets
 
@@ -47,10 +48,10 @@ Workflow beim finalen Logo: `logo.svg` ersetzen → `node packages/twenty-front/
 
 ### E-Mail-Absender
 
-`EMAIL_FROM_NAME` (Default `'Felix from Twenty'` in `config-variables.ts`) wurde **nicht** im Code geändert — per `.env` setzen:
+`EMAIL_FROM_NAME` defaultet jetzt auf `PRODUCT_BRANDING.name` (`Novi CRM`) in `config-variables.ts` — eine Instanz ohne `.env`-Eintrag sendet nicht länger "Felix from Twenty". `.env` bleibt optionaler Override:
 
 ```text
-EMAIL_FROM_NAME="YourCRM"
+EMAIL_FROM_NAME="Novi CRM"
 EMAIL_FROM_ADDRESS=noreply@yourdomain.com
 ```
 
@@ -58,14 +59,14 @@ EMAIL_FROM_ADDRESS=noreply@yourdomain.com
 
 | Was | Wo |
 |---|---|
-| Produktname | `ProductBranding.ts` + `index.html` + `manifest.json` |
+| Produktname | ERLEDIGT (Novi CRM) — `ProductBranding.ts` + `index.html` + `manifest.json` |
 | Logo | `public/images/brand/logo.svg` + Script laufen lassen |
 | Favicon/App-Icons | automatisch aus Logo (Script) |
 | Social Card | automatisch aus Logo (Script) |
 | E-Mail-Logo (extern gehostete URL) | `PRODUCT_BRANDING.emailLogoUrl` |
 | Default-Workspace-Logo in E-Mails | `PRODUCT_BRANDING.defaultWorkspaceLogoUrl` |
 | Website/Support/Source/Legal-URLs | `ProductBranding.ts` |
-| Absendername E-Mails | `.env` `EMAIL_FROM_NAME` |
+| Absendername E-Mails | Default `PRODUCT_BRANDING.name`; `.env` `EMAIL_FROM_NAME` als Override |
 | Farben | `twenty-ui/design-tokens/accent.ts` + `generateTokens` |
 
 ## Geänderte Twenty-Core-Dateien (Upstream-Kompatibilität)
@@ -114,6 +115,7 @@ Konfliktrisiko: LOW = trivial (1–3 Zeilen, stabiler Code), MEDIUM = Datei änd
 | `src/emails/send-email-verification-link.email.tsx` | 2 Copy-Strings | LOW |
 | `src/emails/password-update-notify.email.tsx` | CTA-Label | LOW |
 | `src/emails/clean-suspended-workspace.email.tsx` | Copy + CTA-href | LOW |
+| `src/emails/billing-trial-converting.email.tsx` | Produktname parametrisiert (`{productName}`) | LOW |
 | `src/locales/**` | Kataloge | generiert, neu generieren |
 
 ### Server (`packages/twenty-server`)
@@ -121,6 +123,14 @@ Konfliktrisiko: LOW = trivial (1–3 Zeilen, stabiler Code), MEDIUM = Datei änd
 | Datei | Grund | Risiko |
 |---|---|---|
 | `.../workspace-invitation/services/workspace-invitation.service.ts` | Betreff + "(via …)" | MEDIUM |
+| `.../twenty-config/config-variables.ts` | `EMAIL_FROM_NAME`-Default = `PRODUCT_BRANDING.name` | MEDIUM |
+| `.../ai/ai-chat/constants/chat-system-prompts.const.ts` | Produktname in AI-System-Prompt (7 Stellen) | MEDIUM |
+| `.../ai/ai-agent/constants/workflow-base-system-prompt.const.ts` | Produktname | LOW |
+| `.../ai/ai-agent/constants/agent-run-base-system-prompt.const.ts` | Produktname | LOW |
+| `.../api/mcp/utils/build-mcp-server-instructions.util.ts` | Produktname in MCP-Instructions (3 Stellen) | LOW |
+| `.../application/application.exception.ts` | Produktname in Fehlermeldung | LOW |
+| `.../application/application-registration/application-registration.exception.ts` | Produktname in Fehlermeldung | LOW |
+| `.../index-metadata/services/index-metadata.service.ts` | Produktname in Fehlermeldung | LOW |
 | `.../email-verification/services/email-verification.service.ts` | Betreff | MEDIUM |
 | `.../approved-access-domain/services/approved-access-domain.service.ts` | "(via …)" | LOW |
 | `.../two-factor-authentication/two-factor-authentication.service.ts` | TOTP-Issuer (Authenticator-App) | MEDIUM |
@@ -241,8 +251,8 @@ Hosting-Modell: eine Instanz pro Kunde (eigene Subdomain), genau ein Workspace, 
 
 ## Open Items
 
-1. Finaler Produktname → `ProductBranding.ts`, `index.html`, `manifest.json`, `.env EMAIL_FROM_NAME`
-2. Finales Logo → `public/images/brand/logo.svg` + Script
+1. ~~Finaler Produktname~~ ERLEDIGT: Novi CRM by Novicode (`ProductBranding.ts`, `index.html`, `manifest.json`, `EMAIL_FROM_NAME`-Default = `PRODUCT_BRANDING.name`)
+2. Finales Logo → `public/images/brand/logo.svg` + Script (aktuell neutraler geometrischer Platzhalter, KEIN erfundenes Novi-Logo)
 3. Eigene Website-/Support-/Community-URLs (aktuell `example.com`-Platzhalter)
 4. Eigene Legal-Dokumente (Terms/Privacy/DPA) + URLs — bis dahin zeigen Login-Footer-Links auf Platzhalter
 5. `emailLogoUrl`/`defaultWorkspaceLogoUrl` auf eigenes Hosting umziehen (aktuell raw.githubusercontent.com des Forks)
@@ -254,6 +264,7 @@ Hosting-Modell: eine Instanz pro Kunde (eigene Subdomain), genau ein Workspace, 
 10. Eigene Doku-Domain für kontextuelle "Learn more"-Links (aktuell docs.twenty.com): `SettingsApplicationsDeveloperTab`, `SettingsClaimApplicationSection`, `AiChatApiKeyNotConfiguredMessage`, `SettingsBillingCreditsSection`, `WorkflowEditActionFormBuilder` sowie `DOCUMENTATION_BASE_URL`
 11. Operator-Runbook: ersten Account (Server-Admin-Bootstrap) immer selbst anlegen
 12. Übersetzungen der neuen/umformulierten Branding-Strings in weiteren Sprachen nachziehen (de-DE ist gepflegt, Rest fällt auf Englisch zurück)
-13. `og:image`-URL und `manifest`-Werte beim finalen Branding zusammen mit `index.html` aktualisieren
+13. `og:image`-URL in `index.html` beim Domain-Finale aktualisieren (Titel/`manifest` sind bereits Novi CRM)
+14. MCP-Reverse-DNS-Namespace `com.novi` beim Domain-Finale prüfen (ggf. `com.novicode/novi`) — Änderung wechselt eine veröffentlichte well-known-Identität, daher nur einmal anfassen
 
-Punkte 1, 3, 5 und 9 werden vom Production Branding Guard erzwungen: solange sie offen sind, schlagen Production-Builds und `product/v*`-Releases absichtlich fehl.
+Punkte 3, 5 und 9 werden vom Production Branding Guard erzwungen: solange sie offen sind, schlagen Production-Builds und `product/v*`-Releases absichtlich fehl. Der CI-Negativtest (`ci-product.yaml`) hängt jetzt an `websiteUrl: 'https://example.com'` statt am Produktnamen.

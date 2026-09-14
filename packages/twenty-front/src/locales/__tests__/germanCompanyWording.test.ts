@@ -5,11 +5,25 @@ import * as path from 'path';
 import { messages as germanMessages } from '../generated/de-DE';
 
 // This fork ships single-company instances with a German customer UI: the
-// onboarding/auth strings must say "Unternehmen", not "Arbeitsbereich".
-// Wording lives only in the de-DE catalog (msgstr), so English msgids stay
-// upstream-identical; this test keeps a Crowdin/i18n pipeline run from
+// onboarding/auth strings must say "Unternehmen", not "Arbeitsbereich", and
+// hand-maintained branding entries must survive. Wording lives only in the
+// de-DE catalog (msgstr); this test keeps a Crowdin/i18n pipeline run from
 // silently reverting the hand-maintained entries.
 const FRONT_PO_PATH = path.resolve(__dirname, '../de-DE.po');
+
+// Entries whose compiled form contains ICU placeholders: assert the po
+// msgstr exactly and the compiled catalog by fragment.
+const EXPECTED_BRANDED_TRANSLATIONS: Record<
+  string,
+  { msgstr: string; compiledFragment: string }
+> = {
+  '{0} by {1} (version {PRODUCT_VERSION}) is based on software licensed under the GNU AGPL-3.0, with MIT-licensed components. The complete corresponding source code of this version is available for download.':
+    {
+      msgstr:
+        '{0} by {1} (Version {PRODUCT_VERSION}) basiert auf Software unter der GNU AGPL-3.0-Lizenz, mit MIT-lizenzierten Komponenten. Der vollständige zugehörige Quellcode dieser Version steht zum Download bereit.',
+      compiledFragment: 'basiert auf Software unter der GNU AGPL-3.0-Lizenz',
+    },
+};
 
 const EXPECTED_TRANSLATIONS: Record<string, string> = {
   'Create your workspace': 'Ihr Unternehmen erstellen',
@@ -63,6 +77,16 @@ describe('German single-company wording', () => {
       expect(germanMessages[generateMessageId(msgid)]).toEqual([
         expectedMsgstr,
       ]);
+    },
+  );
+
+  it.each(Object.entries(EXPECTED_BRANDED_TRANSLATIONS))(
+    'keeps the hand-maintained branded entry %s',
+    (msgid, { msgstr, compiledFragment }) => {
+      expect(readMsgstr(frontPo, msgid)).toBe(escapePoString(msgstr));
+      expect(
+        JSON.stringify(germanMessages[generateMessageId(msgid)]),
+      ).toContain(compiledFragment);
     },
   );
 });

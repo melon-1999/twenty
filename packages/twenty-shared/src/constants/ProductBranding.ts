@@ -1,7 +1,8 @@
 // Central branding configuration for the rebranded product.
 // Replace these values (and the assets listed in docs/product/rebranding.md)
 // to rebrand the whole app, emails and server-rendered surfaces.
-// Placeholder values are intentional: no final product name exists yet.
+// The product name is final (Novi CRM by Novicode); the example.com domains
+// are intentional placeholders until the real domains are configured.
 // The production branding guard (findPlaceholderBrandingViolations) blocks
 // production builds while placeholders are active.
 import { PRODUCT_RELEASE_TAG } from './ProductReleaseTag';
@@ -31,9 +32,9 @@ type ProductBranding = {
 };
 
 export const PRODUCT_BRANDING: ProductBranding = {
-  name: 'YourCRM',
-  shortName: 'YourCRM',
-  slug: 'yourcrm',
+  name: 'Novi CRM',
+  shortName: 'Novi',
+  slug: 'novi',
   description: 'A modern CRM',
   websiteUrl: 'https://example.com',
   supportUrl: 'https://example.com/support',
@@ -48,6 +49,6 @@ export const PRODUCT_BRANDING: ProductBranding = {
   emailLogoUrl: 'https://assets.example.com/brand/email-logo.png',
   defaultWorkspaceLogoUrl:
     'https://assets.example.com/brand/workspace-logo.png',
-  legalEntityLine: 'YourCRM',
+  legalEntityLine: 'Novicode',
   legalEntityLocationLine: '',
 };

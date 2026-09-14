@@ -19,6 +19,7 @@ import {
 import {
   ENTERPRISE_INSTANCE_TYPE,
   type EnterpriseInstanceType,
+  PRODUCT_BRANDING,
 } from 'twenty-shared/constants';
 import { isDefined } from 'twenty-shared/utils';
 import { type LoggerOptions } from 'typeorm/logger/LoggerOptions';
@@ -494,7 +495,7 @@ export class ConfigVariables {
     description: 'Name used in the From header for outgoing emails',
     type: ConfigVariableType.STRING,
   })
-  EMAIL_FROM_NAME = 'Felix from Twenty';
+  EMAIL_FROM_NAME = PRODUCT_BRANDING.name;
 
   @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.EMAIL_SETTINGS,

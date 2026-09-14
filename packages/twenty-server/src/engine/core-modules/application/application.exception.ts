@@ -1,5 +1,6 @@
 import { type MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 import { assertUnreachable } from 'twenty-shared/utils';
 
 import { type FlatEntityMapsExceptionContext } from 'src/engine/metadata-modules/flat-entity/exceptions/flat-entity-maps.exception';
@@ -76,7 +77,7 @@ const getApplicationExceptionUserFriendlyMessage = (
     case ApplicationExceptionCode.CANNOT_DOWNGRADE_APPLICATION:
       return msg`A higher version of this application is already installed. Downgrading is not allowed.`;
     case ApplicationExceptionCode.SERVER_VERSION_INCOMPATIBLE:
-      return msg`This app requires a newer version of the Twenty server. Please upgrade your server or use a compatible app version.`;
+      return msg`This app requires a newer version of the ${PRODUCT_BRANDING.name} server. Please upgrade your server or use a compatible app version.`;
     case ApplicationExceptionCode.WORKSPACE_VERSION_INCOMPATIBLE:
       return msg`This app requires a newer version than this workspace has finished upgrading to. Please try again once the workspace upgrade completes.`;
     case ApplicationExceptionCode.INVALID_APP_ENGINE_REQUIREMENT:

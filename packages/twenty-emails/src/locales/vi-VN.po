@@ -119,8 +119,8 @@ msgstr "Chào {userName},"
 
 #. js-lingui-explicit-id
 #: src/emails/billing-trial-converting.email.tsx
-msgid "If Twenty is working for you, you're all set — there's nothing to do. If it's not the right fit, you can cancel in one click before then and you won't be charged."
-msgstr "Nếu Twenty phù hợp với nhu cầu của bạn, mọi thứ đã sẵn sàng — bạn không cần làm gì thêm. Nếu không phù hợp, bạn có thể hủy chỉ với một lần nhấp trước thời điểm đó và sẽ không bị tính phí."
+msgid "If {productName} is working for you, you're all set — there's nothing to do. If it's not the right fit, you can cancel in one click before then and you won't be charged."
+msgstr "Nếu {productName} phù hợp với nhu cầu của bạn, mọi thứ đã sẵn sàng — bạn không cần làm gì thêm. Nếu không phù hợp, bạn có thể hủy chỉ với một lần nhấp trước thời điểm đó và sẽ không bị tính phí."
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx

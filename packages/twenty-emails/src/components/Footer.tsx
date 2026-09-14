@@ -46,7 +46,7 @@ export const Footer = ({ i18n }: FooterProps) => {
       </Row>
       <ShadowText>
         <>
-          {PRODUCT_BRANDING.legalEntityLine}
+          {`${PRODUCT_BRANDING.name} by ${PRODUCT_BRANDING.legalEntityLine}`}
           {PRODUCT_BRANDING.legalEntityLocationLine !== '' && (
             <>
               <br />

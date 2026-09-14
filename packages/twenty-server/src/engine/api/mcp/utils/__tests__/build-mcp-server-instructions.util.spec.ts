@@ -1,3 +1,5 @@
+import { PRODUCT_BRANDING } from 'twenty-shared/constants';
+
 import { buildMcpServerInstructions } from 'src/engine/api/mcp/utils/build-mcp-server-instructions.util';
 
 const getActionLine = (instructions: string): string =>
@@ -47,6 +49,16 @@ describe('buildMcpServerInstructions', () => {
     });
 
     expect(withoutHttp).not.toContain('http_request is ONLY for external');
+  });
+
+  it('should introduce itself with the product name and no upstream brand', () => {
+    const instructions = buildMcpServerInstructions({
+      objectNames: 'companies, people',
+      actionToolNames: ['send_email', 'http_request'],
+    });
+
+    expect(instructions).toContain(PRODUCT_BRANDING.name);
+    expect(instructions).not.toContain('Twenty');
   });
 
   it('should omit the skills line when the workspace has no skills', () => {

@@ -41,8 +41,8 @@ jobs:
       - name: Branding unit tests
         run: |
           cd packages/twenty-shared && npx jest src/constants/__tests__/ProductBranding.test.ts src/utils/branding && cd ../..
-          cd packages/twenty-front && npx jest src/utils/__tests__/title-utils.test.ts src/modules/settings/mcp-and-apis/utils/__tests__/mcpSetup.test.ts src/modules/activities/timeline-activities/utils/__tests__/getTimelineActivityAuthorFullName.test.ts && cd ../..
-          cd packages/twenty-server && npx jest src/engine/core-modules/approved-access-domain/services/approved-access-domain.spec.ts src/engine/core-modules/email/__tests__/email-templates-rendering.spec.ts src/engine/core-modules/well-known && cd ../..
+          cd packages/twenty-front && npx jest src/utils/__tests__/title-utils.test.ts src/modules/settings/mcp-and-apis/utils/__tests__/mcpSetup.test.ts src/modules/activities/timeline-activities/utils/__tests__/getTimelineActivityAuthorFullName.test.ts src/locales/__tests__/germanCompanyWording.test.ts && cd ../..
+          cd packages/twenty-server && npx jest src/engine/core-modules/approved-access-domain/services/approved-access-domain.spec.ts src/engine/core-modules/email/__tests__/email-templates-rendering.spec.ts src/engine/core-modules/well-known src/engine/api/mcp/utils/__tests__/build-mcp-server-instructions.util.spec.ts src/engine/core-modules/i18n/locales/__tests__/german-company-wording.spec.ts && cd ../..
       - name: Build twenty-emails
         run: npx nx build twenty-emails
       - name: Build twenty-server
@@ -52,12 +52,12 @@ jobs:
       # branding guard in packages/twenty-front/src/config/assertProductionBrandingPlugin.ts)
       - name: Build twenty-front (placeholder branding allowed in CI)
         run: ALLOW_PLACEHOLDER_BRANDING=true npx nx build twenty-front
-      # Negative test only while placeholder branding is active; once real
-      # branding lands this step self-disables instead of failing forever.
+      # Negative test only while placeholder domains are active; once the real
+      # domains land this step self-disables instead of failing forever.
       - name: Production branding guard blocks placeholders
         run: |
-          if ! grep -q "name: 'YourCRM'" packages/twenty-shared/src/constants/ProductBranding.ts; then
-            echo "Real branding configured - skipping placeholder guard negative test"
+          if ! grep -q "websiteUrl: 'https://example.com'" packages/twenty-shared/src/constants/ProductBranding.ts; then
+            echo "Real domains configured - skipping placeholder guard negative test"
             exit 0
           fi
           if npx nx build twenty-front --skip-nx-cache; then
