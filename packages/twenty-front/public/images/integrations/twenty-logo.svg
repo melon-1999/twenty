@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Placeholder brand mark. Replace this file with the final logo and run
-       packages/twenty-front/scripts/generate-brand-assets.mjs to regenerate
-       all app icons. See docs/product/rebranding.md -->
-  <rect width="512" height="512" rx="96" fill="#1b1b1b"/>
-  <circle cx="256" cy="256" r="120" fill="none" stroke="#ffffff" stroke-width="48"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Novi logo">
+  <rect width="512" height="512" rx="104" fill="#1b1b1b"/>
+  <rect x="126" y="132" width="72" height="248" rx="36" fill="#ffffff"/>
+  <rect x="314" y="132" width="72" height="248" rx="36" fill="#ffffff"/>
+  <path d="M164 170 L348 344" fill="none" stroke="#ffffff" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
