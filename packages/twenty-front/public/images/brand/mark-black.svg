@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Novi mark">
+  <rect x="118" y="126" width="78" height="260" rx="39" fill="#111111"/>
+  <rect x="316" y="126" width="78" height="260" rx="39" fill="#111111"/>
+  <path d="M160 168 L352 346" fill="none" stroke="#111111" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

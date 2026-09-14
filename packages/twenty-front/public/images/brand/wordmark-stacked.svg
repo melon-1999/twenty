@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 720" role="img" aria-label="Novi CRM by Novicode stacked">
+  <g transform="translate(124 18)">
+    <rect x="118" y="126" width="78" height="260" rx="39" fill="#111111"/>
+    <rect x="316" y="126" width="78" height="260" rx="39" fill="#111111"/>
+    <path d="M160 168 L352 346" fill="none" stroke="#111111" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="380" y="560" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="700" fill="#111111" letter-spacing="-3">Novi CRM</text>
+  <text x="380" y="635" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="400" fill="#7b7b7b">by Novicode</text>
+</svg>

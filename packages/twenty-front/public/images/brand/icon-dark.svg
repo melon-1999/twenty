@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Novi icon dark">
+  <rect width="512" height="512" rx="104" fill="#171717"/>
+  <rect x="126" y="132" width="72" height="248" rx="36" fill="#ffffff"/>
+  <rect x="314" y="132" width="72" height="248" rx="36" fill="#ffffff"/>
+  <path d="M164 170 L348 344" fill="none" stroke="#ffffff" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
