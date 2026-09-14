@@ -1136,7 +1136,7 @@ msgstr "Zugriffsschlüssel-ID"
 #. js-lingui-id: CrjDqe
 #: src/pages/auth/Authorize.tsx
 msgid "Access your workspace data"
-msgstr "Auf deine Arbeitsbereichsdaten zugreifen"
+msgstr "Auf deine Unternehmensdaten zugreifen"
 
 #. js-lingui-id: IF4QNM
 #: src/modules/settings/mcp-and-apis/components/SettingsMcpSetup.tsx
@@ -3553,7 +3553,7 @@ msgstr "Body-Eingabe"
 #. js-lingui-id: SkYx9p
 #: src/pages/onboarding/BookCall.tsx
 msgid "Book a 30-minute call and we'll help you get your workspace production-ready."
-msgstr "Buche ein 30-minütiges Gespräch und wir helfen dir, deinen Arbeitsbereich einsatzbereit zu machen."
+msgstr "Buche ein 30-minütiges Gespräch und wir helfen dir, dein Unternehmen einsatzbereit zu machen."
 
 #. js-lingui-id: 2yl5lQ
 #: src/pages/onboarding/UpgradeFreeTrial.tsx
@@ -4273,7 +4273,7 @@ msgstr ""
 #. js-lingui-id: NFfUic
 #: src/pages/auth/SignInUp.tsx
 msgid "Choose a Workspace"
-msgstr "Wählen Sie einen Arbeitsbereich"
+msgstr "Unternehmen auswählen"
 
 #. js-lingui-id: KsP4Tg
 #: src/pages/settings/ai/components/SettingsAiModelsTab.tsx
@@ -5678,7 +5678,7 @@ msgstr "Erstellen Sie einen Workflow und kehren Sie hierher zurück, um die Vers
 #. js-lingui-id: Hn5erC
 #: src/modules/auth/sign-in-up/components/SignInUpGlobalScopeForm.tsx
 msgid "Create a workspace"
-msgstr "Arbeitsbereich erstellen"
+msgstr "Unternehmen erstellen"
 
 #. js-lingui-id: dpwEnu
 #: src/modules/activities/calendar/components/CalendarEventComposerFields.tsx
@@ -5801,19 +5801,19 @@ msgstr "Webhook erstellen"
 #. js-lingui-id: FdtSNC
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceCreationForm.tsx
 msgid "Create workspace"
-msgstr "Arbeitsbereich erstellen"
+msgstr "Unternehmen erstellen"
 
 #. js-lingui-id: kdLGki
 #: src/modules/ui/navigation/navigation-drawer/components/MultiWorkspaceDropdown/internal/MultiWorkspaceDropdownDefaultComponents.tsx
 #: src/utils/title-utils.ts
 msgid "Create Workspace"
-msgstr "Arbeitsbereich erstellen"
+msgstr "Unternehmen erstellen"
 
 #. js-lingui-id: 9chYz/
 #: src/modules/auth/sign-in-up/components/internal/SignInUpWorkspaceCreationForm.tsx
 #: src/pages/auth/SignInUp.tsx
 msgid "Create your workspace"
-msgstr "Ihren Arbeitsbereich erstellen"
+msgstr "Ihr Unternehmen erstellen"
 
 #. js-lingui-id: OHF273
 #: src/modules/settings/roles/role-permissions/permission-flags/hooks/useActionRolePermissionFlagConfig.ts
@@ -5867,7 +5867,7 @@ msgstr "Ihr <0>Datenmodell</0> wird erstellt..."
 #. js-lingui-id: m4ZE6a
 #: src/modules/auth/sign-in-up/constants/WorkspaceActivationMessages.tsx
 msgid "Creating your <0>workspace</0>..."
-msgstr "Ihr <0>Arbeitsbereich</0> wird erstellt..."
+msgstr "Ihr <0>Unternehmen</0> wird erstellt..."
 
 #. js-lingui-id: HAzhV7
 #: src/pages/settings/admin-panel/SettingsAdminAiProviderDetail.tsx
@@ -10025,7 +10025,7 @@ msgstr "Holen Sie das Beste aus Ihrem CRM heraus, indem Sie einige Apps installi
 #. js-lingui-id: NXEW3h
 #: src/pages/onboarding/InviteTeam.tsx
 msgid "Get the most out of your workspace by inviting your team."
-msgstr "Holen Sie das Beste aus Ihrem Arbeitsbereich heraus, indem Sie Ihr Team einladen."
+msgstr "Holen Sie das Beste aus Ihrem Unternehmen heraus, indem Sie Ihr Team einladen."
 
 #. js-lingui-id: XXtAx5
 #: src/modules/settings/data-model/indexes/forms/components/SettingsObjectIndexOptionsForm.tsx
@@ -15883,7 +15883,7 @@ msgstr "Nur vorinstalliert"
 #. js-lingui-id: 0Lqxjs
 #: src/modules/auth/sign-in-up/constants/WorkspaceActivationMessages.tsx
 msgid "Prefilling your <0>workspace data</0>..."
-msgstr "Ihre <0>Arbeitsbereichsdaten</0> werden vorbefüllt..."
+msgstr "Ihre <0>Unternehmensdaten</0> werden vorbefüllt..."
 
 #. js-lingui-id: rNqTKZ
 #: src/modules/side-panel/pages/page-layout/constants/settings/ChartConfigurationSettingLabels.ts
@@ -18853,7 +18853,7 @@ msgstr "Beim Kontakt mit unserem Abrechnungsdienst ist etwas schiefgelaufen. Bit
 #. js-lingui-id: i34/fH
 #: src/pages/onboarding/WorkspaceActivation.tsx
 msgid "Something went wrong while creating your workspace. Please try again."
-msgstr "Beim Erstellen Ihres Arbeitsbereichs ist etwas schiefgelaufen. Bitte versuchen Sie es erneut."
+msgstr "Beim Erstellen Ihres Unternehmens ist etwas schiefgelaufen. Bitte versuchen Sie es erneut."
 
 #. js-lingui-id: teokEm
 #: src/modules/settings/event-logs/components/SettingsLogs.tsx
@@ -22523,7 +22523,7 @@ msgstr "Willkommen bei {0}"
 #: src/modules/onboarding/constants/WelcomeTitleMessage.ts
 #: src/pages/auth/SignInUp.tsx
 msgid "Welcome to your workspace"
-msgstr "Willkommen in Ihrem Arbeitsbereich"
+msgstr "Willkommen in Ihrem Unternehmen"
 
 #. js-lingui-id: Vin3Dv
 #: src/pages/auth/SignInUp.tsx
@@ -22797,7 +22797,7 @@ msgstr "Arbeitsbereich"
 #: src/modules/auth/sign-in-up/hooks/useSignUpInNewWorkspace.ts
 #: src/pages/onboarding/WorkspaceActivation.tsx
 msgid "Workspace creation failed"
-msgstr "Erstellung des Arbeitsbereichs fehlgeschlagen"
+msgstr "Erstellung des Unternehmens fehlgeschlagen"
 
 #. js-lingui-id: VicISP
 #: src/modules/settings/profile/components/DeleteWorkspace.tsx
@@ -22833,7 +22833,7 @@ msgstr "Listen der Arbeitsbereiche nach Upgrade-Status"
 #. js-lingui-id: yz2+6L
 #: src/modules/auth/sign-in-up/hooks/useSignUpInNewWorkspace.ts
 msgid "Workspace logo upload failed"
-msgstr "Upload des Arbeitsbereichslogos fehlgeschlagen"
+msgstr "Upload des Unternehmenslogos fehlgeschlagen"
 
 #. js-lingui-id: CbGxon
 #: src/modules/settings/billing/components/SettingsBillingSubscriptionInfo.tsx

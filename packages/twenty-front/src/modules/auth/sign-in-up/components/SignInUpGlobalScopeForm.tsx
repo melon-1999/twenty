@@ -21,6 +21,7 @@ import {
 import { getAvailableWorkspacePathAndSearchParams } from '@/auth/utils/availableWorkspacesUtils';
 import { authProvidersState } from '@/client-config/states/authProvidersState';
 import { isDDLLockedState } from '@/client-config/states/isDDLLockedState';
+import { isMultiWorkspaceEnabledState } from '@/client-config/states/isMultiWorkspaceEnabledState';
 import { DEFAULT_WORKSPACE_LOGO } from '@/ui/navigation/navigation-drawer/constants/DefaultWorkspaceLogo';
 import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
 import { useSetAtomState } from '@/ui/utilities/state/jotai/hooks/useSetAtomState';
@@ -127,6 +128,9 @@ export const SignInUpGlobalScopeForm = () => {
   const { theme } = useContext(ThemeContext);
   const authProviders = useAtomStateValue(authProvidersState);
   const isDDLLocked = useAtomStateValue(isDDLLockedState);
+  const isMultiWorkspaceEnabled = useAtomStateValue(
+    isMultiWorkspaceEnabledState,
+  );
   const signInUpStep = useAtomStateValue(signInUpStepState);
   const setSignInUpStep = useSetAtomState(signInUpStepState);
   const { buildWorkspaceUrl } = useBuildWorkspaceUrl();
@@ -205,29 +209,34 @@ export const SignInUpGlobalScopeForm = () => {
                 </UndecoratedLink>
               </OnboardingStepAnimatedItem>
             ))}
-            {!isDDLLocked && (
-              <OnboardingStepAnimatedItem
-                index={availableWorkspacesList.length}
-              >
-                <StyledWorkspaceItem
-                  onClick={() =>
-                    setSignInUpStep(SignInUpStep.WorkspaceCreation)
-                  }
+            {/* Single-company instances hide workspace creation, except during
+                first setup (no workspace exists yet) where the back button of
+                the creation form would otherwise land on an empty screen. */}
+            {(isMultiWorkspaceEnabled ||
+              availableWorkspacesList.length === 0) &&
+              !isDDLLocked && (
+                <OnboardingStepAnimatedItem
+                  index={availableWorkspacesList.length}
                 >
-                  <StyledWorkspaceContent>
-                    <StyledWorkspaceLogo>
-                      <IconPlus size={theme.icon.size.lg} />
-                    </StyledWorkspaceLogo>
-                    <StyledWorkspaceTextContainer>
-                      <StyledWorkspaceName>{t`Create a workspace`}</StyledWorkspaceName>
-                    </StyledWorkspaceTextContainer>
-                    <StyledChevronIcon>
-                      <IconChevronRight size={theme.icon.size.md} />
-                    </StyledChevronIcon>
-                  </StyledWorkspaceContent>
-                </StyledWorkspaceItem>
-              </OnboardingStepAnimatedItem>
-            )}
+                  <StyledWorkspaceItem
+                    onClick={() =>
+                      setSignInUpStep(SignInUpStep.WorkspaceCreation)
+                    }
+                  >
+                    <StyledWorkspaceContent>
+                      <StyledWorkspaceLogo>
+                        <IconPlus size={theme.icon.size.lg} />
+                      </StyledWorkspaceLogo>
+                      <StyledWorkspaceTextContainer>
+                        <StyledWorkspaceName>{t`Create a workspace`}</StyledWorkspaceName>
+                      </StyledWorkspaceTextContainer>
+                      <StyledChevronIcon>
+                        <IconChevronRight size={theme.icon.size.md} />
+                      </StyledChevronIcon>
+                    </StyledWorkspaceContent>
+                  </StyledWorkspaceItem>
+                </OnboardingStepAnimatedItem>
+              )}
           </StyledWorkspaceContainer>
         </StyledOnboardingContentContainer>
       )}

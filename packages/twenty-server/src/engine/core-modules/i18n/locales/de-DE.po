@@ -13039,7 +13039,7 @@ msgstr "Arbeitsbereichsmitglieder"
 #. js-lingui-id: bcIybO
 #: src/engine/core-modules/auth/services/sign-in-up.service.ts
 msgid "Workspace name is required"
-msgstr "Arbeitsbereichsname ist erforderlich"
+msgstr "Unternehmensname ist erforderlich"
 
 #. js-lingui-id: JYc1v3
 #: src/engine/core-modules/user-workspace/guards/upload-profile-picture-permission.guard.ts

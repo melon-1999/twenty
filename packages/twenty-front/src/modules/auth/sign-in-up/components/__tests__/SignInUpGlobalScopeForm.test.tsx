@@ -3,19 +3,23 @@ import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider as JotaiProvider } from 'jotai';
+import { MemoryRouter } from 'react-router-dom';
 import { SOURCE_LOCALE } from 'twenty-shared/translations';
 import { ThemeProvider } from 'twenty-ui/theme-constants';
 
 import { SignInUpGlobalScopeForm } from '@/auth/sign-in-up/components/SignInUpGlobalScopeForm';
+import { availableWorkspacesState } from '@/auth/states/availableWorkspacesState';
 import {
   SignInUpStep,
   signInUpStepState,
 } from '@/auth/states/signInUpStepState';
 import { authProvidersState } from '@/client-config/states/authProvidersState';
+import { isMultiWorkspaceEnabledState } from '@/client-config/states/isMultiWorkspaceEnabledState';
 import {
   jotaiStore,
   resetJotaiStore,
 } from '@/ui/utilities/state/jotai/jotaiStore';
+import { GetWorkspaceCreationDefaultsDocument } from '~/generated-metadata/graphql';
 import { dynamicActivate } from '~/utils/i18n/dynamicActivate';
 
 const buildWorkspaceUrlMock = jest.fn();
@@ -113,5 +117,82 @@ describe('SignInUpGlobalScopeForm', () => {
     fireEvent.click(forgotPasswordLink);
 
     expect(resetPasswordClickMock).toHaveBeenCalledTimes(1);
+  });
+
+  describe('workspace selection step', () => {
+    const existingWorkspace = {
+      id: '20202020-1c25-4d02-bf25-6aeccf7ea419',
+      displayName: 'Testfirma GmbH',
+      logo: null,
+      inviteHash: null,
+      loginToken: null,
+      personalInviteToken: null,
+      sso: [],
+      workspaceUrls: {
+        subdomainUrl: 'https://testfirma.example.com',
+        customUrl: null,
+      },
+    };
+
+    const workspaceCreationDefaultsMock = {
+      request: { query: GetWorkspaceCreationDefaultsDocument },
+      result: {
+        data: {
+          getWorkspaceCreationDefaults: {
+            displayName: '',
+            subdomain: '',
+          },
+        },
+      },
+    };
+
+    const renderWorkspaceSelection = (
+      availableWorkspacesForSignIn: (typeof existingWorkspace)[],
+    ) => {
+      jotaiStore.set(signInUpStepState.atom, SignInUpStep.WorkspaceSelection);
+      jotaiStore.set(availableWorkspacesState.atom, {
+        availableWorkspacesForSignIn,
+        availableWorkspacesForSignUp: [],
+      });
+
+      render(
+        <MemoryRouter>
+          <MockedProvider mocks={[workspaceCreationDefaultsMock]}>
+            <JotaiProvider store={jotaiStore}>
+              <ThemeProvider colorScheme="light">
+                <I18nProvider i18n={i18n}>
+                  <SignInUpGlobalScopeForm />
+                </I18nProvider>
+              </ThemeProvider>
+            </JotaiProvider>
+          </MockedProvider>
+        </MemoryRouter>,
+      );
+    };
+
+    it('hides the create-workspace tile when multi-workspace is disabled and a workspace exists', () => {
+      jotaiStore.set(isMultiWorkspaceEnabledState.atom, false);
+
+      renderWorkspaceSelection([existingWorkspace]);
+
+      expect(screen.getByText('Testfirma GmbH')).toBeInTheDocument();
+      expect(screen.queryByText('Create a workspace')).not.toBeInTheDocument();
+    });
+
+    it('shows the create-workspace tile during first setup with no available workspace', () => {
+      jotaiStore.set(isMultiWorkspaceEnabledState.atom, false);
+
+      renderWorkspaceSelection([]);
+
+      expect(screen.getByText('Create a workspace')).toBeInTheDocument();
+    });
+
+    it('shows the create-workspace tile when multi-workspace is enabled', () => {
+      jotaiStore.set(isMultiWorkspaceEnabledState.atom, true);
+
+      renderWorkspaceSelection([existingWorkspace]);
+
+      expect(screen.getByText('Create a workspace')).toBeInTheDocument();
+    });
   });
 });
