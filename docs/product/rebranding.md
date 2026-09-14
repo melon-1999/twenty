@@ -28,15 +28,17 @@ Beim Domain-Finale bleiben statisch anzufassen: `index.html` og:image/twitter:im
 
 ### Assets
 
-Kanonische Austauschstelle: **`packages/twenty-front/public/images/brand/logo.svg`** (aktuell neutraler geometrischer Platzhalter, kein gestaltetes Logo).
+Kanonische Austauschstelle: **`packages/twenty-front/public/images/brand/logo.svg`** (trägt jetzt die finale Novi-Marke: dunkle Kachel + weißes N, kein Platzhalter mehr).
 
 Generator: **`packages/twenty-front/scripts/generate-brand-assets.mjs`** — regeneriert aus `logo.svg`:
 
 - alle PWA-/App-Icons in `public/images/icons/{android,ios,windows11}/` (~120 PNGs, Pfade unverändert, in-place ersetzt)
 - `public/images/integrations/twenty-logo.svg` (In-App-Marke: Onboarding-Header, Splash-Loader, Import-Badge, OAuth-Consent — Dateiname bewusst beibehalten, damit kein Code-Diff entsteht)
-- `public/images/brand/social-card.png` (og:image/twitter:image)
+- `public/images/brand/social-card.png` (og:image/twitter:image) — wird jetzt aus `brand/wordmark-horizontal.png` zusammengesetzt, nicht mehr aus `logo.svg`
 
-Workflow beim finalen Logo: `logo.svg` ersetzen → `node packages/twenty-front/scripts/generate-brand-assets.mjs` → committen.
+Workflow beim finalen Logo: `logo.svg` ersetzen → bei geänderten Wortmarken-SVGs zuerst `node packages/twenty-front/scripts/generate-brand-assets.mjs --brand-pngs-only` (regeneriert `wordmark-horizontal.png` & Co.) → dann `node packages/twenty-front/scripts/generate-brand-assets.mjs` im vollen Modus → committen.
+
+`packages/twenty-website/src/app/favicon.ico` und `packages/twenty-website/public/images/og/default.png` werden vom Script nicht angefasst und bleiben manuell gepflegt (Favicon: 32x32 PNG-in-ICO aus `logo.svg`; `og/default.png` = Kopie von `brand/social-card.png`) — bei jeder Logo-/Wortmarken-Änderung von Hand nachziehen.
 
 ### Farbe / Theme
 
@@ -228,7 +230,7 @@ Die Next.js-Marketing-Site wurde als eigene Kunden-Surface bereinigt:
 - **Zentrale URLs**: `src/platform/site-urls.ts` enthält nur noch `appWelcome`/`docsApi`/`docsMcp` als eigene Platzhalter-Domains — keine Twenty-Ziele mehr.
 - **Retired Routen** (308 → `/`, de-indexed in `static-website-routes.ts`): `why-twenty`, `partners*`, `releases`, `customers*`, `apps*`, `compare-pricing/*`, `enterprise/*`, `terms`, `privacy-policy`, `halftone` sowie die Legacy-`/user-guide|/developers|/twenty-ui`-Doku-Redirects. Damit ist auch Twentys Enterprise-Checkout (`/enterprise/activate`, Stripe-`success_url`) bewusst stillgelegt — unser Produkt verkauft keine Twenty-Enterprise-Keys. Seiten-/Sektionscode bleibt für minimalen Upstream-Diff im Repo.
 - **SEO/Meta**: `SITE_NAME`/Titles/Descriptions über `PRODUCT_BRANDING`, Twitter-Handle entfernt, `getSiteUrl`-Default `https://www.example.com` (per `NEXT_PUBLIC_WEBSITE_URL` setzen), Sitemap nur `/`, `/product`, `/pricing`.
-- **Assets**: Website-Logo (`src/icons/TwentyLogo.tsx` — Name intern beibehalten), `favicon.ico` und `public/images/og/default.png` durch die Placeholder-Marke ersetzt; Twenty-Wortmarken-SVGs gelöscht; Homepage-Sektionen mit Twenty-Kundenzitaten (TrustedBy/Helped/Testimonials) entfernt; Twenty-Demo-Firma in Mockups durch Figma ersetzt; `twenty-icons.com`-Favicon-Fallback der Mockups entfernt (lokale Logos/Initialen); fremde Domain-Verifikationsdateien (`openai-apps-challenge`, `microsoft-identity-association.json`) gelöscht; `llms.txt`, `security.txt`, MCP-`server-card.json` neutralisiert.
+- **Assets**: Website-Logo (`src/icons/TwentyLogo.tsx` — Name intern beibehalten), `favicon.ico` und `public/images/og/default.png` tragen jetzt die finale Novi-Marke; Twenty-Wortmarken-SVGs gelöscht; Homepage-Sektionen mit Twenty-Kundenzitaten (TrustedBy/Helped/Testimonials) entfernt; Twenty-Demo-Firma in Mockups durch Figma ersetzt; `twenty-icons.com`-Favicon-Fallback der Mockups entfernt (lokale Logos/Initialen); fremde Domain-Verifikationsdateien (`openai-apps-challenge`, `microsoft-identity-association.json`) gelöscht; `llms.txt`, `security.txt`, MCP-`server-card.json` neutralisiert.
 - **Guard**: `next.config.ts` wirft bei Production-Build mit Platzhalter-Branding (gleicher Opt-out `ALLOW_PLACEHOLDER_BRANDING=true` wie die App).
 - **Funktionale Twenty-Kopplungen (Open Items)**: Apps-Marketplace-Daten (`TWENTY_MARKETPLACE_API_URL`, Default api.twenty.com) und Partner-API betreffen nur retired Routen; Cal.com-Buchung zentral in `contact-cal-config.ts` mit Platzhalter-Formular-ID; `/api/enterprise/*`-Backend unangetastet (nur unerreichbar aus der UI).
 - **Bewusst intern bleibend**: `twenty-sdk`-Demo-Code im Homepage-Terminal-Mockup (reales Paket, Fiction-Code), Paket-/Ordnernamen, Lingui-Kataloge enthalten Strings retirte Routen (nicht gerendert; Pruning = Open Item), "Twenty CLI"-OAuth-App-Name (reales CLI-Paket).
@@ -252,7 +254,7 @@ Hosting-Modell: eine Instanz pro Kunde (eigene Subdomain), genau ein Workspace, 
 ## Open Items
 
 1. ~~Finaler Produktname~~ ERLEDIGT: Novi CRM by Novicode (`ProductBranding.ts`, `index.html`, `manifest.json`, `EMAIL_FROM_NAME`-Default = `PRODUCT_BRANDING.name`)
-2. Finales Logo → `public/images/brand/logo.svg` + Script (aktuell neutraler geometrischer Platzhalter, KEIN erfundenes Novi-Logo)
+2. ~~Finales Logo~~ ERLEDIGT: finale Novi-Marke gelandet (`public/images/brand/logo.svg` + Script); Assets, Icons und Website nachgezogen
 3. Eigene Website-/Support-/Community-URLs (aktuell `example.com`-Platzhalter)
 4. Eigene Legal-Dokumente (Terms/Privacy/DPA) + URLs — bis dahin zeigen Login-Footer-Links auf Platzhalter
 5. `emailLogoUrl`/`defaultWorkspaceLogoUrl` auf eigenes Hosting umziehen (aktuell raw.githubusercontent.com des Forks)

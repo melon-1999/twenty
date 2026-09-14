@@ -1,5 +1,9 @@
 // Regenerates every app icon and the social card from the canonical brand
-// mark at public/images/brand/logo.svg. Run after replacing the logo:
+// mark at public/images/brand/logo.svg. The social card is composited from
+// public/images/brand/wordmark-horizontal.png (generated via --brand-pngs-only),
+// so when the wordmark SVGs changed, run --brand-pngs-only first, then this
+// script in full mode:
+//   node packages/twenty-front/scripts/generate-brand-assets.mjs --brand-pngs-only
 //   node packages/twenty-front/scripts/generate-brand-assets.mjs
 import { readdir, readFile, copyFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -71,13 +75,19 @@ for (const dir of iconDirs) {
 }
 
 // In-app mark (onboarding header, splash loader, import badge, OAuth consent)
-await copyFile(logoPath, join(publicDir, 'images', 'integrations', 'twenty-logo.svg'));
+await copyFile(
+  logoPath,
+  join(publicDir, 'images', 'integrations', 'twenty-logo.svg'),
+);
 console.log('regenerated images/integrations/twenty-logo.svg');
 
 // Social preview card referenced by index.html og:image / twitter:image
 await mkdir(join(publicDir, 'images', 'brand'), { recursive: true });
-const logoPng = await sharp(logoSvg, { density: 300 })
-  .resize(320, 320)
+// Wordmark (not the bare mark) reads better at social-card scale.
+const wordmarkPng = await sharp(
+  join(publicDir, 'images', 'brand', 'wordmark-horizontal.png'),
+)
+  .resize({ width: 720 })
   .png()
   .toBuffer();
 await sharp({
@@ -88,7 +98,7 @@ await sharp({
     background: '#fcfcfc',
   },
 })
-  .composite([{ input: logoPng, gravity: 'center' }])
+  .composite([{ input: wordmarkPng, gravity: 'center' }])
   .png()
   .toFile(join(publicDir, 'images', 'brand', 'social-card.png'));
 console.log('regenerated images/brand/social-card.png');
