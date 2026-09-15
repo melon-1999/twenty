@@ -1998,6 +1998,8 @@ export class ConfigVariables {
   @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.SERVER_CONFIG,
     description: 'Enable or disable multi-workspace support',
+    // Single-company lockdown must not be togglable from inside the product.
+    isEnvOnly: true,
     type: ConfigVariableType.BOOLEAN,
   })
   @IsOptional()

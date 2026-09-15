@@ -635,6 +635,13 @@ export class SignInUpService {
     workspaceId: string;
     applicationUniversalIdentifier: string;
   }): Promise<string | undefined> {
+    // Fetching from twenty-icons.com leaks the customer's email domain to
+    // Twenty-operated infra; self-hosted deployments disable it the same way
+    // search.service.ts and client-config.service.ts do.
+    if (!this.twentyConfigService.get('ALLOW_REQUESTS_TO_TWENTY_ICONS')) {
+      return;
+    }
+
     let uploadedLogoFileId: string | undefined;
 
     try {

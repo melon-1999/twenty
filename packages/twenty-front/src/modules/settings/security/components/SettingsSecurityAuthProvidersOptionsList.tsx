@@ -241,17 +241,23 @@ export const SettingsSecurityAuthProvidersOptionsList = () => {
             )}
           </Card>
           <Card rounded>
-            <SettingsOptionCardContentSwitch
-              Icon={IconLink}
-              title={t`Invite by Link`}
-              description={t`Allow the invitation of new users by sharing an invite link.`}
-              checked={currentWorkspace.isPublicInviteLinkEnabled}
-              advancedMode
-              divider
-              onChange={() =>
-                handleChange(!currentWorkspace.isPublicInviteLinkEnabled)
-              }
-            />
+            {isMultiWorkspaceEnabled && (
+              // Single-instance deployments always refuse public-invite-link
+              // sign-up at runtime (see AuthService#checkAccessForSignIn), so
+              // showing this switch there would let an admin flip on a
+              // control that can never actually work.
+              <SettingsOptionCardContentSwitch
+                Icon={IconLink}
+                title={t`Invite by Link`}
+                description={t`Allow the invitation of new users by sharing an invite link.`}
+                checked={currentWorkspace.isPublicInviteLinkEnabled}
+                advancedMode
+                divider
+                onChange={() =>
+                  handleChange(!currentWorkspace.isPublicInviteLinkEnabled)
+                }
+              />
+            )}
             {isMultiWorkspaceEnabled && (
               <SettingsOptionCardContentSelect
                 Icon={IconList}

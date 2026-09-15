@@ -32,6 +32,7 @@ describe('SignInUpService', () => {
   const workspaceRepositoryMock = {
     count: jest.fn(),
     create: jest.fn(),
+    update: jest.fn(),
   };
   const userRepositoryMock = {
     count: jest.fn(),
@@ -51,6 +52,27 @@ describe('SignInUpService', () => {
   };
   const workspaceCacheServiceMock = {
     invalidateAndRecompute: jest.fn(),
+  };
+  const fileCorePictureServiceMock = {
+    uploadWorkspaceLogoFromUrl: jest.fn(),
+  };
+  const applicationServiceMock = {
+    createWorkspaceCustomApplication: jest.fn(),
+  };
+  const userWorkspaceServiceMock = {
+    create: jest.fn(),
+  };
+  const onboardingServiceMock = {
+    setOnboardingConnectAccountPending: jest.fn(),
+    setOnboardingCreateProfilePending: jest.fn(),
+    setOnboardingInstallAppsPending: jest.fn(),
+    setOnboardingInviteTeamPending: jest.fn(),
+  };
+  const billingServiceMock = {
+    isBillingEnabled: jest.fn(),
+  };
+  const eventLogEmitterServiceMock = {
+    createContext: jest.fn(),
   };
 
   const buildExistingUserData = (
@@ -85,8 +107,8 @@ describe('SignInUpService', () => {
           useValue: workspaceRepositoryMock,
         },
         { provide: WorkspaceInvitationService, useValue: {} },
-        { provide: UserWorkspaceService, useValue: {} },
-        { provide: OnboardingService, useValue: {} },
+        { provide: UserWorkspaceService, useValue: userWorkspaceServiceMock },
+        { provide: OnboardingService, useValue: onboardingServiceMock },
         { provide: WorkspaceEventEmitter, useValue: {} },
         { provide: TwentyConfigService, useValue: twentyConfigServiceMock },
         {
@@ -99,13 +121,19 @@ describe('SignInUpService', () => {
           provide: WorkspaceCacheService,
           useValue: workspaceCacheServiceMock,
         },
-        { provide: ApplicationService, useValue: {} },
-        { provide: FileCorePictureService, useValue: {} },
+        { provide: ApplicationService, useValue: applicationServiceMock },
+        {
+          provide: FileCorePictureService,
+          useValue: fileCorePictureServiceMock,
+        },
         { provide: ExceptionHandlerService, useValue: {} },
         { provide: EnterprisePlanService, useValue: enterprisePlanServiceMock },
-        { provide: EventLogEmitterService, useValue: {} },
+        {
+          provide: EventLogEmitterService,
+          useValue: eventLogEmitterServiceMock,
+        },
         { provide: BillingCreditService, useValue: {} },
-        { provide: BillingService, useValue: {} },
+        { provide: BillingService, useValue: billingServiceMock },
         { provide: getDataSourceToken(), useValue: dataSourceMock },
       ],
     }).compile();
@@ -234,6 +262,92 @@ describe('SignInUpService', () => {
 
       expect(workspaceRepositoryMock.create).toHaveBeenCalledWith(
         expect.objectContaining({ isPublicInviteLinkEnabled: true }),
+      );
+    });
+  });
+
+  // The inferred logo is fetched from twenty-icons.com, a Twenty-operated
+  // service, using the new workspace's email domain, so it must be gated by
+  // the same ALLOW_REQUESTS_TO_TWENTY_ICONS flag the front end and the other
+  // server-side twenty-icons callsites already honor.
+  describe('signUpOnNewWorkspace inferred workspace logo', () => {
+    beforeEach(() => {
+      workspaceRepositoryMock.count.mockResolvedValue(0);
+      userRepositoryMock.count.mockResolvedValue(0);
+      workspaceRepositoryMock.create.mockImplementation((data) => data);
+      workspaceRepositoryMock.update.mockResolvedValue({ affected: 1 });
+      subdomainManagerServiceMock.generateSubdomain.mockResolvedValue('acme');
+      applicationServiceMock.createWorkspaceCustomApplication.mockResolvedValue(
+        { universalIdentifier: 'app-universal-id' },
+      );
+      userWorkspaceServiceMock.create.mockResolvedValue(undefined);
+      onboardingServiceMock.setOnboardingConnectAccountPending.mockResolvedValue(
+        undefined,
+      );
+      onboardingServiceMock.setOnboardingCreateProfilePending.mockResolvedValue(
+        undefined,
+      );
+      onboardingServiceMock.setOnboardingInstallAppsPending.mockResolvedValue(
+        undefined,
+      );
+      onboardingServiceMock.setOnboardingInviteTeamPending.mockResolvedValue(
+        undefined,
+      );
+      billingServiceMock.isBillingEnabled.mockReturnValue(false);
+      eventLogEmitterServiceMock.createContext.mockReturnValue({
+        insertWorkspaceEvent: jest.fn(),
+      });
+      fileCorePictureServiceMock.uploadWorkspaceLogoFromUrl.mockResolvedValue({
+        id: 'logo-file-id',
+      });
+
+      dataSourceMock.transaction.mockImplementation(async (callback) => {
+        const queryRunner = {
+          manager: {
+            save: jest.fn().mockImplementation((_entity, data) => data),
+          },
+        };
+
+        return callback({ queryRunner });
+      });
+    });
+
+    it('does not request twenty-icons.com when ALLOW_REQUESTS_TO_TWENTY_ICONS is disabled', async () => {
+      mockConfig({
+        IS_MULTIWORKSPACE_ENABLED: true,
+        ALLOW_REQUESTS_TO_TWENTY_ICONS: false,
+      });
+
+      await signInUpService.signUpOnNewWorkspace(buildExistingUserData(false), {
+        displayName: 'Acme',
+      });
+
+      expect(
+        fileCorePictureServiceMock.uploadWorkspaceLogoFromUrl,
+      ).not.toHaveBeenCalled();
+      expect(workspaceRepositoryMock.update).not.toHaveBeenCalled();
+    });
+
+    it('requests twenty-icons.com for the inferred logo when ALLOW_REQUESTS_TO_TWENTY_ICONS is enabled', async () => {
+      mockConfig({
+        IS_MULTIWORKSPACE_ENABLED: true,
+        ALLOW_REQUESTS_TO_TWENTY_ICONS: true,
+      });
+
+      await signInUpService.signUpOnNewWorkspace(buildExistingUserData(false), {
+        displayName: 'Acme',
+      });
+
+      expect(
+        fileCorePictureServiceMock.uploadWorkspaceLogoFromUrl,
+      ).toHaveBeenCalledWith(
+        expect.objectContaining({
+          imageUrl: 'https://twenty-icons.com/testfirma.example.com',
+        }),
+      );
+      expect(workspaceRepositoryMock.update).toHaveBeenCalledWith(
+        expect.objectContaining({ logoFileId: expect.anything() }),
+        { logoFileId: 'logo-file-id' },
       );
     });
   });

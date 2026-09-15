@@ -10,6 +10,7 @@ import { SettingsRolesQueryEffect } from '@/settings/roles/components/SettingsRo
 
 import { useSnackBarOnQueryError } from '@/apollo/hooks/useSnackBarOnQueryError';
 import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
+import { isMultiWorkspaceEnabledState } from '@/client-config/states/isMultiWorkspaceEnabledState';
 import { useSettingsAllRoles } from '@/settings/roles/hooks/useSettingsAllRoles';
 import { SettingsApprovedAccessDomainsListCard } from '@/settings/security/components/approvedAccessDomains/SettingsApprovedAccessDomainsListCard';
 import { useSnackBar } from '@/ui/feedback/snack-bar-manager/hooks/useSnackBar';
@@ -84,6 +85,9 @@ export const SettingsWorkspaceMembersInviteTab = () => {
   const { deleteWorkspaceInvitation } = useDeleteWorkspaceInvitation();
 
   const currentWorkspace = useAtomStateValue(currentWorkspaceState);
+  const isMultiWorkspaceEnabled = useAtomStateValue(
+    isMultiWorkspaceEnabledState,
+  );
 
   const { data: invitationsData, error: invitationsError } = useQuery(
     GetWorkspaceInvitationsDocument,
@@ -126,7 +130,12 @@ export const SettingsWorkspaceMembersInviteTab = () => {
   return (
     <>
       <SettingsRolesQueryEffect />
-      {currentWorkspace?.inviteHash &&
+      {/* Public invite links never work when multi-workspace is disabled
+          (AuthService#checkAccessForSignIn refuses them at runtime), so a
+          workspace carrying a stale isPublicInviteLinkEnabled=true must not
+          show a link here that would only fail to sign anyone in. */}
+      {isMultiWorkspaceEnabled &&
+        currentWorkspace?.inviteHash &&
         currentWorkspace?.isPublicInviteLinkEnabled && (
           <Section>
             <H2Title
@@ -234,13 +243,18 @@ export const SettingsWorkspaceMembersInviteTab = () => {
           </StyledTableContainer>
         )}
       </Section>
-      <Section>
-        <H2Title
-          title={t`Approved Domains`}
-          description={t`Anyone with an email address at these domains is allowed to sign up for this workspace.`}
-        />
-        <SettingsApprovedAccessDomainsListCard />
-      </Section>
+      {/* Approved-domain self-join is refused at runtime when multi-workspace
+          is disabled (AuthService#checkAccessForSignIn), so this section
+          would only advertise a signup path that no longer works. */}
+      {isMultiWorkspaceEnabled && (
+        <Section>
+          <H2Title
+            title={t`Approved Domains`}
+            description={t`Anyone with an email address at these domains is allowed to sign up for this workspace.`}
+          />
+          <SettingsApprovedAccessDomainsListCard />
+        </Section>
+      )}
     </>
   );
 };

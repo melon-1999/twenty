@@ -920,7 +920,17 @@ export class AuthService {
         ? userData.newUserPayload.email
         : userData.existingUser.email;
 
+    // Approved access domains are a multi-workspace self-join mechanism: on a
+    // single-instance deployment a matching email domain must never be enough
+    // to enter the workspace, only an explicit invitation. Relying on
+    // IS_EMAIL_VERIFICATION_REQUIRED being off to neutralise this is a config
+    // coincidence, not a guarantee.
+    const isApprovedAccessDomainSelfJoinAllowed = this.twentyConfigService.get(
+      'IS_MULTIWORKSPACE_ENABLED',
+    );
+
     if (
+      isApprovedAccessDomainSelfJoinAllowed &&
       isDefined(workspace) &&
       isEmailInApprovedAccessDomains({
         email,
@@ -933,11 +943,18 @@ export class AuthService {
       return;
     }
 
+    // Single-instance deployments must reject public invite links even when
+    // workspace.isPublicInviteLinkEnabled is stale (pre-fix workspace) or an
+    // admin re-enabled it by mistake: the DB value alone is not trustworthy here.
+    const isPublicInviteLinkEffectivelyEnabled =
+      workspace?.isPublicInviteLinkEnabled &&
+      this.twentyConfigService.get('IS_MULTIWORKSPACE_ENABLED');
+
     if (
       hasPublicInviteLink &&
       !hasPersonalInvitation &&
       workspace &&
-      !workspace.isPublicInviteLinkEnabled
+      !isPublicInviteLinkEffectivelyEnabled
     ) {
       throw new AuthException(
         'Public invite link is disabled for this workspace',

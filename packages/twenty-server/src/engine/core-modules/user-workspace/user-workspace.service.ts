@@ -398,17 +398,20 @@ export class UserWorkspaceService {
     );
 
     // Email-domain discovery is the only "listing" source: PUBLIC only.
-    const workspacesFromApprovedAccessDomain = this.twentyConfigService.get(
-      'IS_EMAIL_VERIFICATION_REQUIRED',
-    )
-      ? getJoinableWorkspacesFromApprovedAccessDomains({
-          approvedAccessDomains:
-            await this.approvedAccessDomainService.findValidatedApprovedAccessDomainWithWorkspacesAndSsoIdentityProvidersDomain(
-              getDomainFromEmailOrThrow(email),
-            ),
-          alreadyMemberWorkspaceIds: alreadyMemberWorkspacesIds,
-        })
-      : [];
+    // Server-side, approved-domain self-join is denied outright when
+    // multi-workspace is disabled, so advertising it here would just be a
+    // fail-closed dead end (including its inviteHash) for single-company mode.
+    const workspacesFromApprovedAccessDomain =
+      this.twentyConfigService.get('IS_EMAIL_VERIFICATION_REQUIRED') &&
+      this.twentyConfigService.get('IS_MULTIWORKSPACE_ENABLED')
+        ? getJoinableWorkspacesFromApprovedAccessDomains({
+            approvedAccessDomains:
+              await this.approvedAccessDomainService.findValidatedApprovedAccessDomainWithWorkspacesAndSsoIdentityProvidersDomain(
+                getDomainFromEmailOrThrow(email),
+              ),
+            alreadyMemberWorkspaceIds: alreadyMemberWorkspacesIds,
+          })
+        : [];
 
     const workspacesFromApprovedAccessDomainIds =
       workspacesFromApprovedAccessDomain.map(({ workspace }) => workspace.id);
