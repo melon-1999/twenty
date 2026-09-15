@@ -752,6 +752,15 @@ export class SignInUpService {
             displayName,
             inviteHash: v4(),
             activationStatus: WorkspaceActivationStatus.PENDING_CREATION,
+            // Single-instance workspaces are born invite-only: the inviteHash
+            // is embedded in every invite email and never rotates, so a
+            // public link would let anyone self-register into this
+            // customer's workspace, bypassing SIGNUP_DISABLED. Inert on
+            // Twenty's managed cloud, where IS_MULTIWORKSPACE_ENABLED is
+            // true and the entity default (true) is kept.
+            isPublicInviteLinkEnabled: this.twentyConfigService.get(
+              'IS_MULTIWORKSPACE_ENABLED',
+            ),
           });
 
           const workspace = await queryRunner.manager.save(

@@ -45,6 +45,13 @@ describe('SignInUpService', () => {
   const dataSourceMock = {
     transaction: jest.fn(),
   };
+  const subdomainManagerServiceMock = {
+    generateSubdomain: jest.fn(),
+    validateSubdomainOrThrow: jest.fn(),
+  };
+  const workspaceCacheServiceMock = {
+    invalidateAndRecompute: jest.fn(),
+  };
 
   const buildExistingUserData = (
     canAccessFullAdminPanel: boolean,
@@ -82,10 +89,16 @@ describe('SignInUpService', () => {
         { provide: OnboardingService, useValue: {} },
         { provide: WorkspaceEventEmitter, useValue: {} },
         { provide: TwentyConfigService, useValue: twentyConfigServiceMock },
-        { provide: SubdomainManagerService, useValue: {} },
+        {
+          provide: SubdomainManagerService,
+          useValue: subdomainManagerServiceMock,
+        },
         { provide: UserService, useValue: {} },
         { provide: MetricsService, useValue: {} },
-        { provide: WorkspaceCacheService, useValue: {} },
+        {
+          provide: WorkspaceCacheService,
+          useValue: workspaceCacheServiceMock,
+        },
         { provide: ApplicationService, useValue: {} },
         { provide: FileCorePictureService, useValue: {} },
         { provide: ExceptionHandlerService, useValue: {} },
@@ -167,6 +180,61 @@ describe('SignInUpService', () => {
         code: AuthExceptionCode.INVALID_INPUT,
         message: 'Workspace name is required',
       });
+    });
+  });
+
+  // Single-instance workspaces must be born invite-only: the inviteHash is
+  // embedded in every invite email and never rotates, so a public invite
+  // link on a single-tenant deployment lets anyone self-register into the
+  // customer's workspace, bypassing SIGNUP_DISABLED.
+  describe('signUpOnNewWorkspace isPublicInviteLinkEnabled default', () => {
+    const STOP_AFTER_CREATE_ERROR = new Error('stop after workspace create');
+
+    const setUpTransactionThatStopsAfterWorkspaceCreate = () => {
+      dataSourceMock.transaction.mockImplementation(async (callback) => {
+        const queryRunner = {
+          manager: {
+            save: jest.fn().mockRejectedValue(STOP_AFTER_CREATE_ERROR),
+          },
+        };
+
+        return callback({ queryRunner });
+      });
+    };
+
+    beforeEach(() => {
+      workspaceRepositoryMock.count.mockResolvedValue(0);
+      userRepositoryMock.count.mockResolvedValue(0);
+      subdomainManagerServiceMock.generateSubdomain.mockResolvedValue('acme');
+      setUpTransactionThatStopsAfterWorkspaceCreate();
+    });
+
+    it('creates the workspace with the public invite link disabled when multi-workspace is disabled', async () => {
+      mockConfig({ IS_MULTIWORKSPACE_ENABLED: false });
+
+      await expect(
+        signInUpService.signUpOnNewWorkspace(buildExistingUserData(false), {
+          displayName: 'Acme',
+        }),
+      ).rejects.toBe(STOP_AFTER_CREATE_ERROR);
+
+      expect(workspaceRepositoryMock.create).toHaveBeenCalledWith(
+        expect.objectContaining({ isPublicInviteLinkEnabled: false }),
+      );
+    });
+
+    it('creates the workspace with the public invite link enabled when multi-workspace is enabled', async () => {
+      mockConfig({ IS_MULTIWORKSPACE_ENABLED: true });
+
+      await expect(
+        signInUpService.signUpOnNewWorkspace(buildExistingUserData(false), {
+          displayName: 'Acme',
+        }),
+      ).rejects.toBe(STOP_AFTER_CREATE_ERROR);
+
+      expect(workspaceRepositoryMock.create).toHaveBeenCalledWith(
+        expect.objectContaining({ isPublicInviteLinkEnabled: true }),
+      );
     });
   });
 });
