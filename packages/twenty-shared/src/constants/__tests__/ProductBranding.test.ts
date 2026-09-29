@@ -27,9 +27,7 @@ describe('PRODUCT_BRANDING', () => {
       PRODUCT_BRANDING.supportUrl,
       PRODUCT_BRANDING.sourceCodeUrl,
       PRODUCT_BRANDING.sourceDownloadUrl,
-      PRODUCT_BRANDING.legalTermsUrl,
       PRODUCT_BRANDING.legalPrivacyUrl,
-      PRODUCT_BRANDING.legalDpaUrl,
       PRODUCT_BRANDING.emailLogoUrl,
       PRODUCT_BRANDING.defaultWorkspaceLogoUrl,
     ];
@@ -37,6 +35,14 @@ describe('PRODUCT_BRANDING', () => {
     for (const url of urls) {
       expect(url).toMatch(/^https:\/\//);
     }
+  });
+
+  // No Terms/DPA documents exist yet; consumers must hide these links while
+  // the URLs are empty rather than render a dead link (see FooterNote,
+  // SettingsLegal, base-schema.utils).
+  it('should leave legalTermsUrl and legalDpaUrl empty until those documents exist', () => {
+    expect(PRODUCT_BRANDING.legalTermsUrl).toBe('');
+    expect(PRODUCT_BRANDING.legalDpaUrl).toBe('');
   });
 
   it('should derive the release tag from the product version', () => {

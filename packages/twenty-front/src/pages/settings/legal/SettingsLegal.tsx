@@ -3,6 +3,7 @@ import { SettingsPageContainer } from '@/settings/components/SettingsPageContain
 import { SettingsPageLayout } from '@/settings/components/layout/SettingsPageLayout';
 import { styled } from '@linaria/react';
 import { t } from '@lingui/core/macro';
+import { isNonEmptyString } from '@sniptt/guards';
 import { useContext } from 'react';
 import { PRODUCT_BRANDING, PRODUCT_VERSION } from 'twenty-shared/constants';
 import { SettingsPath } from 'twenty-shared/types';
@@ -57,21 +58,23 @@ export const SettingsLegal = () => {
               title={t`Privacy Policy`}
             />
           </StyledCardLink>
-          <StyledCardLink
-            href={PRODUCT_BRANDING.legalTermsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SettingsCard
-              Icon={
-                <IconFileText
-                  size={theme.icon.size.md}
-                  stroke={theme.icon.stroke.sm}
-                />
-              }
-              title={t`Terms of Service`}
-            />
-          </StyledCardLink>
+          {isNonEmptyString(PRODUCT_BRANDING.legalTermsUrl) && (
+            <StyledCardLink
+              href={PRODUCT_BRANDING.legalTermsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SettingsCard
+                Icon={
+                  <IconFileText
+                    size={theme.icon.size.md}
+                    stroke={theme.icon.stroke.sm}
+                  />
+                }
+                title={t`Terms of Service`}
+              />
+            </StyledCardLink>
+          )}
         </Section>
         <Section>
           <H2Title

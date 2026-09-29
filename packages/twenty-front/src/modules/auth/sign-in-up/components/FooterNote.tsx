@@ -1,5 +1,6 @@
 import { styled } from '@linaria/react';
 import { Trans } from '@lingui/react/macro';
+import { isNonEmptyString } from '@sniptt/guards';
 import { PRODUCT_BRANDING } from 'twenty-shared/constants';
 
 import { useWorkspaceBypass } from '@/auth/sign-in-up/hooks/useWorkspaceBypass';
@@ -69,19 +70,47 @@ export const FooterNote = ({
   const { shouldOfferBypass, shouldUseBypass, enableBypass } =
     useWorkspaceBypass();
 
+  const hasTermsUrl = isNonEmptyString(PRODUCT_BRANDING.legalTermsUrl);
+  const hasDpaUrl = isNonEmptyString(PRODUCT_BRANDING.legalDpaUrl);
+  const hasPrivacyUrl = isNonEmptyString(PRODUCT_BRANDING.legalPrivacyUrl);
+
+  // The DPA document doesn't exist yet on most instances; fall back to the
+  // Privacy Policy (a real document, existing string) instead of inventing a
+  // new sentence for a document we can't link to.
+  const secondaryLinkKind: 'dpa' | 'privacy' | null =
+    secondaryAgreement === 'dataProcessingAgreement' && hasDpaUrl
+      ? 'dpa'
+      : hasPrivacyUrl
+        ? 'privacy'
+        : null;
+  const hasSecondaryAgreementUrl = secondaryLinkKind !== null;
+
   if (!isOnAWorkspace) {
+    // No link at all to show (Terms, DPA and Privacy Policy all empty) -
+    // render nothing rather than a sentence with no document behind it.
+    if (!hasTermsUrl && !hasSecondaryAgreementUrl) {
+      return null;
+    }
+
     return (
       <StyledCopyContainer>
         <Trans>By using {PRODUCT_BRANDING.name}, you agree to the</Trans>{' '}
-        <a
-          href={PRODUCT_BRANDING.legalTermsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Trans>Terms of Service</Trans>
-        </a>{' '}
-        <Trans>and</Trans>{' '}
-        {secondaryAgreement === 'dataProcessingAgreement' ? (
+        {hasTermsUrl && (
+          <a
+            href={PRODUCT_BRANDING.legalTermsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Trans>Terms of Service</Trans>
+          </a>
+        )}
+        {hasTermsUrl && hasSecondaryAgreementUrl && (
+          <>
+            {' '}
+            <Trans>and</Trans>{' '}
+          </>
+        )}
+        {secondaryLinkKind === 'dpa' && (
           <a
             href={PRODUCT_BRANDING.legalDpaUrl}
             target="_blank"
@@ -89,7 +118,8 @@ export const FooterNote = ({
           >
             <Trans>Data Processing Agreement</Trans>
           </a>
-        ) : (
+        )}
+        {secondaryLinkKind === 'privacy' && (
           <a
             href={PRODUCT_BRANDING.legalPrivacyUrl}
             target="_blank"
@@ -113,21 +143,25 @@ export const FooterNote = ({
           <StyledSeparator>•</StyledSeparator>
         </>
       )}
-      <a
-        href={PRODUCT_BRANDING.legalPrivacyUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Trans>Privacy Policy</Trans>
-      </a>
-      <StyledSeparator>•</StyledSeparator>
-      <a
-        href={PRODUCT_BRANDING.legalTermsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Trans>Terms of Service</Trans>
-      </a>
+      {hasPrivacyUrl && (
+        <a
+          href={PRODUCT_BRANDING.legalPrivacyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Trans>Privacy Policy</Trans>
+        </a>
+      )}
+      {hasPrivacyUrl && hasTermsUrl && <StyledSeparator>•</StyledSeparator>}
+      {hasTermsUrl && (
+        <a
+          href={PRODUCT_BRANDING.legalTermsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Trans>Terms of Service</Trans>
+        </a>
+      )}
     </StyledLinksContainer>
   );
 };

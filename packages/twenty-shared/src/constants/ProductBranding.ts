@@ -1,8 +1,10 @@
 // Central branding configuration for the rebranded product.
 // Replace these values (and the assets listed in docs/product/rebranding.md)
 // to rebrand the whole app, emails and server-rendered surfaces.
-// The product name is final (Novi CRM by Novicode); the example.com domains
-// are intentional placeholders until the real domains are configured.
+// The product name is final (Novi CRM by Novicode) and the domains are the
+// real novicode.de ones. legalTermsUrl/legalDpaUrl are still empty because
+// those documents do not exist yet - consumers must hide the links while
+// they are unset (see FooterNote.tsx, SettingsLegal.tsx, base-schema.utils.ts).
 // The production branding guard (findPlaceholderBrandingViolations) blocks
 // production builds while placeholders are active.
 import { PRODUCT_RELEASE_TAG } from './ProductReleaseTag';
@@ -36,19 +38,21 @@ export const PRODUCT_BRANDING: ProductBranding = {
   shortName: 'Novi',
   slug: 'novi',
   description: 'A modern CRM',
-  websiteUrl: 'https://example.com',
-  supportUrl: 'https://example.com/support',
+  websiteUrl: 'https://novicode.de',
+  supportUrl: 'https://novicode.de/kontakt',
   repositoryUrl: 'https://github.com/melon-1999/twenty',
   // Exact source of the deployed version, internal reference for operators
   sourceCodeUrl: `https://github.com/melon-1999/twenty/tree/${PRODUCT_RELEASE_TAG}`,
-  sourceDownloadUrl: `https://legal.example.com/source/product-v${PRODUCT_VERSION}.tar.gz`,
-  legalTermsUrl: 'https://example.com/legal/terms',
-  legalPrivacyUrl: 'https://example.com/legal/privacy',
-  legalDpaUrl: 'https://example.com/legal/dpa',
-  supportEmail: 'support@example.com',
-  emailLogoUrl: 'https://assets.example.com/brand/email-logo.png',
+  sourceDownloadUrl: `https://assets.melondevsolutions.cloud/novi/source/product-v${PRODUCT_VERSION}.tar.gz`,
+  // No Terms/DPA documents exist yet; empty strings signal consumers to hide these links
+  legalTermsUrl: '',
+  legalPrivacyUrl: 'https://novicode.de/datenschutz',
+  legalDpaUrl: '',
+  supportEmail: 'kontakt@novicode.de',
+  emailLogoUrl:
+    'https://assets.melondevsolutions.cloud/novi/brand/email-logo.png',
   defaultWorkspaceLogoUrl:
-    'https://assets.example.com/brand/workspace-logo.png',
+    'https://assets.melondevsolutions.cloud/novi/brand/workspace-logo.png',
   legalEntityLine: 'Novicode',
   legalEntityLocationLine: '',
 };

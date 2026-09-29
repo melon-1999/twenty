@@ -1,3 +1,4 @@
+import { isNonEmptyString } from '@sniptt/guards';
 import { type OpenAPIV3_1 } from 'openapi-types';
 import { ApiPath } from 'twenty-shared/types';
 
@@ -126,7 +127,11 @@ curl -H 'Authorization: Bearer <token>' \\
   ${serverUrl}/${ApiPath.Rest}/open-api/${schemaName} > ${PRODUCT_BRANDING.slug}-${schemaName}.json
 \`\`\`
 `,
-      termsOfService: PRODUCT_BRANDING.legalTermsUrl,
+      // No Terms of Service document exists yet; omit the field rather than
+      // publish an empty/dead URL in the OpenAPI schema.
+      ...(isNonEmptyString(PRODUCT_BRANDING.legalTermsUrl) && {
+        termsOfService: PRODUCT_BRANDING.legalTermsUrl,
+      }),
       contact: {
         email: PRODUCT_BRANDING.supportEmail,
       },
