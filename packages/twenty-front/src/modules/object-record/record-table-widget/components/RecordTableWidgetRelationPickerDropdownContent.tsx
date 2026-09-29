@@ -1,3 +1,4 @@
+import { allowRequestsToTwentyIconsState } from '@/client-config/states/allowRequestsToTwentyIcons';
 import { RecordPickerLoadingSkeletonList } from '@/object-record/record-picker/components/RecordPickerLoadingSkeletonList';
 import { RecordPickerNoRecordFoundMenuItem } from '@/object-record/record-picker/components/RecordPickerNoRecordFoundMenuItem';
 import { RecordTableWidgetRelationPickerMenuItem } from '@/object-record/record-table-widget/components/RecordTableWidgetRelationPickerMenuItem';
@@ -9,6 +10,7 @@ import { DropdownMenuSeparator } from '@/ui/layout/dropdown/components/DropdownM
 import { DropdownComponentInstanceContext } from '@/ui/layout/dropdown/contexts/DropdownComponentInstanceContext';
 import { SelectableList } from '@/ui/layout/selectable-list/components/SelectableList';
 import { useAvailableComponentInstanceIdOrThrow } from '@/ui/utilities/state/component-state/hooks/useAvailableComponentInstanceIdOrThrow';
+import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
 import { t } from '@lingui/core/macro';
 import { useState } from 'react';
 import { type RecordGqlOperationFilter } from 'twenty-shared/types';
@@ -30,11 +32,15 @@ export const RecordTableWidgetRelationPickerDropdownContent = ({
     DropdownComponentInstanceContext,
   );
 
+  const allowRequestsToTwentyIcons = useAtomStateValue(
+    allowRequestsToTwentyIconsState,
+  );
+
   const { recordsToSelect, loading } = useRecordsForSelect({
     searchFilterText: searchFilter,
     selectedIds: [],
     objectNameSingular,
-    allowRequestsToTwentyIcons: true,
+    allowRequestsToTwentyIcons,
     filter: recordsFilter,
   });
 

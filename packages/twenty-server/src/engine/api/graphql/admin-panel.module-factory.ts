@@ -52,6 +52,9 @@ export const adminPanelModuleFactory = async (
       }),
     ],
     path: `/${ApiPath.AdminPanel}`,
+    // Yoga's default CORS reflects any Origin with credentials and overwrites
+    // the allowlist headers set by applyCredentialedCors.
+    cors: false,
     context: () => ({
       loaders: dataloaderService.createLoaders(),
     }),

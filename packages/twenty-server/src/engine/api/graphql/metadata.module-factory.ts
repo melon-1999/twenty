@@ -72,6 +72,9 @@ export const metadataModuleFactory = async (
       }),
     ],
     path: `/${ApiPath.Metadata}`,
+    // Yoga's default CORS reflects any Origin with credentials and overwrites
+    // the allowlist headers set by applyCredentialedCors.
+    cors: false,
     context: () => ({
       loaders: dataloaderService.createLoaders(),
     }),

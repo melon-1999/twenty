@@ -57,6 +57,8 @@ EMAIL_FROM_NAME="Novi CRM"
 EMAIL_FROM_ADDRESS=noreply@yourdomain.com
 ```
 
+`EMAIL_FROM_ADDRESS` defaultet upstream auf den Platzhalter `noreply@yourdomain.com` — sobald eine Instanz SMTP hat, zwingend eine echte, zustellbare Adresse der eigenen Domain setzen (sonst Absender-Platzhalter in Kunden-Mails, SPF/DMARC-Fehler).
+
 ## Austauschbare Werte (Checkliste fürs finale Branding)
 
 | Was | Wo |
@@ -208,6 +210,8 @@ Feature-/Produktarbeit ausschließlich auf `product/*`-Branches.
 - `PRODUCT_BRANDING.sourceCodeUrl` zeigt auf `…/tree/product/v<version>` (exakt deployter Stand, AGPL §13), `repositoryUrl` auf das Repo-Root (Releases-Link, MCP-Server-Card).
 - `emailLogoUrl`/`defaultWorkspaceLogoUrl` sind an denselben Tag gepinnt statt an einen Branch.
 - Release-Ablauf: `PRODUCT_VERSION` bumpen → committen → `git tag product/v<version>` auf den Commit → Tag pushen. Der Release-Workflow validiert die Übereinstimmung.
+- Aktuell `0.2.1` (`ProductVersion.ts`). Bump von 0.2.0, weil der deployte Commit `0.2.0` meldete, `product/v0.2.0` aber auf einen älteren Commit (`e86b7bc4b6`) zeigt — Version, Tag und Source-Tarball müssen denselben Stand beschreiben.
+- **Tag und Tarball = deployter Commit**: `product/v<version>` muss exakt auf den Commit-SHA zeigen, aus dem das deployte Image gebaut wurde (Image-Tag `sha-<kurz>`); nie nachträglich weitere Commits mit derselben Version deployen. Den Source-Tarball aus genau diesem SHA erzeugen (`git archive --format=tar.gz -o product-v<version>.tar.gz <deployter-SHA>`), nicht aus einem Branch-Head.
 
 ## SaaS Product Cleanup (v0.2.0)
 
@@ -259,6 +263,18 @@ Hosting-Modell: eine Instanz pro Kunde (eigene Subdomain), genau ein Workspace, 
 - **Dev-Umgebung**: Seed-Daten enthalten 2 Workspaces (Apple + YCombinator) — der Switcher ist dort sichtbar, `getDefaultWorkspace` warnt. Dev-Artefakt, kein Produktzustand.
 - **REMAINING**: übrige "Arbeitsbereich"-Strings in Settings-/Operator-Flächen bewusst unangetastet. (`SIGNUP_DISABLED` liefert per API bereits eine lokalisierte `userFriendlyMessage` "Registrierung ist deaktiviert." — verifiziert gegen die laufende Instanz.)
 
+## Security-Härtung (v0.2.1)
+
+- **GraphQL-CORS** (`graphql-config.service.ts`, `metadata.module-factory.ts`, `admin-panel.module-factory.ts`: je `cors: false`, 3 Zeilen + Kommentar, LOW). Befund: Yoga-Default-CORS spiegelte jeden `Origin` mit `Access-Control-Allow-Credentials: true` auf `/graphql`, `/metadata`, `/admin-panel` und überschrieb dabei die Header von `applyCredentialedCors` (Nest/Express). Da das Session-Cookie `__Host-twenty-session` (SameSite=Lax) authentifiziert und die CSRF-Middleware GET nicht prüft, hätte eine Seite auf einer Schwester-Subdomain (same-site) Query-Ergebnisse als eingeloggter User lesen können. Fix: Yoga setzt keine CORS-Header mehr, allein die Allowlist in `applyCredentialedCors` entscheidet (`SERVER_URL`, `FRONTEND_URL`, `AUTH_COOKIE_ALLOWED_ORIGINS`; Preflights beantwortet Nest schon vorher). Ergebnis: Same-Origin (Front vom Server ausgeliefert) → Origin gespiegelt + Credentials; erlaubter Dev-Origin (`FRONTEND_URL=http://localhost:3001` → Server `:3000`) → gespiegelt + Credentials, Preflight unverändert; fremder Origin → `Access-Control-Allow-Origin: *` (Browser verweigert damit jeden credentialed Request). Getestet in `src/engine/api/graphql/__tests__/graphql-yoga-cors.spec.ts`. Upstream-tauglich.
+- **Relation-Picker** (`RecordTableWidgetRelationPickerDropdownContent.tsx`): hatte `allowRequestsToTwentyIcons: true` hart kodiert, liest jetzt `allowRequestsToTwentyIconsState` (siehe Open Item 18).
+- **CI**: Docker-Actions in `build-product-image.yml` per Commit-SHA gepinnt (wie `actions/checkout`).
+
+Deployment-Empfehlungen für Kundeninstanzen:
+
+- `IS_CONFIG_VARIABLES_IN_DB_ENABLED=false` setzen: DB-Werte aus dem Admin-Panel haben sonst Vorrang vor `.env` (`TwentyConfigService.get`) — ein Server-Admin könnte z. B. `ALLOW_REQUESTS_TO_TWENTY_ICONS`, `AUTH_COOKIE_ALLOWED_ORIGINS`/`FRONTEND_URL` (CORS-Allowlist) oder `TELEMETRY_ENABLED` zur Laufzeit übersteuern.
+- `ALLOW_REQUESTS_TO_TWENTY_ICONS=false`, `IS_MULTIWORKSPACE_ENABLED=false` (siehe oben).
+- `EMAIL_FROM_ADDRESS` auf eine echte Adresse setzen, sobald SMTP existiert (siehe E-Mail-Absender).
+
 ## Open Items
 
 1. ~~Finaler Produktname~~ ERLEDIGT: Novi CRM by Novicode (`ProductBranding.ts`, `index.html`, `manifest.json`, `EMAIL_FROM_NAME`-Default = `PRODUCT_BRANDING.name`)
@@ -280,6 +296,6 @@ Hosting-Modell: eine Instanz pro Kunde (eigene Subdomain), genau ein Workspace, 
 16. ERLEDIGT: Defense-in-Depth für Public-Invite-Link-Härtung nachgerüstet — `checkAccessForSignIn` (`auth.service.ts`) lehnt den Public-Link-Zweig jetzt zusätzlich ab, wenn `IS_MULTIWORKSPACE_ENABLED=false` ist, unabhängig vom DB-Wert `workspace.isPublicInviteLinkEnabled`; schützt so auch Pre-Fix-Workspaces und einen versehentlich reaktivierten Admin-Flag. Multi-Workspace-Verhalten (Flag=true) bleibt unverändert DB-getrieben, persönliche Einladungs-Tokens sind vom Check unberührt.
 17. ERLEDIGT: Zweiter Self-Registration-Pfad geschlossen — der `approvedAccessDomains`-Early-Return in `checkAccessForSignIn` (`auth.service.ts`) greift jetzt nur noch bei `IS_MULTIWORKSPACE_ENABLED=true`. Vorher war er auf Single-Instance-Deployments nur deshalb wirkungslos, weil `IS_EMAIL_VERIFICATION_REQUIRED=false` die Util `is-email-in-approved-access-domains.util.ts` immer `false` liefern lässt — eine Config-Koinzidenz, kein Guard: mit aktivierter E-Mail-Verifizierung hätte jede Adresse einer validierten Domain den Workspace ohne Einladung betreten können. Einziger membership-erzeugender Konsument ist dieser Early-Return (`signInUp` → `signInUpOnExistingWorkspace` läuft ausnahmslos hinter `checkAccessForSignIn`); `hasProvisionedSignUpDestination` und das Domain-CRUD bleiben absichtlich unangetastet; der Listing-Pfad `findAvailableWorkspacesByEmail` / `availableWorkspacesForSignUp` wurde in einem Folge-Fix ebenfalls auf das Flag gegatet (siehe Single-Company-Abschnitt oben). Flag=true verhält sich byte-identisch zu Upstream. Getestet in `auth.service.spec.ts`.
 
-18. ERLEDIGT: Die client-seitigen `twenty-icons`-Callsites respektieren jetzt `allowRequestsToTwentyIconsState` (Client-Config-Spiegel von `ALLOW_REQUESTS_TO_TWENTY_ICONS`): `BackgroundMockTableRow.tsx` (404-Seite), `OnboardingImportPreviewCompanies.tsx` (Onboarding-Import-Vorschau) und `LinkIconWithLinkOverlay.tsx` (Favicons von Link-Einträgen in der Navigation/Side-Panel — der einzige Pfad mit echten Kunden-URLs). Bei `false` zeigen sie Initialen-Avatar bzw. Standard-Icon. Flag=true verhält sich identisch zu Upstream.
+18. ERLEDIGT: Die client-seitigen `twenty-icons`-Callsites respektieren jetzt `allowRequestsToTwentyIconsState` (Client-Config-Spiegel von `ALLOW_REQUESTS_TO_TWENTY_ICONS`): `BackgroundMockTableRow.tsx` (404-Seite), `OnboardingImportPreviewCompanies.tsx` (Onboarding-Import-Vorschau) und `LinkIconWithLinkOverlay.tsx` (Favicons von Link-Einträgen in der Navigation/Side-Panel) sowie `RecordTableWidgetRelationPickerDropdownContent.tsx` (Relation-Picker im Record-Table-Widget, Firmen-Favicons aus echten Kunden-Domains; war hart auf `true`). Bei `false` zeigen sie Initialen-Avatar bzw. Standard-Icon. Flag=true verhält sich identisch zu Upstream.
 
 Punkte 3, 5 und 9 waren vom Production Branding Guard erzwungen und sind jetzt mit echten Domains gelöst — Production-Builds und `product/v*`-Releases blockieren nicht mehr am Guard. Der CI-Negativtest (`ci-product.yaml`, `grep` auf `websiteUrl: 'https://example.com'`) erkennt das und deaktiviert sich selbst. Verbleibender Release-Blocker ist Punkt 4 (fehlende Terms/DPA-Dokumente) nur insofern, als die Links dafür ausgeblendet bleiben — kein Build- oder Guard-Fehler, sondern eine bewusste Produktentscheidung, bis die Dokumente existieren.

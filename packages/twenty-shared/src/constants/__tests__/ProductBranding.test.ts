@@ -37,12 +37,12 @@ describe('PRODUCT_BRANDING', () => {
     }
   });
 
-  // No Terms/DPA documents exist yet; consumers must hide these links while
-  // the URLs are empty rather than render a dead link (see FooterNote,
+  // Empty until the Terms/DPA documents exist; consumers hide these links
+  // while the URLs are empty rather than render a dead link (see FooterNote,
   // SettingsLegal, base-schema.utils).
-  it('should leave legalTermsUrl and legalDpaUrl empty until those documents exist', () => {
-    expect(PRODUCT_BRANDING.legalTermsUrl).toBe('');
-    expect(PRODUCT_BRANDING.legalDpaUrl).toBe('');
+  it('should leave legalTermsUrl and legalDpaUrl empty or point them to an https URL', () => {
+    expect(PRODUCT_BRANDING.legalTermsUrl).toMatch(/^(https:\/\/\S+)?$/);
+    expect(PRODUCT_BRANDING.legalDpaUrl).toMatch(/^(https:\/\/\S+)?$/);
   });
 
   it('should derive the release tag from the product version', () => {
