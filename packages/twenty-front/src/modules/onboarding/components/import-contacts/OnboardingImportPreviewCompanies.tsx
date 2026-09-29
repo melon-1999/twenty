@@ -1,4 +1,6 @@
+import { allowRequestsToTwentyIconsState } from '@/client-config/states/allowRequestsToTwentyIcons';
 import { IMPORT_CONTACTS_PREVIEW_COMPANIES } from '@/onboarding/constants/ImportContactsPreviewCompanies';
+import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
 import { getAbsoluteImageUrl } from '~/utils/image/getAbsoluteImageUrl';
 import { styled } from '@linaria/react';
 import { useLingui } from '@lingui/react/macro';
@@ -53,6 +55,9 @@ const StyledHeaderTitle = styled.div`
 export const OnboardingImportPreviewCompanies = () => {
   const { t } = useLingui();
   const theme = useTheme();
+  const allowRequestsToTwentyIcons = useAtomStateValue(
+    allowRequestsToTwentyIconsState,
+  );
 
   return (
     <StyledColumn>
@@ -85,9 +90,13 @@ export const OnboardingImportPreviewCompanies = () => {
                 size="md"
                 placeholder={company.name}
                 placeholderColorSeed={company.id}
-                avatarUrl={getAbsoluteImageUrl(
-                  getLogoUrlFromDomainName(company.domainName),
-                )}
+                avatarUrl={
+                  allowRequestsToTwentyIcons
+                    ? getAbsoluteImageUrl(
+                        getLogoUrlFromDomainName(company.domainName),
+                      )
+                    : undefined
+                }
               />
             }
           />

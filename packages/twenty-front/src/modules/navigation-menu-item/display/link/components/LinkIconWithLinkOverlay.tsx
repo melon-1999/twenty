@@ -5,7 +5,9 @@ import { getIconTileColorShades } from 'twenty-ui/data-display';
 import { type IconComponent } from 'twenty-ui/icon';
 import { ThemeContext, themeCssVariables } from 'twenty-ui/theme-constants';
 
+import { allowRequestsToTwentyIconsState } from '@/client-config/states/allowRequestsToTwentyIcons';
 import { DEFAULT_NAVIGATION_MENU_ITEM_COLOR_LINK } from '@/navigation-menu-item/common/constants/NavigationMenuItemDefaultColorLink';
+import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
 
 const failedFaviconUrls = new Set<string>();
 
@@ -76,7 +78,12 @@ export const LinkIconWithLinkOverlay = ({
 }: LinkIconWithLinkOverlayProps) => {
   const { theme } = useContext(ThemeContext);
   const [localFailedLink, setLocalFailedLink] = useState<string | null>(null);
-  const faviconUrl = getLinkFaviconUrl(link);
+  const allowRequestsToTwentyIcons = useAtomStateValue(
+    allowRequestsToTwentyIconsState,
+  );
+  const faviconUrl = allowRequestsToTwentyIcons
+    ? getLinkFaviconUrl(link)
+    : undefined;
   const linkKey = link ?? '';
   const isKnownFailed = failedFaviconUrls.has(linkKey);
   const showFavicon =

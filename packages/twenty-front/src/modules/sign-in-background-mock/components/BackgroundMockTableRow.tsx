@@ -1,9 +1,11 @@
 import { styled } from '@linaria/react';
 import { useContext } from 'react';
 
+import { allowRequestsToTwentyIconsState } from '@/client-config/states/allowRequestsToTwentyIcons';
 import { type BackgroundMockCompany } from '@/sign-in-background-mock/constants/BackgroundMockCompanies';
 import { BACKGROUND_MOCK_COLUMN_WIDTHS } from '@/sign-in-background-mock/constants/BackgroundMockColumnWidths';
 import { BACKGROUND_MOCK_TABLE_DIMENSIONS } from '@/sign-in-background-mock/constants/BackgroundMockTableDimensions';
+import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomStateValue';
 import { getAbsoluteImageUrl } from '~/utils/image/getAbsoluteImageUrl';
 import {
   Avatar,
@@ -107,8 +109,13 @@ export const BackgroundMockTableRow = ({
   company,
 }: BackgroundMockTableRowProps) => {
   const { theme } = useContext(ThemeContext);
+  const allowRequestsToTwentyIcons = useAtomStateValue(
+    allowRequestsToTwentyIconsState,
+  );
 
-  const logoUrl = getLogoUrlFromDomainName(company.domainName);
+  const logoUrl = allowRequestsToTwentyIcons
+    ? getLogoUrlFromDomainName(company.domainName)
+    : undefined;
 
   return (
     <StyledRow>
